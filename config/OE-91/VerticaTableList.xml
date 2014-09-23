@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Table>
+	<VerticaTableList>			
+		<VerticaTableName>dbi.ManagerBasic</VerticaTableName>
+        <VerticaTableName>dbi.ManagerBiography</VerticaTableName>
+		<VerticaTableName>dbi.ManagerCertification</VerticaTableName>
+		<VerticaTableName>dbi.ManagerEducation</VerticaTableName>
+		<VerticaTableName>dbi.ManagerManagedInvestment</VerticaTableName>
+		<VerticaTableName>dbi.ManagerManagementHistory</VerticaTableName>
+		<VerticaTableName>dbi.ManagerAffiliation</VerticaTableName>
+		<VerticaTableName>dbi.ManagerSpecialty</VerticaTableName>
+		<VerticaTableName>dbi.ManagerCompanyBiography</VerticaTableName>
+		<VerticaTableName>dbi.ManagerCompanyIdMapping</VerticaTableName>
+		<VerticaTableName>dbi.ManagerIdentifiers</VerticaTableName>	
+	</VerticaTableList>
+</Table>

@@ -1,0 +1,131 @@
+package com.morningstar.FundTeam.ML;
+
+import java.math.BigDecimal;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.List;
+
+
+import com.morningstar.FundAutoTest.commons.CustomizedLog;
+import com.morningstar.FundAutoTest.commons.DBCommons;
+import com.morningstar.FundAutoTest.commons.Database;
+import com.morningstar.FundAutoTest.commons.Helper;
+import com.morningstar.FundAutoTest.commons.testbase.Base;
+
+public class StockYieldPrecisionTesting extends Base{
+
+	/**@anthur Stefan.Hou
+	 * @param args
+	 * 测试Stock的小数点精度
+	 */
+	static String currentTime = Base.currentSysTime();
+	public static String packagePath = "E:/HJG_Project/ML_Project/StockDemoFile/20131217/Stock/Stock";
+	public static String testLogPath = "./log/TestLog/MerrillLynch/StockYieldPrecision/"; 
+	public static String testLogNameCase = "StockYieldPrecisionTestResult-" + currentTime + "." + "log";
+	public static String testLogTopic = "Stock Yield Rate Precision testing";
+	
+	public static void testPrepare() throws Exception{
+		CustomizedLog.creatCusomizedLogFile(testLogPath, testLogNameCase, testLogTopic);
+	}
+	
+	public static void testYieldPrecision() throws Exception{
+		List<String> shareClassIdList = new ArrayList<String>();
+		HashMap<String,String> perfId2Average3MonthYieldMap = new HashMap<String,String>();
+		
+		String startTime = Base.currentSysTime();	
+		System.out.println("[TestBegin]Begin to test Stock Yield Precision,start at :" + startTime);		
+		shareClassIdList = loadShareClassIdHasYieldDateAndRate();
+		String sqlToGetPerformanceId2Average3MonthYield = "SELECT PerformanceId,Average3MonthYield FROM CurrentData.dbo.MLAverage3MonthYieldForMonthEnd WHERE MLUniverseType = '2'";
+		perfId2Average3MonthYieldMap = DBCommons.getDataHashMap(sqlToGetPerformanceId2Average3MonthYield, Database.MsSQL1);
+		Iterator<String> it = shareClassIdList.iterator();
+		List<String> yieldRateList = new ArrayList<String>();
+		String shareClassId = null;
+		Double rate_1 = null;
+		Double rate_2 = null;
+		Double rate_3 = null;
+//开始测试，遍历整个sharedClassIdList
+		while(it.hasNext()){
+			try{
+				shareClassId = (String) it.next();
+				String sqlToGetDividendYield = "SELECT DividendYield FROM CentralEndData.dbo.HistoricalStockValuationRatios WHERE ShareClassId = '"+shareClassId+"' ORDER BY AsOfPriceDate DESC";			
+				yieldRateList = DBCommons.getDataList(sqlToGetDividendYield, Database.MsSQL2);
+				String strDbYieldRate = perfId2Average3MonthYieldMap.get(shareClassId);
+				Double dblDbYieldRate = Double.parseDouble(strDbYieldRate);			
+				if(yieldRateList.size()>=3){
+//求平均值
+					rate_1 = Double.parseDouble(yieldRateList.get(0));
+					rate_2 = Double.parseDouble(yieldRateList.get(1));
+					rate_3 = Double.parseDouble(yieldRateList.get(2));
+					Double result = ((rate_1+rate_2+rate_3)/3)*100;
+//格式转换				
+					Double acturalCalcResult = Helper.setDoublePrecision(result,5,BigDecimal.ROUND_HALF_DOWN);
+					if(dblDbYieldRate.equals(acturalCalcResult)==false){
+						CustomizedLog.writeCustomizedLogFile(testLogPath+testLogNameCase,"[FAILED]Calculated result has some mistakes,PerformanceId is: " + shareClassId);
+						CustomizedLog.writeCustomizedLogFile(testLogPath+testLogNameCase,"Required Yield Rate is: " + acturalCalcResult);
+						CustomizedLog.writeCustomizedLogFile(testLogPath+testLogNameCase,"Actural Yield Rate in DB is: " + dblDbYieldRate);
+						CustomizedLog.writeCustomizedLogFile(testLogPath+testLogNameCase,"=============================================================================");
+					}
+				}
+				if(yieldRateList.size()==2){
+//求平均值
+					rate_1 = Double.parseDouble(yieldRateList.get(0));
+					rate_2 = Double.parseDouble(yieldRateList.get(1));
+					Double result = ((rate_1+rate_2)/2)*100;
+//格式转换				
+					Double acturalCalcResult = Helper.setDoublePrecision(result,5,BigDecimal.ROUND_HALF_DOWN);
+					if(dblDbYieldRate.equals(acturalCalcResult)==false){
+						CustomizedLog.writeCustomizedLogFile(testLogPath+testLogNameCase,"[FAILED]Calculated result has some mistakes,PerformanceId is: " + shareClassId);
+						CustomizedLog.writeCustomizedLogFile(testLogPath+testLogNameCase,"Required Yield Rate is: " + acturalCalcResult);
+						CustomizedLog.writeCustomizedLogFile(testLogPath+testLogNameCase,"Actural Yield Rate in DB is: " + dblDbYieldRate);
+						CustomizedLog.writeCustomizedLogFile(testLogPath+testLogNameCase,"=============================================================================");
+					}
+				}
+				if(yieldRateList.size()==1){
+					Double result = Double.parseDouble(yieldRateList.get(0));
+					Double acturalCalcResult = Helper.setDoublePrecision(result, 5, BigDecimal.ROUND_HALF_DOWN);
+					if(dblDbYieldRate.equals(acturalCalcResult)==false){
+						CustomizedLog.writeCustomizedLogFile(testLogPath+testLogNameCase,"[FAILED]Calculated result has some mistakes,PerformanceId is: " + shareClassId);
+						CustomizedLog.writeCustomizedLogFile(testLogPath+testLogNameCase,"Required Yield Rate is: " + acturalCalcResult);
+						CustomizedLog.writeCustomizedLogFile(testLogPath+testLogNameCase,"Actural Yield Rate in DB is: " + dblDbYieldRate);
+						CustomizedLog.writeCustomizedLogFile(testLogPath+testLogNameCase,"=============================================================================");
+					}
+				}
+				else if(yieldRateList.isEmpty()){
+					System.out.println("[ERROR]ShareClassId is: "+shareClassId+" has no records of yield rates!");
+				}
+		}catch(Exception ex){
+			CustomizedLog.writeCustomizedLogFile(testLogPath+testLogNameCase,"=============================================================================");
+			CustomizedLog.writeCustomizedLogFile(testLogPath+testLogNameCase,"Accident occured in PerformanceId is: " + shareClassId);
+			CustomizedLog.writeCustomizedLogFile(testLogPath+testLogNameCase,ex.toString());
+			CustomizedLog.writeCustomizedLogFile(testLogPath+testLogNameCase,"=============================================================================");
+		}finally{
+			yieldRateList.clear();
+		}
+		}
+		
+		String endTime = Base.currentSysTime();
+		System.out.println("[TestEnd]End at: " + endTime);
+	}
+//将所有具有YieldDate与YieldRate的shareclassid返回到List中	
+	private static List<String> loadShareClassIdHasYieldDateAndRate() throws Exception{
+		List<String> list = new ArrayList<String>();
+		int fileLineNum = Helper.getTotalLinesOfFile(packagePath);
+		for(int lineNum = 2;lineNum < fileLineNum;lineNum++){
+			String fileContent = Helper.readFileInLines(packagePath, lineNum);
+			String[] ele = fileContent.split("~", 16);
+			String fileSharedClassId = ele[7];
+			String fileYieldDate = ele[8];
+			String fileYieldRate = ele[9];
+			if(fileYieldDate.isEmpty()==false && fileYieldRate.isEmpty()==false){
+				list.add(fileSharedClassId);
+			}
+		}
+		return list;
+	}
+	public static void main(String[] args) throws Exception {
+		testPrepare();
+		testYieldPrecision();
+	}
+
+}

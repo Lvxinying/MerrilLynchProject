@@ -1,0 +1,7 @@
+package com.morningstar.eapi.commons;
+
+public enum Action {
+	
+	checkOngoing,checkNumber,checkSubString
+
+}

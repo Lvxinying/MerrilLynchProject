@@ -1,0 +1,19 @@
+Log Topic:OE-91 Data content Size checking!
+Testing Time:2014-01-17 06:39:00
+===================================================================
+[TestFailed]Data counts not same!
+MS-Table: CurrentData.dbo.ManagerBasic      Data counts: 15540544
+Vertica-Table: dbi.ManagerBasic      Data counts: 15540480
+===================================================================
+[TestFailed]Data counts not same!
+MS-Table: TimeSeries.dbo.ManagerCompanyBiography      Data counts: 877429
+Vertica-Table: dbi.ManagerCompanyBiography      Data counts: 877422
+===================================================================
+[TestFailed]Data counts not same!
+MS-Table: CurrentData.dbo.ManagerCompanyIdMapping      Data counts: 3809568
+Vertica-Table: dbi.ManagerCompanyIdMapping      Data counts: 3809552
+===================================================================
+[TestFailed]Data counts not same!
+MS-Table: CurrentData.dbo.ManagerIdentifiers      Data counts: 1375320
+Vertica-Table: dbi.ManagerIdentifiers      Data counts: 1375230
+===================================================================

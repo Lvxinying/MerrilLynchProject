@@ -1,0 +1,108 @@
+package com.morningstar.eapi.source;
+
+import java.io.InputStream;
+import java.util.HashMap;
+
+import com.morningstar.eapi.commons.ResourceManager;
+import com.morningstar.eapi.utils.HttpConnection;
+import com.morningstar.eapi.utils.XmlHelper;
+
+public class GID {
+	public static final String LINK = "http://globalid.morningstar.com/GIDDataIO/feed/asmx/Axis.asmx/GetYAxisDataTable?outputDPs=-2,-3,-5,1,21,39,45,53,70,84,85,91,100,103,120,254&inputQueryString=%s=";
+
+	public static void main(String[] args) {
+		XmlHelper xmlHelper = new XmlHelper();
+		// getDataMapFromGID("I3", "E0ARG003CM");
+		// getDataMapFromGID("I5", "0P000000N3");
+		getDataMapFromGID(xmlHelper, "I5", "0P000002RH");
+	}
+
+	public static HashMap<String, String> getDataMapFromGID(XmlHelper xmlHelper, String queryType, String id) {
+		HashMap<String, String> GIDMap = new HashMap<String, String>();
+		initXmlHelper(xmlHelper, queryType, id);
+
+		String companyId = xmlHelper.getValueFromInputStream("/NewDataSet/GID[1]/I2");
+		String InvestmentId = xmlHelper.getValueFromInputStream("/NewDataSet/GID[1]/I3");
+		String shareClassId = xmlHelper.getValueFromInputStream("/NewDataSet/GID[1]/I5");
+		String companyName = xmlHelper.getValueFromInputStream("/NewDataSet/GID[1]/D1");
+		String CIK = xmlHelper.getValueFromInputStream("/NewDataSet/GID[1]/D21");
+		String InvestmentPrimaryIssuer = xmlHelper.getValueFromInputStream("/NewDataSet/GID[1]/D39");
+		String InvestmentParentInvId = xmlHelper.getValueFromInputStream("/NewDataSet/GID[1]/D45");
+		String InvestmentName = xmlHelper.getValueFromInputStream("/NewDataSet/GID[1]/D50");
+		String InvestmentType = xmlHelper.getValueFromInputStream("/NewDataSet/GID[1]/D53");
+		String CUSIP = xmlHelper.getValueFromInputStream("/NewDataSet/GID[1]/D70");
+		String SEDOL = xmlHelper.getValueFromInputStream("/NewDataSet/GID[1]/D84");
+		String RTSymbol = xmlHelper.getValueFromInputStream("/NewDataSet/GID[1]/D85");
+		String symbol = xmlHelper.getValueFromInputStream("/NewDataSet/GID[1]/D91");
+		String exchangeId = xmlHelper.getValueFromInputStream("/NewDataSet/GID[1]/D100").replace("EX$$$$X", "");
+		String PerformanceStatus = xmlHelper.getValueFromInputStream("/NewDataSet/GID[1]/D103");
+		String ISIN = xmlHelper.getValueFromInputStream("/NewDataSet/GID[1]/D120");
+		String DRType = xmlHelper.getValueFromInputStream("/NewDataSet/GID[1]/D254");
+
+		GIDMap.put("companyId", companyId);
+		GIDMap.put("InvestmentId", InvestmentId);
+		GIDMap.put("shareClassId", shareClassId);
+		GIDMap.put("companyName", companyName);
+		GIDMap.put("exchangeId", exchangeId);
+		GIDMap.put("symbol", symbol);
+		GIDMap.put("CUSIP", CUSIP);
+		GIDMap.put("CIK", CIK);
+		GIDMap.put("ISIN", ISIN);
+		GIDMap.put("SEDOL", SEDOL);
+		GIDMap.put("RTSymbol", RTSymbol);
+		GIDMap.put("InvestmentType", InvestmentType);
+		GIDMap.put("DRType", DRType);
+		GIDMap.put("InvestmentParentInvId", InvestmentParentInvId);
+		GIDMap.put("InvestmentPrimaryIssuer", InvestmentPrimaryIssuer);
+		GIDMap.put("InvestmentName", InvestmentName);
+		GIDMap.put("PerformanceStatus", PerformanceStatus);
+
+		return GIDMap;
+	}
+
+	public static HashMap<String, String> getParentStock(XmlHelper xmlHelper, String queryType, String id) {
+		HashMap<String, String> GIDMap = new HashMap<String, String>();
+
+		initXmlHelper(xmlHelper, queryType, id);
+
+		int num = xmlHelper.getNodeCount("/NewDataSet/GID");
+
+		for (int i = 1; i <= num; i++) {
+			String performanceStatus = xmlHelper.getValueFromInputStream("/NewDataSet/GID[" + i + "]/D103");
+
+			if (performanceStatus != null && !"0".equals(performanceStatus)) {
+
+				String companyName = xmlHelper.getValueFromInputStream("/NewDataSet/GID[" + i + "]/D1");
+				String symbol = xmlHelper.getValueFromInputStream("/NewDataSet/GID[" + i + "]/D91");
+				String d100 = xmlHelper.getValueFromInputStream("/NewDataSet/GID[" + i + "]/D100");
+
+				String exchangeId = null;
+
+				if (d100 != null) {
+					if (d100.startsWith("EX$$$$X"))
+						exchangeId = d100.replace("EX$$$$X", "");
+					else if (d100.startsWith("EX$$$$")) {
+						exchangeId = d100.replace("EX$$$$", "");
+					}
+				}
+
+				if (exchangeId != null && !"".equals(exchangeId))
+					GIDMap.put(exchangeId, exchangeId + "-" + companyName + "-" + symbol);
+			}
+		}
+		return GIDMap;
+	}
+
+	public static String getValue(XmlHelper xmlHelper, String queryType, String id, String xpath) {
+		initXmlHelper(xmlHelper, queryType, id);
+
+		String data = xmlHelper.getValueFromInputStream(xpath);
+		return data;
+	}
+
+	private static void initXmlHelper(XmlHelper xmlHelper, String queryType, String id) {
+		InputStream in = HttpConnection.getGIDInputStream(ResourceManager.getGIDLoginUrl(), String.format(LINK, queryType) + id);
+		xmlHelper.readStream(in);
+	}
+
+}

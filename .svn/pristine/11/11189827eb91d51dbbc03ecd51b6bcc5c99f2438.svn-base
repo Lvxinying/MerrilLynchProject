@@ -1,0 +1,146 @@
+package com.morningstar.FundAutoTest;    
+import org.w3c.dom.*;    
+
+
+import java.io.File;
+import java.io.InputStream;
+import java.util.ArrayList;
+import java.util.HashMap;
+
+import java.util.List;
+import java.util.Map;
+
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
+
+import org.dom4j.Document;
+import org.dom4j.DocumentException;
+import org.dom4j.Element;
+import org.dom4j.Node;
+import org.dom4j.XPath;
+import org.dom4j.io.SAXReader;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+public class XmlHelper {
+	static Document document = null;
+	private static final Logger logger = LoggerFactory.getLogger(XmlHelper.class);
+
+	public static Document readStream(InputStream in) {
+		if (in == null)
+			return null;
+		SAXReader saxReader = new SAXReader();
+		try {
+			document = saxReader.read(in);
+		} catch (DocumentException e) {
+			logger.warn(e.getMessage());
+			e.printStackTrace();
+		}
+		return document;
+	}
+
+	public static Document readStream(String url) {
+		SAXReader saxReader = new SAXReader();
+		InputStream in = HttpConnection.getInputStream(url);
+		try {
+			document = saxReader.read(in);
+		} catch (DocumentException e) {
+			logger.warn("Read URL wrong" + url + "/t" + e.getMessage());
+			e.printStackTrace();
+		}
+		return document;
+	}
+
+	public static String getValueFromInputStream(String xPath) {
+		XPath xpath = null;
+		if (document == null)
+			return null;
+
+		xpath = document.createXPath(xPath);
+		Node node = xpath.selectSingleNode(document);
+		if (node == null)
+			return null;
+		return node.getText();
+	}
+
+	@SuppressWarnings("unchecked")
+	public static int getNodeCount(String xPath) {
+		List<String> list = new ArrayList<String>();
+		if (document == null)
+			return 0;
+
+		list = document.selectNodes(xPath);
+		return list.size();
+	}
+
+	public static String getDataWithNewNameSpace(String xpath) {
+		if (document == null)
+			return null;
+
+		Map<String, String> names = generateNamespaceURI(document);
+		XPath x = document.createXPath(xpath);
+		x.setNamespaceURIs(names);
+		Node node = x.selectSingleNode(document);
+		if (node == null)
+			return null;
+		return node.getText();
+	}
+
+	public static Map<String, String> generateNamespaceURI(Document document) {
+		Element root = document.getRootElement();
+		String uri = root.getNamespaceURI();
+		Map<String, String> names = new HashMap<String, String>();
+		names.put("uri", uri);
+		return names;
+	}
+	
+	
+	public static String getAttributeValue(Document document, String XPath, String item)
+	{
+		String result = "";
+		Element element = (Element) document.selectSingleNode(XPath);
+		result = element.attributeValue(item);
+		return result;
+	}
+	
+	
+	public static Document getLocalXMLDocument(String filePath)
+	{
+		Document doc = null;
+		SAXReader xmlReader = new SAXReader();
+		try
+        {			
+			doc = xmlReader.read(filePath);
+        }catch(Exception e)
+        {
+        	logger.warn("Read XML Document error " + filePath + "\t" + e.getMessage());
+        }
+		return doc;
+	}
+//	Stefan.hou增加
+//	读取本地路径下的xml文件内容，有两级目录
+	public static void getXMLContent(String filePath){
+		try{
+			File f = new File(filePath);
+			DocumentBuilderFactory factory=DocumentBuilderFactory.newInstance();
+			DocumentBuilder builder=factory.newDocumentBuilder();
+			org.w3c.dom.Document doc = builder.parse(f);
+			NodeList nodes_1 = doc.getChildNodes();
+			for(int i = 0;i < nodes_1.getLength();i++){
+				org.w3c.dom.Node nodes_2 = nodes_1.item(i);
+				NodeList nodes_3 = nodes_2.getChildNodes();
+				for(int j = 0;j < nodes_3.getLength();j++){
+					org.w3c.dom.Node node = nodes_3.item(j);
+					NodeList xmlMeta = node.getChildNodes();
+					for(int k = 0;k < xmlMeta.getLength();k++){
+//						value = xmlMeta.item(k).getNodeValue();
+						System.out.println(xmlMeta.item(k).getNodeName() + ":" + xmlMeta.item(k).getNodeValue());
+					}
+				}
+			}
+		}catch(Exception e){
+				e.printStackTrace();
+		}
+	}
+	
+}

@@ -1,0 +1,156 @@
+package com.morningstar.eapi.utils;
+
+import java.text.ParseException;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.Iterator;
+import java.util.LinkedHashMap;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Map;
+
+import org.slf4j.Logger;
+
+import com.morningstar.eapi.commons.Action;
+import com.morningstar.eapi.commons.Case;
+import com.morningstar.eapi.entity.Info;
+
+public class Utils {
+
+	public static void main(String[] args) throws ParseException {
+	}
+
+	public static String includeSquareBracket(String... value) {
+		StringBuilder sb = new StringBuilder();
+		sb.append("[");
+		int i = 0;
+		for (String str : value) {
+			sb.append(str);
+			i++;
+			if (value.length != i)
+				sb.append(",");
+		}
+		sb.append("]");
+		return sb.toString();
+	}
+
+	public static String getActualExpectedMessage(String field, Object actual, Object expected) {
+		String message = "{" + field + "} actual:" + Utils.includeSquareBracket(actual) + "|expected:" + Utils.includeSquareBracket(expected);
+		return message;
+	}
+
+	public static String includeSquareBracket(Object value) {
+		return "[" + value + "]";
+	}
+
+	public static void assertEquals(String actual, String expected, String message, Info info, Logger logger) {
+		assertEquals(actual, expected, message, info, null, logger);
+	}
+
+	public static void assertEquals(String actual, String expected, String message, Info info, Action action, Logger logger) {
+		boolean equal = false;
+
+		if (actual != null && expected != null)
+			equal = expected.equals(actual);
+
+		// checkNumber
+		if (action != null && Action.checkNumber.equals(action))
+			if (actual != null && expected != null) {
+				double a = Double.parseDouble(actual);
+				double b = Double.parseDouble(expected);
+				equal = a == b;
+
+			}
+
+		// compare code
+		if (actual == null ^ expected == null) {
+			logger.error("FAIL: " + message);
+			info.showBasicInfo(logger);
+			Case.isSuccess = false;
+		} else if (actual != null && expected != null) {
+			if (!equal) {
+				logger.error("FAIL: " + message);
+				info.showBasicInfo(logger);
+				Case.isSuccess = false;
+			} else
+				logger.info(message);
+		}
+
+		// checkOngoing
+		if (action != null && Action.checkOngoing.equals(action) && !DateUtil.isOngoing(actual, DateUtil.getCurrentDate("CST", "yyyy-MM-dd"))) {
+			logger.error(actual + "<- on-going is delay!");
+			Case.isSuccess = false;
+		}
+	}
+
+	public static void segmentMessage(Logger logger, String message) {
+		logger.warn(message);
+	}
+
+	public static void segmentMessageForRoot(Logger logger, String message) {
+		logger.warn("\n++++++++++++++" + message + "++++++++++++++");
+	}
+
+	public static String toString(Object o) {
+		return o == null ? null : String.valueOf(o);
+	}
+
+	public static String checkNull(String str) {
+		if ("".equals(str))
+			return null;
+		return str;
+	}
+
+	public static boolean isDigital(String key) {
+		if (key != null)
+			return key.matches("^[0-9]*$");
+		else {
+			return false;
+		}
+	}
+
+	public static boolean isISIN(String key) {
+		if (key != null)
+			return key.matches("[A-Za-z]{2}[A-Za-z0-9]{10}$");
+		else {
+			return false;
+		}
+	}
+
+	public static Map sortByValue(Map<String, String> map) {
+		List list = new LinkedList(map.entrySet());
+		Collections.sort(list, new Comparator() {
+			public int compare(Object o1, Object o2) {
+				return ((Comparable) ((Map.Entry) o2).getValue()).compareTo(((Map.Entry) o1).getValue());
+			}
+		});
+		Map result = new LinkedHashMap();
+
+		for (Iterator it = list.iterator(); it.hasNext();) {
+			Map.Entry entry = (Map.Entry) it.next();
+			result.put(entry.getKey(), entry.getValue());
+		}
+		return result;
+
+	}
+
+	public static Map sortByValue(Map map, final boolean reverse) {
+		List list = new LinkedList(map.entrySet());
+		Collections.sort(list, new Comparator() {
+			public int compare(Object o1, Object o2) {
+				if (reverse) {
+					return -((Comparable) ((Map.Entry) o1).getValue()).compareTo(((Map.Entry) o2).getValue());
+				}
+				return ((Comparable) ((Map.Entry) o1).getValue()).compareTo(((Map.Entry) o2).getValue());
+			}
+		});
+
+		Map result = new LinkedHashMap();
+		for (Iterator it = list.iterator(); it.hasNext();) {
+			Map.Entry entry = (Map.Entry) it.next();
+			result.put(entry.getKey(), entry.getValue());
+		}
+		return result;
+	}
+
+}

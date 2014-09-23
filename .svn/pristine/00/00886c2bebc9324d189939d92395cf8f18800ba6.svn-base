@@ -1,0 +1,169 @@
+package com.morningstar.eapi.commons;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+public class DBCommons {
+
+	public static String getData(String sql, Database database) {
+		List<String> list = getDataList(sql, database);
+		if (list.size() > 0)
+			return list.get(0);
+		return null;
+	}
+
+	public static List<String> getDataList(String sql, Database database) {
+		return getDataList(database, sql, null);
+	}
+
+	public static List<String> getDataList(Database database, String sql, String[] input) {
+		Connection con = null;
+		switch (database) {
+		case geproddb61:
+			con = DBPool.getConnection_geproddb61();
+			break;
+		case geapi61:
+			con = DBPool.getConnection_geapi61();
+			break;
+		case geoutputdb61:
+			con = DBPool.getConnection_geoutputdb61();
+			break;
+		case MsOutputDb3:
+			con = DBPool.getConnection_MsOutputDb3();
+			break;
+		case gedevdb91:
+			con = DBPool.getConnection_gedevdb91();
+			break;
+		}
+
+		List<String> list = new ArrayList<String>();
+		if (con != null) {
+			PreparedStatement pstmt;
+			try {
+				pstmt = con.prepareStatement(sql);
+				if (input != null && input.length > 0) {
+					for (int i = 1; i <= input.length; i++) {
+						pstmt.setString(i, input[i - 1]);
+					}
+				}
+				ResultSet rs = pstmt.executeQuery();
+				while (rs.next()) {
+					int size = rs.getMetaData().getColumnCount();
+					for (int i = 1; i <= size; i++) {
+						list.add("".equals(rs.getString(i)) ? null : rs.getString(i));
+					}
+				}
+			} catch (SQLException e) {
+				e.printStackTrace();
+			} finally {
+				if (con != null) {
+					try {
+						con.close();
+					} catch (Exception e) {
+						e.printStackTrace();
+					}
+				}
+			}
+		}
+		return list;
+	}
+
+	public static List<Map<Integer, String>> getDataListMap(Database database, String sql, String[] input) {
+		Connection con = null;
+		List<Map<Integer, String>> list = new ArrayList<Map<Integer, String>>();
+
+		switch (database) {
+		case geproddb61:
+			con = DBPool.getConnection_geproddb61();
+			break;
+		case geapi61:
+			con = DBPool.getConnection_geapi61();
+			break;
+		case geoutputdb61:
+			con = DBPool.getConnection_geoutputdb61();
+			break;
+		case MsOutputDb3:
+			con = DBPool.getConnection_MsOutputDb3();
+			break;
+		case gedevdb91:
+			con = DBPool.getConnection_gedevdb91();
+			break;
+		}
+		try {
+			PreparedStatement pstmt = con.prepareStatement(sql);
+			for (int i = 1; i <= input.length; i++) {
+				pstmt.setString(i, input[i - 1]);
+			}
+			ResultSet rs = pstmt.executeQuery();
+			while (rs.next()) {
+				Map<Integer, String> map = new HashMap<Integer, String>();
+				int size = rs.getMetaData().getColumnCount();
+				for (int i = 1; i <= size; i++)
+					map.put(i, rs.getString(i));
+				list.add(map);
+			}
+		} catch (Exception e) {
+			// TODO: handle exception
+		} finally {
+			if (con != null) {
+				try {
+					con.close();
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		}
+		return list;
+	}
+
+	public static List<Map<Integer, String>> getDataListMap(Database database, String sql) {
+		Connection con = null;
+		List<Map<Integer, String>> list = new ArrayList<Map<Integer, String>>();
+
+		switch (database) {
+		case geproddb61:
+			con = DBPool.getConnection_geproddb61();
+			break;
+		case geapi61:
+			con = DBPool.getConnection_geapi61();
+			break;
+		case geoutputdb61:
+			con = DBPool.getConnection_geoutputdb61();
+			break;
+		case MsOutputDb3:
+			con = DBPool.getConnection_MsOutputDb3();
+			break;
+		case gedevdb91:
+			con = DBPool.getConnection_gedevdb91();
+			break;
+		}
+		try {
+			PreparedStatement pstmt = con.prepareStatement(sql);
+			ResultSet rs = pstmt.executeQuery();
+			while (rs.next()) {
+				Map<Integer, String> map = new HashMap<Integer, String>();
+				int size = rs.getMetaData().getColumnCount();
+				for (int i = 1; i <= size; i++)
+					map.put(i, rs.getString(i));
+				list.add(map);
+			}
+		} catch (Exception e) {
+			// TODO: handle exception
+		} finally {
+			if (con != null) {
+				try {
+					con.close();
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		}
+		return list;
+	}
+}

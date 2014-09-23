@@ -1,0 +1,7 @@
+package com.morningstar.eapi.commons;
+
+public enum Database {
+	
+	geproddb61,geapi61,geoutputdb61,MsOutputDb3,gedevdb91
+
+}

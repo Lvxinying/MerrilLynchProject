@@ -1,0 +1,21 @@
+<!DOCTYPE suite SYSTEM "http://beust.com/testng/testng-1.0.dtd" >
+<suite name="Suite1" parallel="tests" thread-count="5">
+
+	<test name="Packages">
+		<parameter name="title" value="Morningstar Equity API" />
+		<packages>
+			<package name="com.morningstar.eapi.Customized.MSFT" />
+			<package name="com.morningstar.eapi.Customized.MSN" />
+			<package name="com.morningstar.eapi.Aggregates.MarketPerformance.IndustryConstituents" />
+			<package name="com.morningstar.eapi.AnalysisResearch.StockPrices" />
+			<package name="com.morningstar.eapi.AnalysisResearch.CorporateAction" />			
+			<package name="com.morningstar.eapi.customizedAPI4MSNService.cases" />
+			<package name="com.morningstar.eapi.customizedAPI4Microsoft.cases" />
+			<package name="com.morningstar.eapi.FinancialKeyRatiosIDXService.cases" />
+			<package name="com.morningstar.eapi.GlobalMasterListsService.cases" />
+			<package name="com.morningstar.eapi.MarketPerformanceService.cases" />
+		</packages>
+		<classes>
+		</classes>
+	</test>
+</suite>  

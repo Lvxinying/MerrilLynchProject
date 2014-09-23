@@ -1,0 +1,129 @@
+package com.morningstar.eapi.commons;
+
+import java.util.List;
+
+
+import com.morningstar.ge.mail.MailInfo;
+import com.morningstar.ge.mail.MailSender;
+
+import com.morningstar.eapi.commons.testbase.Base;
+import com.morningstar.eapi.commons.testbase.DotTestListener;
+import com.morningstar.eapi.utils.PathUtil;
+import java.text.DecimalFormat;
+import java.text.SimpleDateFormat;
+
+public class SendResultByEmail {
+	// Parameters for send email
+	public static String sendMailServerHost;
+	public static String sendMailServerPort;
+	public static boolean validate = true;
+	public static String sendUserName;
+	public static String sendPassword;
+	public static String fromAddress;
+	public static String toAddresses;
+	public static String mailSubject;
+	public static String mailBody;
+	public static String url=Base.baseUrl;
+	public static String resultPath;
+	protected static int failed;
+	protected static int skipped;
+	protected static int totalCase;
+	protected static int passed;
+	protected static double failedP;
+	protected static double skippedP;
+	protected static double passedP;
+	
+	SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm");
+	String time = "Test time:" + sdf.format(new java.util.Date());
+
+
+	// method for send results by email
+	public void sendMail(DotTestListener listener, DotTestListener fListener, String round, String resultOutput) {
+	
+		setmailSenderParam(round);
+		MailInfo mailInfo = new MailInfo();
+		
+		setParemeters(listener, fListener);
+		setMailSubject(round);
+		setMailBody();
+		
+		mailInfo.setMailServerHost(sendMailServerHost);
+		mailInfo.setMailServerPort(sendMailServerPort);
+		mailInfo.setValidate(validate);
+		mailInfo.setUserName(sendUserName);
+		mailInfo.setPassword(sendPassword);
+		mailInfo.setFromAddress(fromAddress);
+		mailInfo.setToAddresses(toAddresses);
+		mailInfo.setSubject(mailSubject);
+		mailInfo.setContent(mailBody);
+		if (passedP < 80&&round.equals("2")) {
+			mailInfo.setImportant(true);
+		}
+		mailInfo.setAttachFileNames(new String[] {
+				PathUtil.getAbsolutePath(resultOutput + "/testng-results.xml"),
+				PathUtil.getAbsolutePath("/log/Run.log") });
+
+		MailSender.sendHtmlMail(mailInfo);
+
+	}
+	
+	private void setParemeters(DotTestListener listener, DotTestListener fListener){
+		failed = fListener.getFailed();
+		skipped = fListener.geSkipped();
+		totalCase = listener.getPassed() + listener.getFailed() + listener.geSkipped();
+		passed=totalCase-skipped-failed;
+		failedP = ((double) failed / totalCase) * 100;
+		skippedP = ((double) skipped / totalCase) * 100;
+		passedP = 100 - skippedP - failedP;
+	}
+	
+	private void setMailSubject(String round){
+		
+		if(round.equals("1"))
+			mailSubject = "Equity API Live Monitor Automation test result";
+		
+		if(round.equals("2"))
+			mailSubject = "Round 2 Automation test result of Equity API" ;
+	}
+	
+	private void setMailBody(){
+		DecimalFormat df = new DecimalFormat("0.00");
+		mailBody = time + "<br>" 
+				+ "Tested URL:  " + url + "<br>" 
+				+ Base.runFrequency + "<br>" 
+				+ "Total tests run:  " + totalCase + "<br>"
+				+ "Passed:  " + passed + "<br>" 
+				+ "Failed:  " + failed + "<br>"
+				+ "Skipped:  " + skipped + "<br>" 
+				+ "Passed Percentage:  "+ df.format(passedP) + "%" + "<br>" 
+				+ "Failed Percentage:  " + df.format(failedP)+ "%" + "<br>" 
+				+ "Skipped Percentage:  " + df.format(skippedP) + "%"+ "<br>";
+	}
+	private void setmailSenderParam(String round) {
+		if(round.equals("1"))
+			loadMailParam(1);
+		
+		if(round.equals("2"))
+			loadMailParam(2);
+		
+		
+	}
+	
+	private static void loadMailParam(int i) {
+		try {
+			List<List<String>> info = ExcelUtil.getCellData("/config/emailConfiguration.xlsx", "Sheet1");
+			
+				sendMailServerHost = info.get(i).get(0);
+				sendMailServerPort = info.get(i).get(1);
+				validate = Boolean.valueOf(info.get(i).get(2));
+				sendUserName = info.get(i).get(3);
+				sendPassword = info.get(i).get(4);
+				fromAddress = info.get(i).get(5);
+				toAddresses = info.get(i).get(6);
+
+			
+		} catch (Exception e) {
+
+		}
+	}
+}

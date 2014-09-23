@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TestConfig>
+	<EODPriceHistory>
+		<Type>EODPriceHistory</Type>
+		<Source>http://price.xoi.morningstar.com/DataPlatform/DataOutput.aspx?Package=HistoricalData&amp;ContentType=MarketPrice&amp;IdType=PerformanceId&amp;Id={0}&amp;Dates={1},{2}&amp;SplitAdjusted=1</Source>
+		<DestNodeSpecifiedDefinitions>EODPrices/EODPriceEntityList/EODPriceEntity</DestNodeSpecifiedDefinitions>
+		<Check>
+			<SourcePath>Performance/PriceHistory/PriceDetail/EndDate</SourcePath>
+			<DestinationPath>TradingDate</DestinationPath>
+			<Type>String</Type>
+		</Check>
+		<Check>
+			<SourcePath>Performance/PriceHistory/PriceDetail/ClosePrice</SourcePath>
+			<DestinationPath>PreviousClosePrice</DestinationPath>
+		</Check>
+		<Check>
+			<SourcePath>Performance/PriceHistory/PriceDetail/OpenPrice</SourcePath>
+			<DestinationPath>OpenPrice</DestinationPath>
+		</Check>
+		<Check>
+			<SourcePath>Performance/PriceHistory/PriceDetail/HighPrice</SourcePath>
+			<DestinationPath>HighPrice</DestinationPath>
+		</Check>
+		<Check>
+			<SourcePath>Performance/PriceHistory/PriceDetail/LowPrice</SourcePath>
+			<DestinationPath>LowPrice</DestinationPath>
+		</Check>				
+		<Check>
+			<SourcePath>Performance/PriceHistory/PriceDetail/ClosePrice</SourcePath>
+			<DestinationPath>ClosePrice</DestinationPath>
+		</Check>
+		<Check>
+			<SourcePath>Performance/PriceHistory/PriceDetail/Volume</SourcePath>
+			<DestinationPath>Volume</DestinationPath>
+		</Check>				
+	</EODPriceHistory>
+	<TSDB>
+		<Type>TSDB</Type>
+		<Source>http://timeseries/Inte-config/ts_proxy.xml</Source>
+		<DestNodeSpecifiedDefinitions>EODPrices/EODPriceEntityList/EODPriceEntity</DestNodeSpecifiedDefinitions>		
+		<Check>
+			<SourcePath>1584</SourcePath>
+			<DestinationPath>PriceCurrencyId</DestinationPath>
+		</Check>
+	</TSDB>
+</TestConfig>

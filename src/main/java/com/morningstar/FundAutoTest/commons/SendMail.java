@@ -1,0 +1,138 @@
+package com.morningstar.FundAutoTest.commons;
+
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
+import java.util.Properties;
+import java.util.concurrent.CountDownLatch;
+
+import javax.mail.Address;
+import javax.mail.Message;
+import javax.mail.MessagingException;
+import javax.mail.Multipart;
+import javax.mail.Session;
+import javax.mail.Transport;
+import javax.mail.internet.InternetAddress;
+import javax.mail.internet.MimeBodyPart;
+import javax.mail.internet.MimeMessage;
+import javax.mail.internet.MimeMultipart;
+
+public class SendMail {
+
+	private CountDownLatch downLatch;
+	private int size;
+	private static String to = "";
+	private static String from = "";
+	private static String host = "";
+	private static String warningFile = "";
+	private static String errorFile = "";
+
+	static {
+		to = ResourceManager.getMailTo();
+		from = ResourceManager.getMailFrom();
+		host = ResourceManager.getMailHost();
+		warningFile = ResourceManager.getResultWarning();
+		errorFile = ResourceManager.getResultError();
+	}
+
+	public SendMail(CountDownLatch downLatch, int size) {
+		this.downLatch = downLatch;
+	}
+
+	public void run() {
+		try {
+			this.downLatch.await();
+		} catch (InterruptedException e) {
+		}
+		System.out.println("All fail messages are saved in " + errorFile + " and " + warningFile);
+
+		System.out.println("Start to send mail ...");
+		send();
+		System.out.println("Mail is send successfully ...");
+	}
+
+	void send() {
+
+		String[] a = to.split(";");
+
+		// create some properties and get the default Session
+		Properties props = System.getProperties();
+		props.put("mail.smtp.host", host);
+
+		Session session = Session.getInstance(props, null);
+
+		try {
+			// create a message
+			MimeMessage msg = new MimeMessage(session);
+			msg.setFrom(new InternetAddress(from));
+			InternetAddress address = null;
+			List<InternetAddress> list = new ArrayList<InternetAddress>();
+			for (String str : a) {
+				address = new InternetAddress(str);
+				list.add(address);
+			}
+			Address[] addressArray = new InternetAddress[a.length];
+			list.toArray(addressArray);
+			msg.setRecipients(Message.RecipientType.TO, addressArray);
+			msg.setSubject("");
+			// create and fill the first message part
+			MimeBodyPart mbp1 = new MimeBodyPart();
+			mbp1.setText("Compared " + size + " items, please find the result from attachment.");
+
+			// create the second message part
+			MimeBodyPart mbpErrorfile = new MimeBodyPart();
+			MimeBodyPart mbpWarningfile = new MimeBodyPart();
+
+			// attach the file to the message
+			mbpWarningfile.attachFile(warningFile);
+			mbpErrorfile.attachFile(errorFile);
+
+			/*
+			 * Use the following approach instead of the above line if you want
+			 * to control the MIME type of the attached file. Normally you
+			 * should never need to do this.
+			 * 
+			 * FileDataSource fds = new FileDataSource(filename) { public String
+			 * getContentType() { return &quot;application/octet-stream&quot;; }
+			 * }; mbp2.setDataHandler(new DataHandler(fds));
+			 * mbp2.setFileName(fds.getName());
+			 */
+
+			// create the Multipart and add its parts to it
+			Multipart mp = new MimeMultipart();
+			mp.addBodyPart(mbp1);
+			mp.addBodyPart(mbpErrorfile);
+			mp.addBodyPart(mbpWarningfile);
+
+			// add the Multipart to the message
+			msg.setContent(mp);
+
+			// set the Date: header
+			msg.setSentDate(new Date());
+
+			/*
+			 * If you want to control the Content-Transfer-Encoding of the
+			 * attached file, do the following. Normally you should never need
+			 * to do this.
+			 * 
+			 * msg.saveChanges();
+			 * mbp2.setHeader(&quot;Content-Transfer-Encoding&quot;,
+			 * &quot;base64&quot;);
+			 */
+
+			// send the message
+//			Transport.send(msg);
+
+		} catch (MessagingException mex) {
+			mex.printStackTrace();
+			Exception ex = null;
+			if ((ex = mex.getNextException()) != null) {
+				ex.printStackTrace();
+			}
+		} catch (IOException ioex) {
+			ioex.printStackTrace();
+		}
+	}
+
+}

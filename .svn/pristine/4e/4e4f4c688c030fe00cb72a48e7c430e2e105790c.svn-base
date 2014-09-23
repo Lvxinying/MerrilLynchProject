@@ -1,0 +1,210 @@
+package com.morningstar.eapi.source;
+
+import java.util.List;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+import com.morningstar.data.tsapi.BaseObject;
+import com.morningstar.data.tsapi.CorporateActionAdjustment;
+import com.morningstar.data.tsapi.TSException;
+import com.morningstar.data.tsapi.tscontext;
+import com.morningstar.data.tsapi.blobData.BlobDCj;
+import com.morningstar.data.tsapi.blobData.BlobDF;
+import com.morningstar.data.tsapi.blobData.BlobDIII;
+import com.morningstar.data.tsapi.blobData.BlobDL;
+import com.morningstar.data.tsapi.blobData.BlobDLLLL;
+
+public class TSDB {
+	private static final Logger logger = LoggerFactory.getLogger(TSDB.class);
+	private static final String CONTEXT = "http://timeseries/Inte-config/ts_proxy.xml";
+
+	public static enum BlobType {
+		DL, DF, DLLLL, DLB, DLL, DDD, DIII
+	};
+
+	public static void main(String[] args) {
+		tscontext context_r = null;
+		try {
+			context_r = new tscontext(CONTEXT);
+			BaseObject ts_r = new BaseObject(context_r);
+			List<BlobDIII> ts = ts_r.<BlobDIII> LoadSeries(BlobDIII.class, 1988, "0C000007QC");
+			int a  = ts.get(0).getIntValue1();
+			System.out.println(a);
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				context_r.dispose();
+			} catch (TSException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+	}
+
+	public static String getChart10Value(String ts_proxy, int timeSeries, String globalID) {
+		String result = "";
+		tscontext context_r = null;
+		try {
+			context_r = new tscontext(ts_proxy);
+			BaseObject ts_r = new BaseObject(context_r);
+			List<BlobDCj> ts = ts_r.<BlobDCj> LoadSeries(BlobDCj.class, timeSeries, globalID);
+			BlobDCj data = ts.get(ts.size() - 1);
+			result = data.getTenChars();
+		} catch (TSException tse) {
+			logger.error("Error Code: " + tse.getErrorCode() + ", Message: " + tse.getMessage());
+		} catch (Exception e) {
+			logger.error("Error Message: " + e.getMessage());
+		} finally {
+			try {
+				context_r.dispose();
+			} catch (TSException tse) {
+				logger.info("Error Code: " + tse.getErrorCode() + ", Message: " + tse.getMessage());
+			}
+		}
+		return result;
+	}
+	
+	public static String getChart10Value(int timeSeries, String globalID) {
+		String result = "";
+		tscontext context_r = null;
+		try {
+			context_r = new tscontext(CONTEXT);
+			BaseObject ts_r = new BaseObject(context_r);
+			List<BlobDCj> ts = ts_r.<BlobDCj> LoadSeries(BlobDCj.class, timeSeries, globalID);
+			BlobDCj data = ts.get(ts.size() - 1);
+			result = data.getTenChars();
+		} catch (TSException tse) {
+			logger.error("Error Code: " + tse.getErrorCode() + ", Message: " + tse.getMessage());
+		} catch (Exception e) {
+			logger.error("Error Message: " + e.getMessage());
+		} finally {
+			try {
+				context_r.dispose();
+			} catch (TSException tse) {
+				logger.info("Error Code: " + tse.getErrorCode() + ", Message: " + tse.getMessage());
+			}
+		}
+		return result;
+	}
+
+	public static List<BlobDLLLL> getBlobDLLLL(int type, String id, boolean useAdjust) {
+		tscontext context_r = null;
+		try {
+			context_r = new tscontext(CONTEXT);
+			if (useAdjust) {
+				CorporateActionAdjustment c = new CorporateActionAdjustment(context_r);
+				List<BlobDLLLL> ts = c.<BlobDLLLL> LoadSeries(BlobDLLLL.class, type, id);
+				return ts;
+			} else {
+				BaseObject ts_r = new BaseObject(context_r);
+				List<BlobDLLLL> ts = ts_r.<BlobDLLLL> LoadSeries(BlobDLLLL.class, type, id);
+				return ts;
+			}
+
+		} catch (Exception e) {
+			// TODO: handle exception
+			logger.error("NaN");
+		} finally {
+			try {
+				context_r.dispose();
+			} catch (TSException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+		return null;
+
+	}
+
+	public static List<BlobDIII> getBlobDIII(int type, String id) {
+		tscontext context_r = null;
+		try {
+			context_r = new tscontext(CONTEXT);
+			BaseObject ts_r = new BaseObject(context_r);
+			List<BlobDIII> ts = ts_r.<BlobDIII> LoadSeries(BlobDIII.class, type, id);
+			return ts;
+
+		} catch (Exception e) {
+			// TODO: handle exception
+			logger.error("NaN");
+		} finally {
+			try {
+				context_r.dispose();
+			} catch (TSException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+		return null;
+
+	}
+
+	public static List<BlobDL> getBlobDL(int type, String id) {
+		tscontext context_r = null;
+		try {
+			context_r = new tscontext(CONTEXT);
+			BaseObject ts_r = new BaseObject(context_r);
+			List<BlobDL> ts = ts_r.<BlobDL> LoadSeries(BlobDL.class, type, id);
+			return ts;
+		} catch (Exception e) {
+			// TODO: handle exception
+			logger.error("NaN");
+		} finally {
+			try {
+				context_r.dispose();
+			} catch (TSException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+		return null;
+
+	}
+
+	public static List<BlobDF> getBlobDF(int type, String id) {
+		tscontext context_r = null;
+		try {
+			context_r = new tscontext(CONTEXT);
+			BaseObject ts_r = new BaseObject(context_r);
+			List<BlobDF> ts = ts_r.<BlobDF> LoadSeries(BlobDF.class, type, id);
+			return ts;
+		} catch (Exception e) {
+			// TODO: handle exception
+			logger.error("NaN");
+		} finally {
+			try {
+				context_r.dispose();
+			} catch (TSException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+		return null;
+
+	}
+
+	public static List<BlobDCj> getBlobDCJ(int type, String id) {
+		tscontext context_r = null;
+		try {
+			context_r = new tscontext(CONTEXT);
+			BaseObject ts_r = new BaseObject(context_r);
+			List<BlobDCj> ts = ts_r.<BlobDCj> LoadSeries(BlobDCj.class, type, id);
+			return ts;
+		} catch (Exception e) {
+			// TODO: handle exception
+			logger.error("NaN");
+		} finally {
+			try {
+				context_r.dispose();
+			} catch (TSException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+		return null;
+
+	}
+}

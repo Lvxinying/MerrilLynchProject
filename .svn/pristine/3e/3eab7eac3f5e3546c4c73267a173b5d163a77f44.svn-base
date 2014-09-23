@@ -1,0 +1,184 @@
+package com.morningstar.eapi.source;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+import com.morningstar.eapi.commons.DBCommons;
+import com.morningstar.eapi.commons.Database;
+
+public class DataId {
+	private static final Logger logger = LoggerFactory.getLogger(DataId.class);
+
+	public static final String DilutedEPS3MonthSamePeriodGrowthRatios = "RGEQP00301";
+	public static final String DilutedEPS6MonthSamePeriodGrowthRatios = "RGEQP00601";
+	public static final String DilutedEPS9MonthSamePeriodGrowthRatios = "RGEQP00901";
+	public static final String DilutedEPSSequentialGrowthRatios = "RGEQS00001";
+	public static final String DilutedEPS1YearGrowthRatios = "RGEY000101";
+	public static final String DilutedEPS3YearGrowthRatios = "RGEY000301";
+	public static final String DilutedEPS5YearGrowthRatios = "RGEY000501";
+	public static final String DilutedEPS10YearGrowthRatios = "RGEY001001";
+	public static final String DilutedContinuousEPS3MonthSamePeriodGrowthRatios = "RGEQP00302";
+	public static final String DilutedContinuousEPS6MonthSamePeriodGrowthRatios = "RGEQP00602";
+	public static final String DilutedContinuousEPS9MonthSamePeriodGrowthRatios = "RGEQP00902";
+	public static final String DilutedContinuousEPSSequentialGrowthRatios = "RGEQS00002";
+	public static final String DilutedContinuousEPS1YearGrowthRatios = "RGEY000102";
+	public static final String DilutedContinuousEPS3YearGrowthRatios = "RGEY000302";
+	public static final String DilutedContinuousEPS5YearGrowthRatios = "RGEY000502";
+	public static final String DilutedContinuousEPS10YearGrowthRatios = "RGEY001002";
+	public static final String Dividend3MonthSamePeriodGrowthRatios = "RGEQP00304";
+	public static final String Dividend6MonthSamePeriodGrowthRatios = "RGEQP00604";
+	public static final String Dividend9MonthSamePeriodGrowthRatios = "RGEQP00904";
+	public static final String DividendSequentialGrowthRatios = "RGEQS00004";
+	public static final String Dividend1YearGrowthRatios = "RGEY000104";
+	public static final String Dividend3YearGrowthRatios = "RGEY000304";
+	public static final String Dividend5YearGrowthRatios = "RGEY000504";
+	public static final String Dividend10YearGrowthRatios = "RGEY001004";
+	public static final String EquityPerShare3MonthSamePeriodGrowthRatios = "RGEQP00303";
+	public static final String EquityPerShare6MonthSamePeriodGrowthRatios = "RGEQP00603";
+	public static final String EquityPerShare9MonthSamePeriodGrowthRatios = "RGEQP00903";
+	public static final String EquityPerShareSequentialGrowthRatios = "RGEQS00003";
+	public static final String EquityPerShare1YearGrowthRatios = "RGEY000103";
+	public static final String EquityPerShare3YearGrowthRatios = "RGEY000303";
+	public static final String EquityPerShare5YearGrowthRatios = "RGEY000503";
+	public static final String EquityPerShare10YearGrowthRatios = "RGEY001003";
+	public static final String Revenue3MonthSamePeriodGrowthRatios = "RGOQP00301";
+	public static final String Revenue6MonthSamePeriodGrowthRatios = "RGOQP00601";
+	public static final String Revenue9MonthSamePeriodGrowthRatios = "RGOQP00901";
+	public static final String RevenueSequentialGrowthRatios = "RGOQS00001";
+	public static final String Revenue1YearGrowthRatios = "RGOY000101";
+	public static final String Revenue3YearGrowthRatios = "RGOY000301";
+	public static final String Revenue5YearGrowthRatios = "RGOY000501";
+	public static final String Revenue10YearGrowthRatios = "RGOY001001";
+	public static final String OperatingIncome3MonthSamePeriodGrowthRatios = "RGOQP00302";
+	public static final String OperatingIncome6MonthSamePeriodGrowthRatios = "RGOQP00602";
+	public static final String OperatingIncome9MonthSamePeriodGrowthRatios = "RGOQP00902";
+	public static final String OperatingIncomeSequentialGrowthRatios = "RGOQS00002";
+	public static final String OperatingIncome1YearGrowthRatios = "RGOY000102";
+	public static final String OperatingIncome3YearGrowthRatios = "RGOY000302";
+	public static final String OperatingIncome5YearGrowthRatios = "RGOY000502";
+	public static final String OperatingIncome10YearGrowthRatios = "RGOY001002";
+	public static final String NetIncome3MonthSamePeriodGrowthRatios = "RGOQP00303";
+	public static final String NetIncome6MonthSamePeriodGrowthRatios = "RGOQP00603";
+	public static final String NetIncome9MonthSamePeriodGrowthRatios = "RGOQP00903";
+	public static final String NetIncomeSequentialGrowthRatios = "RGOQS00003";
+	public static final String NetIncome1YearGrowthRatios = "RGOY000103";
+	public static final String NetIncome3YearGrowthRatios = "RGOY000303";
+	public static final String NetIncome5YearGrowthRatios = "RGOY000503";
+	public static final String NetIncome10YearGrowthRatios = "RGOY001003";
+	public static final String NetIncomeContOps3MonthSamePeriodGrowthRatios = "RGOQP00304";
+	public static final String NetIncomeContOps6MonthSamePeriodGrowthRatios = "RGOQP00604";
+	public static final String NetIncomeContOps9MonthSamePeriodGrowthRatios = "RGOQP00904";
+	public static final String NetIncomeContOpsSequentialGrowthRatios = "RGOQS00004";
+	public static final String NetIncomeContOps1YearGrowthRatios = "RGOY000104";
+	public static final String NetIncomeContOps3YearGrowthRatios = "RGOY000304";
+	public static final String NetIncomeContOps5YearGrowthRatios = "RGOY000504";
+	public static final String NetIncomeContOps10YearGrowthRatios = "RGOY001004";
+	public static final String CFO3MonthSamePeriodGrowthRatios = "RGOQP00305";
+	public static final String CFO6MonthSamePeriodGrowthRatios = "RGOQP00605";
+	public static final String CFO9MonthSamePeriodGrowthRatios = "RGOQP00905";
+	public static final String CFOSequentialGrowthRatios = "RGOQS00005";
+	public static final String CFO1YearGrowthRatios = "RGOY000105";
+	public static final String CFO3YearGrowthRatios = "RGOY000305";
+	public static final String CFO5YearGrowthRatios = "RGOY000505";
+	public static final String CFO10YearGrowthRatios = "RGOY001005";
+	public static final String FCF3MonthSamePeriodGrowthRatios = "RGOQP00306";
+	public static final String FCF6MonthSamePeriodGrowthRatios = "RGOQP00606";
+	public static final String FCF9MonthSamePeriodGrowthRatios = "RGOQP00906";
+	public static final String FCFSequentialGrowthRatios = "RGOQS00006";
+	public static final String FCF1YearGrowthRatios = "RGOY000106";
+	public static final String FCF3YearGrowthRatios = "RGOY000306";
+	public static final String FCF5YearGrowthRatios = "RGOY000506";
+	public static final String FCF10YearGrowthRatios = "RGOY001006";
+	public static final String OperatingRevenue3MonthSamePeriodGrowthRatios = "RGOQP00307";
+	public static final String OperatingRevenue6MonthSamePeriodGrowthRatios = "RGOQP00607";
+	public static final String OperatingRevenue9MonthSamePeriodGrowthRatios = "RGOQP00907";
+	public static final String OperatingRevenueSequentialGrowthRatios = "RGOQS00007";
+	public static final String OperatingRevenue1YearGrowthRatios = "RGOY000107";
+	public static final String OperatingRevenue3YearGrowthRatios = "RGOY000307";
+	public static final String OperatingRevenue5YearGrowthRatios = "RGOY000507";
+	public static final String OperatingRevenue10YearGrowthRatios = "RGOY001007";
+	public static final String BookValuePerShareWeighted = "VAW0000001";
+	public static final String DivPayout5YearWeighted = "VAW0000002";
+	public static final String DivPayoutTotOpsWeighted = "VAW0000003";
+	public static final String GrowthAnnSalesPerShareWeighted5Year = "VAW0000004";
+	public static final String PriceToBookWeighted = "VAW0000005";
+	public static final String PriceToCashFlowWeighted = "VAW0000006";
+	public static final String PriceToEPSWeighted = "VAW0000007";
+	public static final String PriceToSalesWeighted = "VAW0000008";
+	public static final String RatioPEWeighted5YearHigh = "VAW0000009";
+	public static final String RatioPEWeighted5YearLow = "VAW0000010";
+	public static final String SalesPerShareWeighted = "VAW0000011";
+	public static final String TotalRevenueWeighted = "IS00300019";
+	public static final String NetIncomeContinuousOperationsWeighted = "IS00300017";
+	public static final String NetIncomeFromContinuingAndDiscontinuedOperationWeighted = "IS00300018";
+	public static final String DilutedContinuousOperationsWeighted = "IS00300015";
+	public static final String ContinuingAndDiscontinuedDilutedEPSWeighted = "IS00300014";
+	public static final String DilutedEPSWeighted = "IS00300016";
+	public static final String CurrentRatioWeighted = "RL00000007";
+	public static final String DebtEquityRatioWeighted = "RLE0000005";
+	public static final String QuickRatioWeighted = "RL00000009";
+	public static final String DebtTotalCapitalRatioWeighted = "RL00000008";
+	public static final String FinancialLeverageWeighted = "RLE0000006";
+	public static final String TotalDebtToEquityWeighted = "RLE0000007";
+	public static final String GrossMarginWeighted = "ROP0000016";
+	public static final String EBTMarginWeighted = "ROP0000015";
+	public static final String NetMarginWeighted = "ROP0000018";
+	public static final String SalesPerEmployeeWeighted = "ROP0000019";
+	public static final String IncPerEmployeeTotOpsWeighted = "ROP0000017";
+	public static final String ROEWeighted = "ROE0000016";
+	public static final String ROAWeighted = "ROE0000015";
+	public static final String ROICWeighted = "ROE0000017";
+	public static final String ReceivableTurnoverWeighted = "ROE0000018";
+	public static final String InventoryTurnoverWeighted = "ROE0000014";
+	public static final String AssetTurnoverWeighted = "ROE0000013";
+	public static final String OpsRevWeighted3MonSamePeriodGrowth = "RGOQP00309";
+	public static final String OpsRevWeighted1YearGrowth = "RGOY000111";
+	public static final String NIContOpsWeighted3MonthSamePeriodGrowth = "RGOQP00308";
+	public static final String NIContOpsWeighted1YearGrowth = "RGOY000110";
+	public static final String NIContOpsWeighted5YearGrowth = "RGOY000512";
+	public static final String DividendWeighted5YearGrowth = "RGEY000505";
+	public static final String RevenueWeighted5YearGrowth = "RGOY000513";
+	public static final String GrowthAnnCapitalSpendingWighted5Year = "RGOY000510";
+	public static final String GrowthAnnGrossProfitWeighted5Year = "RGOY000511";
+	public static final String AvgGrossMarginWeighted5Year = "RGOA000508";
+	public static final String AvgNetProfitMarginWeighted5Year = "RGOA000509";
+	public static final String AvgPreTaxMarginWeighted5Year = "RGOA000510";
+	public static final String AvgRetCommonEquityWeighted5Year = "RGOA000512";
+	public static final String AvgRetAssetsWeighted5Year = "RGOA000511";
+	public static final String AvgRetInvestedCapitalWeighted5Year = "RGOA000513";
+	public static final String InterestCoverageWeighted = "ROP0000020";
+	public static final String IncPerEmployeeTotOps = "ROP0000014";
+
+	public static String getId(String name) {
+		String sql_dataId = "SELECT [DataId] FROM [ReferenceData].[dbo].[DataID_XOI_Map] where XOI_NAME ='%s'";
+		Object dataId = null;
+		try {
+			dataId = DataId.class.getField(name).get(DataId.class);
+		} catch (Exception e) {
+			dataId = DBCommons.getData(String.format(sql_dataId, name), Database.geoutputdb61);
+		}
+
+		if (dataId == null) {
+			logger.debug(name + " has no dataId");
+			return name;
+		}
+		return String.valueOf(dataId);
+	}
+
+	public static String getIdFromSql(String name, String sql) {
+		Object dataId = null;
+
+		try {
+			dataId = DataId.class.getField(name).get(DataId.class);
+		} catch (Exception e) {
+			dataId = DBCommons.getData(sql, Database.geoutputdb61);
+		}
+
+		if (dataId == null) {
+			logger.debug(name + " has no dataId");
+			return name;
+		}
+		return String.valueOf(dataId);
+	}
+
+}

@@ -1,0 +1,160 @@
+package com.morningstar.eapi.source;
+
+import java.io.FileInputStream;
+import java.io.InputStream;
+import java.util.ArrayList;
+import java.util.List;
+
+import org.apache.poi.hssf.usermodel.HSSFCell;
+import org.apache.poi.hssf.usermodel.HSSFRow;
+import org.apache.poi.hssf.usermodel.HSSFSheet;
+import org.apache.poi.hssf.usermodel.HSSFWorkbook;
+
+public class InputHandler {
+	private static final String HAED_CODE_FILE = "config/input.xls";
+
+	public static String getValueFromIndex(String sheet, String value, int searchColumnIndex, int resultColumnIndex) {
+		try {
+			InputStream is = new FileInputStream(HAED_CODE_FILE);
+			HSSFWorkbook hssfWorkbook = new HSSFWorkbook(is);
+			HSSFSheet hSSFSheet = hssfWorkbook.getSheet(sheet);
+			searchColumnIndex = searchColumnIndex - 1;
+			resultColumnIndex = resultColumnIndex - 1;
+			for (int i = 1; i <= hSSFSheet.getLastRowNum(); i++) {
+				HSSFRow hSSFRow = hSSFSheet.getRow(i);
+				HSSFCell hSSFCell = hSSFRow.getCell(searchColumnIndex);
+				String cellValue = hSSFCell.getStringCellValue();
+				if (cellValue.equals(value))
+					return hSSFSheet.getRow(i).getCell(resultColumnIndex).getStringCellValue();
+			}
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+		return null;
+	}
+
+	public static List<List<String>> getStockList() {
+		List<List<String>> stockList = new ArrayList<List<String>>();
+
+		try {
+			InputStream is = new FileInputStream(HAED_CODE_FILE);
+			HSSFWorkbook hssfWorkbook = new HSSFWorkbook(is);
+			HSSFSheet hSSFSheet = hssfWorkbook.getSheet("Stock");
+
+			for (int i = 2; i <= hSSFSheet.getLastRowNum(); i++) {
+				List<String> list = new ArrayList<String>();
+				HSSFRow hSSFRow = hSSFSheet.getRow(i);
+				HSSFCell exchangeIdCell = hSSFRow.getCell(0);
+				HSSFCell symbolCell = hSSFRow.getCell(1);
+				HSSFCell shareClassIdCell = hSSFRow.getCell(2);
+
+				String exchangeId = exchangeIdCell.getStringCellValue();
+				String symbol = symbolCell.getStringCellValue();
+				String shareClassId = shareClassIdCell.getStringCellValue();
+
+				list.add(exchangeId);
+				list.add(symbol);
+				list.add(shareClassId);
+				stockList.add(list);
+			}
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+		return stockList;
+	}
+
+	public static List<List<String>> getIndexList() {
+		List<List<String>> indexList = new ArrayList<List<String>>();
+
+		try {
+			InputStream is = new FileInputStream(HAED_CODE_FILE);
+			HSSFWorkbook hssfWorkbook = new HSSFWorkbook(is);
+			HSSFSheet hSSFSheet = hssfWorkbook.getSheet("Indices");
+
+			for (int i = 2; i <= hSSFSheet.getLastRowNum(); i++) {
+				List<String> list = new ArrayList<String>();
+				HSSFRow hSSFRow = hSSFSheet.getRow(i);
+				HSSFCell symbolCell = hSSFRow.getCell(0);
+				HSSFCell performanceIdCell = hSSFRow.getCell(1);
+
+				String symbol = symbolCell.getStringCellValue();
+				String performanceId = performanceIdCell.getStringCellValue();
+
+				list.add(symbol);
+				list.add(performanceId);
+				indexList.add(list);
+			}
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+		return indexList;
+	}
+
+	public static List<List<String>> getIndustryList() {
+		List<List<String>> industryList = new ArrayList<List<String>>();
+
+		try {
+			InputStream is = new FileInputStream(HAED_CODE_FILE);
+			HSSFWorkbook hssfWorkbook = new HSSFWorkbook(is);
+			HSSFSheet hSSFSheet = hssfWorkbook.getSheet("Industry");
+
+			for (int i = 2; i <= hSSFSheet.getLastRowNum(); i++) {
+				List<String> list = new ArrayList<String>();
+				HSSFRow hSSFRow = hSSFSheet.getRow(i);
+				HSSFCell industryCell = hSSFRow.getCell(0);
+				HSSFCell industrySIDCell = hSSFRow.getCell(1);
+
+				String industry = "";
+				switch (industryCell.getCellType()) {
+				case HSSFCell.CELL_TYPE_STRING:
+					industry = industryCell.getStringCellValue();
+					break;
+				case HSSFCell.CELL_TYPE_NUMERIC:
+					industry = String.valueOf((int) industryCell.getNumericCellValue());
+					break;
+				case HSSFCell.CELL_TYPE_BLANK:
+					break;
+				default:
+					break;
+				}
+
+				String industrySID = industrySIDCell.getStringCellValue();
+
+				list.add(industry);
+				list.add(industrySID);
+				industryList.add(list);
+			}
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+		return industryList;
+	}
+
+	public static List<List<String>> getETFList() {
+		List<List<String>> etfList = new ArrayList<List<String>>();
+
+		try {
+			InputStream is = new FileInputStream(HAED_CODE_FILE);
+			HSSFWorkbook hssfWorkbook = new HSSFWorkbook(is);
+			HSSFSheet hSSFSheet = hssfWorkbook.getSheet("ETF");
+
+			for (int i = 2; i <= hSSFSheet.getLastRowNum(); i++) {
+				List<String> list = new ArrayList<String>();
+				HSSFRow hSSFRow = hSSFSheet.getRow(i);
+				HSSFCell exchangeIdCell = hSSFRow.getCell(0);
+				HSSFCell symbolCell = hSSFRow.getCell(1);
+				HSSFCell shareClassIdCell = hSSFRow.getCell(2);
+				HSSFCell investmentIdCell = hSSFRow.getCell(3);
+
+				list.add(exchangeIdCell.getStringCellValue());
+				list.add(symbolCell.getStringCellValue());
+				list.add(shareClassIdCell.getStringCellValue());
+				list.add(investmentIdCell.getStringCellValue());
+				etfList.add(list);
+			}
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+		return etfList;
+	}
+}

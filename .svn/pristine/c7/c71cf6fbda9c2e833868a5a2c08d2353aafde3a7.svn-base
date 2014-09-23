@@ -1,0 +1,1 @@
+Select b.InvestmentId, PerformanceId, Status, b.CUSIP, b.CurrencyId from dbo.FixedIncome a Inner join dbo.InvestmentIdDimension b on a.InvestmentKey = b.InvestmentKey inner join dbo.PerformanceIdDimension c on b.InvestmentId = c.InvestmentId and b.VendorId = c.VendorId where b.VendorId = 101 and Status<>'D' LIMIT ?;

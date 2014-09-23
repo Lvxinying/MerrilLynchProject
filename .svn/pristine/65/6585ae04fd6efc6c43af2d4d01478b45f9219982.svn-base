@@ -1,0 +1,40 @@
+package com.morningstar.eapi.login;
+
+import java.rmi.RemoteException;
+
+import com.morningstar.FundAutoTest.commons.ResourceManager;
+
+public class LoginToken {
+	public static String token = "";
+
+	public static String getToken() throws RemoteException {
+		// LoginTokenStub loginTokenStub = new
+		// LoginTokenStub(ResourceManager.getTokenSite() +
+		// "/WSLogin/Login.asmx");
+		//
+		// Login login = new Login();
+		//
+		// login.setEmail(ResourceManager.getTokeLoginEmail());
+		// login.setPassword(ResourceManager.getTokeLoginPassword());
+		//
+		// LoginResponse loginResponse = loginTokenStub.login(login);
+		//
+		// TokenEntity te = loginResponse.getLoginResult();
+
+		// TOKEN = te.getToken();
+		String site = ResourceManager.getSite();
+		if (site.contains("gedataprocdev2"))
+			token = ResourceManager.getDevToken();
+		else if (site.contains("geapiqalive61")) {
+			token = ResourceManager.getQAToken();
+		} else {
+			token = ResourceManager.gettoken();
+		}
+
+		// logger.info("Token="+te.localToken);
+		// logger.info("ExpireDate="+te.getExpireDate().getTime());
+
+		return token;
+	}
+
+}

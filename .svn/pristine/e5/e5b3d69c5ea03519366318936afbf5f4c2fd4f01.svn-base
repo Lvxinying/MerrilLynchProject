@@ -1,0 +1,72 @@
+package com.morningstar.eapi.source;
+
+import java.io.InputStream;
+import java.util.HashMap;
+
+import org.apache.commons.codec.binary.Base64;
+
+import com.morningstar.eapi.commons.ResourceManager;
+import com.morningstar.eapi.utils.HttpConnection;
+import com.morningstar.eapi.utils.XmlHelper;
+
+public class PriceXOI {
+	static final String RETURN_DETAIL = "/MarketPerformanceSnapshot/TrailingReturn/Return/ReturnDetail";
+
+	public static HashMap<String, String> getDataMap(String link) {
+		HashMap<String, String> map = new HashMap<String, String>();
+		XmlHelper xmlHelper = new XmlHelper();
+		xmlHelper.readStream(getInputStream(link));
+		int num = xmlHelper.getNodeCount(RETURN_DETAIL);
+		for (int i = 1; i <= num; i++) {
+			String returnDetailTimePeriod = RETURN_DETAIL + "[%d]" + "/@TimePeriod";
+			String returnDetailValue = RETURN_DETAIL + "[%d]" + "/Value";
+			returnDetailTimePeriod = String.format(returnDetailTimePeriod, i);
+			returnDetailValue = String.format(returnDetailValue, i);
+			String time_period = getDataViaXpath(xmlHelper, link, returnDetailTimePeriod);
+			if ("W1".equals(time_period)) {
+				String value = getDataViaXpath(xmlHelper, link, returnDetailValue);
+				map.put("TrailingMarketReturn1W", value);
+			} else if ("M1".equals(time_period)) {
+				String value = getDataViaXpath(xmlHelper, link, returnDetailValue);
+				map.put("TrailingMarketReturn1M", value);
+			} else if ("M12".equals(time_period)) {
+				String value = getDataViaXpath(xmlHelper, link, returnDetailValue);
+				map.put("TrailingMarketReturn1Y", value);
+			}
+		}
+		return map;
+
+	}
+
+	public static String getDataViaXpath(XmlHelper xmlHelper, String link, String xPath) {
+		if (xmlHelper.document == null)
+			getData(xmlHelper, link);
+		return xmlHelper.getValueFromInputStream(xPath);
+	}
+
+	public static int getCountViaXpath(XmlHelper xmlHelper, String link, String xPath) {
+		if (xmlHelper.document == null)
+			getData(xmlHelper, link);
+		return xmlHelper.getNodeCount(xPath);
+	}
+
+	public static boolean hasException(XmlHelper xmlHelper) {
+		return xmlHelper.getNodeCount("//XOIException") == 1;
+	}
+
+	private static void getData(XmlHelper xmlHelper, String link) {
+		xmlHelper.readStream(getInputStream(link));
+	}
+
+	public static InputStream getInputStream(String link) {
+		return HttpConnection.getPriceXOIInputStream(link, getToken());
+	}
+
+	private static String getToken() {
+		String user = ResourceManager.getXoi_user();
+		String pwd = ResourceManager.getXoi_password();
+		String creds = user + ":" + pwd;
+		return Base64.encodeBase64String(creds.getBytes());
+	}
+
+}

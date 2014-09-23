@@ -1,0 +1,80 @@
+package com.morningstar.eapi.GlobalETFService.cases;
+
+import java.rmi.RemoteException;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.testng.annotations.Test;
+
+import com.morningstar.eapi.commons.Case;
+import com.morningstar.eapi.source.CGeneralInfo;
+import com.morningstar.eapi.utils.DateUtil;
+import com.morningstar.eapi.utils.Utils;
+import com.morningstar.eapi.ws.GlobalETFServiceStub.EODPriceETFSnapshot;
+import com.morningstar.eapi.ws.GlobalETFServiceStub.ETFDailyReturnIdentifierType;
+import com.morningstar.eapi.ws.GlobalETFServiceStub.GetEODPriceETFSnapshot;
+import com.morningstar.eapi.ws.GlobalETFServiceStub.GetEODPriceETFSnapshotResponse;
+
+public class CGetEODPriceETFSnapshot extends Initiation {
+	private static final Logger logger = LoggerFactory.getLogger(CGetEODPriceETFSnapshot.class);
+	static EODPriceETFSnapshot eODPriceETFSnapshot = null;
+	static String startMonth = DateUtil.getNYear("CST", -2, "MM/yyyy");
+	static String endMonth = DateUtil.getCurrentDate("CST", "MM/yyyy");
+	static CGeneralInfo generalInfo = null;
+
+	@Test
+	public void test() {
+
+		run("ARCX", "ROLA");
+		Case.assertTrue();
+	}
+
+	public static void run(String exchangeId, String identifier) {
+		Utils.segmentMessageForRoot(logger, Utils.includeSquareBracket(exchangeId, identifier));
+
+		generalInfo = new CGeneralInfo(exchangeId, identifier);
+
+		if (generalInfo.isDataAvaliable) {
+			eODPriceETFSnapshot = getResult(exchangeId, identifier);
+
+			if (eODPriceETFSnapshot != null)
+				start();
+		} else {
+			logger.error("GeneralInfo contains no data");
+		}
+	}
+
+	public static EODPriceETFSnapshot getResult(String ExchangeId, String Identifier) {
+		GetEODPriceETFSnapshot getEODPriceETFSnapshot = new GetEODPriceETFSnapshot();
+		getEODPriceETFSnapshot.setExchangeId(ExchangeId);
+		getEODPriceETFSnapshot.setIdentifier(Identifier);
+		getEODPriceETFSnapshot.setIdentifierType(ETFDailyReturnIdentifierType.Symbol);
+
+		GetEODPriceETFSnapshotResponse getEODPriceETFSnapshotResponse = null;
+
+		try {
+			getEODPriceETFSnapshotResponse = getglobalETFServiceStubInstance().getEODPriceETFSnapshot(getEODPriceETFSnapshot);
+		} catch (RemoteException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+		if (getEODPriceETFSnapshotResponse != null)
+			eODPriceETFSnapshot = getEODPriceETFSnapshotResponse.getGetEODPriceETFSnapshotResult();
+
+		if (eODPriceETFSnapshot != null)
+			checkReturnCode(ExchangeId + "-" + Identifier, eODPriceETFSnapshot.getMessageInfo().getMessageCode(), eODPriceETFSnapshot.getMessageInfo().getMessageDetail(), logger);
+		else {
+			logger.error("Object is null");
+			isSuccess = false;
+		}
+
+		return eODPriceETFSnapshot;
+	}
+
+	public static void start() {
+
+		// testStatisticsIndustryPeerEntity();
+	}
+
+}

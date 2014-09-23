@@ -1,0 +1,46 @@
+package com.morningstar.eapi.source;
+
+import java.util.List;
+
+import com.morningstar.eapi.commons.DBCommons;
+import com.morningstar.eapi.commons.Database;
+import com.morningstar.eapi.utils.XmlHelper;
+
+public class Tenfore {
+	static final String TENFORE_URL = "http://platform-search/v2/securities/ids-mapping?q=OS06Y:%s&d=AC001,AC005";
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		printAllExchangeCode();
+
+	}
+
+	public static String getExchangeId(String shareClassId) {
+		String url = String.format(TENFORE_URL, shareClassId);
+		XmlHelper xmlHelper = new XmlHelper();
+		xmlHelper.readStream(url);
+		int num = xmlHelper.getNodeCount("root/m/r/dv");
+		for (int i = 1; i <= num; i++) {
+			String xpath_d = "root/m/r/dv[" + i + "]/@d";
+			String xpath_v = "root/m/r/dv[" + i + "]/@v";
+			if ("AC005".equals(xmlHelper.getValueFromInputStream(xpath_d)))
+				return xmlHelper.getValueFromInputStream(xpath_v);
+		}
+		return null;
+	}
+	
+	public static void printAllExchangeCode(){
+		String sql = "select ShareClassId from GEAPI.StockExchangeSecurity where InvestmentTypeId in ('EQ','DR','PE') and StockStatus='Active' and Symbol !='' and ExchangeId != '' and CIK != '' group by ExchangeId order by UpdateDate";
+		
+		 List<String> list = DBCommons.getDataList(sql, Database.geapi61);
+		 
+		 for(String str : list){
+			 String exchangeCode = getExchangeId(str);
+			 System.out.println(exchangeCode);
+		 }
+		
+	}
+
+}

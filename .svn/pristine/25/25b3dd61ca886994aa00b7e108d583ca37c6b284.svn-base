@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TestConfig>
+	<Number>
+		<Type>SQLBase</Type>
+		<Source>OperationData.dbo.getEquityIndustryMembership</Source>
+		<DestNodeSpecifiedDefinitions>IndustryConstituentss/NumberOfIndustryMember</DestNodeSpecifiedDefinitions>		
+		<Check>
+			<SourcePath>select CompanyName,ExchangeId,Symbol,CUSIP,CIK,ISIN,SEDOL from GEAPI.StockExchangeSecurity where ShareClassId in</SourcePath>
+			<DestinationPath>Number</DestinationPath>
+		</Check>
+	</Number>
+	<IndustryConstituents>
+		<Type>SQL</Type>
+		<Source>select CompanyName,ExchangeId,Symbol,CUSIP,CIK,ISIN,SEDOL from GEAPI.StockExchangeSecurity where ShareClassId in</Source>
+		<DestNodeSpecifiedDefinitions>IndustryConstituentss/IndustryConstituentsEntityList/IndustryConstituentsEntity</DestNodeSpecifiedDefinitions>
+		<Check>
+			<SourcePath>CompanyName</SourcePath>
+			<DestinationPath>CompanyName</DestinationPath>
+			<Type>String</Type>
+		</Check>
+		<Check>
+			<SourcePath>ExchangeId</SourcePath>
+			<DestinationPath>ExchangeId</DestinationPath>
+			<Type>String</Type>
+		</Check>
+		<Check>
+			<SourcePath>Symbol</SourcePath>
+			<DestinationPath>Symbol</DestinationPath>
+			<Type>String</Type>
+		</Check>
+		<Check>
+			<SourcePath>CUSIP</SourcePath>
+			<DestinationPath>CUSIP</DestinationPath>
+			<Type>String</Type>
+		</Check>
+		<Check>
+			<SourcePath>CIK</SourcePath>
+			<DestinationPath>CIK</DestinationPath>
+			<Type>String</Type>
+		</Check>				
+		<Check>
+			<SourcePath>ISIN</SourcePath>
+			<DestinationPath>ISIN</DestinationPath>
+			<Type>String</Type>
+		</Check>
+		<Check>
+			<SourcePath>SEDOL</SourcePath>
+			<DestinationPath>SEDOL</DestinationPath>
+			<Type>String</Type>
+		</Check>				
+	</IndustryConstituents>
+</TestConfig>

@@ -1,0 +1,325 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" total="17" passed="17">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Default suite" duration-ms="60" started-at="2014-06-24T06:13:39Z" finished-at="2014-06-24T06:13:39Z">
+    <groups>
+    </groups>
+    <test name="Default test" duration-ms="60" started-at="2014-06-24T06:13:39Z" finished-at="2014-06-24T06:13:39Z">
+      <class name="com.morningstar.Fund.TestRunner.TestNGSample">
+        <test-method status="PASS" signature="getShuList(int, int, java.lang.String, int)[pri:0, instance:com.morningstar.Fund.TestRunner.TestNGSample@46116f2]" name="getShuList" duration-ms="0" started-at="2014-06-24T03:13:39Z" data-provider="inputData" finished-at="2014-06-24T03:13:39Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[2000]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[2012]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[猪]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[2007]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getShuList -->
+        <test-method status="PASS" signature="getShuXiang(int, java.lang.String)[pri:0, instance:com.morningstar.Fund.TestRunner.TestNGSample@46116f2]" name="getShuXiang" duration-ms="0" started-at="2014-06-24T03:13:39Z" data-provider="inputData" finished-at="2014-06-24T03:13:39Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[1936]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[鼠]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getShuXiang -->
+        <test-method status="PASS" signature="getShuXiang(int, java.lang.String)[pri:0, instance:com.morningstar.Fund.TestRunner.TestNGSample@46116f2]" name="getShuXiang" duration-ms="0" started-at="2014-06-24T03:13:39Z" data-provider="inputData" finished-at="2014-06-24T03:13:39Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[2012]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[龙]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getShuXiang -->
+        <test-method status="PASS" signature="getShuList(int, int, java.lang.String, int)[pri:0, instance:com.morningstar.Fund.TestRunner.TestNGSample@46116f2]" name="getShuList" duration-ms="0" started-at="2014-06-24T03:13:39Z" data-provider="inputData" finished-at="2014-06-24T03:13:39Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[2069]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[2059]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[兔]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[2059]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getShuList -->
+        <test-method status="PASS" signature="getShuList(int, int, java.lang.String, int)[pri:0, instance:com.morningstar.Fund.TestRunner.TestNGSample@46116f2]" name="getShuList" duration-ms="0" started-at="2014-06-24T03:13:39Z" data-provider="inputData" finished-at="2014-06-24T03:13:39Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[1993]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[2000]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[鼠]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[1996]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getShuList -->
+        <test-method status="PASS" signature="getShuXiang(int, java.lang.String)[pri:0, instance:com.morningstar.Fund.TestRunner.TestNGSample@46116f2]" name="getShuXiang" duration-ms="0" started-at="2014-06-24T03:13:39Z" data-provider="inputData" finished-at="2014-06-24T03:13:39Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[2011]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[兔]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getShuXiang -->
+        <test-method status="PASS" signature="getShuList(int, int, java.lang.String, int)[pri:0, instance:com.morningstar.Fund.TestRunner.TestNGSample@46116f2]" name="getShuList" duration-ms="0" started-at="2014-06-24T03:13:39Z" data-provider="inputData" finished-at="2014-06-24T03:13:39Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[1969]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[1974]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[鸡]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[1969]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getShuList -->
+        <test-method status="PASS" signature="getShuXiang(int, java.lang.String)[pri:0, instance:com.morningstar.Fund.TestRunner.TestNGSample@46116f2]" name="getShuXiang" duration-ms="0" started-at="2014-06-24T03:13:39Z" data-provider="inputData" finished-at="2014-06-24T03:13:39Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[1913]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[牛]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getShuXiang -->
+        <test-method status="PASS" signature="getShuXiang(int, java.lang.String)[pri:0, instance:com.morningstar.Fund.TestRunner.TestNGSample@46116f2]" name="getShuXiang" duration-ms="0" started-at="2014-06-24T03:13:39Z" data-provider="inputData" finished-at="2014-06-24T03:13:39Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[1977]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[蛇]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getShuXiang -->
+        <test-method status="PASS" signature="getShuXiang(int, java.lang.String)[pri:0, instance:com.morningstar.Fund.TestRunner.TestNGSample@46116f2]" name="getShuXiang" duration-ms="0" started-at="2014-06-24T03:13:39Z" data-provider="inputData" finished-at="2014-06-24T03:13:39Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[1930]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[马]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getShuXiang -->
+        <test-method status="PASS" signature="getShuXiang(int, java.lang.String)[pri:0, instance:com.morningstar.Fund.TestRunner.TestNGSample@46116f2]" name="getShuXiang" duration-ms="0" started-at="2014-06-24T03:13:39Z" data-provider="inputData" finished-at="2014-06-24T03:13:39Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[1986]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[虎]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getShuXiang -->
+        <test-method status="PASS" signature="getShuXiang(int, java.lang.String)[pri:0, instance:com.morningstar.Fund.TestRunner.TestNGSample@46116f2]" name="getShuXiang" duration-ms="0" started-at="2014-06-24T03:13:39Z" data-provider="inputData" finished-at="2014-06-24T03:13:39Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[2007]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[猪]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getShuXiang -->
+        <test-method status="PASS" signature="getShuXiang(int, java.lang.String)[pri:0, instance:com.morningstar.Fund.TestRunner.TestNGSample@46116f2]" name="getShuXiang" duration-ms="0" started-at="2014-06-24T03:13:39Z" data-provider="inputData" finished-at="2014-06-24T03:13:39Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[1968]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[猴]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getShuXiang -->
+        <test-method status="PASS" signature="getShuXiang(int, java.lang.String)[pri:0, instance:com.morningstar.Fund.TestRunner.TestNGSample@46116f2]" name="getShuXiang" duration-ms="0" started-at="2014-06-24T03:13:39Z" data-provider="inputData" finished-at="2014-06-24T03:13:39Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[2018]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[狗]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getShuXiang -->
+        <test-method status="PASS" signature="getShuXiang(int, java.lang.String)[pri:0, instance:com.morningstar.Fund.TestRunner.TestNGSample@46116f2]" name="getShuXiang" duration-ms="0" started-at="2014-06-24T03:13:39Z" data-provider="inputData" finished-at="2014-06-24T03:13:39Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[1993]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[鸡]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getShuXiang -->
+        <test-method status="PASS" signature="getShuXiang(int, java.lang.String)[pri:0, instance:com.morningstar.Fund.TestRunner.TestNGSample@46116f2]" name="getShuXiang" duration-ms="0" started-at="2014-06-24T03:13:39Z" data-provider="inputData" finished-at="2014-06-24T03:13:39Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[1907]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[羊]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getShuXiang -->
+        <test-method status="PASS" signature="getShuXiang(int, java.lang.String)[pri:0, instance:com.morningstar.Fund.TestRunner.TestNGSample@46116f2]" name="getShuXiang" duration-ms="0" started-at="2014-06-24T03:13:39Z" data-provider="inputData" finished-at="2014-06-24T03:13:39Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[-2]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[error]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getShuXiang -->
+      </class> <!-- com.morningstar.Fund.TestRunner.TestNGSample -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>

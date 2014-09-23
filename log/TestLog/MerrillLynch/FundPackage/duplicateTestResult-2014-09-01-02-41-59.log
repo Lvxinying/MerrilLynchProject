@@ -1,0 +1,7 @@
+[TestForDataFormat]Begin to test the Fund File's Duplicate content in each lines,start at:2014-09-01-02-41-59
+Testing failed:Duplicate SEDOL counts in Fund Package is:2
+Duplicate SEDOL is:B05HVC4
+Testing failed:Duplicate SEDOL counts in Fund Package is:2
+Duplicate SEDOL is:B8411C3
+Testing failed:Duplicate SEDOL counts in Fund Package is:2
+Duplicate SEDOL is:B83GHR6

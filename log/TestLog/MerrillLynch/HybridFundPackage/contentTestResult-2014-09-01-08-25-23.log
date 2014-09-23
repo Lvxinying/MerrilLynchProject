@@ -1,0 +1,20 @@
+[TestForDataContent]Begin to test the Hybrid Fund File's Data content in each lines,start at:2014-09-01-08-25-23
+[TestForDataContent]Begin to test the Fund File's ISIN in each lines,start at:2014-09-01-08-25-23
+[TestForDataContent]Hybrid Fund File ISIN testing has finished,end at:2014-09-01-08-25-30
+<------------------------------------------------------------------------------>
+[TestForDataContent]Begin to test the Hybrid Fund File's YieldAsAtDate in each lines,start at:2014-09-01-08-25-30
+[TestForDataContent]Hybrid Fund File YieldAsAtDate testing has finished,end at:2014-09-01-08-25-34
+<------------------------------------------------------------------------------>
+[TestForDataContent]Begin to test the Hybrid Fund File's YieldRate in each lines,start at:2014-09-01-08-25-34
+[TestForDataContent]Hybrid Fund File YieldRate testing has finished,end at:2014-09-01-08-25-38
+<------------------------------------------------------------------------------>
+[TestForDataContent]Begin to test the Hybrid Fund File's BetaAsAtDate in each lines,start at:2014-09-01-08-25-38
+[TestForDataContent]Hybrid Fund File BetaAsAtDate testing has finished,end at:2014-09-01-08-25-42
+<------------------------------------------------------------------------------>
+[TestForDataContent]Begin to test the Hybrid Fund File's BetaRate in each lines,start at:2014-09-01-08-25-42
+[TestForDataContent]Hybrid Fund File BetaRate testing has finished,end at:2014-09-01-08-25-46
+<------------------------------------------------------------------------------>
+[TestForDataContent]Begin to test the Hybrid Fund File's ProxyId in each lines,start at:2014-09-01-08-25-46
+[TestForDataContent]Hybrid Fund File ProxyId testing has finished,end at:2014-09-01-08-25-50
+<------------------------------------------------------------------------------>
+[TestForDataContent]Content test has finished,end at:2014-09-01-08-25-50

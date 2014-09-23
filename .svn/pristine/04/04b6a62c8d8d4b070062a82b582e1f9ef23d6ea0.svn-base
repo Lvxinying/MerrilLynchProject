@@ -1,0 +1,177 @@
+package com.morningstar.eapi.AnalysisResearch.CorporateAction;
+
+import java.text.MessageFormat;
+import java.util.List;
+
+import org.dom4j.Document;
+import org.dom4j.Element;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+import com.morningstar.FundAutoTest.DateUtil;
+import com.morningstar.FundAutoTest.commons.Common;
+import com.morningstar.FundAutoTest.commons.ResourceManager;
+import com.morningstar.FundAutoTest.commons.testbase.Base;
+import com.morningstar.FundAutoTest.commons.testbase.Check;
+import com.morningstar.FundAutoTest.commons.testbase.TestConfigData;
+
+public class CorporateActionBase extends Base{
+	private static final Logger logger = LoggerFactory.getLogger(CorporateActionBase.class);
+	Common common = new Common();
+	
+	//if size = -1, then compare the size number data randomly
+	public boolean compareDividend(List<List<String>> stockList, String startDate, String endDate, boolean result)
+	{	
+		String messageBasic = "StartDate: " + startDate + "\tEndDate: " + endDate + "\t";
+		try {
+			//Check Destination XML 
+			String destinationUrl = baseUrl + "/GlobalCorporateActionsService.asmx/GetDividendsSummary?responseType=XML&excludingFrom=" + startDate + "&excludingTo=" + endDate + "&token=" + token;
+			Document customAPIDoc = common.getCustomAPIDoc(destinationUrl);
+			if (!common.checkXMLBasicInfo(customAPIDoc, messageBasic, destinationUrl, result)) 	caseResult = false;
+			if (!result) 	return caseResult;
+
+/*
+			if (DateUtil.compareDate(startDate, DateUtil.getNYear(timezone, 1, pattern), pattern))
+			{
+				if (customAPIDoc.getRootElement().selectSingleNode("MessageInfo/MessageCode").getText().trim().equals("50002"))		return true;
+				else 	
+				{
+					logger.error(messageBasic + "It should get 50002 code, but get " + customAPIDoc.getRootElement().selectSingleNode("MessageInfo/MessageCode").getText().trim());
+					return false;
+				}
+			}
+			if (!DateUtil.compareDate(endDate, DateUtil.getNYear(timezone, -1, pattern), pattern))
+			{
+				if (customAPIDoc.getRootElement().selectSingleNode("MessageInfo/MessageCode").getText().trim().equals("50002"))		return true;
+				else 	
+				{
+					logger.error(messageBasic + "It should get 50002 code, but get " + customAPIDoc.getRootElement().selectSingleNode("MessageInfo/MessageCode").getText().trim());
+					return false;
+				}
+			}
+*/			
+			
+			if (stockList == null)
+			{	
+				//Check ExchangeId
+				if (!checkExchangeId(customAPIDoc, messageBasic))		caseResult = false;
+				//Check ExcludingDate
+				for (TestConfigData test : Dividend.testList) 
+				{
+					List<Check> ck = test.CheckList;
+					for (Check check : ck)
+					{
+						if (check.DestinationPath.equals("ExcludingDate"))
+						{
+							if (!checkDate(customAPIDoc, startDate, endDate, test, check))	caseResult = false;
+						}						
+					}
+				}
+			}else
+			{
+				//Check Data one by one
+				String sourceURL = "";
+				Document sourceDoc;
+				String startMonthYear = DateUtil.getMonthYear(startDate);
+				String endMonthYear = DateUtil.getMonthYear(endDate);
+				for (int i=0; i<stockList.size(); i++)
+				{
+					for (TestConfigData test : Dividend.testList) 
+					{
+						List<Check> ck = test.CheckList;
+						sourceURL = MessageFormat.format(test.Source, stockList.get(i).get(0), stockList.get(i).get(1), startMonthYear, endMonthYear) + "&token=" + ResourceManager.gettoken();
+						sourceDoc = common.getCustomAPIDoc(sourceURL);
+						//Remove a Node
+						sourceDoc = common.removeXMLNodeByDate(sourceDoc, test.SourceNodeSpecifiedDefinitions, "ExcludingDate", startDate, "yyyy-MM-dd", true);
+						/*
+						List<Element> sourceElements = sourceDoc.selectNodes(test.SourceNodeSpecifiedDefinitions);
+						if (sourceElements.size() > 0)
+						{
+							String earliestDate = sourceElements.get(sourceElements.size()-1).selectSingleNode("ExcludingDate").getText().trim();
+							earliestDate = DateUtil.translateDate(earliestDate, "yyyy-MM-dd", "MM/dd/yyyy");
+							if (DateUtil.compareDate(startDate, earliestDate, "MM/dd/yyyy"))	sourceElements.get(sourceElements.size()-1).detach();
+						}
+						*/
+						for (Check check : ck)
+						{
+							List<Element> destinationElements = getDividendElement(customAPIDoc, test, stockList.get(i).get(2), check);
+							List<Element> sourceElements = sourceDoc.selectNodes(test.SourceNodeSpecifiedDefinitions + "/" + check.SourcePath);
+							if (!common.compareXMLList(destinationElements, sourceElements, messageBasic + "ShareClassId: " + stockList.get(i).get(2) + "\t", check, test)) 	caseResult = false;
+						}
+					}
+				}
+			}									
+		} catch (Exception ex) {
+			logger.error("StartDate: " + startDate + "\tEndDate: " + endDate + "\t" + ex.toString());
+			if (result)	caseResult = false;
+			ex.printStackTrace();
+		}
+		return caseResult;
+	}
+		
+	private static List<Element> getDividendElement(Document doc, TestConfigData test, String shareClassId, Check check)
+	{
+		String destinationXPath = "DividendsSummary/DividendsDetailEntityList/DividendsDetailEntity";
+		List<Element> destinationDataElements = doc.selectNodes(destinationXPath);
+		for (int i=0; i<destinationDataElements.size(); i++)
+		{
+			if (destinationDataElements.get(i).selectSingleNode("GeneralInfo/ShareClassId").getText().equals(shareClassId))
+			{
+				return destinationDataElements.get(i).selectNodes(test.DestNodeSpecifiedDefinitions.replace(destinationXPath + "/", "") + "/" + check.DestinationPath);
+			}
+		}
+		return null;
+	}
+	
+	
+	// make sure it will has only the ASE, NYS, NAS Exchange
+	private boolean checkExchangeId(Document doc, String messageTitle)
+	{
+		boolean result = true;
+		String destinationXPath = "DividendsSummary/DividendsDetailEntityList/DividendsDetailEntity/GeneralInfo/ExchangeId";
+		List<Element> destinationDataElements = doc.selectNodes(destinationXPath);
+		for (int i=0; i<destinationDataElements.size(); i++)
+		{
+			String destinationValue = destinationDataElements.get(i).getTextTrim();
+			if (!(destinationValue.equals("NAS") || destinationValue.equals("NYS") || destinationValue.equals("ASE")))	
+			{
+				result = false;
+				logger.error(messageTitle + "ExchangeId: " + destinationValue);
+			}
+		}
+		return result;
+	}
+	
+	// make sure it will has only the recent 1 year date, and 1 more year date
+	private boolean checkDate(Document doc, String startDate, String endDate, TestConfigData test, Check check)
+	{
+		boolean result = true;
+		String pattern = "MM/dd/yyyy";
+		//Time Range is 7 days
+		if (DateUtil.compareDate(DateUtil.getSpecifiedDayAfter(pattern, startDate, 7), endDate, pattern))
+		{
+			if (doc.getRootElement().selectSingleNode("MessageInfo/MessageCode").getText().trim().equals("50002"))		return true;			
+		}
+		String newStartDate = startDate;
+		String newEndDate = endDate;
+		if (DateUtil.compareDate(DateUtil.getNYear(ResourceManager.getTimeZone(), -1, pattern), startDate, pattern))		newStartDate = DateUtil.getNYear(ResourceManager.getTimeZone(), -1, pattern);
+		if (DateUtil.compareDate(endDate, DateUtil.getNYear(ResourceManager.getTimeZone(), 1, pattern), pattern))		newEndDate = DateUtil.getNYear(ResourceManager.getTimeZone(), 1, pattern);		
+		String destinationXPath = "DividendsSummary/DividendsDetailEntityList/DividendsDetailEntity";
+		List<Element> destinationDataElements = doc.selectNodes(destinationXPath);
+		for (int i=0; i<destinationDataElements.size(); i++)
+		{
+			List<Element> elements = destinationDataElements.get(i).selectNodes(test.DestNodeSpecifiedDefinitions.replace(destinationXPath + "/", "") + "/" + check.DestinationPath);
+			for (Element element: elements)
+			{
+				String originalValue = element.getTextTrim();
+				String destinationValue = originalValue.replace("-", "/");
+				if (!((DateUtil.compareDate(destinationValue, newStartDate, pattern)) || DateUtil.compareDate(newEndDate, destinationValue, pattern))) 	
+				{
+					result = false;
+					logger.error("StartDate: " + startDate + "\tEndDate: " + endDate + "\t" + "ExcludingDate: " + originalValue);
+				}
+			}
+		}		
+		return result;
+	}
+}

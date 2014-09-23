@@ -1,0 +1,19 @@
+Log Topic:OE-91 Data counts checking!
+Testing Time:2014-01-17 06:39:00
+===================================================================
+[TestFailed]Records count not same!
+MS-Table: CurrentData.dbo.ManagerBasic      Count = 485642
+Vertica-Table: dbi.ManagerBasic      Count = 485640
+===================================================================
+[TestFailed]Records count not same!
+MS-Table: TimeSeries.dbo.ManagerCompanyBiography      Count = 125347
+Vertica-Table: dbi.ManagerCompanyBiography      Count = 125346
+===================================================================
+[TestFailed]Records count not same!
+MS-Table: CurrentData.dbo.ManagerCompanyIdMapping      Count = 476196
+Vertica-Table: dbi.ManagerCompanyIdMapping      Count = 476194
+===================================================================
+[TestFailed]Records count not same!
+MS-Table: CurrentData.dbo.ManagerIdentifiers      Count = 137532
+Vertica-Table: dbi.ManagerIdentifiers      Count = 137523
+===================================================================

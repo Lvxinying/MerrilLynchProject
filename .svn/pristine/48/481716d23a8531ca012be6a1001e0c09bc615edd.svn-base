@@ -1,0 +1,1 @@
+SELECT count(*) from (SELECT PerformanceId FROM "dbo"."ML3YearBetaForMonthEnd" WHERE MLUniverseType = '1' INTERSECT SELECT PerformanceId FROM "dbo"."MLAverage3MonthYieldForMonthEnd" WHERE MLUniverseType = '1') a

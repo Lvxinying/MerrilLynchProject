@@ -1,0 +1,45 @@
+package com.morningstar.eapi.GlobalETFService.cases;
+
+import java.rmi.RemoteException;
+
+import org.apache.axis2.AxisFault;
+
+import com.morningstar.eapi.commons.Case;
+import com.morningstar.eapi.commons.ResourceManager;
+import com.morningstar.eapi.login.LoginToken;
+import com.morningstar.eapi.ws.GlobalETFServiceStub;
+
+public class Initiation extends Case {
+	static GlobalETFServiceStub globalETFServiceStub = null;
+	private static final String SITE = ResourceManager.getSite() + "/GlobalETFService.asmx";
+
+//	public static SecurityHeaderE getSecurityHeaderEInstance() {
+//		// get login token from here
+//		String token = "";
+//		try {
+//			token = LoginToken.getToken();
+//		} catch (RemoteException e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		}
+//		SecurityHeader securityHeader = new SecurityHeader();
+//		securityHeader.setToken(token);
+//		SecurityHeaderE securityHeaderE = new SecurityHeaderE();
+//		securityHeaderE.setSecurityHeader(securityHeader);
+//		return securityHeaderE;
+//
+//	}
+
+	public static GlobalETFServiceStub getglobalETFServiceStubInstance() {
+		try {
+			globalETFServiceStub = new GlobalETFServiceStub(SITE);
+		} catch (AxisFault e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return globalETFServiceStub;
+	}
+	
+
+
+}

@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TestConfig>
+	<EquityDetail_EODPrice>
+		<Type>EquityDetail</Type>
+		<Source>http://equityapi.morningstar.com/Webservice/GlobalStockPricesService.asmx/GetEODPriceSnapshot?exchangeId={1}&amp;identifier={0}&amp;identifierType=Symbol&amp;responseType=XML&amp;Token=--uSzp3RZydSkrp6jYT4x4g8P_cQI8g1CB8sroF2FVG9ZH22uOhHhIPThjRL3haH71UhXqbTT_kDvQdW5f44qfrMJK4_K6C2DZxu4QAfumA1</Source>
+		<DestNodeSpecifiedDefinitions>EquityDetails4MSN/EquityDetails/KeyStatisticsEntity/StatisticsIndustryPeerEntityList/StatisticsIndustryPeerEntity</DestNodeSpecifiedDefinitions>
+		<Check>
+			<SourcePath>EODPriceSnapshots/EODPriceSnapshotEntity/ClosePrice</SourcePath>
+			<DestinationPath>ClosePrice</DestinationPath>
+		</Check>
+		<Check>
+			<SourcePath>EODPriceSnapshots/EODPriceSnapshotEntity/PriceCurrencyId</SourcePath>
+			<DestinationPath>CurrencyId</DestinationPath>
+			<Type>String</Type>
+		</Check>		
+	</EquityDetail_EODPrice>
+	<EquityDetail_MarketCap>
+		<Type>EquityDetail</Type>
+		<Source>http://equityapi.morningstar.com/Webservice/MarketPerformanceService.asmx/GetCurrentMarketCapitalization?exchangeId={1}&amp;identifier={0}&amp;identifierType=Symbol&amp;responseType=XML&amp;Token=--uSzp3RZydSkrp6jYT4x4g8P_cQI8g1CB8sroF2FVG9ZH22uOhHhIPThjRL3haH71UhXqbTT_kDvQdW5f44qfrMJK4_K6C2DZxu4QAfumA1</Source>
+		<DestNodeSpecifiedDefinitions>EquityDetails4MSN/EquityDetails/KeyStatisticsEntity/StatisticsIndustryPeerEntityList/StatisticsIndustryPeerEntity</DestNodeSpecifiedDefinitions>
+		<Check>
+			<SourcePath>MarketCapitalizations/MarketCapitalizationEntityList/MarketCapitalizationEntity/MarketCap</SourcePath>
+			<DestinationPath>MarketCap</DestinationPath>
+		</Check>		
+	</EquityDetail_MarketCap>
+</TestConfig>

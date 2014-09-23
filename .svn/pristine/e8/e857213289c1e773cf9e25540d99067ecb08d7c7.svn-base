@@ -1,0 +1,113 @@
+package com.morningstar.eapi.utils;
+
+import java.io.InputStream;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import org.dom4j.Document;
+import org.dom4j.DocumentException;
+import org.dom4j.Element;
+import org.dom4j.Node;
+import org.dom4j.XPath;
+import org.dom4j.io.SAXReader;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+public class XmlHelper {
+	public Document document = null;
+	private static final Logger logger = LoggerFactory.getLogger(XmlHelper.class);
+
+	public Document readStream(InputStream in) {
+		if (in == null)
+			return null;
+		SAXReader saxReader = new SAXReader();
+		try {
+			document = saxReader.read(in);
+		} catch (DocumentException e) {
+			logger.warn(e.getMessage());
+			e.printStackTrace();
+		}
+		return document;
+	}
+
+	public Document readStream(String url) {
+		SAXReader saxReader = new SAXReader();
+		InputStream in = HttpConnection.getInputStream(url);
+		try {
+			document = saxReader.read(in);
+		} catch (DocumentException e) {
+			logger.warn("Read URL wrong" + url + "/t" + e.getMessage());
+			e.printStackTrace();
+		}
+		return document;
+	}
+
+	public String getValueFromInputStream(String xPath) {
+		XPath xpath = null;
+		if (document == null)
+			return null;
+
+		xpath = document.createXPath(xPath);
+		Node node = xpath.selectSingleNode(document);
+		if (node == null)
+			return null;
+		return node.getText();
+	}
+
+	@SuppressWarnings("unchecked")
+	public int getNodeCount(String xPath) {
+		List<String> list = new ArrayList<String>();
+		if (document == null)
+			return 0;
+
+		list = document.selectNodes(xPath);
+		return list.size();
+	}
+
+	public String getDataWithNewNameSpace(String xpath) {
+		if (document == null)
+			return null;
+
+		Map<String, String> names = generateNamespaceURI(document);
+		XPath x = document.createXPath(xpath);
+		x.setNamespaceURIs(names);
+		Node node = x.selectSingleNode(document);
+		if (node == null)
+			return null;
+		return node.getText();
+	}
+
+	public Map<String, String> generateNamespaceURI(Document document) {
+		Element root = document.getRootElement();
+		String uri = root.getNamespaceURI();
+		Map<String, String> names = new HashMap<String, String>();
+		names.put("uri", uri);
+		return names;
+	}
+	
+	
+	public String getAttributeValue(Document document, String XPath, String item)
+	{
+		String result = "";
+		Element element = (Element) document.selectSingleNode(XPath);
+		result = element.attributeValue(item);
+		return result;
+	}
+	
+	
+	public Document getLocalXMLDocument(String filePath)
+	{
+		Document doc = null;
+		SAXReader xmlReader = new SAXReader();
+		try
+        {			
+			doc = xmlReader.read(filePath);
+        }catch(Exception e)
+        {
+        	logger.warn("Read XML Document error " + filePath + "\t" + e.getMessage());
+        }
+		return doc;
+	}
+}

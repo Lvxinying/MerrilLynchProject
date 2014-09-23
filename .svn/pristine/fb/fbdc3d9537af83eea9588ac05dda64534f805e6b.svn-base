@@ -1,0 +1,1466 @@
+package com.morningstar.FundAutoTest.commons;
+
+import java.sql.Connection;
+
+import java.sql.SQLException;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+import com.jolbox.bonecp.BoneCP;
+import com.jolbox.bonecp.BoneCPConfig;
+
+
+public class NewDBPool {
+	private static Logger logger = LoggerFactory.getLogger(NewDBPool.class);
+	private static BoneCP mssqlConnectionPool1 = null;
+	private static BoneCP mssqlConnectionPool2 = null;
+	private static BoneCP mssqlConnectionPool3 = null;
+	private static BoneCP mssqlConnectionPool4 = null;
+	private static BoneCP mssqlConnectionPool5 = null;
+	private static BoneCP mssqlConnectionPool6 = null;
+	private static BoneCP mssqlConnectionPool7 = null;
+	private static BoneCP mssqlConnectionPool8 = null;
+	private static BoneCP mssqlConnectionPool9 = null;
+	private static BoneCP mssqlConnectionPool10 = null;
+	
+	private static BoneCP mysqlConnectionPool1 = null;
+	private static BoneCP mysqlConnectionPool2 = null;
+	private static BoneCP mysqlConnectionPool3 = null;
+	private static BoneCP mysqlConnectionPool4 = null;
+	private static BoneCP mysqlConnectionPool5 = null;
+	private static BoneCP mysqlConnectionPool6 = null;
+	private static BoneCP mysqlConnectionPool7 = null;
+	private static BoneCP mysqlConnectionPool8 = null;
+	private static BoneCP mysqlConnectionPool9 = null;
+	private static BoneCP mysqlConnectionPool10 = null;
+	
+	private static BoneCP VerticaConnectionPool1 = null;
+	private static BoneCP VerticaConnectionPool2 = null;
+	private static BoneCP VerticaConnectionPool3 = null;
+	private static BoneCP VerticaConnectionPool4 = null;
+	private static BoneCP VerticaConnectionPool5 = null;
+	private static BoneCP VerticaConnectionPool6 = null;
+	private static BoneCP VerticaConnectionPool7 = null;
+	private static BoneCP VerticaConnectionPool8 = null;
+	private static BoneCP VerticaConnectionPool9 = null;
+	private static BoneCP VerticaConnectionPool10 = null;
+	
+
+	static {
+//MS-SQL		
+		if (mssqlConnectionPool1 == null)
+				try {
+					init_MsSQL_1();
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+		if (mssqlConnectionPool2 == null)
+			try {
+				init_MsSQL_2();
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		if (mssqlConnectionPool3 == null)
+			try {
+				init_MsSQL_3();
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		if (mssqlConnectionPool4 == null)
+			try {
+				init_MsSQL_4();
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		if (mssqlConnectionPool5 == null)
+			try {
+				init_MsSQL_5();
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		if (mssqlConnectionPool6 == null)
+			try {
+				init_MsSQL_6();
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		if (mssqlConnectionPool7 == null)
+			try {
+				init_MsSQL_7();
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		if (mssqlConnectionPool8 == null)
+			try {
+				init_MsSQL_8();
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		if (mssqlConnectionPool9 == null)
+			try {
+				init_MsSQL_9();
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		if (mssqlConnectionPool10 == null)
+			try {
+				init_MsSQL_10();
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+
+//MySQL		
+		if (mysqlConnectionPool1 == null)
+				try {
+					init_MySQL_1();
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+		if (mysqlConnectionPool2 == null)
+			try {
+				init_MySQL_2();
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		if (mysqlConnectionPool3 == null)
+			try {
+				init_MySQL_3();
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		if (mysqlConnectionPool4 == null)
+			try {
+				init_MySQL_4();
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		if (mysqlConnectionPool5 == null)
+			try {
+				init_MySQL_5();
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		if (mysqlConnectionPool6 == null)
+			try {
+				init_MySQL_6();
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		if (mysqlConnectionPool7 == null)
+			try {
+				init_MySQL_7();
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		if (mysqlConnectionPool8 == null)
+			try {
+				init_MySQL_8();
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		if (mysqlConnectionPool9 == null)
+			try {
+				init_MySQL_9();
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		if (mysqlConnectionPool10 == null)
+			try {
+				init_MySQL_10();
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+
+//Vertica		
+		if (VerticaConnectionPool1 == null)
+				try{
+					init_Vertica_1();
+				} catch(Exception e){
+					e.getMessage();
+				}
+		if (VerticaConnectionPool2 == null)
+			try{
+				init_Vertica_2();
+			} catch(Exception e){
+				e.getMessage();
+			}
+		if (VerticaConnectionPool3 == null)
+			try{
+				init_Vertica_3();
+			} catch(Exception e){
+				e.getMessage();
+			}
+		if (VerticaConnectionPool4 == null)
+			try{
+				init_Vertica_4();
+			} catch(Exception e){
+				e.getMessage();
+			}
+		if (VerticaConnectionPool5 == null)
+			try{
+				init_Vertica_5();
+			} catch(Exception e){
+				e.getMessage();
+			}
+		if (VerticaConnectionPool6 == null)
+			try{
+				init_Vertica_6();
+			} catch(Exception e){
+				e.getMessage();
+			}
+		if (VerticaConnectionPool7 == null)
+			try{
+				init_Vertica_7();
+			} catch(Exception e){
+				e.getMessage();
+			}
+		if (VerticaConnectionPool8 == null)
+			try{
+				init_Vertica_8();
+			} catch(Exception e){
+				e.getMessage();
+			}
+		if (VerticaConnectionPool9 == null)
+			try{
+				init_Vertica_9();
+			} catch(Exception e){
+				e.getMessage();
+			}
+		if (VerticaConnectionPool10 == null)
+			try{
+				init_Vertica_10();
+			} catch(Exception e){
+				e.getMessage();
+			}
+	}
+
+//  初始化数据库连接池
+//	修改 Stefan.Hou
+//初始化MS-SQL
+	public static void init_MsSQL_1() throws Exception{
+		BoneCP connectionPool = null;
+		try {
+			Class.forName(DBFactoryManager.getMssqlDriverClass(1));
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+		try {
+			BoneCPConfig config = new BoneCPConfig();
+			config.setJdbcUrl(DBFactoryManager.getMssqlUrl(1));
+			
+			config.setUsername(DBFactoryManager.getMsSQLUername(1));
+			config.setPassword(DBFactoryManager.getMsSQLPassword(1));
+			
+			config.setMaxConnectionsPerPartition(DBFactoryManager.getmaxConnectionsPerPartition());
+			config.setMinConnectionsPerPartition(DBFactoryManager.getminConnectionsPerPartition());
+			config.setPartitionCount(DBFactoryManager.getPartitionCount());
+            
+			logger.debug("Start to initialize [No1] SQL SERVER database pool...");
+			System.out.println("Start to initialize [No1] SQL SERVER database pool...");
+			long startTime = System.nanoTime();
+			connectionPool = new BoneCP(config);
+			long endTime = System.nanoTime() - startTime;
+			logger.debug("SQL SERVER [No1] DataBase initialize finished, total cost [" + endTime / (1000 * 1000) + "]ms");
+			System.out.println("SQL SERVER [No1] DataBase initialize finished, total cost [" + endTime / (1000 * 1000) + "]ms");
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		mssqlConnectionPool1 = connectionPool;
+	}
+	
+	public static void init_MsSQL_2() throws Exception{
+		BoneCP connectionPool = null;
+		try {
+			Class.forName(DBFactoryManager.getMssqlDriverClass(2));
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+		try {
+			BoneCPConfig config = new BoneCPConfig();
+			config.setJdbcUrl(DBFactoryManager.getMssqlUrl(2));
+			
+			config.setUsername(DBFactoryManager.getMsSQLUername(2));
+			config.setPassword(DBFactoryManager.getMsSQLPassword(2));
+			
+			config.setMaxConnectionsPerPartition(DBFactoryManager.getmaxConnectionsPerPartition());
+			config.setMinConnectionsPerPartition(DBFactoryManager.getminConnectionsPerPartition());
+			config.setPartitionCount(DBFactoryManager.getPartitionCount());
+            
+			logger.debug("Start to initialize [No2] SQL SERVER database pool...");
+			System.out.println("Start to initialize [No2] SQL SERVER database pool...");
+			long startTime = System.nanoTime();
+			connectionPool = new BoneCP(config);
+			long endTime = System.nanoTime() - startTime;
+			logger.debug("SQL SERVER [No2] DataBase initialize finished, total cost [" + endTime / (1000 * 1000) + "]ms");
+			System.out.println("SQL SERVER [No2] DataBase initialize finished, total cost [" + endTime / (1000 * 1000) + "]ms");
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		mssqlConnectionPool2 = connectionPool;
+	}
+	
+	public static void init_MsSQL_3() throws Exception{
+		BoneCP connectionPool = null;
+		try {
+			Class.forName(DBFactoryManager.getMssqlDriverClass(3));
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+		try {
+			BoneCPConfig config = new BoneCPConfig();
+			config.setJdbcUrl(DBFactoryManager.getMssqlUrl(3));
+			
+			config.setUsername(DBFactoryManager.getMsSQLUername(3));
+			config.setPassword(DBFactoryManager.getMsSQLPassword(3));
+			
+			config.setMaxConnectionsPerPartition(DBFactoryManager.getmaxConnectionsPerPartition());
+			config.setMinConnectionsPerPartition(DBFactoryManager.getminConnectionsPerPartition());
+			config.setPartitionCount(DBFactoryManager.getPartitionCount());
+            
+			logger.debug("Start to initialize [No3] SQL SERVER database pool...");
+			System.out.println("Start to initialize [No3] SQL SERVER database pool...");
+			long startTime = System.nanoTime();
+			connectionPool = new BoneCP(config);
+			long endTime = System.nanoTime() - startTime;
+			logger.debug("SQL SERVER [No3] DataBase initialize finished, total cost [" + endTime / (1000 * 1000) + "]ms");
+			System.out.println("SQL SERVER [No3] DataBase initialize finished, total cost [" + endTime / (1000 * 1000) + "]ms");
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		mssqlConnectionPool3 = connectionPool;
+	}
+	
+	public static void init_MsSQL_4() throws Exception{
+		BoneCP connectionPool = null;
+		try {
+			Class.forName(DBFactoryManager.getMssqlDriverClass(4));
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+		try {
+			BoneCPConfig config = new BoneCPConfig();
+			config.setJdbcUrl(DBFactoryManager.getMssqlUrl(4));
+			
+			config.setUsername(DBFactoryManager.getMsSQLUername(4));
+			config.setPassword(DBFactoryManager.getMsSQLPassword(4));
+			
+			config.setMaxConnectionsPerPartition(DBFactoryManager.getmaxConnectionsPerPartition());
+			config.setMinConnectionsPerPartition(DBFactoryManager.getminConnectionsPerPartition());
+			config.setPartitionCount(DBFactoryManager.getPartitionCount());
+            
+			logger.debug("Start to initialize [No4] SQL SERVER database pool...");
+			System.out.println("Start to initialize [No4] SQL SERVER database pool...");
+			long startTime = System.nanoTime();
+			connectionPool = new BoneCP(config);
+			long endTime = System.nanoTime() - startTime;
+			logger.debug("SQL SERVER [No4] DataBase initialize finished, total cost [" + endTime / (1000 * 1000) + "]ms");
+			System.out.println("SQL SERVER [No4] DataBase initialize finished, total cost [" + endTime / (1000 * 1000) + "]ms");
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		mssqlConnectionPool4 = connectionPool;
+	}
+	
+	public static void init_MsSQL_5() throws Exception{
+		BoneCP connectionPool = null;
+		try {
+			Class.forName(DBFactoryManager.getMssqlDriverClass(5));
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+		try {
+			BoneCPConfig config = new BoneCPConfig();
+			config.setJdbcUrl(DBFactoryManager.getMssqlUrl(5));
+			
+			config.setUsername(DBFactoryManager.getMsSQLUername(5));
+			config.setPassword(DBFactoryManager.getMsSQLPassword(5));
+			
+			config.setMaxConnectionsPerPartition(DBFactoryManager.getmaxConnectionsPerPartition());
+			config.setMinConnectionsPerPartition(DBFactoryManager.getminConnectionsPerPartition());
+			config.setPartitionCount(DBFactoryManager.getPartitionCount());
+            
+			logger.debug("Start to initialize [No5] SQL SERVER database pool...");
+			System.out.println("Start to initialize [No1] SQL SERVER database pool...");
+			long startTime = System.nanoTime();
+			connectionPool = new BoneCP(config);
+			long endTime = System.nanoTime() - startTime;
+			logger.debug("SQL SERVER [No5] DataBase initialize finished, total cost [" + endTime / (1000 * 1000) + "]ms");
+			System.out.println("SQL SERVER [No5] DataBase initialize finished, total cost [" + endTime / (1000 * 1000) + "]ms");
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		mssqlConnectionPool5 = connectionPool;
+	}
+	
+	public static void init_MsSQL_6() throws Exception{
+		BoneCP connectionPool = null;
+		try {
+			Class.forName(DBFactoryManager.getMssqlDriverClass(6));
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+		try {
+			BoneCPConfig config = new BoneCPConfig();
+			config.setJdbcUrl(DBFactoryManager.getMssqlUrl(6));
+			
+			config.setUsername(DBFactoryManager.getMsSQLUername(6));
+			config.setPassword(DBFactoryManager.getMsSQLPassword(6));
+			
+			config.setMaxConnectionsPerPartition(DBFactoryManager.getmaxConnectionsPerPartition());
+			config.setMinConnectionsPerPartition(DBFactoryManager.getminConnectionsPerPartition());
+			config.setPartitionCount(DBFactoryManager.getPartitionCount());
+            
+			logger.debug("Start to initialize [No6] SQL SERVER database pool...");
+			System.out.println("Start to initialize [No6] SQL SERVER database pool...");
+			long startTime = System.nanoTime();
+			connectionPool = new BoneCP(config);
+			long endTime = System.nanoTime() - startTime;
+			logger.debug("SQL SERVER [No6] DataBase initialize finished, total cost [" + endTime / (1000 * 1000) + "]ms");
+			System.out.println("SQL SERVER [No6] DataBase initialize finished, total cost [" + endTime / (1000 * 1000) + "]ms");
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		mssqlConnectionPool6 = connectionPool;
+	}
+	
+	public static void init_MsSQL_7() throws Exception{
+		BoneCP connectionPool = null;
+		try {
+			Class.forName(DBFactoryManager.getMssqlDriverClass(7));
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+		try {
+			BoneCPConfig config = new BoneCPConfig();
+			config.setJdbcUrl(DBFactoryManager.getMssqlUrl(7));
+			
+//			config.setUsername(DBFactoryManager.getMsSQLUername(7));
+			config.setPassword(DBFactoryManager.getMsSQLPassword(7));
+			
+			config.setMaxConnectionsPerPartition(DBFactoryManager.getmaxConnectionsPerPartition());
+			config.setMinConnectionsPerPartition(DBFactoryManager.getminConnectionsPerPartition());
+			config.setPartitionCount(DBFactoryManager.getPartitionCount());
+            
+			logger.debug("Start to initialize [No7] SQL SERVER database pool...");
+			System.out.println("Start to initialize [No7] SQL SERVER database pool...");
+			long startTime = System.nanoTime();
+			connectionPool = new BoneCP(config);
+			long endTime = System.nanoTime() - startTime;
+			logger.debug("SQL SERVER [No7] DataBase initialize finished, total cost [" + endTime / (1000 * 1000) + "]ms");
+			System.out.println("SQL SERVER [No7] DataBase initialize finished, total cost [" + endTime / (1000 * 1000) + "]ms");
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		mssqlConnectionPool7 = connectionPool;
+	}
+	
+	public static void init_MsSQL_8() throws Exception{
+		BoneCP connectionPool = null;
+		try {
+			Class.forName(DBFactoryManager.getMssqlDriverClass(8));
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+		try {
+			BoneCPConfig config = new BoneCPConfig();
+			config.setJdbcUrl(DBFactoryManager.getMssqlUrl(8));
+			
+			config.setUsername(DBFactoryManager.getMsSQLUername(8));
+			config.setPassword(DBFactoryManager.getMsSQLPassword(8));
+			
+			config.setMaxConnectionsPerPartition(DBFactoryManager.getmaxConnectionsPerPartition());
+			config.setMinConnectionsPerPartition(DBFactoryManager.getminConnectionsPerPartition());
+			config.setPartitionCount(DBFactoryManager.getPartitionCount());
+            
+			logger.debug("Start to initialize [No8] SQL SERVER database pool...");
+			System.out.println("Start to initialize [No8] SQL SERVER database pool...");
+			long startTime = System.nanoTime();
+			connectionPool = new BoneCP(config);
+			long endTime = System.nanoTime() - startTime;
+			logger.debug("SQL SERVER [No8] DataBase initialize finished, total cost [" + endTime / (1000 * 1000) + "]ms");
+			System.out.println("SQL SERVER [No8] DataBase initialize finished, total cost [" + endTime / (1000 * 1000) + "]ms");
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		mssqlConnectionPool8 = connectionPool;
+	}
+	
+	public static void init_MsSQL_9() throws Exception{
+		BoneCP connectionPool = null;
+		try {
+			Class.forName(DBFactoryManager.getMssqlDriverClass(1));
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+		try {
+			BoneCPConfig config = new BoneCPConfig();
+			config.setJdbcUrl(DBFactoryManager.getMssqlUrl(9));
+			
+			config.setUsername(DBFactoryManager.getMsSQLUername(9));
+			config.setPassword(DBFactoryManager.getMsSQLPassword(9));
+			
+			config.setMaxConnectionsPerPartition(DBFactoryManager.getmaxConnectionsPerPartition());
+			config.setMinConnectionsPerPartition(DBFactoryManager.getminConnectionsPerPartition());
+			config.setPartitionCount(DBFactoryManager.getPartitionCount());
+            
+			logger.debug("Start to initialize [No9] SQL SERVER database pool...");
+			System.out.println("Start to initialize [No9] SQL SERVER database pool...");
+			long startTime = System.nanoTime();
+			connectionPool = new BoneCP(config);
+			long endTime = System.nanoTime() - startTime;
+			logger.debug("SQL SERVER [No9] DataBase initialize finished, total cost [" + endTime / (1000 * 1000) + "]ms");
+			System.out.println("SQL SERVER [No9] DataBase initialize finished, total cost [" + endTime / (1000 * 1000) + "]ms");
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		mssqlConnectionPool9 = connectionPool;
+	}
+	
+	public static void init_MsSQL_10() throws Exception{
+		BoneCP connectionPool = null;
+		try {
+			Class.forName(DBFactoryManager.getMssqlDriverClass(10));
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+		try {
+			BoneCPConfig config = new BoneCPConfig();
+			config.setJdbcUrl(DBFactoryManager.getMssqlUrl(10));
+			
+			config.setUsername(DBFactoryManager.getMsSQLUername(10));
+			config.setPassword(DBFactoryManager.getMsSQLPassword(10));
+			
+			config.setMaxConnectionsPerPartition(DBFactoryManager.getmaxConnectionsPerPartition());
+			config.setMinConnectionsPerPartition(DBFactoryManager.getminConnectionsPerPartition());
+			config.setPartitionCount(DBFactoryManager.getPartitionCount());
+            
+			logger.debug("Start to initialize [No10] SQL SERVER database pool...");
+			System.out.println("Start to initialize [No10] SQL SERVER database pool...");
+			long startTime = System.nanoTime();
+			connectionPool = new BoneCP(config);
+			long endTime = System.nanoTime() - startTime;
+			logger.debug("SQL SERVER [No10] DataBase initialize finished, total cost [" + endTime / (1000 * 1000) + "]ms");
+			System.out.println("SQL SERVER [No10] DataBase initialize finished, total cost [" + endTime / (1000 * 1000) + "]ms");
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		mssqlConnectionPool10 = connectionPool;
+	}
+
+	
+//初始化MySQL	
+	public static void init_MySQL_1() throws Exception {
+		BoneCP connectionPool = null;
+		try {
+			Class.forName(DBFactoryManager.getMysqlDriverClass(1));
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+		try {
+			BoneCPConfig config = new BoneCPConfig();
+			config.setJdbcUrl(DBFactoryManager.getMssqlUrl(1));
+			
+			config.setUsername(DBFactoryManager.getMySQLUername(1));
+			config.setPassword(DBFactoryManager.getMySQLPassword(1));
+
+			config.setMaxConnectionsPerPartition(DBFactoryManager.getmaxConnectionsPerPartition());
+			config.setMinConnectionsPerPartition(DBFactoryManager.getminConnectionsPerPartition());
+			config.setPartitionCount(DBFactoryManager.getPartitionCount());
+            
+			logger.debug("Start to initialize MYSQL [No1] database pool...");
+			System.out.println("Start to initialize MySQL [No1] database pool...");
+			long startTime = System.nanoTime();
+			connectionPool = new BoneCP(config);
+			long endTime = System.nanoTime() - startTime;
+			logger.debug("MySQL [No1] DataBase initialize finished, total cost [" + endTime / (1000 * 1000) + "]ms");
+			System.out.println("MySQL [No1] DataBase initialize finished, total cost [" + endTime / (1000 * 1000) + "]ms");
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		mssqlConnectionPool1 = connectionPool;
+	}
+	
+	public static void init_MySQL_2() throws Exception {
+		BoneCP connectionPool = null;
+		try {
+			Class.forName(DBFactoryManager.getMysqlDriverClass(2));
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+		try {
+			BoneCPConfig config = new BoneCPConfig();
+			config.setJdbcUrl(DBFactoryManager.getMssqlUrl(2));
+			
+			config.setUsername(DBFactoryManager.getMySQLUername(2));
+			config.setPassword(DBFactoryManager.getMySQLPassword(2));
+
+			config.setMaxConnectionsPerPartition(DBFactoryManager.getmaxConnectionsPerPartition());
+			config.setMinConnectionsPerPartition(DBFactoryManager.getminConnectionsPerPartition());
+			config.setPartitionCount(DBFactoryManager.getPartitionCount());
+            
+			logger.debug("Start to initialize MYSQL [No2] database pool...");
+			System.out.println("Start to initialize MySQL [No2] database pool...");
+			long startTime = System.nanoTime();
+			connectionPool = new BoneCP(config);
+			long endTime = System.nanoTime() - startTime;
+			logger.debug("MySQL [No2] DataBase initialize finished, total cost [" + endTime / (1000 * 1000) + "]ms");
+			System.out.println("MySQL [No2] DataBase initialize finished, total cost [" + endTime / (1000 * 1000) + "]ms");
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		mssqlConnectionPool2 = connectionPool;
+	}
+	
+	public static void init_MySQL_3() throws Exception {
+		BoneCP connectionPool = null;
+		try {
+			Class.forName(DBFactoryManager.getMysqlDriverClass(3));
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+		try {
+			BoneCPConfig config = new BoneCPConfig();
+			config.setJdbcUrl(DBFactoryManager.getMssqlUrl(3));
+			
+			config.setUsername(DBFactoryManager.getMySQLUername(3));
+			config.setPassword(DBFactoryManager.getMySQLPassword(3));
+
+			config.setMaxConnectionsPerPartition(DBFactoryManager.getmaxConnectionsPerPartition());
+			config.setMinConnectionsPerPartition(DBFactoryManager.getminConnectionsPerPartition());
+			config.setPartitionCount(DBFactoryManager.getPartitionCount());
+            
+			logger.debug("Start to initialize MYSQL [No3] database pool...");
+			System.out.println("Start to initialize MySQL [No3] database pool...");
+			long startTime = System.nanoTime();
+			connectionPool = new BoneCP(config);
+			long endTime = System.nanoTime() - startTime;
+			logger.debug("MySQL [No3] DataBase initialize finished, total cost [" + endTime / (1000 * 1000) + "]ms");
+			System.out.println("MySQL [No3] DataBase initialize finished, total cost [" + endTime / (1000 * 1000) + "]ms");
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		mssqlConnectionPool3 = connectionPool;
+	}
+	
+	public static void init_MySQL_4() throws Exception {
+		BoneCP connectionPool = null;
+		try {
+			Class.forName(DBFactoryManager.getMysqlDriverClass(4));
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+		try {
+			BoneCPConfig config = new BoneCPConfig();
+			config.setJdbcUrl(DBFactoryManager.getMssqlUrl(4));
+			
+			config.setUsername(DBFactoryManager.getMySQLUername(4));
+			config.setPassword(DBFactoryManager.getMySQLPassword(4));
+
+			config.setMaxConnectionsPerPartition(DBFactoryManager.getmaxConnectionsPerPartition());
+			config.setMinConnectionsPerPartition(DBFactoryManager.getminConnectionsPerPartition());
+			config.setPartitionCount(DBFactoryManager.getPartitionCount());
+            
+			logger.debug("Start to initialize MYSQL [No4] database pool...");
+			System.out.println("Start to initialize MySQL [No4] database pool...");
+			long startTime = System.nanoTime();
+			connectionPool = new BoneCP(config);
+			long endTime = System.nanoTime() - startTime;
+			logger.debug("MySQL [No4] DataBase initialize finished, total cost [" + endTime / (1000 * 1000) + "]ms");
+			System.out.println("MySQL [No4] DataBase initialize finished, total cost [" + endTime / (1000 * 1000) + "]ms");
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		mssqlConnectionPool4 = connectionPool;
+	}
+	
+	public static void init_MySQL_5() throws Exception {
+		BoneCP connectionPool = null;
+		try {
+			Class.forName(DBFactoryManager.getMysqlDriverClass(5));
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+		try {
+			BoneCPConfig config = new BoneCPConfig();
+			config.setJdbcUrl(DBFactoryManager.getMssqlUrl(5));
+			
+			config.setUsername(DBFactoryManager.getMySQLUername(5));
+			config.setPassword(DBFactoryManager.getMySQLPassword(5));
+
+			config.setMaxConnectionsPerPartition(DBFactoryManager.getmaxConnectionsPerPartition());
+			config.setMinConnectionsPerPartition(DBFactoryManager.getminConnectionsPerPartition());
+			config.setPartitionCount(DBFactoryManager.getPartitionCount());
+            
+			logger.debug("Start to initialize MYSQL [No5] database pool...");
+			System.out.println("Start to initialize MySQL [No5] database pool...");
+			long startTime = System.nanoTime();
+			connectionPool = new BoneCP(config);
+			long endTime = System.nanoTime() - startTime;
+			logger.debug("MySQL [No5] DataBase initialize finished, total cost [" + endTime / (1000 * 1000) + "]ms");
+			System.out.println("MySQL [No5] DataBase initialize finished, total cost [" + endTime / (1000 * 1000) + "]ms");
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		mssqlConnectionPool5 = connectionPool;
+	}
+	
+	public static void init_MySQL_6() throws Exception {
+		BoneCP connectionPool = null;
+		try {
+			Class.forName(DBFactoryManager.getMysqlDriverClass(6));
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+		try {
+			BoneCPConfig config = new BoneCPConfig();
+			config.setJdbcUrl(DBFactoryManager.getMssqlUrl(6));
+			
+			config.setUsername(DBFactoryManager.getMySQLUername(6));
+			config.setPassword(DBFactoryManager.getMySQLPassword(6));
+
+			config.setMaxConnectionsPerPartition(DBFactoryManager.getmaxConnectionsPerPartition());
+			config.setMinConnectionsPerPartition(DBFactoryManager.getminConnectionsPerPartition());
+			config.setPartitionCount(DBFactoryManager.getPartitionCount());
+            
+			logger.debug("Start to initialize MYSQL [No6] database pool...");
+			System.out.println("Start to initialize MySQL [No6] database pool...");
+			long startTime = System.nanoTime();
+			connectionPool = new BoneCP(config);
+			long endTime = System.nanoTime() - startTime;
+			logger.debug("MySQL [No6] DataBase initialize finished, total cost [" + endTime / (1000 * 1000) + "]ms");
+			System.out.println("MySQL [No6] DataBase initialize finished, total cost [" + endTime / (1000 * 1000) + "]ms");
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		mssqlConnectionPool6 = connectionPool;
+	}
+	
+	public static void init_MySQL_7() throws Exception {
+		BoneCP connectionPool = null;
+		try {
+			Class.forName(DBFactoryManager.getMysqlDriverClass(6));
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+		try {
+			BoneCPConfig config = new BoneCPConfig();
+			config.setJdbcUrl(DBFactoryManager.getMssqlUrl(7));
+			
+			config.setUsername(DBFactoryManager.getMySQLUername(7));
+			config.setPassword(DBFactoryManager.getMySQLPassword(6));
+
+			config.setMaxConnectionsPerPartition(DBFactoryManager.getmaxConnectionsPerPartition());
+			config.setMinConnectionsPerPartition(DBFactoryManager.getminConnectionsPerPartition());
+			config.setPartitionCount(DBFactoryManager.getPartitionCount());
+            
+			logger.debug("Start to initialize MYSQL [No7] database pool...");
+			System.out.println("Start to initialize MySQL [No7] database pool...");
+			long startTime = System.nanoTime();
+			connectionPool = new BoneCP(config);
+			long endTime = System.nanoTime() - startTime;
+			logger.debug("MySQL [No7] DataBase initialize finished, total cost [" + endTime / (1000 * 1000) + "]ms");
+			System.out.println("MySQL [No7] DataBase initialize finished, total cost [" + endTime / (1000 * 1000) + "]ms");
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		mssqlConnectionPool7 = connectionPool;
+	}
+	
+	public static void init_MySQL_8() throws Exception {
+		BoneCP connectionPool = null;
+		try {
+			Class.forName(DBFactoryManager.getMysqlDriverClass(8));
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+		try {
+			BoneCPConfig config = new BoneCPConfig();
+			config.setJdbcUrl(DBFactoryManager.getMssqlUrl(8));
+			
+			config.setUsername(DBFactoryManager.getMySQLUername(8));
+			config.setPassword(DBFactoryManager.getMySQLPassword(8));
+
+			config.setMaxConnectionsPerPartition(DBFactoryManager.getmaxConnectionsPerPartition());
+			config.setMinConnectionsPerPartition(DBFactoryManager.getminConnectionsPerPartition());
+			config.setPartitionCount(DBFactoryManager.getPartitionCount());
+            
+			logger.debug("Start to initialize MYSQL [No8] database pool...");
+			System.out.println("Start to initialize MySQL [No8] database pool...");
+			long startTime = System.nanoTime();
+			connectionPool = new BoneCP(config);
+			long endTime = System.nanoTime() - startTime;
+			logger.debug("MySQL [No8] DataBase initialize finished, total cost [" + endTime / (1000 * 1000) + "]ms");
+			System.out.println("MySQL [No8] DataBase initialize finished, total cost [" + endTime / (1000 * 1000) + "]ms");
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		mssqlConnectionPool8 = connectionPool;
+	}
+	
+	public static void init_MySQL_9() throws Exception {
+		BoneCP connectionPool = null;
+		try {
+			Class.forName(DBFactoryManager.getMysqlDriverClass(9));
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+		try {
+			BoneCPConfig config = new BoneCPConfig();
+			config.setJdbcUrl(DBFactoryManager.getMssqlUrl(9));
+			
+			config.setUsername(DBFactoryManager.getMySQLUername(9));
+			config.setPassword(DBFactoryManager.getMySQLPassword(9));
+
+			config.setMaxConnectionsPerPartition(DBFactoryManager.getmaxConnectionsPerPartition());
+			config.setMinConnectionsPerPartition(DBFactoryManager.getminConnectionsPerPartition());
+			config.setPartitionCount(DBFactoryManager.getPartitionCount());
+            
+			logger.debug("Start to initialize MYSQL [No9] database pool...");
+			System.out.println("Start to initialize MySQL [No9] database pool...");
+			long startTime = System.nanoTime();
+			connectionPool = new BoneCP(config);
+			long endTime = System.nanoTime() - startTime;
+			logger.debug("MySQL [No9] DataBase initialize finished, total cost [" + endTime / (1000 * 1000) + "]ms");
+			System.out.println("MySQL [No9] DataBase initialize finished, total cost [" + endTime / (1000 * 1000) + "]ms");
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		mssqlConnectionPool9 = connectionPool;
+	}
+	
+	public static void init_MySQL_10() throws Exception {
+		BoneCP connectionPool = null;
+		try {
+			Class.forName(DBFactoryManager.getMysqlDriverClass(10));
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+		try {
+			BoneCPConfig config = new BoneCPConfig();
+			config.setJdbcUrl(DBFactoryManager.getMssqlUrl(10));
+			
+			config.setUsername(DBFactoryManager.getMySQLUername(10));
+			config.setPassword(DBFactoryManager.getMySQLPassword(10));
+
+			config.setMaxConnectionsPerPartition(DBFactoryManager.getmaxConnectionsPerPartition());
+			config.setMinConnectionsPerPartition(DBFactoryManager.getminConnectionsPerPartition());
+			config.setPartitionCount(DBFactoryManager.getPartitionCount());
+            
+			logger.debug("Start to initialize MYSQL [No10] database pool...");
+			System.out.println("Start to initialize MySQL [No10] database pool...");
+			long startTime = System.nanoTime();
+			connectionPool = new BoneCP(config);
+			long endTime = System.nanoTime() - startTime;
+			logger.debug("MySQL [No10] DataBase initialize finished, total cost [" + endTime / (1000 * 1000) + "]ms");
+			System.out.println("MySQL [No10] DataBase initialize finished, total cost [" + endTime / (1000 * 1000) + "]ms");
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		mssqlConnectionPool10 = connectionPool;
+	}
+
+//初始化Vertica	
+	public static void init_Vertica_1() throws Exception {
+		BoneCP connectionPool = null;
+		try {
+			Class.forName(DBFactoryManager.getVerticaDriverClass(1));
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+		try {
+			BoneCPConfig config = new BoneCPConfig();
+			config.setJdbcUrl(DBFactoryManager.getVerticaUrl(1));
+			config.setUsername(DBFactoryManager.getVerticaUername(1));
+			config.setPassword(DBFactoryManager.getVerticaPassword(1));
+			config.setMaxConnectionsPerPartition(DBFactoryManager.getmaxConnectionsPerPartition());
+			config.setMinConnectionsPerPartition(DBFactoryManager.getminConnectionsPerPartition());
+			config.setPartitionCount(DBFactoryManager.getPartitionCount());
+
+			logger.debug("Start to initialize Vertica [No1] database pool...");
+			System.out.println("Start to initialize Vertica [No1] database pool...");
+			long startTime = System.nanoTime();
+			connectionPool = new BoneCP(config);
+			long endTime = System.nanoTime() - startTime;
+			logger.debug("Vertica [No1] DataBase initialize finished,total cost [" + endTime / (1000 * 1000) + "]ms");
+			System.out.println("Vertica [No1] DataBase initialize finished, total cost [" + endTime / (1000 * 1000) + "]ms");
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		VerticaConnectionPool1 = connectionPool;
+	}
+	
+	public static void init_Vertica_2() throws Exception {
+		BoneCP connectionPool = null;
+		try {
+			Class.forName(DBFactoryManager.getVerticaDriverClass(2));
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+		try {
+			BoneCPConfig config = new BoneCPConfig();
+			config.setJdbcUrl(DBFactoryManager.getVerticaUrl(2));
+			config.setUsername(DBFactoryManager.getVerticaUername(2));
+			config.setPassword(DBFactoryManager.getVerticaPassword(2));
+			config.setMaxConnectionsPerPartition(DBFactoryManager.getmaxConnectionsPerPartition());
+			config.setMinConnectionsPerPartition(DBFactoryManager.getminConnectionsPerPartition());
+			config.setPartitionCount(DBFactoryManager.getPartitionCount());
+
+			logger.debug("Start to initialize Vertica [No2] database pool...");
+			System.out.println("Start to initialize Vertica [No2] database pool...");
+			long startTime = System.nanoTime();
+			connectionPool = new BoneCP(config);
+			long endTime = System.nanoTime() - startTime;
+			logger.debug("Vertica [No2] DataBase initialize finished,total cost [" + endTime / (1000 * 1000) + "]ms");
+			System.out.println("Vertica [No2] DataBase initialize finished, total cost [" + endTime / (1000 * 1000) + "]ms");
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		VerticaConnectionPool2 = connectionPool;
+	}
+	
+	public static void init_Vertica_3() throws Exception {
+		BoneCP connectionPool = null;
+		try {
+			Class.forName(DBFactoryManager.getVerticaDriverClass(3));
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+		try {
+			BoneCPConfig config = new BoneCPConfig();
+			config.setJdbcUrl(DBFactoryManager.getVerticaUrl(3));
+			config.setUsername(DBFactoryManager.getVerticaUername(3));
+			config.setPassword(DBFactoryManager.getVerticaPassword(3));
+			config.setMaxConnectionsPerPartition(DBFactoryManager.getmaxConnectionsPerPartition());
+			config.setMinConnectionsPerPartition(DBFactoryManager.getminConnectionsPerPartition());
+			config.setPartitionCount(DBFactoryManager.getPartitionCount());
+
+			logger.debug("Start to initialize Vertica [No3] database pool...");
+			System.out.println("Start to initialize Vertica [No3] database pool...");
+			long startTime = System.nanoTime();
+			connectionPool = new BoneCP(config);
+			long endTime = System.nanoTime() - startTime;
+			logger.debug("Vertica [No3] DataBase initialize finished,total cost [" + endTime / (1000 * 1000) + "]ms");
+			System.out.println("Vertica [No3] DataBase initialize finished, total cost [" + endTime / (1000 * 1000) + "]ms");
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		VerticaConnectionPool3 = connectionPool;
+	}
+	
+	public static void init_Vertica_4() throws Exception {
+		BoneCP connectionPool = null;
+		try {
+			Class.forName(DBFactoryManager.getVerticaDriverClass(4));
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+		try {
+			BoneCPConfig config = new BoneCPConfig();
+			config.setJdbcUrl(DBFactoryManager.getVerticaUrl(4));
+			config.setUsername(DBFactoryManager.getVerticaUername(4));
+			config.setPassword(DBFactoryManager.getVerticaPassword(4));
+			config.setMaxConnectionsPerPartition(DBFactoryManager.getmaxConnectionsPerPartition());
+			config.setMinConnectionsPerPartition(DBFactoryManager.getminConnectionsPerPartition());
+			config.setPartitionCount(DBFactoryManager.getPartitionCount());
+
+			logger.debug("Start to initialize Vertica [No4] database pool...");
+			System.out.println("Start to initialize Vertica [No4] database pool...");
+			long startTime = System.nanoTime();
+			connectionPool = new BoneCP(config);
+			long endTime = System.nanoTime() - startTime;
+			logger.debug("Vertica [No4] DataBase initialize finished,total cost [" + endTime / (1000 * 1000) + "]ms");
+			System.out.println("Vertica [No4] DataBase initialize finished, total cost [" + endTime / (1000 * 1000) + "]ms");
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		VerticaConnectionPool4 = connectionPool;
+	}
+	
+	public static void init_Vertica_5() throws Exception {
+		BoneCP connectionPool = null;
+		try {
+			Class.forName(DBFactoryManager.getVerticaDriverClass(5));
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+		try {
+			BoneCPConfig config = new BoneCPConfig();
+			config.setJdbcUrl(DBFactoryManager.getVerticaUrl(5));
+			config.setUsername(DBFactoryManager.getVerticaUername(5));
+			config.setPassword(DBFactoryManager.getVerticaPassword(5));
+			config.setMaxConnectionsPerPartition(DBFactoryManager.getmaxConnectionsPerPartition());
+			config.setMinConnectionsPerPartition(DBFactoryManager.getminConnectionsPerPartition());
+			config.setPartitionCount(DBFactoryManager.getPartitionCount());
+
+			logger.debug("Start to initialize Vertica [No5] database pool...");
+			System.out.println("Start to initialize Vertica [No5] database pool...");
+			long startTime = System.nanoTime();
+			connectionPool = new BoneCP(config);
+			long endTime = System.nanoTime() - startTime;
+			logger.debug("Vertica [No5] DataBase initialize finished,total cost [" + endTime / (1000 * 1000) + "]ms");
+			System.out.println("Vertica [No5] DataBase initialize finished, total cost [" + endTime / (1000 * 1000) + "]ms");
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		VerticaConnectionPool5 = connectionPool;
+	}
+	
+	public static void init_Vertica_6() throws Exception {
+		BoneCP connectionPool = null;
+		try {
+			Class.forName(DBFactoryManager.getVerticaDriverClass(6));
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+		try {
+			BoneCPConfig config = new BoneCPConfig();
+			config.setJdbcUrl(DBFactoryManager.getVerticaUrl(6));
+			config.setUsername(DBFactoryManager.getVerticaUername(6));
+			config.setPassword(DBFactoryManager.getVerticaPassword(6));
+			config.setMaxConnectionsPerPartition(DBFactoryManager.getmaxConnectionsPerPartition());
+			config.setMinConnectionsPerPartition(DBFactoryManager.getminConnectionsPerPartition());
+			config.setPartitionCount(DBFactoryManager.getPartitionCount());
+
+			logger.debug("Start to initialize Vertica [No6] database pool...");
+			System.out.println("Start to initialize Vertica [No6] database pool...");
+			long startTime = System.nanoTime();
+			connectionPool = new BoneCP(config);
+			long endTime = System.nanoTime() - startTime;
+			logger.debug("Vertica [No6] DataBase initialize finished,total cost [" + endTime / (1000 * 1000) + "]ms");
+			System.out.println("Vertica [No6] DataBase initialize finished, total cost [" + endTime / (1000 * 1000) + "]ms");
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		VerticaConnectionPool6 = connectionPool;
+	}
+	
+	public static void init_Vertica_7() throws Exception {
+		BoneCP connectionPool = null;
+		try {
+			Class.forName(DBFactoryManager.getVerticaDriverClass(7));
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+		try {
+			BoneCPConfig config = new BoneCPConfig();
+			config.setJdbcUrl(DBFactoryManager.getVerticaUrl(7));
+			config.setUsername(DBFactoryManager.getVerticaUername(7));
+			config.setPassword(DBFactoryManager.getVerticaPassword(7));
+			config.setMaxConnectionsPerPartition(DBFactoryManager.getmaxConnectionsPerPartition());
+			config.setMinConnectionsPerPartition(DBFactoryManager.getminConnectionsPerPartition());
+			config.setPartitionCount(DBFactoryManager.getPartitionCount());
+
+			logger.debug("Start to initialize Vertica [No7] database pool...");
+			System.out.println("Start to initialize Vertica [No7] database pool...");
+			long startTime = System.nanoTime();
+			connectionPool = new BoneCP(config);
+			long endTime = System.nanoTime() - startTime;
+			logger.debug("Vertica [No7] DataBase initialize finished,total cost [" + endTime / (1000 * 1000) + "]ms");
+			System.out.println("Vertica [No7] DataBase initialize finished, total cost [" + endTime / (1000 * 1000) + "]ms");
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		VerticaConnectionPool7 = connectionPool;
+	}
+	
+	public static void init_Vertica_8() throws Exception {
+		BoneCP connectionPool = null;
+		try {
+			Class.forName(DBFactoryManager.getVerticaDriverClass(8));
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+		try {
+			BoneCPConfig config = new BoneCPConfig();
+			config.setJdbcUrl(DBFactoryManager.getVerticaUrl(8));
+			config.setUsername(DBFactoryManager.getVerticaUername(8));
+			config.setPassword(DBFactoryManager.getVerticaPassword(8));
+			config.setMaxConnectionsPerPartition(DBFactoryManager.getmaxConnectionsPerPartition());
+			config.setMinConnectionsPerPartition(DBFactoryManager.getminConnectionsPerPartition());
+			config.setPartitionCount(DBFactoryManager.getPartitionCount());
+
+			logger.debug("Start to initialize Vertica [No8] database pool...");
+			System.out.println("Start to initialize Vertica [No8] database pool...");
+			long startTime = System.nanoTime();
+			connectionPool = new BoneCP(config);
+			long endTime = System.nanoTime() - startTime;
+			logger.debug("Vertica [No8] DataBase initialize finished,total cost [" + endTime / (1000 * 1000) + "]ms");
+			System.out.println("Vertica [No8] DataBase initialize finished, total cost [" + endTime / (1000 * 1000) + "]ms");
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		VerticaConnectionPool8 = connectionPool;
+	}
+	
+	public static void init_Vertica_9() throws Exception {
+		BoneCP connectionPool = null;
+		try {
+			Class.forName(DBFactoryManager.getVerticaDriverClass(9));
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+		try {
+			BoneCPConfig config = new BoneCPConfig();
+			config.setJdbcUrl(DBFactoryManager.getVerticaUrl(9));
+			config.setUsername(DBFactoryManager.getVerticaUername(9));
+			config.setPassword(DBFactoryManager.getVerticaPassword(9));
+			config.setMaxConnectionsPerPartition(DBFactoryManager.getmaxConnectionsPerPartition());
+			config.setMinConnectionsPerPartition(DBFactoryManager.getminConnectionsPerPartition());
+			config.setPartitionCount(DBFactoryManager.getPartitionCount());
+
+			logger.debug("Start to initialize Vertica [No9] database pool...");
+			System.out.println("Start to initialize Vertica [No9] database pool...");
+			long startTime = System.nanoTime();
+			connectionPool = new BoneCP(config);
+			long endTime = System.nanoTime() - startTime;
+			logger.debug("Vertica [No9] DataBase initialize finished,total cost [" + endTime / (1000 * 1000) + "]ms");
+			System.out.println("Vertica [No9] DataBase initialize finished, total cost [" + endTime / (1000 * 1000) + "]ms");
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		VerticaConnectionPool9 = connectionPool;
+	}
+	
+	public static void init_Vertica_10() throws Exception {
+		BoneCP connectionPool = null;
+		try {
+			Class.forName(DBFactoryManager.getVerticaDriverClass(10));
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+		try {
+			BoneCPConfig config = new BoneCPConfig();
+			config.setJdbcUrl(DBFactoryManager.getVerticaUrl(10));
+			config.setUsername(DBFactoryManager.getVerticaUername(10));
+			config.setPassword(DBFactoryManager.getVerticaPassword(10));
+			config.setMaxConnectionsPerPartition(DBFactoryManager.getmaxConnectionsPerPartition());
+			config.setMinConnectionsPerPartition(DBFactoryManager.getminConnectionsPerPartition());
+			config.setPartitionCount(DBFactoryManager.getPartitionCount());
+
+			logger.debug("Start to initialize Vertica [No10] database pool...");
+			System.out.println("Start to initialize Vertica [No10] database pool...");
+			long startTime = System.nanoTime();
+			connectionPool = new BoneCP(config);
+			long endTime = System.nanoTime() - startTime;
+			logger.debug("Vertica [No10] DataBase initialize finished,total cost [" + endTime / (1000 * 1000) + "]ms");
+			System.out.println("Vertica [No10] DataBase initialize finished, total cost [" + endTime / (1000 * 1000) + "]ms");
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		VerticaConnectionPool10 = connectionPool;
+	}
+	
+	public static Connection getConnection_MsSQL(int DBNumber) {
+		switch(DBNumber){
+		case 1:
+			if (mssqlConnectionPool1 != null)
+				try {
+					return mssqlConnectionPool1.getConnection();
+				} catch (SQLException e) {
+					e.printStackTrace();
+				}
+			break;
+		case 2:
+			if (mssqlConnectionPool2 != null)
+				try {
+					return mssqlConnectionPool2.getConnection();
+				} catch (SQLException e) {
+					e.printStackTrace();
+				}
+			break;
+		case 3:
+			if (mssqlConnectionPool3 != null)
+				try {
+					return mssqlConnectionPool3.getConnection();
+				} catch (SQLException e) {
+					e.printStackTrace();
+				}
+			break;
+		case 4:
+			if (mssqlConnectionPool4 != null)
+				try {
+					return mssqlConnectionPool4.getConnection();
+				} catch (SQLException e) {
+					e.printStackTrace();
+				}
+			break;
+		case 5:
+			if (mssqlConnectionPool5 != null)
+				try {
+					return mssqlConnectionPool5.getConnection();
+				} catch (SQLException e) {
+					e.printStackTrace();
+				}
+			break;
+		case 6:
+			if (mssqlConnectionPool6 != null)
+				try {
+					return mssqlConnectionPool6.getConnection();
+				} catch (SQLException e) {
+					e.printStackTrace();
+				}
+			break;
+		case 7:
+			if (mssqlConnectionPool7 != null)
+				try {
+					return mssqlConnectionPool7.getConnection();
+				} catch (SQLException e) {
+					e.printStackTrace();
+				}
+			break;
+		case 8:
+			if (mssqlConnectionPool8 != null)
+				try {
+					return mssqlConnectionPool8.getConnection();
+				} catch (SQLException e) {
+					e.printStackTrace();
+				}
+			break;
+		case 9:
+			if (mssqlConnectionPool9 != null)
+				try {
+					return mssqlConnectionPool9.getConnection();
+				} catch (SQLException e) {
+					e.printStackTrace();
+				}
+			break;
+		case 10:
+			if (mssqlConnectionPool10 != null)
+				try {
+					return mssqlConnectionPool10.getConnection();
+				} catch (SQLException e) {
+					e.printStackTrace();
+				}
+			break;
+		}
+
+		return null;
+	}
+	
+	public static Connection getConnection_MySQL(int DBNumber) {
+		switch(DBNumber){
+		case 1:
+			if (mysqlConnectionPool1 != null)
+				try {
+					return mysqlConnectionPool1.getConnection();
+				} catch (SQLException e) {
+					e.printStackTrace();
+				}
+			break;
+		case 2:
+			if (mysqlConnectionPool2 != null)
+				try {
+					return mysqlConnectionPool2.getConnection();
+				} catch (SQLException e) {
+					e.printStackTrace();
+				}
+			break;
+		case 3:
+			if (mysqlConnectionPool3 != null)
+				try {
+					return mysqlConnectionPool3.getConnection();
+				} catch (SQLException e) {
+					e.printStackTrace();
+				}
+			break;
+		case 4:
+			if (mysqlConnectionPool4 != null)
+				try {
+					return mysqlConnectionPool4.getConnection();
+				} catch (SQLException e) {
+					e.printStackTrace();
+				}
+			break;
+		case 5:
+			if (mysqlConnectionPool5 != null)
+				try {
+					return mysqlConnectionPool5.getConnection();
+				} catch (SQLException e) {
+					e.printStackTrace();
+				}
+			break;
+		case 6:
+			if (mysqlConnectionPool6 != null)
+				try {
+					return mysqlConnectionPool6.getConnection();
+				} catch (SQLException e) {
+					e.printStackTrace();
+				}
+			break;
+		case 7:
+			if (mysqlConnectionPool7 != null)
+				try {
+					return mysqlConnectionPool7.getConnection();
+				} catch (SQLException e) {
+					e.printStackTrace();
+				}
+			break;
+		case 8:
+			if (mysqlConnectionPool8 != null)
+				try {
+					return mysqlConnectionPool8.getConnection();
+				} catch (SQLException e) {
+					e.printStackTrace();
+				}
+			break;
+		case 9:
+			if (mysqlConnectionPool9 != null)
+				try {
+					return mysqlConnectionPool9.getConnection();
+				} catch (SQLException e) {
+					e.printStackTrace();
+				}
+			break;
+		case 10:
+			if (mysqlConnectionPool10 != null)
+				try {
+					return mysqlConnectionPool10.getConnection();
+				} catch (SQLException e) {
+					e.printStackTrace();
+				}
+			break;
+		}
+		return null;
+	}
+
+	public static Connection getConnection_Vertica(int DBNumber) {
+		switch(DBNumber){
+		case 1:
+			if (VerticaConnectionPool1 != null)
+				try {
+					return VerticaConnectionPool1.getConnection();
+				} catch (SQLException e) {
+					e.printStackTrace();
+				}
+			break;
+		case 2:
+			if (VerticaConnectionPool2 != null)
+				try {
+					return VerticaConnectionPool2.getConnection();
+				} catch (SQLException e) {
+					e.printStackTrace();
+				}
+			break;
+		case 3:
+			if (VerticaConnectionPool3 != null)
+				try {
+					return VerticaConnectionPool3.getConnection();
+				} catch (SQLException e) {
+					e.printStackTrace();
+				}
+			break;
+		case 4:
+			if (VerticaConnectionPool4 != null)
+				try {
+					return VerticaConnectionPool4.getConnection();
+				} catch (SQLException e) {
+					e.printStackTrace();
+				}
+			break;
+		case 5:
+			if (VerticaConnectionPool5 != null)
+				try {
+					return VerticaConnectionPool5.getConnection();
+				} catch (SQLException e) {
+					e.printStackTrace();
+				}
+			break;
+		case 6:
+			if (VerticaConnectionPool6 != null)
+				try {
+					return VerticaConnectionPool6.getConnection();
+				} catch (SQLException e) {
+					e.printStackTrace();
+				}
+			break;
+		case 7:
+			if (VerticaConnectionPool7 != null)
+				try {
+					return VerticaConnectionPool7.getConnection();
+				} catch (SQLException e) {
+					e.printStackTrace();
+				}
+			break;
+		case 8:
+			if (VerticaConnectionPool8 != null)
+				try {
+					return VerticaConnectionPool8.getConnection();
+				} catch (SQLException e) {
+					e.printStackTrace();
+				}
+			break;
+		case 9:
+			if (VerticaConnectionPool9 != null)
+				try {
+					return VerticaConnectionPool9.getConnection();
+				} catch (SQLException e) {
+					e.printStackTrace();
+				}
+			break;
+		case 10:
+			if (VerticaConnectionPool10 != null)
+				try {
+					return VerticaConnectionPool10.getConnection();
+				} catch (SQLException e) {
+					e.printStackTrace();
+				}
+			break;
+		}		
+		return null;
+	}
+
+	public static void shutdownPool(BoneCP connectionPool) {
+		connectionPool.shutdown();
+	}
+}

@@ -1,0 +1,175 @@
+package com.morningstar.eapi;
+
+import java.io.File;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.testng.TestNG;
+
+import com.morningstar.eapi.commons.ResourceManager;
+import com.morningstar.eapi.commons.SendResultByEmail;
+import com.morningstar.eapi.commons.testbase.Base;
+import com.morningstar.eapi.commons.testbase.DotTestListener;
+
+
+public class RunTestCases {
+	private static final Logger logger = LoggerFactory.getLogger(RunTestCases.class);
+	private static String round1ResultOutput = "";
+	private static String round2ResultOutput = "";
+	static DotTestListener listener = new DotTestListener();
+	static DotTestListener r2Listener = new DotTestListener();
+	
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		if (args == null || args.length <= 1)
+			throw new IllegalArgumentException(
+					"Please use \"java -jar ... [Dev,QA,Live,UAT] [quickly,normal,fully] [OPTIONAL: severSite]\" to start");
+		
+		new File("./msncompareresult.txt").deleteOnExit();
+		
+		if (args.length > 2) 	ResourceManager.serverSite = args[2].trim();
+/*
+		System.out.println("arguments:" + args[2]);
+		System.out.println("Edward:" + ResourceManager.getLiveSite());
+		System.out.println("Simon:" + ResourceManager.getSite());
+		System.out.println("Base:" + Base.baseUrl);
+*/		
+//		round1Run(args);
+		TestNG ng = new TestNG();
+		setOutputDirectoryName(ng, args);
+		setTestSuites(ng, args);
+		setListener(ng);
+		ng.run();
+		sendMail("1");
+		//Run the fail test cases again to make sure it really fails
+/*		
+//		round2Run(args);
+		TestNG fng = new TestNG();
+		setFailOutputDirectoryName(fng, args);
+		setFailTestSuites(fng, args);
+		setFailListener(fng);
+		fng.run();
+		sendMail("2");
+*/		
+		//send email to user
+		logger.info("Done");
+		System.exit(0);
+	}
+
+	private static void round1Run(String[] args){
+		//Start to run the normalize process
+				TestNG ng = new TestNG();
+				setOutputDirectoryName(ng, args);
+				setTestSuites(ng, args);
+				setListener(ng);
+				ng.run();
+				sendMail("1");
+	}
+	private static void round2Run(String[] args){
+		TestNG fng = new TestNG();
+		setFailOutputDirectoryName(fng, args);
+		setFailTestSuites(fng, args);
+		setFailListener(fng);
+		fng.run();
+		sendMail("2");
+
+	}
+
+	private static void setOutputDirectoryName(TestNG ng, String[] args) {
+
+		if (args.length >= 2) {
+			round1ResultOutput = "testNG-round1-output/" + args[0] + "." + args[1];
+
+			// args[0] should only be QA, UAT, Live
+			// args[1] should only be Fully, Daily, Monthly, Yearly
+			Base.siteTag = args[0];
+			Base.runFrequency = args[1];
+		}
+
+		ng.setOutputDirectory(round1ResultOutput);
+	}
+	
+	//fail test cases result will be output here
+	private static void setFailOutputDirectoryName(TestNG ng, String[] args) {
+	
+		if (args.length >= 2) {
+			round2ResultOutput = "testNG-round2-output/" + args[0] + "." + args[1];
+
+			// args[0] should only be QA, UAT, Live
+			// args[1] should only be Fully, Daily, Monthly, Yearly
+			Base.siteTag = args[0];
+			Base.runFrequency = args[1];			
+		}
+
+		ng.setOutputDirectory(round2ResultOutput);
+	}
+
+	private static void setFailListener(TestNG ng) {
+		ng.addListener(r2Listener);
+	}
+
+	private static void setTestSuites(TestNG ng, String[] args) {
+		List<String> suites = new ArrayList<String>();
+		String testngXML;
+		if (args[1].equalsIgnoreCase("fully") || args[1].equalsIgnoreCase("monthly"))
+		{
+			testngXML = ResourceManager.getSlowTestngXML();
+		}		
+		else if (args[1].equalsIgnoreCase("quickly") || args[1].equalsIgnoreCase("release"))
+		{
+			testngXML = ResourceManager.getQuickTestngXML();
+		}
+		else
+		{
+			testngXML = ResourceManager.getNormalTestXML();
+		}
+		if (testngXMLExists(testngXML))
+			suites.add(testngXML);
+		else {
+			logger.error("Can not find " + testngXML);
+			System.exit(0);
+		}
+		ng.setTestSuites(suites);
+	}
+	
+	//set fail test xml to suite for running again
+	private static void setFailTestSuites(TestNG ng, String[] args) {
+		List<String> suites = new ArrayList<String>();
+
+		String failXMLPath = round1ResultOutput + "/testng-failed.xml";
+
+		if (failedXMLPathExists(failXMLPath))
+			suites.add(failXMLPath);
+		else {
+			logger.error("Can not find " + failXMLPath);
+			System.exit(0);
+		}
+		ng.setTestSuites(suites);
+	}
+	private static void setListener(TestNG ng) {
+		ng.addListener(listener);
+	}
+
+	private static boolean testngXMLExists(String testngXML) {
+		return new File(testngXML).exists();
+	}
+
+	private static boolean failedXMLPathExists(String failedXMLPath) {
+		return new File(failedXMLPath).exists();
+	}
+
+	private static void sendMail(String round) {
+
+		SendResultByEmail email = new SendResultByEmail();
+		if(round.equals("1"))
+			email.sendMail(listener, listener,"1",round1ResultOutput);
+		if(round.equals("2"))
+			email.sendMail(listener, r2Listener,"2",round2ResultOutput);
+	}
+
+}

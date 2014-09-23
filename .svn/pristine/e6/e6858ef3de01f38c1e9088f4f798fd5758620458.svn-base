@@ -1,0 +1,36 @@
+package com.morningstar.eapi.source;
+
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+
+import com.morningstar.eapi.utils.XmlHelper;
+
+public class HardCodeXml {
+	static String fileName = "config/ExchangeList.xml";
+	static String Exchange = "/ExchangeList/Exchange";
+	static String ExchangeId = "/ExchangeList/Exchange[%d]/@ExchangeId";
+	static String CountryId = "/ExchangeList/Exchange[%d]/@CountryId";
+
+	public static String getData(String exchangeId) {
+		FileInputStream fis = null;
+		XmlHelper xmlHelper = new XmlHelper();
+		try {
+			fis = new FileInputStream(new File(fileName));
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		xmlHelper.readStream(fis);
+
+		int num = xmlHelper.getNodeCount(Exchange);
+		for (int i = 1; i <= num; i++) {
+			if (exchangeId.equals(xmlHelper.getValueFromInputStream(String.format(ExchangeId, i)))) {
+				return xmlHelper.getValueFromInputStream(String.format(CountryId,i));
+			}
+		}
+		return "";
+
+	}
+
+}

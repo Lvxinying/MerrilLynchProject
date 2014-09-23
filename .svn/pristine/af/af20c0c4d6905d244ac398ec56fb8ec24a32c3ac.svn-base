@@ -1,0 +1,95 @@
+package com.morningstar.eapi.commons.testbase;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.BeforeSuite;
+import org.testng.annotations.BeforeMethod;
+
+import com.morningstar.eapi.commons.ResourceManager;
+
+public class Base {
+	public static String runFrequency = "";
+	public static String baseUrl = "";
+	public static String token = "";
+	public static String email = "";
+	public static String liveSite = "";
+	public static String QASite = "";
+	public static String UATSite = "";
+	public static String DevSite = "";
+	protected String caseName = "";
+	public static String siteTag = "";
+	public static boolean caseResult = true;
+	private static final Logger logger = LoggerFactory.getLogger(Base.class);
+	
+	//init all variables from configuration file
+	static {				
+		liveSite = ResourceManager.getLiveSite();
+		QASite = ResourceManager.getQASite();
+		UATSite = ResourceManager.getUATSite();
+		DevSite = ResourceManager.getDevSite();
+	}
+	
+	//determine baseurl before test start
+	@BeforeSuite
+	public void setBaseURL() {
+		if (isLive())
+		{
+			baseUrl = liveSite;
+			token = ResourceManager.gettoken(); 
+		}			
+		if (isQA())
+		{
+			baseUrl = QASite;
+			token = ResourceManager.getQAToken();
+		}
+			
+		if (isUAT())
+		{
+			baseUrl = UATSite;
+			token = ResourceManager.gettoken(); 
+		}	
+			
+		if (isDev())
+		{
+			baseUrl = DevSite;
+			token = ResourceManager.getDevToken();
+		}		
+	}
+
+	@BeforeClass
+	public void setUp() throws Exception {
+		caseName = this.getClass().getName();
+		logger.info("+++++++++++++++++++++++++++++++++++" + caseName
+				+ "+++++++++++++++++++++++++++++++++++");
+	}
+	
+	@BeforeMethod
+	public void setUpMethod() throws Exception {
+		caseResult = true;
+	}
+/*	
+	@AfterMethod
+	public void tearDownMethod() throws Exception {
+		Assert.assertTrue(caseResult);
+	}
+*/
+	public static boolean isLive() {
+		return "Live".equalsIgnoreCase(Base.siteTag);
+	}
+
+	public static boolean isQA() {
+		return "QA".equalsIgnoreCase(Base.siteTag);
+	}
+
+	public static boolean isUAT() {
+		return "UAT".equalsIgnoreCase(Base.siteTag);
+	}
+	
+	public static boolean isDev() {
+		return "Dev".equalsIgnoreCase(Base.siteTag);
+				
+	}
+		
+
+}

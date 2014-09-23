@@ -1,0 +1,23 @@
+package com.morningstar.eapi.commons;
+
+import com.morningstar.eapi.utils.DateUtil;
+
+public class DateCommon {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+	public static String getStartDate(int i) {
+		return DateUtil.getNYear("CST", i, "MM/yyyy");
+	}
+
+	public static String getEndDate() {
+		return DateUtil.getCurrentDate("CST", "MM/yyyy");
+	}
+
+}

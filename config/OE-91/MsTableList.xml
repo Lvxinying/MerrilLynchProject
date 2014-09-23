@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Table>
+	<MsSqlTableList>			
+		<MsSqlTableName>CurrentData.dbo.ManagerBasic</MsSqlTableName>
+        <MsSqlTableName>CurrentData.dbo.ManagerBiography</MsSqlTableName>
+		<MsSqlTableName>TimeSeries.dbo.ManagerCertification</MsSqlTableName>
+		<MsSqlTableName>TimeSeries.dbo.ManagerEducation</MsSqlTableName>
+		<MsSqlTableName>TimeSeries.dbo.ManagerManagedInvestment</MsSqlTableName>
+		<MsSqlTableName>TimeSeries.dbo.ManagerManagementHistory</MsSqlTableName>
+		<MsSqlTableName>CurrentData.dbo.ManagerAffiliation</MsSqlTableName>
+		<MsSqlTableName>CurrentData.dbo.ManagerSpecialty</MsSqlTableName>
+		<MsSqlTableName>TimeSeries.dbo.ManagerCompanyBiography</MsSqlTableName>
+		<MsSqlTableName>CurrentData.dbo.ManagerCompanyIdMapping</MsSqlTableName>
+		<MsSqlTableName>CurrentData.dbo.ManagerIdentifiers</MsSqlTableName>	
+	</MsSqlTableList>
+</Table>

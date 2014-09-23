@@ -1,0 +1,1 @@
+SELECT COUNT(PerformanceId) FROM "dbo"."MLAverage3MonthYieldForMonthEnd" WHERE MLUniverseType = '1';

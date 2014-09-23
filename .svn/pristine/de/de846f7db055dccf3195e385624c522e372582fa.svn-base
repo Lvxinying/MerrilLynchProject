@@ -1,0 +1,391 @@
+package com.morningstar.FundTeam.ML;
+
+//import java.math.BigDecimal;
+import java.io.File;
+import java.math.BigDecimal;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import org.junit.Assert;
+import org.testng.annotations.Parameters;
+import org.testng.annotations.Test;
+
+import com.morningstar.FundAutoTest.commons.CustomizedLog;
+import com.morningstar.FundAutoTest.commons.DBCommons;
+import com.morningstar.FundAutoTest.commons.Database;
+import com.morningstar.FundAutoTest.commons.ExcelHelper;
+import com.morningstar.FundAutoTest.commons.Helper;
+import com.morningstar.FundAutoTest.commons.testbase.Base;
+
+public class ML44 extends Base{
+
+	/**
+	 * @author shou
+	 * @throws SQLException 
+	 */
+	
+	@Test(description = "Testing for all EndDate need to be the end date of a month!")
+	@Parameters({"monthEndDate"})
+	public static void testEndDate(String monthEndDate) throws SQLException{
+		boolean testResult = false;
+		String sqlToCountPerfIdYield1 = "SELECT COUNT(PerformanceId) FROM CurrentData.dbo.MLAverage3MonthYieldForMonthEnd WHERE EndDate = '" + monthEndDate +" 00:00:00.0' AND MLUniverseType = '2'";
+		String sqlToCountPerfIdYield2 = "SELECT COUNT(PerformanceId) FROM CurrentData.dbo.MLAverage3MonthYieldForMonthEnd WHERE MLUniverseType = '2'";
+		String count1 = DBCommons.getData(sqlToCountPerfIdYield1, Database.MsSQL1);
+		String count2 = DBCommons.getData(sqlToCountPerfIdYield2, Database.MsSQL1);
+		int c1 = Integer.parseInt(count1);
+		int c2 = Integer.parseInt(count2);
+		if(c1 != c2){
+			testResult = false;
+			System.out.println("Testing failed!Not all EndDate is the month end date in Table MLAverage3MonthYieldForMonthEnd.");
+			System.out.println("Expect count: " + c1);
+			System.out.println("Actual count: " + c2);
+		}		
+		else{
+			testResult = true;
+			System.out.println("[SUCCESS]All EndDate in Table MLAverage3MonthYieldForMonthEnd is the end of month!");
+		}
+		Assert.assertTrue("Testing failed!Not all EndDate is the month end date in Table MLAverage3MonthYieldForMonthEnd.", testResult);		
+	}
+	
+	@Test(description = "Testing for all Yield rate have no '0' or null value")
+	public static void testNoNULLValueInYieldRate() throws Exception{
+		boolean testResult = false;
+		String sqlToGetPerfIdCountWithCondition = "SELECT COUNT (PerformanceId) FROM CurrentData.dbo.MLAverage3MonthYieldForMonthEnd WHERE MLUniverseType = '2' AND Average3MonthYield IS NOT NULL";
+		String sqlToGetPerfIdCountWithNoCondition = "SELECT COUNT (PerformanceId) FROM CurrentData.dbo.MLAverage3MonthYieldForMonthEnd WHERE MLUniverseType = '2'";
+		String count1 = DBCommons.getData(sqlToGetPerfIdCountWithCondition, Database.MsSQL1);
+		String count2 = DBCommons.getData(sqlToGetPerfIdCountWithNoCondition, Database.MsSQL1);
+		int c1 = Integer.parseInt(count1);
+		int c2 = Integer.parseInt(count2);
+		if(c1 != c2){
+			testResult = false;
+			System.out.println("Testing failed!It has null YieldRate value in Table MLAverage3MonthYieldForMonthEnd.");
+			System.out.println("Expect count: " + c1);
+			System.out.println("Actual count: " + c2);
+		}
+		else{
+			testResult = true;
+			System.out.println("[SUCCESS]No null YieldRate value in Table MLAverage3MonthYieldForMonthEnd!");
+		}
+		Assert.assertTrue("Testing failed!It has null YieldRate value in Table MLAverage3MonthYieldForMonthEnd.", testResult);
+	}
+	
+	@Test(description = "Testing for all row data transfered to OICONTENTDB61!")
+	public static void testRowDataComplete() throws Exception{
+		boolean testResult = false;		
+		String sqlToGetActuralRecords = "SELECT COUNT(PerformanceId) FROM CurrentData.dbo.MLAverage3MonthYieldForMonthEnd WHERE EndDate = '2013-10-31 00:00:00.0' AND MLUniverseType = '2'";
+		String count2 = DBCommons.getData(sqlToGetActuralRecords, Database.MsSQL1);
+		
+		int c1 = getContainCount();
+		int c2 = Integer.parseInt(count2);
+		
+		if(c1 == c2){
+			System.out.println("[SUCCESS] All row data transfered to OICONTENTDB61!");
+		}
+		else{
+			System.out.println("Testing failed!Not all row data transfered to OICONTENTDB61!");
+			System.out.println("Expect count: " + c1);
+			System.out.println("Actual count: " + c2);
+		}
+		Assert.assertTrue("Testing failed!Not all row data transfered to OICONTENTDB61!", testResult);
+	}
+	
+	
+	@Test(description = "Testing for all Yield Rate need to multiply  by 100 in CentralEndData.dbo.HistoricalStockValuationRatios And Calculation veracity!")
+	public static void testRateVeracityRegression(String startDate,String endDate,int testRound) throws Exception{
+		List<String> perfIdList = new ArrayList<String>();
+		List<String> yieldRateList = new ArrayList<String>();
+		List<String> excelList = new ArrayList<String>();
+		HashMap<String,String> performanceId2YieldMap = new HashMap<String,String>();
+		int testRoundCount = testRound;
+		
+		String sqlToGetPerfId = "SELECT PerformanceId FROM CurrentData.dbo.MLAverage3MonthYieldForMonthEnd WHERE MLUniverseType = '2' AND Average3MonthYield IS NOT NULL";		
+		String sqlToGetPerfIdYieldRate = "SELECT PerformanceId,Average3MonthYield FROM CurrentData.dbo.MLAverage3MonthYieldForMonthEnd WHERE MLUniverseType = '2' AND Average3MonthYield IS NOT NULL";
+		
+		perfIdList = DBCommons.getDataList(sqlToGetPerfId, Database.MsSQL1);
+		performanceId2YieldMap = DBCommons.getDataHashMap(sqlToGetPerfIdYieldRate, Database.MsSQL1);
+		
+//测试准备（log创建，Excel人工创建好计算器)
+		String excelPath = "./log/TestLog/MerrillLynch/ML-44/YieldRateCalc.xlsx";
+		String startTime = Base.currentSysTime();
+		String logPath = "./log/TestLog/MerrillLynch/ML-44/";
+		String testLogName = "YieldRateVerify-" + startTime + "." + "log";
+		String testLogTopic = "Testing for all Yield Rate need to multiply  by 100 in CentralEndData.dbo.HistoricalStockValuationRatios And Calculation veracity!";
+//Log准备		
+		CustomizedLog.creatCusomizedLogFile(logPath, testLogName, testLogTopic);
+		System.out.println("Testing for all Yield Rate need to multiply  by 100 in CentralEndData.dbo.HistoricalStockValuationRatios And Calculation veracity!");
+		System.out.println("Start At :" + startTime);
+		CustomizedLog.writeCustomizedLogFile(logPath + testLogName, "Start to test Testing for all Yield Rate need to multiply  by 100 in CentralEndData.dbo.HistoricalStockValuationRatios And Calculation veracity!");
+		CustomizedLog.writeCustomizedLogFile(logPath + testLogName, "Start at: " + startTime);
+		
+		
+		String sqlToGetCurrentPerfIdCount = "SELECT COUNT(PerformanceId) FROM CurrentData.dbo.MLAverage3MonthYieldForMonthEnd WHERE MLUniverseType = '2' AND Average3MonthYield IS NOT NULL";
+		String strCurrentPerfIdCount = DBCommons.getData(sqlToGetCurrentPerfIdCount, Database.MsSQL1);
+		int currentPerfIdCount = Integer.parseInt(strCurrentPerfIdCount);
+		for(int i = 0;i < testRoundCount; i++){
+//随机上限值为当前实际数据库中的PerformanceId的数目			
+			int randomPerfIdNum = Helper.getRandomInt(0,currentPerfIdCount - 1);
+			String perf2ShareClassId = perfIdList.get(randomPerfIdNum);
+			String sqlToGetYieldRate = "SELECT DividendYield FROM CentralEndData.dbo.HistoricalStockValuationRatios WHERE AsOfPriceDate BETWEEN '" + startDate + "' AND '" + endDate + "' AND DividendYield IS NOT NULL AND ShareClassId = '" + perf2ShareClassId + "'";
+			yieldRateList = DBCommons.getDataList(sqlToGetYieldRate, Database.MsSQL2);
+//if have latest 3 month Yield Rate
+			if(yieldRateList.size() == 3){
+				String YieldRate1 = yieldRateList.get(0);
+				String YieldRate2 = yieldRateList.get(1);
+				String YieldRate3 = yieldRateList.get(2);
+//需求要求，每个Rate在计算前要乘以100				
+				Double DYieldRate1 = Double.parseDouble(YieldRate1) * 100;
+				Double DYieldRate2 = Double.parseDouble(YieldRate2) * 100;
+				Double DYieldRate3 = Double.parseDouble(YieldRate3) * 100;
+//开始计算
+				ExcelHelper.updateExcelDouble(excelPath, 0, 0, DYieldRate1);
+				ExcelHelper.updateExcelDouble(excelPath, 0, 1, DYieldRate2);
+				ExcelHelper.updateExcelDouble(excelPath, 0, 2, DYieldRate3);
+				ExcelHelper.setCellFormula(excelPath, 0, 3, "AVERAGE(A1:C1)");
+//获取Excel测试结果，不使用readExcel这个方法
+//			    	excelList = ExcelHelper.readExcel(excelPath);
+				excelList = ExcelHelper.exportListFromExcel(new File(excelPath), 0, 0, 3);
+				if (excelList != null) {
+//Excel计算器算出的结果		    		
+					String excelCalResult = excelList.get(0);
+					Double DexcelCalResult = Double.parseDouble(excelCalResult);
+//精度做调整		    		
+					Double finalExcelCalResult = Helper.setDoublePrecision(DexcelCalResult, 2, BigDecimal.ROUND_HALF_DOWN);
+//数据库中由开发算出的结果		    		
+					String DBCalResult = performanceId2YieldMap.get(perf2ShareClassId);
+					Double DDBCalResult = Double.parseDouble(DBCalResult);
+//精度做调整		    		
+					Double finalDBCalResult = Helper.setDoublePrecision(DDBCalResult, 2, BigDecimal.ROUND_HALF_DOWN);
+					if(!finalExcelCalResult.equals(finalDBCalResult)){
+						CustomizedLog.writeCustomizedLogFile(logPath + testLogName, "[TestFailed]Yield Rate calc result not same!------------------3 Yield Rates");
+			    		CustomizedLog.writeCustomizedLogFile(logPath + testLogName, "Doubtful PerformanceId is : " + perf2ShareClassId);
+			    		CustomizedLog.writeCustomizedLogFile(logPath + testLogName, "DB Calculating Result is : " + DDBCalResult);
+			    		CustomizedLog.writeCustomizedLogFile(logPath + testLogName, "Excell Calculating Result is : " + DexcelCalResult);
+			    		CustomizedLog.writeCustomizedLogFile(logPath + testLogName, "DB Yield Rates are : " + yieldRateList.get(0) + "\t" + yieldRateList.get(1) + "\t" + yieldRateList.get(2));
+			    		CustomizedLog.writeCustomizedLogFile(logPath + testLogName, "===========================================================================");
+			    	}
+				}
+			}
+//if have two month Yield Rate
+			if(yieldRateList.size() == 2){
+				String YieldRate1 = yieldRateList.get(0);
+				String YieldRate2 = yieldRateList.get(1);
+				Double DYieldRate1 = Double.parseDouble(YieldRate1) * 100;
+				Double DYieldRate2 = Double.parseDouble(YieldRate2) * 100;
+//开始计算
+				ExcelHelper.updateExcelDouble(excelPath, 1, 0, DYieldRate1);
+				ExcelHelper.updateExcelDouble(excelPath, 1, 1, DYieldRate2);
+				ExcelHelper.setCellFormula(excelPath, 1, 2, "AVERAGE(A1:B1)");
+				excelList = ExcelHelper.exportListFromExcel(new File(excelPath), 0, 1, 2);
+				if (excelList != null) {
+//Excel计算器算出的结果		    		
+					String excelCalResult = excelList.get(0);
+					Double DexcelCalResult = Double.parseDouble(excelCalResult);
+//精度做调整		    		
+					Double finalExcelCalResult = Helper.setDoublePrecision(DexcelCalResult, 2, BigDecimal.ROUND_HALF_DOWN);
+//数据库中由开发算出的结果		    		
+					String DBCalResult = performanceId2YieldMap.get(perf2ShareClassId);
+					Double DDBCalResult = Double.parseDouble(DBCalResult);
+//精度做调整		    		
+					Double finalDBCalResult = Helper.setDoublePrecision(DDBCalResult, 2, BigDecimal.ROUND_HALF_DOWN);
+					if(!finalExcelCalResult.equals(finalDBCalResult)){
+						CustomizedLog.writeCustomizedLogFile(logPath + testLogName, "[TestFailed]Yield Rate calc result not same!------------------2 Yield Rates");
+			    		CustomizedLog.writeCustomizedLogFile(logPath + testLogName, "Doubtful PerformanceId is : " + perf2ShareClassId);
+			    		CustomizedLog.writeCustomizedLogFile(logPath + testLogName, "DB Calculating Result is : " + DDBCalResult);
+			    		CustomizedLog.writeCustomizedLogFile(logPath + testLogName, "Excell Calculating Result is : " + DexcelCalResult);
+			    		CustomizedLog.writeCustomizedLogFile(logPath + testLogName, "DB Yield Rates are : " + yieldRateList.get(0) + "\t" + yieldRateList.get(1));
+			    		CustomizedLog.writeCustomizedLogFile(logPath + testLogName, "===========================================================================");
+					}
+				}
+			}
+//if only have one Yield Rate
+			if(yieldRateList.size() == 1){
+				String actYiledRate = yieldRateList.get(0);
+				String reqYiledRate = performanceId2YieldMap.get(perf2ShareClassId);
+//转成Double				
+				Double DactYiledRate = Double.parseDouble(actYiledRate) * 100;
+//精度调整
+				Double finalActYieldRate = Helper.setDoublePrecision(DactYiledRate, 2, BigDecimal.ROUND_HALF_DOWN);
+//转成Double				
+				Double DreqYiledRate = Double.parseDouble(reqYiledRate);
+//精度调整
+				Double finalReqYieldRate = Helper.setDoublePrecision(DreqYiledRate, 2, BigDecimal.ROUND_HALF_DOWN);
+				if(!finalActYieldRate.equals(finalReqYieldRate)){
+					CustomizedLog.writeCustomizedLogFile(logPath + testLogName, "[TestFailed]Yield Rate calc result not same!------------------1 Yield Rate");
+					CustomizedLog.writeCustomizedLogFile(logPath + testLogName, "Doubtful PerformanceId is : " + perf2ShareClassId);
+					CustomizedLog.writeCustomizedLogFile(logPath + testLogName, "Actual Calculating Result in DB is : " + DactYiledRate);
+					CustomizedLog.writeCustomizedLogFile(logPath + testLogName, "Required Calculating Result in DB is : " + DreqYiledRate);
+					CustomizedLog.writeCustomizedLogFile(logPath + testLogName, "DB Yield Rates are : " + yieldRateList.get(0));
+					CustomizedLog.writeCustomizedLogFile(logPath + testLogName, "===========================================================================");
+				}
+			}			
+		}
+		String endTime = Base.currentSysTime();
+		CustomizedLog.writeCustomizedLogFile(logPath + testLogName, "Testing Has finished! End at :" + endTime);
+		System.out.println("Testing Has finished! End at :" + endTime);
+	}
+	
+	private static int getContainCount() throws SQLException{
+		List<String> perfIdList = new ArrayList<String>();
+		List<String> sharedClassList = new ArrayList<String>();
+		int samePerfIdCount = 0;
+		
+		String sqlToGetAllSharedClassId = "select distinct ShareClassId FROM CentralEndData.dbo.HistoricalStockValuationRatios WHERE ShareClassId IN"
+				+ "(SELECT distinct ShareClassId FROM CentralEndData.dbo.HistoricalStockValuationRatios WHERE AsOfPriceDate BETWEEN '2013-10-01' AND '2013-10-31' AND DividendYield IS NOT NULL AND ShareClassId IN "
+				+ "(SELECT distinct ShareClassId FROM OperationData.dbo.ShareClassOperation WHERE SecurityTypeId IN ('ST00000001','ST00000002') AND ActivationStatus = 'A'))";
+		String sqlExec = "exec CurrentData.dbo.getMLBetaPerformanceAttributes_PerformanceIdList @p_MLUniverseType=2";
+		
+		sharedClassList = DBCommons.getDataList(sqlToGetAllSharedClassId, Database.MsSQL2);
+		perfIdList = DBCommons.getDataList(sqlExec, Database.MsSQL3);
+		
+		for(int i = 0; i < sharedClassList.size();i++){
+			int sameCount = Collections.frequency(perfIdList, sharedClassList.get(i));
+			if(sameCount == 1){
+				samePerfIdCount ++;
+			}
+		}
+		return samePerfIdCount;	
+	}
+
+	public static void testRateVeracity(String startDate,String endDate) throws Exception{
+		List<Map<String,String>> shareClassIdYieldListMap = new ArrayList<Map<String,String>>();
+		List<String> perfIdList = new ArrayList<String>();
+		Map<String,String> resultShareClassYieldContainerMap = new HashMap<String,String>();
+		Map<String,String> performanceId2YieldMap = new HashMap<String,String>();
+		List<String> resultYieldRateContainerList = new ArrayList<String>();
+		List<String> excelList = new ArrayList<String>();
+		
+//SQL语句相关		
+		String sqlToGetShareClassIdYieldRate = "SELECT ShareClassId,DividendYield FROM CentralEndData.dbo.HistoricalStockValuationRatios WHERE AsOfPriceDate BETWEEN '" + startDate + "' AND '" + endDate + "' AND DividendYield IS NOT NULL";
+		String sqlToGetPerfId = "SELECT PerformanceId FROM CurrentData.dbo.MLAverage3MonthYieldForMonthEnd WHERE MLUniverseType = '2' AND Average3MonthYield IS NOT NULL";
+		String sqlToGetPerfIdYieldRate = "SELECT PerformanceId,Average3MonthYield FROM CurrentData.dbo.MLAverage3MonthYieldForMonthEnd WHERE MLUniverseType = '2' AND Average3MonthYield IS NOT NULL";
+		
+//测试准备（log创建，Excel人工创建好计算器)
+		String excelPath = "./log/TestLog/MerrillLynch/ML-44/YieldRateCalc.xlsx";
+		String startTime = Base.currentSysTime();
+		String logPath = "./log/TestLog/MerrillLynch/ML-44/";
+		String testLogName = "YieldRateVerify-" + startTime + "." + "log";
+		String testLogTopic = "Testing for all Yield Rate need to multiply  by 100 in CentralEndData.dbo.HistoricalStockValuationRatios And Calculation veracity!";
+//Log准备		
+		CustomizedLog.creatCusomizedLogFile(logPath, testLogName, testLogTopic);
+		System.out.println("Testing for all Yield Rate need to multiply  by 100 in CentralEndData.dbo.HistoricalStockValuationRatios And Calculation veracity!");
+		System.out.println("Start At :" + startTime);
+		CustomizedLog.writeCustomizedLogFile(logPath + testLogName, "Start to test Testing for all Yield Rate need to multiply  by 100 in CentralEndData.dbo.HistoricalStockValuationRatios And Calculation veracity!");
+		CustomizedLog.writeCustomizedLogFile(logPath + testLogName, "Start at: " + startTime);
+		
+		shareClassIdYieldListMap = DBCommons.getDataListMapStrStr(Database.MsSQL2, sqlToGetShareClassIdYieldRate);
+		perfIdList = DBCommons.getDataList(sqlToGetPerfId, Database.MsSQL1);
+		performanceId2YieldMap = DBCommons.getDataHashMap(sqlToGetPerfIdYieldRate, Database.MsSQL1);
+		
+		for(int i = 0;i<perfIdList.size();i++){
+			String perfId2ShareClassId = perfIdList.get(i);
+			for(int j = 0;j<shareClassIdYieldListMap.size();j++){
+				resultShareClassYieldContainerMap = shareClassIdYieldListMap.get(j);
+				if(resultShareClassYieldContainerMap.containsKey(perfId2ShareClassId)){
+//如果performanceId是这个Map中的一个key，则把value取出保存在	resultYieldRateContainerList中				
+					resultYieldRateContainerList.add(resultShareClassYieldContainerMap.get(perfId2ShareClassId));
+				}
+			}//end for
+//测试逻辑部分
+//if have latest 3 month Yield Rate			
+				if(resultYieldRateContainerList.size() == 3){
+					String YieldRate1 = resultYieldRateContainerList.get(0);
+					String YieldRate2 = resultYieldRateContainerList.get(1);
+					String YieldRate3 = resultYieldRateContainerList.get(2);
+//需求要求，每个Rate在计算前要乘以100				
+					Double DYieldRate1 = Double.parseDouble(YieldRate1) * 100;
+					Double DYieldRate2 = Double.parseDouble(YieldRate2) * 100;
+					Double DYieldRate3 = Double.parseDouble(YieldRate3) * 100;
+//开始计算
+					ExcelHelper.updateExcelDouble(excelPath, 0, 0, DYieldRate1);
+					ExcelHelper.updateExcelDouble(excelPath, 0, 1, DYieldRate2);
+					ExcelHelper.updateExcelDouble(excelPath, 0, 2, DYieldRate3);
+					ExcelHelper.setCellFormula(excelPath, 0, 3, "AVERAGE(A1:C1)");
+//获取Excel测试结果
+				    excelList = ExcelHelper.exportListFromExcel(new File(excelPath), 0, 0, 3);
+				    if (excelList != null) {
+//Excel计算器算出的结果		    		
+						String excelCalResult = excelList.get(0);
+						Double DexcelCalResult = Double.parseDouble(excelCalResult);	    		
+						Double finalExcelCalResult = Helper.setDoublePrecision(DexcelCalResult, 2, BigDecimal.ROUND_HALF_DOWN);
+//数据库中由开发算出的结果		    		
+						String DBCalResult = performanceId2YieldMap.get(perfId2ShareClassId);
+						Double DDBCalResult = Double.parseDouble(DBCalResult);	    		
+						Double finalDBCalResult = Helper.setDoublePrecision(DDBCalResult, 2, BigDecimal.ROUND_HALF_DOWN);
+						if(!finalExcelCalResult.equals(finalDBCalResult)){
+							CustomizedLog.writeCustomizedLogFile(logPath + testLogName, "[TestFailed]Yield Rate calc result not same!------------------3 Yield Rates");
+				    		CustomizedLog.writeCustomizedLogFile(logPath + testLogName, "Doubtful PerformanceId is : " + perfId2ShareClassId);
+				    		CustomizedLog.writeCustomizedLogFile(logPath + testLogName, "DB Calculating Result is : " + DDBCalResult);
+				    		CustomizedLog.writeCustomizedLogFile(logPath + testLogName, "Excel Calculating Result is : " + finalExcelCalResult);
+				    		CustomizedLog.writeCustomizedLogFile(logPath + testLogName, "DB Yield Rates are : " + resultYieldRateContainerList.get(0) + "\t" + resultYieldRateContainerList.get(1) + "\t" + resultYieldRateContainerList.get(2));
+				    		CustomizedLog.writeCustomizedLogFile(logPath + testLogName, "===========================================================================");
+				    	}
+				    }
+				}
+				
+//if have latest 2 month Yield Rate			
+				if(resultYieldRateContainerList.size() == 2){
+					String YieldRate1 = resultYieldRateContainerList.get(0);
+					String YieldRate2 = resultYieldRateContainerList.get(1);			
+					Double DYieldRate1 = Double.parseDouble(YieldRate1) * 100;
+					Double DYieldRate2 = Double.parseDouble(YieldRate2) * 100;
+					ExcelHelper.updateExcelDouble(excelPath, 1, 0, DYieldRate1);
+					ExcelHelper.updateExcelDouble(excelPath, 1, 1, DYieldRate2);
+					ExcelHelper.setCellFormula(excelPath, 1, 2, "AVERAGE(A2:B2)");
+				    excelList = ExcelHelper.exportListFromExcel(new File(excelPath), 0, 1, 2);
+				    if (excelList != null) {	    		
+						String excelCalResult = excelList.get(0);
+						Double DexcelCalResult = Double.parseDouble(excelCalResult);	    		
+						Double finalExcelCalResult = Helper.setDoublePrecision(DexcelCalResult, 2, BigDecimal.ROUND_HALF_DOWN);	    		
+						String DBCalResult = performanceId2YieldMap.get(perfId2ShareClassId);
+						Double DDBCalResult = Double.parseDouble(DBCalResult);	    		
+						Double finalDBCalResult = Helper.setDoublePrecision(DDBCalResult, 2, BigDecimal.ROUND_HALF_DOWN);
+						if(!finalExcelCalResult.equals(finalDBCalResult)){
+							CustomizedLog.writeCustomizedLogFile(logPath + testLogName, "[TestFailed]Yield Rate calc result not same!------------------2 Yield Rates");
+				    		CustomizedLog.writeCustomizedLogFile(logPath + testLogName, "Doubtful PerformanceId is : " + perfId2ShareClassId);
+				    		CustomizedLog.writeCustomizedLogFile(logPath + testLogName, "DB Calculating Result is : " + finalDBCalResult);
+				    		CustomizedLog.writeCustomizedLogFile(logPath + testLogName, "Excel Calculating Result is : " + finalExcelCalResult);
+				    		CustomizedLog.writeCustomizedLogFile(logPath + testLogName, "DB Yield Rates are : " + resultYieldRateContainerList.get(0) + "\t" + resultYieldRateContainerList.get(1));
+				    		CustomizedLog.writeCustomizedLogFile(logPath + testLogName, "===========================================================================");
+				    	}
+				    }
+				}
+				
+//if have latest 2 month Yield Rate			
+				if(resultYieldRateContainerList.size() == 1){
+					String YieldRate1 = resultYieldRateContainerList.get(0);				
+					Double DYieldRate1 = Double.parseDouble(YieldRate1) * 100;
+//不需要Excel再做计算了，因为只有一个Yield Rate 所以值就是那个						    			    		
+					Double finalCalResult = Helper.setDoublePrecision(DYieldRate1, 2, BigDecimal.ROUND_HALF_DOWN);    		
+					String DBCalResult = performanceId2YieldMap.get(perfId2ShareClassId);
+					Double DDBCalResult = Double.parseDouble(DBCalResult);	    		
+					Double finalDBCalResult = Helper.setDoublePrecision(DDBCalResult, 2, BigDecimal.ROUND_HALF_DOWN);
+					if(!finalCalResult.equals(finalDBCalResult)){
+						CustomizedLog.writeCustomizedLogFile(logPath + testLogName, "[TestFailed]Yield Rate calc result not same!------------------1 Yield Rates");
+			    		CustomizedLog.writeCustomizedLogFile(logPath + testLogName, "Doubtful PerformanceId is : " + perfId2ShareClassId);
+			    		CustomizedLog.writeCustomizedLogFile(logPath + testLogName, "DB Calculating Result is : " + finalDBCalResult);
+			    		CustomizedLog.writeCustomizedLogFile(logPath + testLogName, "Testing Calculating Result is : " + finalCalResult);
+			    		CustomizedLog.writeCustomizedLogFile(logPath + testLogName, "DB Yield Rate is : " + resultYieldRateContainerList.get(0));
+			    		CustomizedLog.writeCustomizedLogFile(logPath + testLogName, "===========================================================================");
+			    	}
+
+				}
+			    resultYieldRateContainerList.removeAll(resultYieldRateContainerList);
+		}//end for
+		String endTime = Base.currentSysTime();
+		CustomizedLog.writeCustomizedLogFile(logPath + testLogName, "Testing Has finished! End at :" + endTime);
+		System.out.println("Testing Has finished! End at :" + endTime);
+	}
+	
+	public static void main(String[] args) throws Exception {
+//		testEndDate("2013-10-31");
+//		testNoNULLValueInYieldRate();
+//		testRowDataComplete();
+//		testRateVeracityRegression("2013-8-01","2013-10-31",100);
+		testRateVeracity("2013-9-01","2013-11-30");
+	}
+
+}

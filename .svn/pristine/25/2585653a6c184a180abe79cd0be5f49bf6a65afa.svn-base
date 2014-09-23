@@ -1,0 +1,205 @@
+package com.morningstar.eapi.source;
+
+import java.util.HashMap;
+import java.util.List;
+
+import com.morningstar.eapi.commons.DBCommons;
+import com.morningstar.eapi.commons.Database;
+import com.morningstar.eapi.utils.XmlHelper;
+
+public class CGeneralInfo {
+	public boolean isDataAvaliable = false;
+	public String ShareClassId = null;
+	public String CompanyName = null;
+	public String ExchangeId = null;
+	public String Symbol = null;
+	public String CUSIP = null;
+	public String CIK = null;
+	public String ISIN = null;
+	public String SEDOL = null;
+	public String CountryId = null;
+	public String CompanyId = null;
+	public String InvestmentType = null;
+	public String InvestmentParentInvId = null;
+	public String DRType = null;
+	public String SecurityType = "Stock";
+
+	// for industry
+	public String IndustryCode = null;
+	public String ClassificationName = null;
+	public String industryId = null;
+	public String GroupCode = null;
+	public String SectorCode = null;
+
+	public CGeneralInfo() {
+	}
+
+	public CGeneralInfo(String exchangeId, String symbol) {
+		if (exchangeId.matches("^[0-9]*$")) {
+			exchangeId = Exchange.getExchangeName(exchangeId);
+		}
+
+		String sql = "select ShareClassId,CompanyName,ExchangeId,Symbol,CUSIP,CIK,ISIN,SEDOL,CountryId, CompanyId from GEAPI.StockExchangeSecurity where ExchangeId = '%s' and Symbol = '%s' order by UpdateDate desc";
+		List<String> list = DBCommons.getDataList(String.format(sql, exchangeId, symbol), Database.geapi61);
+
+		if (!list.isEmpty()) {
+			ShareClassId = list.get(0);
+			CompanyName = list.get(1);
+			ExchangeId = list.get(2);
+			Symbol = list.get(3);
+			CUSIP = list.get(4);
+			CIK = list.get(5);
+			ISIN = list.get(6);
+			SEDOL = list.get(7);
+			CountryId = list.get(8);
+			CompanyId = list.get(9);
+
+			if (CompanyId != null) {
+				String sql_ind = "select IndustryCode,GroupCode,SectorCode from ReferenceData..Industry where IndustryCode in (select IndustryCode from OperationData..CompanyExtendedInfo where CompanyId = '%s')";
+				List<String> list_ind = DBCommons.getDataList(String.format(sql_ind, CompanyId), Database.geproddb61);
+
+				if (!list_ind.isEmpty()) {
+					IndustryCode = list_ind.get(0);
+					GroupCode = list_ind.get(1);
+					SectorCode = list_ind.get(2);
+				}
+			}
+
+			XmlHelper xmlHelper = new XmlHelper();
+			HashMap<String, String> map = GID.getDataMapFromGID(xmlHelper, "I5", ShareClassId);
+			InvestmentType = map.get("InvestmentType");
+			InvestmentParentInvId = map.get("InvestmentParentInvId");
+			DRType = map.get("DRType");
+
+			if ("DR".equals(InvestmentType)) {
+				SecurityType = "DR";
+				if ("0".equals(DRType))
+					SecurityType = "ADR";
+				if ("1".equals(DRType))
+					SecurityType = "GDR";
+			}
+
+			isDataAvaliable = true;
+		}
+	}
+
+	public void setEquityDataViaSID(String shareClassId) {
+
+		String sql = "select ShareClassId,CompanyName,ExchangeId,Symbol,CUSIP,CIK,ISIN,SEDOL,CountryId, CompanyId from GEAPI.StockExchangeSecurity where ShareClassId = '%s' order by UpdateDate desc";
+		List<String> list = DBCommons.getDataList(String.format(sql, shareClassId), Database.geapi61);
+
+		if (!list.isEmpty()) {
+			ShareClassId = list.get(0);
+			CompanyName = list.get(1);
+			ExchangeId = list.get(2);
+			Symbol = list.get(3);
+			CUSIP = list.get(4);
+			CIK = list.get(5);
+			ISIN = list.get(6);
+			SEDOL = list.get(7);
+			CountryId = list.get(8);
+			CompanyId = list.get(9);
+
+			if (CompanyId != null) {
+				String sql_ind = "select IndustryCode,GroupCode,SectorCode from ReferenceData..Industry where IndustryCode in (select IndustryCode from OperationData..CompanyExtendedInfo where CompanyId = '%s')";
+				List<String> list_ind = DBCommons.getDataList(String.format(sql_ind, CompanyId), Database.geproddb61);
+
+				if (!list_ind.isEmpty()) {
+					IndustryCode = list_ind.get(0);
+					GroupCode = list_ind.get(1);
+					SectorCode = list_ind.get(2);
+				}
+			}
+
+			XmlHelper xmlHelper = new XmlHelper();
+			HashMap<String, String> map = GID.getDataMapFromGID(xmlHelper, "I5", ShareClassId);
+			InvestmentType = map.get("InvestmentType");
+			InvestmentParentInvId = map.get("InvestmentParentInvId");
+			DRType = map.get("DRType");
+
+			if ("DR".equals(InvestmentType)) {
+				SecurityType = "DR";
+				if ("0".equals(DRType))
+					SecurityType = "ADR";
+				if ("1".equals(DRType))
+					SecurityType = "GDR";
+			}
+
+			isDataAvaliable = true;
+		}
+	}
+
+	// for industry/group/sector
+	public CGeneralInfo(String code) {
+		if (code != null) {
+
+			IndustryCode = code;
+
+			// industry
+			if (code.length() > 5) {
+				String sql = "select top 1 [CountryId],[IndustryName],[IndustryId] from [ReferenceData].[dbo].[Industry] where IndustryCode = '%s'";
+				List<String> list = DBCommons.getDataList(String.format(sql, code), Database.geproddb61);
+
+				if (list != null && !list.isEmpty()) {
+					CountryId = list.get(0);
+					ClassificationName = list.get(1);
+					industryId = list.get(2);
+					GroupCode = code.substring(0, 5);
+					SectorCode = code.substring(0, 3);
+
+					isDataAvaliable = true;
+				}
+			}
+
+			// group
+			if (code.length() == 5) {
+				String sql = "select top 1 [CountryId],[GroupName],[IndustryGroupId] from [ReferenceData].[dbo].[Industry] where GroupCode = '%s'";
+				List<String> list = DBCommons.getDataList(String.format(sql, code), Database.geproddb61);
+
+				if (list != null && !list.isEmpty()) {
+					CountryId = list.get(0);
+					ClassificationName = list.get(1);
+					industryId = list.get(2);
+					SectorCode = code.substring(0, 3);
+
+					isDataAvaliable = true;
+				}
+			}
+
+			// sector
+			if (code.length() < 5) {
+				String sql = "select top 1 [CountryId],[SectorName],[SectorGlobalId] from [ReferenceData].[dbo].[Industry] where [SectorCode] = '%s'";
+				List<String> list = DBCommons.getDataList(String.format(sql, code), Database.geproddb61);
+
+				if (list != null && !list.isEmpty()) {
+					CountryId = list.get(0);
+					ClassificationName = list.get(1);
+					industryId = list.get(2);
+
+					isDataAvaliable = true;
+				}
+			}
+		}
+	}
+
+	public void setExchangeAndSymbolFromISIN(String ExchangeId, String ISIN) {
+		String sql = "select Symbol from GEAPI.StockExchangeSecurity where ExchangeId='%s' and ISIN='%s' ";
+
+		List<String> list = DBCommons.getDataList(String.format(sql, ExchangeId, ISIN), Database.geapi61);
+		if (list.size() == 1) {
+			this.Symbol = list.get(0);
+		}
+	}
+
+	public void setFundDataViaSID(String shareClassId) {
+		String sql = "select ShareClassId,ExchangeId,Symbol from OperationData.dbo.FundOperation where ShareClassId='%s' order by UpdateDate desc";
+		List<String> list = DBCommons.getDataList(String.format(sql, shareClassId), Database.geproddb61);
+		if (!list.isEmpty()) {
+			this.ShareClassId = list.get(0);
+			this.ExchangeId = "ARCA".equals(list.get(1)) ? "ARCX" : list.get(1);
+			this.Symbol = list.get(2);
+
+			this.isDataAvaliable = true;
+		}
+	}
+}

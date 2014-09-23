@@ -1,0 +1,16 @@
+package com.morningstar.eapi.source;
+
+public class Index {
+	public static final String ID = "0P00001G7J";
+	public static final String ISIN = "US78378X1072";
+	public static final String NAME = "SPX";
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

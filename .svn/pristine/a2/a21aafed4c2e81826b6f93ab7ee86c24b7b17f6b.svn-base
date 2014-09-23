@@ -1,0 +1,50 @@
+package com.morningstar.FundAutoTest.Universe;
+
+import java.util.ArrayList;
+
+import java.util.List;
+
+import org.junit.Assert;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Test;
+
+import com.morningstar.FundAutoTest.DateUtil;
+import com.morningstar.FundAutoTest.commons.Common;
+import com.morningstar.FundAutoTest.commons.ExcelData;
+import com.morningstar.FundAutoTest.commons.ResourceManager;
+import com.morningstar.FundAutoTest.commons.SQLData;
+import com.morningstar.FundAutoTest.commons.testbase.Base;
+import com.morningstar.FundAutoTest.commons.testbase.TestConfigData;
+import com.morningstar.eapi.AnalysisResearch.CorporateAction.CorporateActionBase;
+
+public class CorporateActionUniverse extends Base{
+	public static List<TestConfigData> testList = new ArrayList<TestConfigData>();
+	Common common= new Common();
+	CorporateActionBase corporateActionBase = new CorporateActionBase();
+	String pattern = "MM/dd/yyyy";
+	String timeZone = ResourceManager.getTimeZone();
+	
+	@BeforeClass
+	public void load() throws Exception {
+		
+	}
+	
+	
+	@Test(description = "Search Results by all stocks in NYS, NAS, ASE Exchange in config/universe.xls")
+	public void testExcelUniverse() throws Exception
+	{
+		testList = common.loadConfig("./config/AnalysisResearch/CorporateAction/Dividend.xml");
+		String exchangeIds[] = {"NYS","NAS","ASE"};
+		List<List<String>> stockList = ExcelData.getExchangeStock(exchangeIds);
+		Assert.assertTrue(corporateActionBase.compareDividend(stockList, DateUtil.getNYear(timeZone, -1, pattern),  DateUtil.getNYear(timeZone, 1, pattern), true));
+	}
+	
+	//@Test(description = "Search Results by all stocks in NYS, NAS, ASE Exchange in DB")
+	public void testUniverse() throws Exception
+	{
+		testList = common.loadConfig("./config/AnalysisResearch/CorporateAction/Dividend.xml");
+		String exchangeIds[] = {"NYS","NAS","ASE"};
+//		List<List<String>> stockList = common.listMap2List(SQLData.getUniverseByExchange(exchangeIds));
+//		Assert.assertTrue(corporateActionBase.compareDividend(stockList, DateUtil.getNYear(timeZone, -1, pattern),  DateUtil.getNYear(timeZone, 1, pattern), true));
+	}
+}

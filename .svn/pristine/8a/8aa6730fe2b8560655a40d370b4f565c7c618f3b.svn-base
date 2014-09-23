@@ -1,0 +1,13 @@
+<!DOCTYPE suite SYSTEM "http://beust.com/testng/testng-1.0.dtd" >
+<suite name="Suite1" parallel="tests" thread-count="5">
+
+	<test name="Packages">
+<!-- 		<parameter name="title" value="Equity APIs" />  -->
+		<packages>
+<!--	 		<package name="com.morningstar.eapi.MSFT"></package>	-->  	  
+		</packages>
+		<classes>			 		
+		<class name="com.morningstar.Fund.FixedIncome.FFI28" />					 			
+		</classes>
+	</test>
+</suite>  

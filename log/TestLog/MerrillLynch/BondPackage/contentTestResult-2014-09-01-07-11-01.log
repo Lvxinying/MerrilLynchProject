@@ -1,0 +1,6 @@
+[TestForDataContent]Begin to test the Bond File's Data content in each lines,start at:2014-09-01-07-11-01
+[TestForDataContent]Begin to test the Bond File's CUSIP in each lines,start at:2014-09-01-07-11-01
+Bond File CUSIP testing has finished,end at:2014-09-01-07-30-16
+[TestForDataContent]Begin to test the Bond File's ISIN in each lines,start at:2014-09-01-07-30-16
+Bond File ISIN testing has finished,end at:2014-09-01-07-49-41
+[TestForDataContent]Begin to test the Bond File's Yield As At Date in each lines,start at:2014-09-01-07-49-41

@@ -1,0 +1,3205 @@
+[TestForCompletment]Begin to test no CUSIP and ISIN in each lines,start at:2014-09-01-07-07-52
+[FAILED]Line number is:2   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D0006XZXL
+Original content in file is: 20272AEY8~~US20272AEY82~~~~~0D0006XZXL~~~20140731~0.000~~~F00000QFNT~S&P US Commercial Paper TR USD
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:3   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D00093EUM
+Original content in file is: 63975WAZ1~~US63975WAZ14~~~~~0D00093EUM~~~20140731~0.000~~~F00000QFNT~S&P US Commercial Paper TR USD
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:4   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D0009RM0D
+Original content in file is: 0347M5BA6~~US0347M5BA64~~~~~0D0009RM0D~~~20140731~0.000~~~F00000QFNT~S&P US Commercial Paper TR USD
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:5   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D0005O7NP
+Original content in file is: 04821QBU4~~US04821QBU40~~~~~0D0005O7NP~~~20140731~0.000~~~F00000QFNT~S&P US Commercial Paper TR USD
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:6   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D0009LTSZ
+Original content in file is: 67984YAB0~~US67984YAB02~~~~~0D0009LTSZ~~~20140731~0.000~~~F00000QFNT~S&P US Commercial Paper TR USD
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:7   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D0009M40J
+Original content in file is: 0020P5ED7~~US0020P5ED72~~~~~0D0009M40J~~~20140731~0.000~~~F00000QFNT~S&P US Commercial Paper TR USD
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:8   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D0009CECN
+Original content in file is: 05252TBG4~~US05252TBG40~~~~~0D0009CECN~~~20140331~0.000~~~F00000QFNT~S&P US Commercial Paper TR USD
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:9   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D0003UYD6
+Original content in file is: 20272ACB0~~US20272ACB08~~~~~0D0003UYD6~~~20140731~0.000~~~F00000QFNT~S&P US Commercial Paper TR USD
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:10   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D0003Y9YW
+Original content in file is: 9612C4DV0~~US9612C4DV00~~~~~0D0003Y9YW~~~20140731~0.000~~~F00000QFNT~S&P US Commercial Paper TR USD
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:11   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D0009L9P6
+Original content in file is: 9612C4JX0~~US9612C4JX02~~~~~0D0009L9P6~~~20140731~0.000~~~F00000QFNT~S&P US Commercial Paper TR USD
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:12   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D00071MUR
+Original content in file is: 26876CAL3~~US26876CAL37~~~~~0D00071MUR~~~20140731~0.000~~~F00000QFNT~S&P US Commercial Paper TR USD
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:13   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D0009OJP9
+Original content in file is: 05253MCW2~~US05253MCW29~~~~~0D0009OJP9~~~20140731~0.000~~~F00000QFNT~S&P US Commercial Paper TR USD
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:14   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D0009P6WM
+Original content in file is: 05253MCZ5~~US05253MCZ59~~~~~0D0009P6WM~~~20140731~0.000~~~F00000QFNT~S&P US Commercial Paper TR USD
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:15   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D00093EUE
+Original content in file is: 63975WAR9~~US63975WAR97~~~~~0D00093EUE~~~20140731~0.000~~~F00000QFNT~S&P US Commercial Paper TR USD
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:16   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D0009ID0V
+Original content in file is: 55607NBT6~~US55607NBT63~~~~~0D0009ID0V~~~20140731~0.000~~~F00000QFNT~S&P US Commercial Paper TR USD
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:17   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D0006XZYY
+Original content in file is: 20272AGH3~~US20272AGH32~~~~~0D0006XZYY~~~20140731~0.000~~~F00000QFNT~S&P US Commercial Paper TR USD
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:18   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D00093EUA
+Original content in file is: 63975WAM0~~US63975WAM01~~~~~0D00093EUA~~~20140731~0.000~~~F00000QFNT~S&P US Commercial Paper TR USD
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:19   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D00093EUX
+Original content in file is: 63975WBC1~~US63975WBC10~~~~~0D00093EUX~~~20140731~0.000~~~F00000QFNT~S&P US Commercial Paper TR USD
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:20   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D0009LTT0
+Original content in file is: 67984YAC8~~US67984YAC84~~~~~0D0009LTT0~~~20140731~0.000~~~F00000QFNT~S&P US Commercial Paper TR USD
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:21   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D0003UIBW
+Original content in file is: 2332K4BY9~~US2332K4BY95~~~~~0D0003UIBW~~~20140731~0.000~~~F00000QFNT~S&P US Commercial Paper TR USD
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:22   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D0009CCVV
+Original content in file is: 9612C4HW4~~US9612C4HW47~~~~~0D0009CCVV~~~20140331~0.000~~~F00000QFNT~S&P US Commercial Paper TR USD
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:23   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D0003XC7G
+Original content in file is: 00182HAU6~~US00182HAU68~~~~~0D0003XC7G~~~20140731~0.000~~~F00000QFNT~S&P US Commercial Paper TR USD
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:24   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D0009I44O
+Original content in file is: 9612C4JK8~~US9612C4JK80~~~~~0D0009I44O~~~20140731~0.000~~~F00000QFNT~S&P US Commercial Paper TR USD
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:25   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D0009NY64
+Original content in file is: 9612C4KF7~~US9612C4KF76~~~~~0D0009NY64~~~20140731~0.000~~~F00000QFNT~S&P US Commercial Paper TR USD
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:26   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D0009K4L9
+Original content in file is: 2332K4CZ5~~US2332K4CZ51~~~~~0D0009K4L9~~~20140731~0.000~~~F00000QFNT~S&P US Commercial Paper TR USD
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:27   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D0009LIMJ
+Original content in file is: 2332K4DE1~~US2332K4DE14~~~~~0D0009LIMJ~~~20140731~0.000~~~F00000QFNT~S&P US Commercial Paper TR USD
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:28   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D0008S66U
+Original content in file is: 28504JAR1~~US28504JAR14~~~~~0D0008S66U~~~20140731~0.000~~~F00000QFNT~S&P US Commercial Paper TR USD
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:29   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D0006XZXG
+Original content in file is: 20272AET9~~US20272AET97~~~~~0D0006XZXG~~~20140731~0.000~~~F00000QFNT~S&P US Commercial Paper TR USD
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:30   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D0003SKJO
+Original content in file is: 05568WAB8~~US05568WAB81~~~~~0D0003SKJO~~~20140731~0.000~~~F00000QFNT~S&P US Commercial Paper TR USD
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:31   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D0003YRQI
+Original content in file is: 20272ADB9~~US20272ADB98~~~~~0D0003YRQI~~~20140731~0.000~~~F00000QFNT~S&P US Commercial Paper TR USD
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:32   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D0009HNF0
+Original content in file is: 0020P5EA3~~US0020P5EA34~~~~~0D0009HNF0~~~20140731~0.000~~~F00000QFNT~S&P US Commercial Paper TR USD
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:33   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D0006XZY3
+Original content in file is: 20272AFJ0~~US20272AFJ07~~~~~0D0006XZY3~~~20140731~0.000~~~F00000QFNT~S&P US Commercial Paper TR USD
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:34   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D0009M1TQ
+Original content in file is: 88603YAA9~~US88603YAA91~~~~~0D0009M1TQ~~~20140731~0.000~~~F00000QFNT~S&P US Commercial Paper TR USD
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:35   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D0009SDRY
+Original content in file is: 0556X4BV7~~US0556X4BV71~~~~~0D0009SDRY~~~20140731~0.000~~~F00000QFNT~S&P US Commercial Paper TR USD
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:36   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D0003VD7W
+Original content in file is: 9612C4DG3~~US9612C4DG33~~~~~0D0003VD7W~~~20140731~0.000~~~F00000QFNT~S&P US Commercial Paper TR USD
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:37   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D0009LMXQ
+Original content in file is: 30601YNC5~~US30601YNC56~~~~~0D0009LMXQ~~~20140731~0.000~~~F00000QFNT~S&P US Commercial Paper TR USD
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:38   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D0008S66N
+Original content in file is: 28504JAJ9~~US28504JAJ97~~~~~0D0008S66N~~~20140731~0.000~~~F00000QFNT~S&P US Commercial Paper TR USD
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:39   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D0008S66V
+Original content in file is: 28504JAS9~~US28504JAS96~~~~~0D0008S66V~~~20140731~0.000~~~F00000QFNT~S&P US Commercial Paper TR USD
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:40   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D0005NRIB
+Original content in file is: 62454XAB4~~US62454XAB47~~~~~0D0005NRIB~~~20140731~0.000~~~F00000QFNT~S&P US Commercial Paper TR USD
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:41   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D0009M01Z
+Original content in file is: 9612C4KC4~~US9612C4KC46~~~~~0D0009M01Z~~~20140731~0.000~~~F00000QFNT~S&P US Commercial Paper TR USD
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:42   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D0009M1TS
+Original content in file is: 88603YAC5~~US88603YAC57~~~~~0D0009M1TS~~~20140731~0.000~~~F00000QFNT~S&P US Commercial Paper TR USD
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:43   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D0009KHF7
+Original content in file is: 05253DAD6~~US05253DAD66~~~~~0D0009KHF7~~~20140731~0.000~~~F00000QFNT~S&P US Commercial Paper TR USD
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:44   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D0005NRIA
+Original content in file is: 62454XAA6~~US62454XAA63~~~~~0D0005NRIA~~~20140731~0.000~~~F00000QFNT~S&P US Commercial Paper TR USD
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:45   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D0003S64H
+Original content in file is: 9612C4CQ2~~US9612C4CQ24~~~~~0D0003S64H~~~20140731~0.000~~~F00000QFNT~S&P US Commercial Paper TR USD
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:46   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D0003SDBM
+Original content in file is: 0020P5CQ0~~US0020P5CQ04~~~~~0D0003SDBM~~~20140731~0.000~~~F00000QFNT~S&P US Commercial Paper TR USD
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:47   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D00093EUG
+Original content in file is: 63975WAT5~~US63975WAT53~~~~~0D00093EUG~~~20140731~0.000~~~F00000QFNT~S&P US Commercial Paper TR USD
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:48   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D0009GIV0
+Original content in file is: 0020P5DZ9~~US0020P5DZ93~~~~~0D0009GIV0~~~20140731~0.000~~~F00000QFNT~S&P US Commercial Paper TR USD
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:49   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D0005UTPN
+Original content in file is: 2332K4CD4~~US2332K4CD40~~~~~0D0005UTPN~~~20140731~0.000~~~F00000QFNT~S&P US Commercial Paper TR USD
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:50   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D0009O7IA
+Original content in file is: 30601YNK7~~US30601YNK72~~~~~0D0009O7IA~~~20140731~0.000~~~F00000QFNT~S&P US Commercial Paper TR USD
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:51   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D00093EU9
+Original content in file is: 63975WAL2~~US63975WAL28~~~~~0D00093EU9~~~20140731~0.000~~~F00000QFNT~S&P US Commercial Paper TR USD
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:52   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D0005KZT7
+Original content in file is: 06945JBS1~~US06945JBS15~~~~~0D0005KZT7~~~20140731~0.000~~~F00000QFNT~S&P US Commercial Paper TR USD
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:53   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D0005RZSR
+Original content in file is: 13738LAA3~~US13738LAA35~~~~~0D0005RZSR~~~20140731~0.000~~~F00000QFNT~S&P US Commercial Paper TR USD
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:54   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D0006XZXB
+Original content in file is: 20272AEN2~~US20272AEN28~~~~~0D0006XZXB~~~20140331~0.001~~~F00000QFNT~S&P US Commercial Paper TR USD
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:55   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D0003SCRB
+Original content in file is: 26876CAF6~~US26876CAF68~~~~~0D0003SCRB~~~20140731~0.000~~~F00000QFNT~S&P US Commercial Paper TR USD
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:56   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D0009JYWT
+Original content in file is: 30601YMZ5~~US30601YMZ50~~~~~0D0009JYWT~~~20140731~0.000~~~F00000QFNT~S&P US Commercial Paper TR USD
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:57   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D0006XZXK
+Original content in file is: 20272AEX0~~US20272AEX00~~~~~0D0006XZXK~~~20140731~0.000~~~F00000QFNT~S&P US Commercial Paper TR USD
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:58   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D00093EU7
+Original content in file is: 63975WAJ7~~US63975WAJ71~~~~~0D00093EU7~~~20140731~0.000~~~F00000QFNT~S&P US Commercial Paper TR USD
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:59   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D0009M1TR
+Original content in file is: 88603YAB7~~US88603YAB74~~~~~0D0009M1TR~~~20140731~0.000~~~F00000QFNT~S&P US Commercial Paper TR USD
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:60   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D00099FL3
+Original content in file is: 96122JCA5~~US96122JCA51~~~~~0D00099FL3~~~20140731~0.000~~~F00000QFNT~S&P US Commercial Paper TR USD
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:61   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D0005RZSS
+Original content in file is: 13738LAB1~~US13738LAB18~~~~~0D0005RZSS~~~20140731~0.000~~~F00000QFNT~S&P US Commercial Paper TR USD
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:62   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D0009LMRF
+Original content in file is: 9612C4KB6~~US9612C4KB62~~~~~0D0009LMRF~~~20140731~0.000~~~F00000QFNT~S&P US Commercial Paper TR USD
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:63   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D0006XZYX
+Original content in file is: 20272AGG5~~US20272AGG58~~~~~0D0006XZYX~~~20140731~0.000~~~F00000QFNT~S&P US Commercial Paper TR USD
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:64   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D0006XZXX
+Original content in file is: 20272AFC5~~US20272AFC53~~~~~0D0006XZXX~~~20140731~0.000~~~F00000QFNT~S&P US Commercial Paper TR USD
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:65   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D0009D3H6
+Original content in file is: 2332K4CY8~~US2332K4CY86~~~~~0D0009D3H6~~~20140731~0.000~~~F00000QFNT~S&P US Commercial Paper TR USD
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:66   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D0005O7NO
+Original content in file is: 04821QBT7~~US04821QBT76~~~~~0D0005O7NO~~~20140731~0.000~~~F00000QFNT~S&P US Commercial Paper TR USD
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:67   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D0009M1TT
+Original content in file is: 88603YAD3~~US88603YAD31~~~~~0D0009M1TT~~~20140731~0.000~~~F00000QFNT~S&P US Commercial Paper TR USD
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:68   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D0003ZWX7
+Original content in file is: 0020P5CU1~~US0020P5CU16~~~~~0D0003ZWX7~~~20140731~0.000~~~F00000QFNT~S&P US Commercial Paper TR USD
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:69   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D0006XZYB
+Original content in file is: 20272AFS0~~US20272AFS06~~~~~0D0006XZYB~~~20140731~0.000~~~F00000QFNT~S&P US Commercial Paper TR USD
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:70   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D0005KZTL
+Original content in file is: 06945JCG6~~US06945JCG67~~~~~0D0005KZTL~~~20140731~0.000~~~F00000QFNT~S&P US Commercial Paper TR USD
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:71   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D0003UIUY
+Original content in file is: 2332K4BZ6~~US2332K4BZ60~~~~~0D0003UIUY~~~20140731~0.000~~~F00000QFNT~S&P US Commercial Paper TR USD
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:72   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D0006XZX3
+Original content in file is: 20272AEE2~~US20272AEE29~~~~~0D0006XZX3~~~20140731~0.000~~~F00000QFNT~S&P US Commercial Paper TR USD
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:73   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D0006XZXH
+Original content in file is: 20272AEU6~~US20272AEU60~~~~~0D0006XZXH~~~20140731~0.000~~~F00000QFNT~S&P US Commercial Paper TR USD
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:74   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D0009LTT1
+Original content in file is: 67984YAD6~~US67984YAD67~~~~~0D0009LTT1~~~20140731~0.000~~~F00000QFNT~S&P US Commercial Paper TR USD
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:75   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D0009LTSY
+Original content in file is: 67984YAA2~~US67984YAA29~~~~~0D0009LTSY~~~20140731~0.000~~~F00000QFNT~S&P US Commercial Paper TR USD
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:76   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D0006XZX2
+Original content in file is: 20272AED4~~US20272AED46~~~~~0D0006XZX2~~~20140731~0.000~~~F00000QFNT~S&P US Commercial Paper TR USD
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:77   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D00098QPG
+Original content in file is: 00182HBM3~~US00182HBM34~~~~~0D00098QPG~~~20140731~0.000~~~F00000QFNT~S&P US Commercial Paper TR USD
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:78   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D0009NVZN
+Original content in file is: 30601YNJ0~~US30601YNJ00~~~~~0D0009NVZN~~~20140731~0.000~~~F00000QFNT~S&P US Commercial Paper TR USD
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:79   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D0009SSWW
+Original content in file is: 12800EAD8~~US12800EAD85~~~~~0D0009SSWW~~~20140731~0.000~~~F00000QFNT~S&P US Commercial Paper TR USD
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:80   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D0006XZYA
+Original content in file is: 20272AFR2~~US20272AFR23~~~~~0D0006XZYA~~~20140731~0.000~~~F00000QFNT~S&P US Commercial Paper TR USD
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:81   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D0009CCVU
+Original content in file is: 9612C4HV6~~US9612C4HV63~~~~~0D0009CCVU~~~20140731~0.000~~~F00000QFNT~S&P US Commercial Paper TR USD
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:82   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D0003SDBN
+Original content in file is: 0020P5CR8~~US0020P5CR86~~~~~0D0003SDBN~~~20140731~0.000~~~F00000QFNT~S&P US Commercial Paper TR USD
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:83   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D0005KZRD
+Original content in file is: 06945JBU6~~US06945JBU60~~~~~0D0005KZRD~~~20140731~0.000~~~F00000QFNT~S&P US Commercial Paper TR USD
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:84   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D0006XZYT
+Original content in file is: 20272AGC4~~US20272AGC45~~~~~0D0006XZYT~~~20140731~0.000~~~F00000QFNT~S&P US Commercial Paper TR USD
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:85   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D0009KHF8
+Original content in file is: 05253DAE4~~US05253DAE40~~~~~0D0009KHF8~~~20140731~0.000~~~F00000QFNT~S&P US Commercial Paper TR USD
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:86   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D0006XZYC
+Original content in file is: 20272AFT8~~US20272AFT88~~~~~0D0006XZYC~~~20140731~0.000~~~F00000QFNT~S&P US Commercial Paper TR USD
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:87   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D0008S66T
+Original content in file is: 28504JAQ3~~US28504JAQ31~~~~~0D0008S66T~~~20140731~0.000~~~F00000QFNT~S&P US Commercial Paper TR USD
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:88   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D0005KZT9
+Original content in file is: 06945JBV4~~US06945JBV44~~~~~0D0005KZT9~~~20140731~0.000~~~F00000QFNT~S&P US Commercial Paper TR USD
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:89   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D0003R6LR
+Original content in file is: 05253MAR5~~US05253MAR51~~~~~0D0003R6LR~~~20140731~0.000~~~F00000QFNT~S&P US Commercial Paper TR USD
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:90   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D00093EUV
+Original content in file is: 63975WBA5~~US63975WBA53~~~~~0D00093EUV~~~20140731~0.000~~~F00000QFNT~S&P US Commercial Paper TR USD
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:91   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D0006XZYU
+Original content in file is: 20272AGD2~~US20272AGD28~~~~~0D0006XZYU~~~20140731~0.000~~~F00000QFNT~S&P US Commercial Paper TR USD
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:92   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D0009RHZU
+Original content in file is: 55607NCA6~~US55607NCA63~~~~~0D0009RHZU~~~20140731~0.000~~~F00000QFNT~S&P US Commercial Paper TR USD
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:93   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D0005Q0D6
+Original content in file is: 23305GAA6~~US23305GAA67~~~~~0D0005Q0D6~~~20140731~0.000~~~F00000QFNT~S&P US Commercial Paper TR USD
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:94   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D0009ODSJ
+Original content in file is: 05253MCR3~~US05253MCR34~~~~~0D0009ODSJ~~~20140731~0.000~~~F00000QFNT~S&P US Commercial Paper TR USD
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:95   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D0009OSSC
+Original content in file is: 0347M5AY5~~US0347M5AY59~~~~~0D0009OSSC~~~20140731~0.000~~~F00000QFNT~S&P US Commercial Paper TR USD
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:96   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D0009DBKO
+Original content in file is: 08224TAC3~~US08224TAC36~~~~~0D0009DBKO~~~20140731~0.000~~~F00000QFNT~S&P US Commercial Paper TR USD
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:97   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D0003XDJL
+Original content in file is: 00182HAW2~~US00182HAW25~~~~~0D0003XDJL~~~20140731~0.000~~~F00000QFNT~S&P US Commercial Paper TR USD
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:98   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D00071MUQ
+Original content in file is: 26876CAK5~~US26876CAK53~~~~~0D00071MUQ~~~20140731~0.000~~~F00000QFNT~S&P US Commercial Paper TR USD
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:99   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D0005O7NS
+Original content in file is: 04821QBX8~~US04821QBX88~~~~~0D0005O7NS~~~20140731~0.000~~~F00000QFNT~S&P US Commercial Paper TR USD
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:100   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D0003W9N9
+Original content in file is: 9612C4DN8~~US9612C4DN83~~~~~0D0003W9N9~~~20140731~0.000~~~F00000QFNT~S&P US Commercial Paper TR USD
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:101   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D0006XZYD
+Original content in file is: 20272AFU5~~US20272AFU51~~~~~0D0006XZYD~~~20140731~0.000~~~F00000QFNT~S&P US Commercial Paper TR USD
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:102   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D0006XZYR
+Original content in file is: 20272AGA8~~US20272AGA88~~~~~0D0006XZYR~~~20140731~0.000~~~F00000QFNT~S&P US Commercial Paper TR USD
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:103   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D0005Q1ML
+Original content in file is: 23305GAC2~~US23305GAC24~~~~~0D0005Q1ML~~~20140731~0.000~~~F00000QFNT~S&P US Commercial Paper TR USD
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:104   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D00096TKC
+Original content in file is: 92513HHQ5~~US92513HHQ56~~~~~0D00096TKC~~~20140731~0.000~~~F00000QFNT~S&P US Commercial Paper TR USD
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:105   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D0003UDAO
+Original content in file is: 96122JBH1~~US96122JBH14~~~~~0D0003UDAO~~~20140731~0.000~~~F00000QFNT~S&P US Commercial Paper TR USD
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:106   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D0008S66R
+Original content in file is: 28504JAN0~~US28504JAN00~~~~~0D0008S66R~~~20140731~0.000~~~F00000QFNT~S&P US Commercial Paper TR USD
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:107   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D0009BBMF
+Original content in file is: 0556X4BT2~~US0556X4BT26~~~~~0D0009BBMF~~~20140731~0.000~~~F00000QFNT~S&P US Commercial Paper TR USD
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:348755   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D0000ANYS
+Original content in file is: 30225XAA1~~US30225XAA19~~~~~0D0000ANYS~~~20140331~0.946~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:348756   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D0001F6X5
+Original content in file is: 549463AG2~~US549463AG24~~~~~0D0001F6X5~~~20140331~0.373~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:348757   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D00000T5L
+Original content in file is: 025676AH0~~US025676AH01~~~~~0D00000T5L~~~20140331~1.449~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:348758   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D000071QK
+Original content in file is: 19259PAF9~~US19259PAF99~~~~~0D000071QK~~~20140331~0.872~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:348759   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D0001PTK1
+Original content in file is: 78388JAM8~~US78388JAM80~~~~~0D0001PTK1~~~20140331~0.492~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:348760   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D0000YM18
+Original content in file is: 31787AAK7~~US31787AAK79~~~~~0D0000YM18~~~20140331~0.876~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:348761   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D0001OHHX
+Original content in file is: 750459AE9~~US750459AE91~~~~~0D0001OHHX~~~20130131~0.218~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:348762   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D0000Z4NO
+Original content in file is: 345370CF5~~US345370CF51~~~~~0D0000Z4NO~~~20140331~0.994~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:348763   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D00024GA4
+Original content in file is: 206708AA7~~US206708AA71~~~~~0D00024GA4~~~20140331~0.380~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:348764   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D0002ACBB
+Original content in file is: 375558AM5~~US375558AM55~~~~~0D0002ACBB~~~20140331~0.665~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:348765   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D00027E6V
+Original content in file is: 427093AD1~~US427093AD16~~~~~0D00027E6V~~~20140331~0.085~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:348766   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D0001T9YM
+Original content in file is: 871130AC4~~US871130AC45~~~~~0D0001T9YM~~~20140331~0.000~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:348767   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D00000X8N
+Original content in file is: 031652AZ3~~US031652AZ39~~~~~0D00000X8N~~~20140331~1.603~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:348768   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D00000SDX
+Original content in file is: 023178AB2~~US023178AB21~~~~~0D00000SDX~~~20110630~0.020~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:348769   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D00000N1J
+Original content in file is: 018772AK9~~US018772AK95~~~~~0D00000N1J~~~20140331~0.672~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:348770   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D00017SD2
+Original content in file is: 38068NAB4~~US38068NAB47~~~~~0D00017SD2~~~20121130~-0.058~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:348771   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D000071IA
+Original content in file is: 19239VAA2~~US19239VAA26~~~~~0D000071IA~~~20140331~0.020~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:348772   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D0001TBBU
+Original content in file is: 872443AB2~~US872443AB20~~~~~0D0001TBBU~~~20140331~1.638~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:348773   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D0001N5YC
+Original content in file is: 719405AF9~~US719405AF90~~~~~0D0001N5YC~~~20140331~1.269~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:348774   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D0002YQFC
+Original content in file is: 693320AN3~~US693320AN32~~~~~0D0002YQFC~~~20140331~0.481~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:348775   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D00000VDS
+Original content in file is: 02744MAA6~~US02744MAA62~~~~~0D00000VDS~~~20121130~0.177~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:348776   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D00007O50
+Original content in file is: 212485AE6~~US212485AE66~~~~~0D00007O50~~~20140331~0.662~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:348777   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D00005U0H
+Original content in file is: 156708AP4~~US156708AP48~~~~~0D00005U0H~~~20120229~0.134~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:348778   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D00009RNX
+Original content in file is: 269246AZ7~~US269246AZ79~~~~~0D00009RNX~~~20140331~2.342~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:348779   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D0001PQPI
+Original content in file is: 78029AAD2~~CA78029AAD24~~~~~0D0001PQPI~~~20101231~0.708~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:348780   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D0001V6RS
+Original content in file is: 92769LAB7~~US92769LAB71~~~~~0D0001V6RS~~~20140331~0.747~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:348781   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D0001SS2N
+Original content in file is: 859737AB4~~US859737AB48~~~~~0D0001SS2N~~~20140331~0.688~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:348782   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D00031QAF
+Original content in file is: 25388BAC8~~US25388BAC81~~~~~0D00031QAF~~~20140331~0.243~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:348783   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D00017FFS
+Original content in file is: 367905AE6~~US367905AE60~~~~~0D00017FFS~~~20140331~0.728~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:348784   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D00032OVS
+Original content in file is: 460951AC0~~US460951AC01~~~~~0D00032OVS~~~20140331~0.319~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:348785   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D0001L2FZ
+Original content in file is: 66705CAA0~~US66705CAA09~~~~~0D0001L2FZ~~~20140331~0.031~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:348786   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D0001OMR0
+Original content in file is: 75508AAB2~~US75508AAB26~~~~~0D0001OMR0~~~20120930~0.519~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:348787   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D00009L41
+Original content in file is: 262498AB4~~US262498AB44~~~~~0D00009L41~~~20140331~1.674~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:348788   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D00004944
+Original content in file is: 126408GA5~~US126408GA52~~~~~0D00004944~~~20140331~1.425~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:348789   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D0001AS83
+Original content in file is: 44106MAK8~~US44106MAK80~~~~~0D0001AS83~~~20140331~0.051~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:348790   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D0000Z227
+Original content in file is: 343389AA0~~US343389AA03~~~~~0D0000Z227~~~20130228~-0.179~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:348791   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D000386HC
+Original content in file is: 419879AD3~~US419879AD39~~~~~0D000386HC~~~20140331~0.539~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:348792   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D0001RNNM
+Original content in file is: 82934HAD3~~US82934HAD35~~~~~0D0001RNNM~~~20130131~1.144~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:348793   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D0003381I
+Original content in file is: 74973WAA5~~US74973WAA53~~~~~0D0003381I~~~20140331~0.625~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:348794   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D0001EF50
+Original content in file is: 530715AG6~~US530715AG61~~~~~0D0001EF50~~~20140331~0.083~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:348795   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D00033JIW
+Original content in file is: 716578AC3~~US716578AC33~~~~~0D00033JIW~~~20140331~1.190~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:348796   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D00030QAX
+Original content in file is: 171779AG6~~US171779AG67~~~~~0D00030QAX~~~20140331~1.219~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:348797   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D00002BOV
+Original content in file is: 06846NAA2~~US06846NAA28~~~~~0D00002BOV~~~20140331~0.062~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:348798   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D0001SSDV
+Original content in file is: 860370AJ4~~US860370AJ40~~~~~0D0001SSDV~~~20140331~0.296~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:348799   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D00034B4B
+Original content in file is: 74586WAA4~~US74586WAA45~~~~~0D00034B4B~~~20140331~0.703~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:348800   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D0001L8NU
+Original content in file is: 670704AA3~~US670704AA31~~~~~0D0001L8NU~~~20130228~0.306~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:348801   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D00002B7R
+Original content in file is: 067806AC3~~US067806AC35~~~~~0D00002B7R~~~20140331~0.734~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:348802   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D0001EFU5
+Original content in file is: 53219LAH2~~US53219LAH24~~~~~0D0001EFU5~~~20140331~0.378~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:348803   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D00031DR0
+Original content in file is: 69329YAB0~~US69329YAB02~~~~~0D00031DR0~~~20140331~0.283~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:348804   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D0000AFVI
+Original content in file is: 29275YAA0~~US29275YAA01~~~~~0D0000AFVI~~~20140331~0.924~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:348805   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D00007WXG
+Original content in file is: 22160QAA0~~US22160QAA04~~~~~0D00007WXG~~~20140331~0.445~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:348806   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D0000Z22V
+Original content in file is: 343412AA0~~US343412AA04~~~~~0D0000Z22V~~~20140331~1.928~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:348807   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D0001KDWF
+Original content in file is: 651639AF3~~US651639AF36~~~~~0D0001KDWF~~~20140331~-0.049~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:348808   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D00017UZD
+Original content in file is: 382410AC2~~US382410AC28~~~~~0D00017UZD~~~20140331~0.319~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:348809   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D00017UZB
+Original content in file is: 382410AB4~~US382410AB45~~~~~0D00017UZB~~~20120131~0.295~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:348810   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D00028H8Y
+Original content in file is: 018772AQ6~~US018772AQ65~~~~~0D00028H8Y~~~20140331~0.672~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:348811   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D00000I7F
+Original content in file is: 015271AB5~~US015271AB56~~~~~0D00000I7F~~~20140331~0.981~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:348812   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D0001UBRA
+Original content in file is: 90333EAC2~~US90333EAC21~~~~~0D0001UBRA~~~20140331~1.668~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:348813   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D00026N22
+Original content in file is: 526057BC7~~US526057BC76~~~~~0D00026N22~~~20140331~0.559~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:348814   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D0001GM13
+Original content in file is: 584690AA9~~US584690AA97~~~~~0D0001GM13~~~20140331~0.325~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:348815   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D0001NVPO
+Original content in file is: 739363AD1~~US739363AD17~~~~~0D0001NVPO~~~20120731~0.201~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:348816   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D00028IT8
+Original content in file is: 127387AG3~~US127387AG30~~~~~0D00028IT8~~~20140331~0.900~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:348817   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D00037ZJ6
+Original content in file is: 151290AZ6~~US151290AZ66~~~~~0D00037ZJ6~~~20140331~2.458~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:348818   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D0001WES9
+Original content in file is: 95082PAH8~~US95082PAH82~~~~~0D0001WES9~~~20140331~1.907~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:348819   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D0001C816
+Original content in file is: 470355AC2~~US470355AC28~~~~~0D0001C816~~~20140331~0.831~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:348820   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D0001E27Z
+Original content in file is: 521863AL4~~US521863AL48~~~~~0D0001E27Z~~~20140331~0.175~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:348821   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D0001CEOD
+Original content in file is: 477143AG6~~US477143AG67~~~~~0D0001CEOD~~~20140331~0.396~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:348822   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D000383AM
+Original content in file is: 779376AB8~~US779376AB85~~~~~0D000383AM~~~20140331~0.555~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:348823   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D0001EBO5
+Original content in file is: 52729NBQ2~~US52729NBQ25~~~~~0D0001EBO5~~~20140331~1.039~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:348824   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D0001LR6C
+Original content in file is: 681919AM8~~US681919AM84~~~~~0D0001LR6C~~~20140331~0.280~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:348825   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D0001NGOK
+Original content in file is: 728117AB8~~US728117AB86~~~~~0D0001NGOK~~~20110430~0.611~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:348826   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D0001A9KV
+Original content in file is: 42217KAR7~~US42217KAR77~~~~~0D0001A9KV~~~20140331~0.192~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:348827   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D000286GR
+Original content in file is: 380956AB8~~US380956AB80~~~~~0D000286GR~~~20140331~0.215~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:348828   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D00024R3U
+Original content in file is: 22003BAC0~~US22003BAC00~~~~~0D00024R3U~~~20130731~0.199~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:348829   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D00017GGM
+Original content in file is: 369300AJ7~~US369300AJ70~~~~~0D00017GGM~~~20120930~-0.002~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:348830   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D0001BXMH
+Original content in file is: 46612JAD3~~US46612JAD37~~~~~0D0001BXMH~~~20140331~0.084~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:348831   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D0001XHMP
+Original content in file is: 98235TAA5~~US98235TAA51~~~~~0D0001XHMP~~~20140331~0.239~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:348832   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D0001E3D7
+Original content in file is: 52324WAB5~~US52324WAB54~~~~~0D0001E3D7~~~20120630~-0.133~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:348833   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D0001CEO9
+Original content in file is: 477143AE1~~US477143AE10~~~~~0D0001CEO9~~~20140331~0.496~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:348834   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D0000ZDM9
+Original content in file is: 35100EAE4~~US35100EAE41~~~~~0D0000ZDM9~~~20121130~0.000~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:348835   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D00026WPC
+Original content in file is: 22282EAC6~~US22282EAC66~~~~~0D00026WPC~~~20140331~0.196~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:348836   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D00017GED
+Original content in file is: 368682AL4~~US368682AL43~~~~~0D00017GED~~~20120131~0.234~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:348837   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D000244WQ
+Original content in file is: 867652AD1~~US867652AD16~~~~~0D000244WQ~~~20140331~0.866~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:348838   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D0000AR1J
+Original content in file is: 305204AB5~~US305204AB53~~~~~0D0000AR1J~~~20121130~0.000~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:348839   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D0001EJDW
+Original content in file is: 535678AA4~~US535678AA46~~~~~0D0001EJDW~~~20140331~0.362~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:348840   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D0002ZWPX
+Original content in file is: 025676AJ6~~US025676AJ66~~~~~0D0002ZWPX~~~20140331~1.118~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:348841   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D000065EZ
+Original content in file is: 165167BZ9~~US165167BZ99~~~~~0D000065EZ~~~20140331~0.631~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:348842   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D00019A8E
+Original content in file is: 398433AC6~~US398433AC68~~~~~0D00019A8E~~~20120430~0.035~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:348843   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D00019A8G
+Original content in file is: 398433AD4~~US398433AD42~~~~~0D00019A8G~~~20140331~0.751~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:348844   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D00036LWE
+Original content in file is: 47009MAH6~~US47009MAH60~~~~~0D00036LWE~~~20140331~0.314~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:348845   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D0001EJDY
+Original content in file is: 535678AC0~~US535678AC02~~~~~0D0001EJDY~~~20140331~0.362~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:348846   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D0001R4UA
+Original content in file is: 807863AL9~~US807863AL90~~~~~0D0001R4UA~~~20120630~0.138~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:348847   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D00021HS9
+Original content in file is: U83404AA8~~USU83404AA82~~~~~0D00021HS9~~~20120531~1.908~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:348848   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D00025UOR
+Original content in file is: 552848AD5~~US552848AD50~~~~~0D00025UOR~~~20140331~1.441~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:348849   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D0001TGQ5
+Original content in file is: 878555AA9~~US878555AA97~~~~~0D0001TGQ5~~~20140331~0.703~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:348850   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D0001OH89
+Original content in file is: 749941AJ9~~US749941AJ94~~~~~0D0001OH89~~~20140331~0.249~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:348851   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D00005JTK
+Original content in file is: 14754DAC4~~US14754DAC48~~~~~0D00005JTK~~~20140331~0.433~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:348852   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D0001TH6D
+Original content in file is: 87929JAA1~~US87929JAA16~~~~~0D0001TH6D~~~20140331~0.045~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:348853   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D00023H1G
+Original content in file is: 779376AA0~~US779376AA03~~~~~0D00023H1G~~~20140331~0.555~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:348854   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D0001IZJJ
+Original content in file is: 63934EAL2~~US63934EAL20~~~~~0D0001IZJJ~~~20140331~1.043~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:348855   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D0001C7SZ
+Original content in file is: 47012EAC0~~US47012EAC03~~~~~0D0001C7SZ~~~20140331~-0.094~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:348856   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D0001UGNL
+Original content in file is: 911905AC1~~US911905AC18~~~~~0D0001UGNL~~~20140331~0.545~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:348857   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D0001UFPP
+Original content in file is: 910197AK8~~~~~~~0D0001UFPP~~~20110331~0.295~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:348858   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D000010V7
+Original content in file is: 035290AH8~~US035290AH89~~~~~0D000010V7~~~20130131~0.876~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:348859   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D00002Q7Q
+Original content in file is: 075811AC3~~US075811AC31~~~~~0D00002Q7Q~~~20111031~0.290~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:348860   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D0001EJY1
+Original content in file is: 53626YAA6~~US53626YAA64~~~~~0D0001EJY1~~~20140331~0.788~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:348861   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D000162S3
+Original content in file is: 36238GAD4~~US36238GAD43~~~~~0D000162S3~~~20121130~0.159~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:348862   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D0001BMBZ
+Original content in file is: 458140AF7~~US458140AF79~~~~~0D0001BMBZ~~~20140331~0.594~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:348863   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D00002Q7R
+Original content in file is: 075811AD1~~US075811AD14~~~~~0D00002Q7R~~~20111031~0.290~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:348864   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D0001T7IX
+Original content in file is: 86800CAE4~~US86800CAE49~~~~~0D0001T7IX~~~20140331~2.358~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:348865   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D0001H8RA
+Original content in file is: 595017AB0~~US595017AB07~~~~~0D0001H8RA~~~20140331~1.005~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:348866   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D00028HFO
+Original content in file is: 483548AD5~~US483548AD51~~~~~0D00028HFO~~~20140331~0.889~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:348867   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D0001KDWH
+Original content in file is: 651639AH9~~US651639AH91~~~~~0D0001KDWH~~~20140331~-0.049~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:348868   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D0001LUE8
+Original content in file is: 683399AB5~~US683399AB58~~~~~0D0001LUE8~~~20140331~1.265~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:348869   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D00030KA4
+Original content in file is: 651718AC2~~US651718AC25~~~~~0D00030KA4~~~20140331~1.187~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:348870   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D0001L882
+Original content in file is: 67020YAB6~~US67020YAB65~~~~~0D0001L882~~~20140331~0.797~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:348871   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D00005Z2N
+Original content in file is: 161133AD5~~US161133AD54~~~~~0D00005Z2N~~~20120831~0.205~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:348872   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D0001AF1K
+Original content in file is: 42805TAA3~~US42805TAA34~~~~~0D0001AF1K~~~20140331~1.884~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:348873   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D000044VE
+Original content in file is: 124805AB8~~US124805AB85~~~~~0D000044VE~~~20120229~0.119~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:348874   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D0001G2F8
+Original content in file is: 574599BB1~~US574599BB15~~~~~0D0001G2F8~~~20130131~-0.007~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:348875   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D0001EGE7
+Original content in file is: 532791AD2~~US532791AD26~~~~~0D0001EGE7~~~20140331~0.513~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:348876   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D00000L85
+Original content in file is: 01741RAD4~~US01741RAD44~~~~~0D00000L85~~~20140331~0.895~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:348877   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D00006CQV
+Original content in file is: 170032AT3~~US170032AT34~~~~~0D00006CQV~~~20140331~0.620~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:348878   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D0001RX48
+Original content in file is: 83415UAB4~~US83415UAB44~~~~~0D0001RX48~~~20140331~1.290~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:348879   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D0000ALH3
+Original content in file is: 298736AE9~~US298736AE96~~~~~0D0000ALH3~~~20130630~0.085~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:348880   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D0001X23R
+Original content in file is: 969199AD0~~US969199AD02~~~~~0D0001X23R~~~20121130~0.312~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:348881   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D00002B7P
+Original content in file is: 067806AB5~~~~~~~0D00002B7P~~~20110331~0.945~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:348882   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D0001Z0FK
+Original content in file is: G1163HAH9~~XS0157201665~~~~~0D0001Z0FK~~~20121031~0.324~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:348883   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D000245W5
+Original content in file is: 483007AA8~~US483007AA82~~~~~0D000245W5~~~20140331~0.367~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:348884   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D0001ADRZ
+Original content in file is: 427056BC9~~US427056BC94~~~~~0D0001ADRZ~~~20140331~0.371~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:348885   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D00005S9X
+Original content in file is: 153443AD8~~US153443AD80~~~~~0D00005S9X~~~20130228~0.320~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:349133   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D00005D0J
+Original content in file is: 14055XAG7~~US14055XAG79~~~~~0D00005D0J~~~20120630~0.225~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:552182   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D0001C9F5
+Original content in file is: 472319AG7~~US472319AG74~~~~~0D0001C9F5~~~20140331~0.315~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:552183   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D00023WK5
+Original content in file is: 499005AE6~~US499005AE60~~~~~0D00023WK5~~~20140331~0.110~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:552184   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D000380OM
+Original content in file is: 94770VAG7~~US94770VAG77~~~~~0D000380OM~~~20140331~0.208~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:552185   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D0001T7IW
+Original content in file is: 86800CAD6~~US86800CAD65~~~~~0D0001T7IW~~~20140331~2.281~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:552186   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D0001H4ZC
+Original content in file is: 594457BT9~~US594457BT97~~~~~0D0001H4ZC~~~20140331~-0.440~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:552187   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D000010PG
+Original content in file is: 03512QAA5~~US03512QAA58~~~~~0D000010PG~~~20130831~0.324~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:552188   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D00008W9I
+Original content in file is: 24823QAA5~~US24823QAA58~~~~~0D00008W9I~~~20140331~2.282~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:552189   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D00029HMU
+Original content in file is: 2515A13P4~~US2515A13P42~~~~~0D00029HMU~~~20140331~0.589~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:552190   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D0001C7SV
+Original content in file is: 47009MAG8~~US47009MAG87~~~~~0D0001C7SV~~~20140331~-0.042~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:552191   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D00027Z1R
+Original content in file is: 983919AE1~~US983919AE19~~~~~0D00027Z1R~~~20140331~0.986~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:552192   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D00008W9J
+Original content in file is: 24823QAB3~~US24823QAB32~~~~~0D00008W9J~~~20140331~2.282~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:552193   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D0001SSDY
+Original content in file is: 860372AA9~~US860372AA96~~~~~0D0001SSDY~~~20140331~0.763~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:552194   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D00008FH4
+Original content in file is: 23331ABB4~~US23331ABB44~~~~~0D00008FH4~~~20140331~0.841~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:552195   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D0001TBHC
+Original content in file is: 87264MAD1~~~~~~~0D0001TBHC~~~20140331~1.664~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:552196   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D0001Z0F0
+Original content in file is: G1145KAB8~~XS0192041621~~~~~0D0001Z0F0~~~20090228~0.281~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:552197   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D0001SSNY
+Original content in file is: 86074QAD4~~US86074QAD43~~~~~0D0001SSNY~~~20140331~0.348~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:552198   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D00037ZJ7
+Original content in file is: 151290BA0~~US151290BA07~~~~~0D00037ZJ7~~~20140331~2.446~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:552199   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D00006GF4
+Original content in file is: 172453AA0~~CA172453AA09~~~~~0D00006GF4~~~20101231~0.637~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:552200   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D0002AO4M
+Original content in file is: 879369AA4~~US879369AA42~~~~~0D0002AO4M~~~20140331~0.604~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:552201   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D0001TBIZ
+Original content in file is: 87305RAC3~~US87305RAC34~~~~~0D0001TBIZ~~~20140331~0.600~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:552202   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D000004A0
+Original content in file is: 004239AB5~~US004239AB51~~~~~0D000004A0~~~20120331~0.297~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:552203   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D00037S44
+Original content in file is: 66705PAA1~~US66705PAA12~~~~~0D00037S44~~~20140331~0.736~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:552204   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D00028Z0G
+Original content in file is: 587200AG1~~US587200AG14~~~~~0D00028Z0G~~~20130731~0.110~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:552205   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D0001J32O
+Original content in file is: 641208AC7~~US641208AC72~~~~~0D0001J32O~~~20120229~0.444~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:552206   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D00002O04
+Original content in file is: 074002AA4~~US074002AA43~~~~~0D00002O04~~~20090131~1.394~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:552207   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D000065F7
+Original content in file is: 165167CB1~~US165167CB13~~~~~0D000065F7~~~20140331~0.332~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:552208   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D000028AX
+Original content in file is: 06652BAE3~~US06652BAE39~~~~~0D000028AX~~~20130331~1.835~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:552209   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D00024IM5
+Original content in file is: G92435FU8~~GB0002212099~~~~~0D00024IM5~~~20140331~-0.110~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:552210   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D0001AKP1
+Original content in file is: 432848AZ2~~US432848AZ26~~~~~0D0001AKP1~~~20120331~0.000~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:552211   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D000065F3
+Original content in file is: 165167CA3~~US165167CA30~~~~~0D000065F3~~~20140331~0.742~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:552212   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D0001MP4M
+Original content in file is: 704549AG9~~US704549AG98~~~~~0D0001MP4M~~~20140331~0.621~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:552213   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D000064DV
+Original content in file is: 16359RAC7~~US16359RAC79~~~~~0D000064DV~~~20140331~0.346~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:552214   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D00000I7E
+Original content in file is: 015271AA7~~US015271AA73~~~~~0D00000I7E~~~20120229~0.197~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:552215   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D0001OMQZ
+Original content in file is: 75508AAA4~~US75508AAA43~~~~~0D0001OMQZ~~~20120930~0.519~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:552216   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D0001HXFR
+Original content in file is: 60855RAA8~~US60855RAA86~~~~~0D0001HXFR~~~20140331~0.695~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:552217   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D0001BM7H
+Original content in file is: 45771TAE8~~CA45771TAE88~~~~~0D0001BM7H~~~20120930~0.394~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:552218   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D00025C7I
+Original content in file is: 552953BR1~~US552953BR13~~~~~0D00025C7I~~~20140331~1.016~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:552219   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D0001EM4Y
+Original content in file is: 538034AA7~~US538034AA72~~~~~0D0001EM4Y~~~20140331~0.187~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:552220   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D0001EM4Z
+Original content in file is: 538034AB5~~US538034AB55~~~~~0D0001EM4Z~~~20140331~0.187~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:552221   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D00032OY8
+Original content in file is: 526057BE3~~US526057BE33~~~~~0D00032OY8~~~20140331~0.875~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:552222   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D000071IB
+Original content in file is: 19239VAB0~~US19239VAB09~~~~~0D000071IB~~~20140331~0.020~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:552223   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D0001RNN7
+Original content in file is: 829226AW9~~US829226AW93~~~~~0D0001RNN7~~~20130930~0.320~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:552224   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D000301LO
+Original content in file is: 891777AB0~~US891777AB00~~~~~0D000301LO~~~20140331~0.264~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:552225   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D0001OMR4
+Original content in file is: 75508AAD8~~US75508AAD81~~~~~0D0001OMR4~~~20140331~0.427~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:552226   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D0000ALH4
+Original content in file is: 298736AF6~~US298736AF61~~~~~0D0000ALH4~~~20130630~0.085~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:552227   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D0001OQF6
+Original content in file is: 758932AA5~~US758932AA53~~~~~0D0001OQF6~~~20140331~0.523~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:552228   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D00017GEG
+Original content in file is: 368682AN0~~US368682AN09~~~~~0D00017GEG~~~20140331~0.969~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:552229   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D0001EGE6
+Original content in file is: 532791AC4~~US532791AC43~~~~~0D0001EGE6~~~20140331~0.316~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:552230   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D0001L7DL
+Original content in file is: 66987EAA5~~US66987EAA55~~~~~0D0001L7DL~~~20140331~0.824~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:552231   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D000015W3
+Original content in file is: 03938LAK0~~US03938LAK08~~~~~0D000015W3~~~20140331~0.589~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:552232   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D0001948R
+Original content in file is: 393657AD3~~US393657AD34~~~~~0D0001948R~~~20140331~0.071~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:552233   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D00007GLR
+Original content in file is: 205826AE0~~US205826AE01~~~~~0D00007GLR~~~20140331~0.379~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:552234   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D00007GLS
+Original content in file is: 205826AF7~~US205826AF75~~~~~0D00007GLS~~~20140331~0.379~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:552235   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D0001RYOU
+Original content in file is: 83545GAQ5~~US83545GAQ55~~~~~0D0001RYOU~~~20140331~1.231~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:552236   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D0001UBPH
+Original content in file is: 903293AT5~~US903293AT57~~~~~0D0001UBPH~~~20140331~2.554~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:552237   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D0000AGZC
+Original content in file is: 29426LAA6~~US29426LAA61~~~~~0D0000AGZC~~~20120131~0.218~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:552238   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D0001MXCT
+Original content in file is: 709600AA8~~US709600AA81~~~~~0D0001MXCT~~~20140228~2.684~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:552239   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D0001GC3D
+Original content in file is: 576203AJ2~~US576203AJ29~~~~~0D0001GC3D~~~20140331~0.659~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:552240   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D00031DQY
+Original content in file is: 69329YAA2~~US69329YAA29~~~~~0D00031DQY~~~20140331~0.283~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:552241   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D0001TM88
+Original content in file is: 88163VAE9~~US88163VAE92~~~~~0D0001TM88~~~20140331~0.335~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:552242   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D0001U3PD
+Original content in file is: 896522AF6~~US896522AF60~~~~~0D0001U3PD~~~20140331~0.675~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:552243   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D00007HN2
+Original content in file is: 207410AD3~~US207410AD34~~~~~0D00007HN2~~~20140331~0.155~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:552244   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D00007GHX
+Original content in file is: 20478NAD2~~US20478NAD21~~~~~0D00007GHX~~~20140331~0.253~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:552245   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D000065EP
+Original content in file is: 165167BV8~~US165167BV85~~~~~0D000065EP~~~20140331~0.521~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:552246   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D0001AS8Q
+Original content in file is: 44107TAG1~~US44107TAG13~~~~~0D0001AS8Q~~~20140331~1.197~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:552247   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D00037A78
+Original content in file is: 55277JAA6~~US55277JAA60~~~~~0D00037A78~~~20140331~-0.514~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:552248   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D0001LY9H
+Original content in file is: 685564AN6~~US685564AN66~~~~~0D0001LY9H~~~20140331~0.196~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:552249   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D0001V1I1
+Original content in file is: 92343EAC6~~US92343EAC66~~~~~0D0001V1I1~~~20140331~0.917~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:552250   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D0001WQ5G
+Original content in file is: 959319AC8~~US959319AC82~~~~~0D0001WQ5G~~~20140331~1.829~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:552251   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D0001PTK0
+Original content in file is: 78388JAL0~~US78388JAL08~~~~~0D0001PTK0~~~20140331~0.492~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:552252   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D000244MV
+Original content in file is: 151290AU7~~~~~~~0D000244MV~~~20140331~2.498~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:552253   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D0001D4PG
+Original content in file is: 495582AH1~~US495582AH17~~~~~0D0001D4PG~~~20110731~0.495~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:552254   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D00017R3G
+Original content in file is: 379336AE0~~US379336AE07~~~~~0D00017R3G~~~20120131~0.205~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:552255   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D0002XDGH
+Original content in file is: 56400PAB8~~US56400PAB85~~~~~0D0002XDGH~~~20140331~0.793~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:552256   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D00038GXG
+Original content in file is: P2253THW2~~USP2253THW29~~~~~0D00038GXG~~~20140331~2.446~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:552257   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D00009BZO
+Original content in file is: 256664AC7~~US256664AC76~~~~~0D00009BZO~~~20140331~0.401~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:552258   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D0001BCIY
+Original content in file is: 45337CAH5~~US45337CAH51~~~~~0D0001BCIY~~~20140331~0.180~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:552259   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D0001OH88
+Original content in file is: 749941AH3~~US749941AH39~~~~~0D0001OH88~~~20140331~0.249~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:552260   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D00005Z2O
+Original content in file is: 161133AE3~~US161133AE38~~~~~0D00005Z2O~~~20120831~0.205~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:552261   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D00019A8D
+Original content in file is: 398433AB8~~US398433AB85~~~~~0D00019A8D~~~20120430~0.035~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:552262   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D0001V1I2
+Original content in file is: 92343EAD4~~US92343EAD40~~~~~0D0001V1I2~~~20140331~0.917~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:552263   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D00000VDU
+Original content in file is: 02744MAB4~~US02744MAB46~~~~~0D00000VDU~~~20121130~0.198~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:552264   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D000011HI
+Original content in file is: 035710AA0~~US035710AA05~~~~~0D000011HI~~~20140331~0.122~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:552265   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D0001T70N
+Original content in file is: 867652AB5~~US867652AB59~~~~~0D0001T70N~~~20110930~0.510~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:552266   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D0001U3F6
+Original content in file is: 896106AW1~~US896106AW14~~~~~0D0001U3F6~~~20121130~-0.130~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:552267   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D0001PUHN
+Original content in file is: 78444FAA4~~US78444FAA49~~~~~0D0001PUHN~~~20140331~0.032~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:552268   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D00032MZN
+Original content in file is: 928298AG3~~US928298AG39~~~~~0D00032MZN~~~20140331~1.725~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:552269   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D00036ZA9
+Original content in file is: 153443AH9~~US153443AH94~~~~~0D00036ZA9~~~20140331~0.671~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:552270   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D00000XHO
+Original content in file is: 032346AE8~~US032346AE83~~~~~0D00000XHO~~~20121130~0.229~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:552271   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D0000AH1K
+Original content in file is: 29444UAH9~~US29444UAH95~~~~~0D0000AH1K~~~20140331~0.713~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:552272   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D00007HN1
+Original content in file is: 207410AC5~~US207410AC50~~~~~0D00007HN1~~~20140331~0.155~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:552273   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D0001LR6R
+Original content in file is: 681919AV8~~US681919AV83~~~~~0D0001LR6R~~~20140331~0.285~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:552274   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D00034QOB
+Original content in file is: 74348TAA0~~US74348TAA07~~~~~0D00034QOB~~~20140331~0.300~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:552275   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D000064DU
+Original content in file is: 16359RAB9~~US16359RAB96~~~~~0D000064DU~~~20140331~0.346~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:552276   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D0001IF7Y
+Original content in file is: 61748WAA6~~US61748WAA62~~~~~0D0001IF7Y~~~20140331~0.499~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:552277   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D000367WX
+Original content in file is: 04010LAA1~~US04010LAA17~~~~~0D000367WX~~~20140331~0.332~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:552278   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D0001IF7Z
+Original content in file is: 61748WAB4~~US61748WAB46~~~~~0D0001IF7Z~~~20140331~0.499~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:552279   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D00007GHU
+Original content in file is: 20478NAB6~~US20478NAB64~~~~~0D00007GHU~~~20120831~0.396~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:552280   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D0001L881
+Original content in file is: 67020YAA8~~US67020YAA82~~~~~0D0001L881~~~20140331~0.797~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:552281   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D0001LR6B
+Original content in file is: 681919AL0~~US681919AL02~~~~~0D0001LR6B~~~20140331~0.280~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:552282   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D0001EBO3
+Original content in file is: 52729NBP4~~US52729NBP42~~~~~0D0001EBO3~~~20140331~1.050~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:552283   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D00036KX9
+Original content in file is: 448407AG1~~US448407AG10~~~~~0D00036KX9~~~20140331~0.733~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:552284   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D0001LR69
+Original content in file is: 681919AK2~~US681919AK29~~~~~0D0001LR69~~~20110731~0.009~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:552285   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D00020KFF
+Original content in file is: L75288AA5~~XS0146388656~~~~~0D00020KFF~~~20070131~-6.196~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:552286   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D000097GF
+Original content in file is: 25389JAC0~~US25389JAC09~~~~~0D000097GF~~~20140331~0.373~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:552287   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D0001MCY4
+Original content in file is: 69375NAB7~~CA69375NAB79~~~~~0D0001MCY4~~~20080831~0.420~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:552288   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D00005GKQ
+Original content in file is: 144577AA1~~US144577AA15~~~~~0D00005GKQ~~~20140331~-0.049~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:552289   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D00033PX0
+Original content in file is: 45071RAA7~~US45071RAA77~~~~~0D00033PX0~~~20140331~0.637~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:552290   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D00026S1S
+Original content in file is: 69073TAQ6~~US69073TAQ67~~~~~0D00026S1S~~~20140331~0.316~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:552291   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D0001KDWG
+Original content in file is: 651639AG1~~US651639AG19~~~~~0D0001KDWG~~~20140331~-0.085~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:552292   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D0001DB2Q
+Original content in file is: 502413AW7~~US502413AW73~~~~~0D0001DB2Q~~~20140331~0.262~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:552293   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D0001TM9X
+Original content in file is: 88164RAA5~~US88164RAA59~~~~~0D0001TM9X~~~20120531~0.692~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:552294   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D0001PYEL
+Original content in file is: 786449AG3~~US786449AG39~~~~~0D0001PYEL~~~20120531~0.062~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:552295   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D00000N2F
+Original content in file is: 018804AK0~~US018804AK06~~~~~0D00000N2F~~~20140331~0.161~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:552296   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D0002ZJ0H
+Original content in file is: 29264FAB2~~US29264FAB22~~~~~0D0002ZJ0H~~~20140331~1.240~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:552297   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D00000MXH
+Original content in file is: 018581AB4~~US018581AB48~~~~~0D00000MXH~~~20140331~1.065~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:552298   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D00017GGT
+Original content in file is: 369540AA7~~CA369540AA71~~~~~0D00017GGT~~~20101231~0.827~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:552299   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D0001UG8M
+Original content in file is: 911363AL3~~US911363AL38~~~~~0D0001UG8M~~~20140331~2.119~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:552300   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D0001CTUQ
+Original content in file is: 488360AB4~~US488360AB40~~~~~0D0001CTUQ~~~20120531~0.303~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:552301   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D000047HS
+Original content in file is: 125896BD1~~US125896BD14~~~~~0D000047HS~~~20140331~0.138~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:552302   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D0001LR65
+Original content in file is: 681904AL2~~US681904AL25~~~~~0D0001LR65~~~20140331~0.121~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:552303   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D000306A7
+Original content in file is: 345550AM9~~US345550AM98~~~~~0D000306A7~~~20140331~1.384~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:552304   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D0001C8MV
+Original content in file is: 47102XAG0~~US47102XAG07~~~~~0D0001C8MV~~~20140331~0.358~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:552305   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D0001XJYS
+Original content in file is: 98375YAU0~~US98375YAU01~~~~~0D0001XJYS~~~20140331~1.006~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:552306   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D0001NVPN
+Original content in file is: 739363AC3~~US739363AC34~~~~~0D0001NVPN~~~20120731~0.201~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:552307   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D00034NXX
+Original content in file is: 43713WAA5~~US43713WAA53~~~~~0D00034NXX~~~20140331~1.409~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:552308   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D00000O96
+Original content in file is: 02076XAA0~~US02076XAA00~~~~~0D00000O96~~~20140331~0.710~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:552309   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D0000020D
+Original content in file is: 001084AM4~~US001084AM43~~~~~0D0000020D~~~20140331~1.133~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:552310   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D0001SSDS
+Original content in file is: 860370AG0~~US860370AG01~~~~~0D0001SSDS~~~20140331~0.223~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:761724   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D0000Z4NR
+Original content in file is: 345370CN8~~US345370CN85~~~~~0D0000Z4NR~~~20140331~1.006~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:761725   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D00007GHW
+Original content in file is: 20478NAC4~~US20478NAC48~~~~~0D00007GHW~~~20140331~0.253~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:761726   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D0000YM17
+Original content in file is: 31787AAJ0~~US31787AAJ07~~~~~0D0000YM17~~~20140331~0.876~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:761727   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D0001O1DF
+Original content in file is: 743815AB8~~US743815AB80~~~~~0D0001O1DF~~~20140331~0.052~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:761728   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D000245PF
+Original content in file is: 151290AV5~~US151290AV52~~~~~0D000245PF~~~20140331~2.498~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:761729   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D00002O05
+Original content in file is: 074002AB2~~US074002AB26~~~~~0D00002O05~~~20080831~1.154~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:761730   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D00009C69
+Original content in file is: 25746UAT6~~US25746UAT60~~~~~0D00009C69~~~20140331~0.038~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:761731   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D0001SSDT
+Original content in file is: 860370AH8~~US860370AH83~~~~~0D0001SSDT~~~20140331~0.223~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:761732   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D0002118D
+Original content in file is: N6863RAA6~~XS0124248922~~~~~0D0002118D~~~20060731~-1.406~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:761733   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D000346TN
+Original content in file is: 18538TAG4~~US18538TAG40~~~~~0D000346TN~~~20140331~0.843~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:761734   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D00031BXU
+Original content in file is: 229678AD9~~US229678AD92~~~~~0D00031BXU~~~20140331~0.763~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:761735   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D0001SSDW
+Original content in file is: 860370AK1~~US860370AK13~~~~~0D0001SSDW~~~20140331~0.296~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:761736   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D0001T70P
+Original content in file is: 867652AC3~~US867652AC33~~~~~0D0001T70P~~~20140331~0.667~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:761737   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D00021E88
+Original content in file is: U2200XAA6~~USU2200XAA64~~~~~0D00021E88~~~20140331~0.454~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:761738   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D0001EBMR
+Original content in file is: 527288AX2~~US527288AX22~~~~~0D0001EBMR~~~20140331~1.380~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:761739   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D0001CLLP
+Original content in file is: 48248AAD0~~US48248AAD00~~~~~0D0001CLLP~~~20140331~0.662~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:761740   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D0001NVPQ
+Original content in file is: 739363AE9~~US739363AE99~~~~~0D0001NVPQ~~~20130228~0.343~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:761741   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D0001T70L
+Original content in file is: 867652AA7~~US867652AA76~~~~~0D0001T70L~~~20120630~0.221~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:761742   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D00009RNW
+Original content in file is: 269246AY0~~US269246AY05~~~~~0D00009RNW~~~20140331~2.342~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:761743   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D0001XLLA
+Original content in file is: 98584BAA1~~US98584BAA17~~~~~0D0001XLLA~~~20121130~0.045~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:761744   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D0001IRYK
+Original content in file is: 62913FAC6~~US62913FAC68~~~~~0D0001IRYK~~~20120229~1.559~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:761745   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D00017R3F
+Original content in file is: 379336AD2~~US379336AD24~~~~~0D00017R3F~~~20120131~0.205~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:761746   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D000344LU
+Original content in file is: 681904AN8~~US681904AN80~~~~~0D000344LU~~~20140331~0.742~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:761747   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D00036VD8
+Original content in file is: 053494AG5~~US053494AG53~~~~~0D00036VD8~~~20140331~0.132~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:761748   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D0001BCIZ
+Original content in file is: 45337CAJ1~~US45337CAJ18~~~~~0D0001BCIZ~~~20140331~0.180~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:761749   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D00007WXI
+Original content in file is: 22160QAC6~~US22160QAC69~~~~~0D00007WXI~~~20140331~0.445~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:761750   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D0000028S
+Original content in file is: 001765BC9~~US001765BC99~~~~~0D0000028S~~~20131130~1.661~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:761751   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D0001FBCD
+Original content in file is: 55276YAB2~~US55276YAB20~~~~~0D0001FBCD~~~20140331~-0.831~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:761752   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D00001O7R
+Original content in file is: 053774AB1~~US053774AB18~~~~~0D00001O7R~~~20140331~1.759~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:761753   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D0001D2E5
+Original content in file is: 49460WAF6~~US49460WAF68~~~~~0D0001D2E5~~~20120131~0.340~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:761754   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D00021PCQ
+Original content in file is: Y42539AE9~~XS0243251138~~~~~0D00021PCQ~~~20111031~1.008~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:761755   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D0001MB5Q
+Original content in file is: 693320AJ2~~US693320AJ20~~~~~0D0001MB5Q~~~20140331~0.481~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:761756   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D0001D20C
+Original content in file is: 49427RAC6~~US49427RAC60~~~~~0D0001D20C~~~20140331~0.610~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:761757   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D0001J32N
+Original content in file is: 641208AB9~~US641208AB99~~~~~0D0001J32N~~~20120229~0.444~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:761758   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D000323YX
+Original content in file is: 251591AX1~~US251591AX13~~~~~0D000323YX~~~20140331~0.738~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:761759   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D0001EDUD
+Original content in file is: 529043AA9~~US529043AA96~~~~~0D0001EDUD~~~20140331~0.890~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:761760   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D000383AJ
+Original content in file is: 749227AA2~~US749227AA23~~~~~0D000383AJ~~~20140331~1.710~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:761761   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D0001GC5Q
+Original content in file is: 576323AH2~~US576323AH26~~~~~0D0001GC5Q~~~20140331~0.811~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:761762   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D0000Z4Y5
+Original content in file is: 345550AL1~~US345550AL16~~~~~0D0000Z4Y5~~~20140331~1.384~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:761763   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D00000SNN
+Original content in file is: 02342TAC3~~US02342TAC36~~~~~0D00000SNN~~~20130630~0.005~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:761764   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D00000SNO
+Original content in file is: 02342TAD1~~US02342TAD19~~~~~0D00000SNO~~~20130630~-0.002~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:761765   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D0001BMBW
+Original content in file is: 458140AC4~~US458140AC49~~~~~0D0001BMBW~~~20140331~0.416~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:761766   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D00017RVO
+Original content in file is: 38011MAA6~~US38011MAA62~~~~~0D00017RVO~~~20130131~0.307~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:761767   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D00001O7Q
+Original content in file is: 053774AA3~~US053774AA35~~~~~0D00001O7Q~~~20140331~1.759~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:761768   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D00020KML
+Original content in file is: L8996HAA6~~CH0024667229~~~~~0D00020KML~~~20110331~1.389~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:761769   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D0001FBCJ
+Original content in file is: 552848AB9~~US552848AB94~~~~~0D0001FBCJ~~~20140331~1.650~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:761770   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D0001UBUE
+Original content in file is: 90341WAB4~~US90341WAB46~~~~~0D0001UBUE~~~20111031~0.416~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:761771   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D0001H8R9
+Original content in file is: 595017AA2~~US595017AA24~~~~~0D0001H8R9~~~20140331~1.005~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:761772   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D00005BL6
+Original content in file is: 140288AA9~~US140288AA96~~~~~0D00005BL6~~~20140331~0.030~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:761773   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D000065EQ
+Original content in file is: 165167BW6~~US165167BW68~~~~~0D000065EQ~~~20140331~0.521~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:761774   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D0001A97H
+Original content in file is: 421933AJ1~~US421933AJ17~~~~~0D0001A97H~~~20140331~0.583~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:761775   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D000009L8
+Original content in file is: 00949PAD0~~US00949PAD06~~~~~0D000009L8~~~20140331~0.284~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:761776   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D00017RVR
+Original content in file is: 38011MAJ7~~US38011MAJ71~~~~~0D00017RVR~~~20130831~-0.029~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:761777   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D0000AF85
+Original content in file is: 29264FAA4~~US29264FAA49~~~~~0D0000AF85~~~20140331~1.240~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:761778   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D0001BO2I
+Original content in file is: 459902AQ5~~US459902AQ56~~~~~0D0001BO2I~~~20140331~0.300~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:761779   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D00029R9T
+Original content in file is: 36869MAA3~~US36869MAA36~~~~~0D00029R9T~~~20140331~1.039~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:761780   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D0001CEOB
+Original content in file is: 477143AF8~~US477143AF84~~~~~0D0001CEOB~~~20140331~0.368~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:761781   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D0001SSNZ
+Original content in file is: 86074QAF9~~US86074QAF90~~~~~0D0001SSNZ~~~20140331~0.348~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:761782   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D00027B7W
+Original content in file is: 795435AC0~~US795435AC06~~~~~0D00027B7W~~~20140331~0.654~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:761783   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D0000AGHZ
+Original content in file is: 29355XAB3~~US29355XAB38~~~~~0D0000AGHZ~~~20140331~0.715~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:761784   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D0001BMBX
+Original content in file is: 458140AD2~~US458140AD22~~~~~0D0001BMBX~~~20140331~0.416~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:761785   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D0001PAR4
+Original content in file is: 767754BU7~~US767754BU70~~~~~0D0001PAR4~~~20140331~0.676~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:761786   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D00023FUH
+Original content in file is: 743410AY8~~US743410AY82~~~~~0D00023FUH~~~20140331~0.600~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:761787   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D000008SW
+Original content in file is: 007903AL1~~US007903AL16~~~~~0D000008SW~~~20140331~0.316~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:761788   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D00035RX6
+Original content in file is: 24823QAC1~~US24823QAC15~~~~~0D00035RX6~~~20140331~0.972~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:761789   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D0001SR84
+Original content in file is: 858119AP5~~US858119AP59~~~~~0D0001SR84~~~20140331~0.628~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:761790   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D00037WRW
+Original content in file is: 500233AA9~~US500233AA97~~~~~0D00037WRW~~~20140331~0.495~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:761791   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D0001UI9C
+Original content in file is: 912909AE8~~US912909AE85~~~~~0D0001UI9C~~~20140331~0.884~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:761792   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D00032YRD
+Original content in file is: 750236AK7~~US750236AK77~~~~~0D00032YRD~~~20140331~1.716~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:761793   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D0001EF55
+Original content in file is: 530715AL5~~US530715AL56~~~~~0D0001EF55~~~20140331~0.148~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:761794   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D0001WL8E
+Original content in file is: 955306AA3~~US955306AA38~~~~~0D0001WL8E~~~20140331~0.375~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:761795   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D00037S61
+Original content in file is: 02208RAC0~~US02208RAC07~~~~~0D00037S61~~~20140331~1.110~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:761796   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D00004MPA
+Original content in file is: 127914AB5~~US127914AB52~~~~~0D00004MPA~~~20130731~0.027~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:761797   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D00007NFQ
+Original content in file is: 210795PU8~~US210795PU84~~~~~0D00007NFQ~~~20140331~0.254~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:761798   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D0000ANFX
+Original content in file is: 301283AA5~~CA301283AA59~~~~~0D0000ANFX~~~20120930~0.414~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:761800   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D00029SDJ
+Original content in file is: 01449JAA3~~US01449JAA34~~~~~0D00029SDJ~~~20140331~0.777~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:761801   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D000380NN
+Original content in file is: 888706AD0~~US888706AD00~~~~~0D000380NN~~~20140331~0.743~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:761802   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D0001ODKR
+Original content in file is: 74837RAB0~~US74837RAB06~~~~~0D0001ODKR~~~20120229~0.674~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:761803   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D00000HNY
+Original content in file is: 014485AA4~~US014485AA45~~~~~0D00000HNY~~~20110731~-0.497~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:761804   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D00030VAQ
+Original content in file is: 78444FAC0~~US78444FAC05~~~~~0D00030VAQ~~~20140331~0.800~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:761806   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D00037WUA
+Original content in file is: 680223AH7~~US680223AH76~~~~~0D00037WUA~~~20140331~0.358~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:761807   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D00017QSB
+Original content in file is: 378973AA9~~US378973AA92~~~~~0D00017QSB~~~20130831~0.967~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:761808   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D0001VCCK
+Original content in file is: 928241AH1~~US928241AH10~~~~~0D0001VCCK~~~20140331~1.150~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:761809   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D00007FQX
+Original content in file is: 203349AB1~~~~~~~0D00007FQX~~~20070531~0.452~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:761810   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D0001KDWJ
+Original content in file is: 651639AJ5~~US651639AJ57~~~~~0D0001KDWJ~~~20140331~-0.085~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:761811   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D0000AGHY
+Original content in file is: 29355XAA5~~US29355XAA54~~~~~0D0000AGHY~~~20140331~0.715~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:761812   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D0001UB32
+Original content in file is: 902549AJ3~~US902549AJ38~~~~~0D0001UB32~~~20140331~0.260~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:761813   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D000048HY
+Original content in file is: 126349AC3~~US126349AC33~~~~~0D000048HY~~~20140331~0.447~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:761814   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D0002YQGR
+Original content in file is: 80004CAD3~~US80004CAD39~~~~~0D0002YQGR~~~20140331~0.744~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:761815   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D00006EZ9
+Original content in file is: 171779AE1~~US171779AE10~~~~~0D00006EZ9~~~20140331~0.594~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:761816   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D00035EOX
+Original content in file is: 94770VAE2~~US94770VAE20~~~~~0D00035EOX~~~20140331~0.548~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:761817   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D000010V8
+Original content in file is: 035290AJ4~~US035290AJ46~~~~~0D000010V8~~~20130131~0.876~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:761818   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D00009OR4
+Original content in file is: 264901AB5~~CA264901AB50~~~~~0D00009OR4~~~20120930~0.576~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:761819   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D0000AH1I
+Original content in file is: 29444UAG1~~US29444UAG13~~~~~0D0000AH1I~~~20140331~0.595~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:761820   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D00037MST
+Original content in file is: 74348TAB8~~US74348TAB89~~~~~0D00037MST~~~20140331~0.294~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:761821   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D00005S9V
+Original content in file is: 153435AA0~~US153435AA00~~~~~0D00005S9V~~~20130531~0.770~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:761822   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D0001BN0J
+Original content in file is: 45884XAD5~~US45884XAD57~~~~~0D0001BN0J~~~20140331~1.757~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:761823   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D00017GGN
+Original content in file is: 369300AK4~~US369300AK44~~~~~0D00017GGN~~~20120930~-0.002~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:761824   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D00033PZU
+Original content in file is: 576323AL3~~US576323AL38~~~~~0D00033PZU~~~20140331~0.839~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:761825   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D0001D4PH
+Original content in file is: 495582AJ7~~US495582AJ72~~~~~0D0001D4PH~~~20110731~0.495~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:761827   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D0000719U
+Original content in file is: 192108AR9~~US192108AR96~~~~~0D0000719U~~~20140331~0.103~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:761828   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D0001GM1D
+Original content in file is: 58470KAA2~~US58470KAA25~~~~~0D0001GM1D~~~20140331~0.325~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:761829   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D00000XHP
+Original content in file is: 032346AF5~~US032346AF58~~~~~0D00000XHP~~~20121130~0.229~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:761830   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D0001DB0N
+Original content in file is: 50212AAA4~~US50212AAA43~~~~~0D0001DB0N~~~20111031~0.035~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:761832   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D0001NVPR
+Original content in file is: 739363AF6~~US739363AF64~~~~~0D0001NVPR~~~20130228~0.343~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:761833   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D0001E27Y
+Original content in file is: 521863AK6~~US521863AK64~~~~~0D0001E27Y~~~20140331~0.175~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:761834   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D0001OEL1
+Original content in file is: 74923MAA8~~US74923MAA80~~~~~0D0001OEL1~~~20140331~0.054~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:761835   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D0001EBO1
+Original content in file is: 52729NBM1~~US52729NBM11~~~~~0D0001EBO1~~~20121231~0.606~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:761836   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D00006EZB
+Original content in file is: 171779AF8~~US171779AF84~~~~~0D00006EZB~~~20140331~0.922~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:761837   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D00000N2E
+Original content in file is: 018804AJ3~~US018804AJ33~~~~~0D00000N2E~~~20140331~0.161~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:761838   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D00000WSA
+Original content in file is: 031162AP5~~US031162AP59~~~~~0D00000WSA~~~20130131~0.097~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:761839   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D00001NX6
+Original content in file is: 053494AF7~~US053494AF70~~~~~0D00001NX6~~~20140331~-0.009~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:761840   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D0001BOEK
+Original content in file is: 461203AD3~~US461203AD38~~~~~0D0001BOEK~~~20140331~0.413~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:761841   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D0001EJLY
+Original content in file is: 535919AF1~~US535919AF16~~~~~0D0001EJLY~~~20120131~0.209~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:761842   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D00000T5J
+Original content in file is: 025676AG2~~US025676AG28~~~~~0D00000T5J~~~20120831~0.222~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:761843   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D00034I0S
+Original content in file is: 422368AA8~~US422368AA83~~~~~0D00034I0S~~~20140331~0.147~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:761844   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D0001F6X7
+Original content in file is: 549463AH0~~US549463AH07~~~~~0D0001F6X7~~~20140331~0.250~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:761845   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D0001EGE8
+Original content in file is: 532791AE0~~US532791AE09~~~~~0D0001EGE8~~~20140331~0.316~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:761846   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D0002ZYH0
+Original content in file is: 928645AA8~~US928645AA84~~~~~0D0002ZYH0~~~20140331~-0.030~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:761847   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D0001EGEA
+Original content in file is: 532791AF7~~US532791AF73~~~~~0D0001EGEA~~~20140331~0.513~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:761848   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D0001TUPH
+Original content in file is: 888305AA7~~US888305AA73~~~~~0D0001TUPH~~~20140331~2.388~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:761849   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D0000ANYO
+Original content in file is: 302251AA1~~CA302251AA14~~~~~0D0000ANYO~~~20120630~0.604~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:761850   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D0001RN1M
+Original content in file is: 82823LAA4~~US82823LAA44~~~~~0D0001RN1M~~~20140331~0.146~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:761851   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D0001TKS1
+Original content in file is: 880779AV5~~US880779AV56~~~~~0D0001TKS1~~~20140331~2.764~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:761852   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D0001EED1
+Original content in file is: 529289AA8~~US529289AA81~~~~~0D0001EED1~~~20120531~0.069~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:761854   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D0001RWVP
+Original content in file is: 83408WAC7~~US83408WAC73~~~~~0D0001RWVP~~~20120531~1.908~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:761856   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D0001RX47
+Original content in file is: 83415UAA6~~US83415UAA60~~~~~0D0001RX47~~~20140331~1.290~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:761857   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D0000ANYQ
+Original content in file is: 30225VAA5~~US30225VAA52~~~~~0D0000ANYQ~~~20120331~0.383~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:761858   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D00000MXI
+Original content in file is: 018581AC2~~US018581AC21~~~~~0D00000MXI~~~20140331~1.065~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:761859   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D00002B7S
+Original content in file is: 067806AD1~~US067806AD18~~~~~0D00002B7S~~~20140331~0.734~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:761860   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D0001U4BC
+Original content in file is: 896818AB7~~US896818AB75~~~~~0D0001U4BC~~~20140331~0.682~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:761861   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D00000VK0
+Original content in file is: 028731AA5~~US028731AA54~~~~~0D00000VK0~~~20140331~0.477~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:761862   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D00001QV5
+Original content in file is: 055639AB4~~US055639AB42~~~~~0D00001QV5~~~20140331~0.639~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:761863   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D000097GE
+Original content in file is: 25389JAB2~~US25389JAB26~~~~~0D000097GE~~~20111031~0.655~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:761864   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D000097GD
+Original content in file is: 25389JAA4~~US25389JAA43~~~~~0D000097GD~~~20111031~0.655~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:761865   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D000097G9
+Original content in file is: 25388BAB0~~US25388BAB09~~~~~0D000097G9~~~20140331~0.003~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:761866   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D000305TU
+Original content in file is: 666416AB8~~US666416AB86~~~~~0D000305TU~~~20140331~0.279~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:761867   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D00006QY8
+Original content in file is: 181901AB5~~CA181901AB56~~~~~0D00006QY8~~~20120930~0.343~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:761868   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D0001OCBA
+Original content in file is: 74732WAA7~~US74732WAA71~~~~~0D0001OCBA~~~20140331~2.463~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:761869   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D0001U4BB
+Original content in file is: 896818AA9~~US896818AA92~~~~~0D0001U4BB~~~20140331~0.682~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:762117   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D0001RZ0N
+Original content in file is: 83568GAA2~~US83568GAA22~~~~~0D0001RZ0N~~~20120531~0.340~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:762118   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D000035BM
+Original content in file is: 09064AAB7~~US09064AAB70~~~~~0D000035BM~~~20140331~0.454~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:762119   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D00000WSB
+Original content in file is: 031162AQ3~~US031162AQ33~~~~~0D00000WSB~~~20130131~0.097~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:762120   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D00008W47
+Original content in file is: 247907AD0~~US247907AD06~~~~~0D00008W47~~~20120331~0.587~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:762121   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D00003P7K
+Original content in file is: 110394AC7~~US110394AC72~~~~~0D00003P7K~~~20140331~0.409~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:762123   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D0001OHWX
+Original content in file is: 750917AC0~~US750917AC08~~~~~0D0001OHWX~~~20140331~0.303~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:762125   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D0001IRJ8
+Original content in file is: 628530AJ6~~US628530AJ63~~~~~0D0001IRJ8~~~20140331~1.004~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:762126   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D0001DDYD
+Original content in file is: 50540RAG7~~US50540RAG74~~~~~0D0001DDYD~~~20140331~0.767~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:762127   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D00036WMG
+Original content in file is: 80517QAA8~~US80517QAA85~~~~~0D00036WMG~~~20131231~0.970~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:762128   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D00009RO5
+Original content in file is: 269246BG8~~US269246BG89~~~~~0D00009RO5~~~20140331~2.342~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:762129   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D00028TEU
+Original content in file is: 457461AC5~~US457461AC59~~~~~0D00028TEU~~~20140331~0.082~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:762130   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D0001ONGD
+Original content in file is: 75621LAJ3~~US75621LAJ35~~~~~0D0001ONGD~~~20120630~-0.005~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:762131   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D00001QV4
+Original content in file is: 055639AA6~~US055639AA68~~~~~0D00001QV4~~~20140331~0.639~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:762132   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D00004M0I
+Original content in file is: 127190AC0~~US127190AC07~~~~~0D00004M0I~~~20140331~0.818~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:762133   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D00009BZL
+Original content in file is: 256664AA1~~US256664AA11~~~~~0D00009BZL~~~20140331~0.043~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:762134   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D0001KKLX
+Original content in file is: 656568AE2~~US656568AE23~~~~~0D0001KKLX~~~20140331~-0.063~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:762135   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D00017KHW
+Original content in file is: 372917AN4~~~~~~~0D00017KHW~~~20081130~0.196~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:762136   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D000035BE
+Original content in file is: 09061GAD3~~US09061GAD34~~~~~0D000035BE~~~20140331~0.518~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:762137   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D00004M0J
+Original content in file is: 127190AD8~~US127190AD89~~~~~0D00004M0J~~~20140331~0.818~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:762139   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D00023TTE
+Original content in file is: 398905AF6~~US398905AF64~~~~~0D00023TTE~~~20140331~1.085~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:762140   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D0001DB2Y
+Original content in file is: 502424AE4~~US502424AE49~~~~~0D0001DB2Y~~~20140331~0.262~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:762142   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D00000SDV
+Original content in file is: 023178AA4~~US023178AA48~~~~~0D00000SDV~~~20110630~0.020~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:762143   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D000301VH
+Original content in file is: 124805AC6~~US124805AC68~~~~~0D000301VH~~~20140331~0.558~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:762144   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D00000RZC
+Original content in file is: 02261WAB5~~US02261WAB54~~~~~0D00000RZC~~~20140331~0.510~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:762145   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D0001MDON
+Original content in file is: 695112AG7~~US695112AG79~~~~~0D0001MDON~~~20110731~0.520~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:762146   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D00009BZM
+Original content in file is: 256664AB9~~US256664AB93~~~~~0D00009BZM~~~20140331~0.043~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================
+[FAILED]Line number is:762148   No YieldAsAtDate and YieldRate in this line!
+PerformanceId is:0D000001W8
+Original content in file is: 000886AE1~~US000886AE11~~~~~0D000001W8~~~20120131~0.844~~~~
+Yield As At Date is: 
+Yield Rate is: 
+========================================================

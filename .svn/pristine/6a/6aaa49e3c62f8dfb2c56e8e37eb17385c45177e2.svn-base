@@ -1,0 +1,82 @@
+package com.morningstar.eapi.source;
+
+import java.io.FileInputStream;
+import java.io.InputStream;
+import java.util.HashMap;
+
+import org.apache.poi.hssf.usermodel.HSSFCell;
+import org.apache.poi.hssf.usermodel.HSSFRow;
+import org.apache.poi.hssf.usermodel.HSSFSheet;
+import org.apache.poi.hssf.usermodel.HSSFWorkbook;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+public class HardCodeSummary {
+	private static final String HAED_CODE_FILE = "config/hard code summary.xls";
+	private static final Logger logger = LoggerFactory.getLogger(HardCodeSummary.class);
+
+	public static String getValueFromIndex(String sheet, String value, int searchColumnIndex, int resultColumnIndex) {
+		try {
+			InputStream is = new FileInputStream(HAED_CODE_FILE);
+			HSSFWorkbook hssfWorkbook = new HSSFWorkbook(is);
+			HSSFSheet hSSFSheet = hssfWorkbook.getSheet(sheet);
+			searchColumnIndex = searchColumnIndex - 1;
+			resultColumnIndex = resultColumnIndex - 1;
+			for (int i = 1; i <= hSSFSheet.getLastRowNum(); i++) {
+				HSSFRow hSSFRow = hSSFSheet.getRow(i);
+				HSSFCell hSSFCell = hSSFRow.getCell(searchColumnIndex);
+				if (hSSFCell != null) {
+					String cellValue = hSSFCell.getStringCellValue();
+					if (cellValue.equals(value))
+						return hSSFSheet.getRow(i).getCell(resultColumnIndex).getStringCellValue();
+				}
+			}
+		} catch (Exception e) {
+			logger.warn("Error to get Valu in " + HAED_CODE_FILE + "\t" + e.getMessage());
+		}
+		return null;
+	}
+
+	public static String getPerformanceIdByIndexSymbol(String symbol) {
+		String sheet = "Market Indices";
+		int searchColumnIndex = 1;
+		int resultColumnIndex = 5;
+
+		return getValueFromIndex(sheet, symbol, searchColumnIndex, resultColumnIndex);
+	}
+
+	public static HashMap<String, String> getIndicesSymbolAndId() {
+		HashMap<String, String> map = new HashMap<String, String>();
+		try {
+			InputStream is = new FileInputStream(HAED_CODE_FILE);
+			HSSFWorkbook hssfWorkbook = new HSSFWorkbook(is);
+			HSSFSheet hSSFSheet = hssfWorkbook.getSheet("Market Indices");
+			for (int i = 1; i <= hSSFSheet.getLastRowNum(); i++) {
+				HSSFRow hSSFRow = hSSFSheet.getRow(i);
+				HSSFCell symbolCell = hSSFRow.getCell(0);
+				HSSFCell performanceIdCell = hSSFRow.getCell(4);
+				String symbol = "";
+				switch (symbolCell.getCellType()) {
+				case HSSFCell.CELL_TYPE_STRING:
+					symbol = symbolCell.getStringCellValue();
+					break;
+				case HSSFCell.CELL_TYPE_NUMERIC:
+					symbol = String.valueOf((int) symbolCell.getNumericCellValue());
+					break;
+				case HSSFCell.CELL_TYPE_BLANK:
+					break;
+				default:
+					break;
+				}
+
+				String performanceId = performanceIdCell.getStringCellValue();
+				if (!performanceId.equals(""))
+					map.put(performanceId, symbol);
+			}
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+		return map;
+	}
+
+}

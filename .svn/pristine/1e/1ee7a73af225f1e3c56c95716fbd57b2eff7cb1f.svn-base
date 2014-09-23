@@ -1,0 +1,248 @@
+package com.morningstar.eapi.commons;
+
+import java.sql.Connection;
+import java.sql.SQLException;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+import com.jolbox.bonecp.BoneCP;
+import com.jolbox.bonecp.BoneCPConfig;
+
+public class DBPool {
+	private static Logger logger = LoggerFactory.getLogger(DBPool.class);
+	private static BoneCP mysqlConnectionPool_geapi61 = null;
+	private static BoneCP mssqlConnectionPool_geproddb61 = null;
+	private static BoneCP mssqlConnectionPool_geoutputdb61 = null;
+	private static BoneCP mssqlConnectionPool_MsOutputDb3 = null;
+	private static BoneCP mssqlConnectionPool_gedevdb91 = null;
+
+	public static void init_geapi61() {
+		BoneCP connectionPool = null;
+		try {
+			Class.forName(ResourceManager.getMysqlDriverClass());
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+		}
+
+		try {
+			BoneCPConfig config = new BoneCPConfig();
+			config.setJdbcUrl(ResourceManager.getMysqlUrl());
+			config.setUsername(ResourceManager.getMysqlUsername());
+			config.setPassword(ResourceManager.getMysqlPassword());
+			config.setMaxConnectionsPerPartition(ResourceManager.getMaxConnectionsPerPartition());
+			config.setMinConnectionsPerPartition(ResourceManager.getMinConnectionsPerPartition());
+			config.setPartitionCount(ResourceManager.getPartitionCount());
+
+			logger.debug("Start to initialize MYSQL database pool...");
+			long startTime = System.nanoTime();
+			connectionPool = new BoneCP(config);
+			long endTime = System.nanoTime() - startTime;
+			logger.debug("geapi61 DataBase initialize finished, cost [" + endTime / (1000 * 1000) + "]ms");
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		mysqlConnectionPool_geapi61 = connectionPool;
+	}
+
+	public static void init_geproddb61() {
+		BoneCP connectionPool = null;
+		try {
+			Class.forName(ResourceManager.getMssqlDriverClass());
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+		}
+
+		try {
+			BoneCPConfig config = new BoneCPConfig();
+			config.setJdbcUrl(ResourceManager.getGeproddb61Url());
+			config.setUsername("aa");
+			config.setPassword("");
+			config.setMaxConnectionsPerPartition(ResourceManager.getMaxConnectionsPerPartition());
+			config.setMinConnectionsPerPartition(ResourceManager.getMinConnectionsPerPartition());
+			config.setPartitionCount(ResourceManager.getPartitionCount());
+
+			logger.debug("Start to initialize geproddb61 database pool...");
+			long startTime = System.nanoTime();
+			connectionPool = new BoneCP(config);
+			long endTime = System.nanoTime() - startTime;
+			logger.debug("geproddb61 DataBase initialize finished, cost [" + endTime / (1000 * 1000) + "]ms");
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		mssqlConnectionPool_geproddb61 = connectionPool;
+	}
+
+	public static void init_gedevdb91() {
+		BoneCP connectionPool = null;
+		try {
+			Class.forName(ResourceManager.getMssqlDriverClass());
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+		}
+
+		try {
+			BoneCPConfig config = new BoneCPConfig();
+			config.setJdbcUrl(ResourceManager.getGedevdb91Url());
+			config.setUsername("aa");
+			config.setPassword("");
+			config.setMaxConnectionsPerPartition(ResourceManager.getMaxConnectionsPerPartition());
+			config.setMinConnectionsPerPartition(ResourceManager.getMinConnectionsPerPartition());
+			config.setPartitionCount(ResourceManager.getPartitionCount());
+
+			logger.debug("Start to initialize gedevdb91 database pool...");
+			long startTime = System.nanoTime();
+			connectionPool = new BoneCP(config);
+			long endTime = System.nanoTime() - startTime;
+			logger.debug("gedevdb91 DataBase initialize finished, cost [" + endTime / (1000 * 1000) + "]ms");
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		mssqlConnectionPool_gedevdb91 = connectionPool;
+	}
+
+	public static void init_geoutputdb61() {
+		BoneCP connectionPool = null;
+		try {
+			Class.forName(ResourceManager.getMssqlDriverClass());
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+		}
+
+		try {
+			BoneCPConfig config = new BoneCPConfig();
+			config.setJdbcUrl(ResourceManager.getGeoutputdb61Url());
+			config.setUsername("aa");
+			config.setPassword("");
+			config.setMaxConnectionsPerPartition(ResourceManager.getMaxConnectionsPerPartition());
+			config.setMinConnectionsPerPartition(ResourceManager.getMinConnectionsPerPartition());
+			config.setPartitionCount(ResourceManager.getPartitionCount());
+
+			logger.debug("Start to initialize geoutputdb61 database pool...");
+			long startTime = System.nanoTime();
+			connectionPool = new BoneCP(config);
+			long endTime = System.nanoTime() - startTime;
+			logger.debug("geoutputdb61 DataBase initialize finished, cost [" + endTime / (1000 * 1000) + "]ms");
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		mssqlConnectionPool_geoutputdb61 = connectionPool;
+	}
+
+	public static void init_MsOutputDb3() {
+		BoneCP connectionPool = null;
+		try {
+			Class.forName(ResourceManager.getMssqlDriverClass());
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+		}
+
+		try {
+			BoneCPConfig config = new BoneCPConfig();
+			config.setJdbcUrl(ResourceManager.getMsOutputDb3Url());
+			config.setUsername(ResourceManager.getMsOutputDb3User());
+			config.setPassword(ResourceManager.getMsOutputDb3Password());
+			config.setMaxConnectionsPerPartition(ResourceManager.getMaxConnectionsPerPartition());
+			config.setMinConnectionsPerPartition(ResourceManager.getMinConnectionsPerPartition());
+			config.setPartitionCount(ResourceManager.getPartitionCount());
+
+			logger.debug("Start to initialize MsOutputDb3 database pool...");
+			long startTime = System.nanoTime();
+			connectionPool = new BoneCP(config);
+			long endTime = System.nanoTime() - startTime;
+			logger.debug("MsOutputDb3 DataBase initialize finished, cost [" + endTime / (1000 * 1000) + "]ms");
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		mssqlConnectionPool_MsOutputDb3 = connectionPool;
+	}
+
+	public static Connection getConnection_geapi61() {
+		if (mysqlConnectionPool_geapi61 != null) {
+			try {
+				return mysqlConnectionPool_geapi61.getConnection();
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		} else {
+			init_geapi61();
+			return getConnection_geapi61();
+		}
+		return null;
+	}
+
+	public static Connection getConnection_geproddb61() {
+		if (mssqlConnectionPool_geproddb61 != null) {
+			try {
+				return mssqlConnectionPool_geproddb61.getConnection();
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		} else {
+			init_geproddb61();
+			return getConnection_geproddb61();
+		}
+		return null;
+	}
+
+	public static Connection getConnection_geoutputdb61() {
+		if (mssqlConnectionPool_geoutputdb61 != null) {
+			try {
+				return mssqlConnectionPool_geoutputdb61.getConnection();
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		} else {
+			init_geoutputdb61();
+			return getConnection_geoutputdb61();
+		}
+		return null;
+	}
+
+	public static Connection getConnection_MsOutputDb3() {
+		if (mssqlConnectionPool_MsOutputDb3 != null) {
+			try {
+				return mssqlConnectionPool_MsOutputDb3.getConnection();
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		} else {
+			init_MsOutputDb3();
+			return getConnection_MsOutputDb3();
+		}
+		return null;
+	}
+
+	public static Connection getConnection_gedevdb91() {
+		if (mssqlConnectionPool_gedevdb91 != null) {
+			try {
+				return mssqlConnectionPool_gedevdb91.getConnection();
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		} else {
+			init_gedevdb91();
+			return getConnection_gedevdb91();
+		}
+		return null;
+	}
+
+	public static void shutdownPool(BoneCP connectionPool) {
+		connectionPool.shutdown();
+	}
+}

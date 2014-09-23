@@ -1,0 +1,1 @@
+SELECT Average3MonthYield FROM dbo.MLAverage3MonthYieldForMonthEnd ORDER BY EndDate;

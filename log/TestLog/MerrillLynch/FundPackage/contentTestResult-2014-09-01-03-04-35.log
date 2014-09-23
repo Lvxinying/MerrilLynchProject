@@ -1,0 +1,26 @@
+[TestForDataContent]Begin to test the Fund File's Data content in each lines,start at:2014-09-01-03-04-35
+[TestForDataContent]Begin to test the Fund File's SEDOL in each lines,start at:2014-09-01-03-04-35
+Fund File SEDOL testing has finished,end at:2014-09-01-03-05-08
+================================================================================
+================================================================================
+[TestForDataContent]Begin to test the Fund File's ISIN in each lines,start at:2014-09-01-03-05-08
+Fund File ISIN testing has finished,end at:2014-09-01-03-05-37
+================================================================================
+================================================================================
+[TestForDataContent]Begin to test the Fund File's Symbol in each lines,start at:2014-09-01-03-05-37
+Fund File Symbol testing has finished,end at:2014-09-01-03-06-10
+================================================================================
+================================================================================
+[TestForDataContent]Begin to test the Fund File's YieldAsAtDate in each lines,start at:2014-09-01-03-06-10
+Fund File YieldAsAtDate testing has finished,end at:2014-09-01-03-07-15
+================================================================================
+================================================================================
+[TestForDataContent]Begin to test the Fund File's YieldRate in each lines,start at:2014-09-01-03-07-15
+Fund File YieldRate testing has finished,end at:2014-09-01-03-07-41
+[TestForDataContent]Begin to test the Fund File's BetaAsAtDate in each lines,start at:2014-09-01-03-07-41
+Fund File BetaAsAtDate testing has finished,end at:2014-09-01-03-08-51
+================================================================================
+================================================================================
+[TestForDataContent]Begin to test the Fund File's BetaRate in each lines,start at:2014-09-01-03-08-51
+Fund File BetaRate testing has finished,end at:2014-09-01-03-09-17
+[TestForDataContent]Content test has finished,end at:2014-09-01-03-09-17

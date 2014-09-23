@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>  
+<configs>
+    <config id="1" name="dev" visible="enable" schedule="600">
+        <http_server_r>http://dltsdbdevap8001/timeseries/</http_server_r>
+        <http_server_w>http://dltsdbdevap8001/timeseries_w/</http_server_w>
+        <max_socket_count>30</max_socket_count>
+        <ts_server_list>dltsdbdevap8001:11000;dltsdbdevap8002:11000</ts_server_list>
+    </config>
+</configs>

@@ -1,0 +1,77 @@
+#commons configuration
+
+#Live: http://equityapi.morningstar.com/Webservice
+#QA Live: http://geapiqalive61/Webservice
+#UAT: http://equityapisandbox.morningstar.com/WebserviceUAT
+#DEV: http://gedataprocdev2/Webservice
+
+site=http://equityapi.morningstar.com/Webservice
+codeMappingURL=http\://codemapping.morningstar.com/category/category.xml
+token_site=http://equityapi.morningstar.com
+
+#site=http://geapi61:81/Webservice
+#token_site=http://geapi61:81
+
+token.login.email=globalequityaccess@morningstar.com
+token.login.password=ge2Shenzhen
+xoi_user=globalequitydata@morningstar.com
+xoi_password=GXy1q88E
+resultWarning=./warning.txt
+resultError=./error.txt
+
+#For BoneCP database pool use
+#The number of connections to start off with per partition.
+minConnectionsPerPartition=2
+#The number of connections to create per partition. Setting this to 5 with 3 partitions means you will have 15 unique connections to the database. Note that BoneCP will not create all these connections in one go but rather start off with minConnectionsPerPartition and gradually increase connections as required.
+maxConnectionsPerPartition=4
+#In order to reduce lock contention and thus improve performance, each incoming connection request picks off a connection from a pool that has thread-affinity, i.e. pool[threadId % partition_count]. The higher this number, the better your performance will be for the case when you have plenty of short-lived threads. Beyond a certain threshold, maintenence of these pools will start to have a negative effect on performance (and only for the case when connections on a partition start running out).
+#Default: 2, minimum: 1, recommended: 3-4 (but very app specific)
+partitionCount=1
+
+#For Mysql database use
+mysql.connection.driverclass=com.mysql.jdbc.Driver
+mysql.connection.username=ITDevUser
+mysql.connection.password=eqDev!123
+mysql.connection.url=jdbc:mysql://geapidb61/
+mysql.connection.poolSize=5
+
+##For sqlserver database use
+mssql.connection.driverclass=net.sourceforge.jtds.jdbc.Driver
+mssql.connection.poolSize=5
+#Windows Auth
+geproddb61.connection.url=jdbc:jtds:sqlserver://geproddb61;user=sqiu;password=e.123456;domain=MSDOMAIN1
+gedevdb91.connection.url=jdbc:jtds:sqlserver://gedevdb91;user=sqiu;password=e.123456;domain=MSDOMAIN1
+geoutputdb61.connection.url=jdbc:jtds:sqlserver://geoutputdb61;user=sqiu;password=e.123456;domain=MSDOMAIN1
+#Server Auth
+MsOutputDb3.connection.url=jdbc:jtds:sqlserver://MsOutputDb3
+mssql.MsOutputDb3.username=DataClient
+mssql.MsOutputDb3.password=UI*)@#(Nfb]
+
+#Mail
+mail_to=simon.qiu@morningstar.com;Edward.Zhou@morningstar.com
+mail_from=EquityTechQA@morningstar.com
+mail_host=prodmail.morningstar.com
+
+#source: Remote file share
+remote.user=msequser
+remote.password=GXy1q88E
+remote.url.gexoifs61=gexoifs61/GeEquityData/EquityXml/
+
+remote.url.4GEAPI=file://morningstar.com/shares/geequitydata/EquityProduction/Data/4GEAPI/CompanyOperation/
+remote.url.CompanyOperation.back=file://morningstar.com/shares/GEEquityData/EquityProduction/Data/CompanyOperation/Back/
+timeZone=CST
+#source: GID
+GIDLoginUrl=http://globalid.morningstar.com/GIDDataIO/Reg/Login.aspx?action=login&
+normalTestXML=./config/testng_normal.xml
+quickTestXML=./config/testng_quick.xml
+slowTestXML=./config/testng_slow.xml
+token=GYjhqiDAnk6gp7Bida1Vz4TU0gz-70NKvmwLFHVcyS-hY00CTN3my1T2mtADdSbf71UhXqbTT_lbiBPi2vPrOJHYiKxX5Djj55jjImlBn2o1
+devToken=kWadukZQoqk4iFent5S02yqHESQAMBTdsNkH7Wyja-DA7FYpkecsnnj_F8hcc0gP71UhXqbTT_k3CMJpsWJv5T10aC9Ir4ToItXb7G1_iVk1
+QAToken=Xpft1HPtr4FmFhWh4puJyo_VKUmMmgUJKP5xKQ3Ku25KlktOkj8LHxtWPev3L-5O71UhXqbTT_mRBGqPp7VPUw_bS0qDLOsHVN5u8ML6X8w1
+LiveSite=http\://equityapi/Webservice
+UATSite=http\://geapisdbx81.morningstar.com/WebserviceUAT
+QASite=http://geapiqalive61/Webservice
+DevSite=http\://gedataprocdev2/Webservice
+IDServiceURL=http\://idservice.morningstar.com/fcgi-bin/idservice.cgi?q\=OS06Y\:{0}&d\=OS001%2cOS06Y%2cAC001%2cAC018%2cAC030&
+
+

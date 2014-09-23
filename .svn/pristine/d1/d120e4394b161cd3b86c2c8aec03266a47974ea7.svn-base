@@ -1,0 +1,257 @@
+package com.morningstar.FundAutoTest.commons;
+
+import java.io.BufferedReader;
+import java.io.File;   
+import java.io.FileInputStream;
+import java.io.FileReader;
+import java.io.IOException;   
+import java.io.InputStream;
+import java.io.LineNumberReader;
+import java.math.BigDecimal;
+
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.List;
+import java.util.Random;
+import java.util.regex.*;
+
+import bsh.ParseException;
+
+public class Helper {
+
+
+	//以字节形式读取文本内容,返回给字符串	
+	public static void readFileByBytes(String fileName,int byteSize) {
+//	        File file = new File(fileName);
+	        InputStream in = null;
+/*	        try {
+	            in = new FileInputStream(file);
+	            int tempbyte;
+	            while ((tempbyte = in.read()) != -1) {
+	                System.out.write(tempbyte);
+	            }
+	            in.close();
+	        } catch (IOException e) {
+	            e.printStackTrace();
+	            return;
+	        }*/
+	        
+
+//byteSize为byte数组的大小，取整数
+	        try {
+	            byte[] tempbytes = new byte[byteSize];
+	            int byteread = 0;
+	            in = new FileInputStream(fileName);
+	            while ((byteread = in.read(tempbytes)) != -1) {
+	                System.out.write(tempbytes, 0, byteread);
+	            }
+	        } catch (Exception e1) {
+	            e1.printStackTrace();
+	        } finally {
+	            if (in != null) {
+	                try {
+	                    in.close();
+	                } catch (IOException e1) {
+	                	e1.printStackTrace();
+	                }
+	            }
+	        }
+	    }
+
+//逐行去读取一个文件的所有内容，返回一个字符串	
+    public static String readFileByLines(String fileName) {
+        File file = new File(fileName);
+        BufferedReader reader = null;
+        String text = "";
+        try {
+            String tempString = null;
+            reader = new BufferedReader(new FileReader(file));
+// 一次读入一行，直到读入null为文件结束
+            while ((tempString = reader.readLine()) != null) {             
+            	text += tempString.trim();
+            }
+            reader.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        } finally {
+            if (reader != null) {
+                try {
+                    reader.close();
+                } catch (IOException e1) {
+                	e1.getMessage();
+                }
+            }
+        }
+		return text;
+    }
+    
+    
+//按照行读取数据并且返回到一个ArrayList中
+    public static List<String> readFileList(String filePath) throws IOException {
+    	File file = new File(filePath);
+        BufferedReader reader = null;
+        List<String> fileList = new ArrayList<String>();
+        try {
+            String tempString = null;
+            reader = new BufferedReader(new FileReader(file));
+            // 一次读入一行，直到读入null为文件结束，返回到一个List中，利用List来指定读取哪行的信息
+            while ((tempString = reader.readLine()) != null) {
+            	fileList.add(tempString);
+            }
+            reader.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        } finally {
+            if (reader != null) {
+                try {
+                    reader.close();
+                } catch (IOException e1) {
+                	e1.getMessage();
+                }
+            }
+        }
+        return fileList;	
+    }
+    
+    static List<String> lineContentList = new ArrayList<String>();    
+//读取指定行的内容
+    public static String readFileInLines(String filePath,int lineNum)  throws IOException{
+    	if(lineContentList.size() < 1){
+    		lineContentList = readFileList(filePath);
+    	}
+    	int lineNumAct = lineNum - 1;
+    	String text = lineContentList.get(lineNumAct);
+    	return text;
+    }
+ 
+// 文件内容的总行数。 
+    public static int getTotalLinesOfFile(String filePath) throws IOException {
+        FileReader in = new FileReader(filePath);
+        LineNumberReader reader = new LineNumberReader(in);
+        String s = reader.readLine();
+        int lines = 0;
+        while (s != null) {
+            lines++;
+            s = reader.readLine();
+        }
+        reader.close();
+        in.close();
+        return lines;
+    }
+         
+    
+//生成随机数 
+    public static Object getRandom(String type){
+    	switch(type){
+//    		case "int":
+//    			return getRandomInt();
+    		case "float":
+    			return getRandomFloat();
+    		case "double":
+    			return getRandomDouble();
+    		case "boolean":
+    			return getRandomBoolean();
+    		default:
+    			return null;
+    	}    	
+    }
+
+ //设置一个返回范围，从min到max的指定范围内的随机整数   
+    public static int getRandomInt(int min,int max){
+    	Random random = new Random();
+    	int intNum = random.nextInt(max)%(max-min+1) + min;
+    	return intNum;
+    }
+    private static Object getRandomFloat(){
+    	Random random = new Random();
+    	float floatNum = random.nextFloat();
+    	return floatNum;
+    }
+    private static Object getRandomDouble(){
+    	Random random = new Random();
+    	double doubleNum = random.nextDouble();
+    	return doubleNum;
+    }
+    private static Object getRandomBoolean(){
+    	Random random = new Random();
+    	boolean booleanNum = random.nextBoolean();
+    	return booleanNum;
+    }
+
+    
+//判断一个字符串对应的数是否为小数
+    public static boolean isDecimal(String str){
+//正则表达式判断是否为小数
+//原正则有问题    	return Pattern.compile("([1-9]+[0-9]*|0)(\\.[\\d]+)?").matcher(str).matches(); 
+    	return Pattern.compile("(\\d+\\.\\d+)").matcher(str).matches();
+    }
+//获取小数点位数
+    public static int getDecimalScale(String decimal){
+    	int digitsNum = 0;
+    	if(isDecimal(decimal) == true){
+//获取小数点位置    		
+    		int bitPos = decimal.indexOf(".");
+//获取小数位数
+    		int numOfBits = decimal.length() - bitPos - 1;
+    		digitsNum = numOfBits;
+    	}
+    	else{
+    		System.out.println("Not a decimal,can't get the scale of it!");
+    	}
+    	return digitsNum;
+    }
+    
+//在字符串中返回某子字符串出现的次数，正则方式(仅适合字符串较短的重复比较，性能不够好)
+    public static int getMatchCount(String matchStr,String targetStr){ 
+        Pattern p = Pattern.compile(matchStr);  
+        Matcher m = p.matcher(targetStr);       
+        int matchcount = 0;  
+        while(m.find()){  
+        	matchcount++;  
+        }  
+        return matchcount;            
+    }
+    
+//设置Double精度
+    public static double setDoublePrecision(double doubleValue, int scale,int roundingMode) {  
+       BigDecimal bd = new BigDecimal(doubleValue);  
+       bd = bd.setScale(scale,roundingMode);  
+       double d = bd.doubleValue();  
+       bd = null;  
+       return d;  
+   }
+    
+//处理日期类数据
+//用法，如：String strDate = Helper.dateFormat(testdate,"yyyy-MM-dd")    
+    public static  String dateFormat(Date date,String dateFormat)throws ParseException{
+        SimpleDateFormat sdf = new SimpleDateFormat(dateFormat);
+        return sdf.format(date);
+   }
+
+//用法，如：Date testDate = Helper.dateParse(testdate,"yyyy-MM-dd")      
+   public static Date dateParse(String strDate,String dateFormat) throws ParseException, java.text.ParseException{
+        SimpleDateFormat sdf = new SimpleDateFormat(dateFormat);
+        return sdf.parse(strDate);
+   }
+//获取指定日期所在月的最后一天
+    public static Date lastDayOfMonth(Date date) {
+        Calendar cal = Calendar.getInstance();
+        cal.setTime(date);
+        cal.set(Calendar.DAY_OF_MONTH, 1);
+        cal.roll(Calendar.DAY_OF_MONTH, -1);
+        return cal.getTime();
+    }
+    
+    public static void main(String[] args) throws ParseException, Exception{
+    	String dateStr1 = "2013-11-30 00:00:00.0";
+    	Date date1 = Helper.dateParse(dateStr1, "yyyy-MM-dd");
+    	System.out.println("1:" + date1);
+    	String dateStr2 = "20131130";
+    	Date date2 = Helper.dateParse(dateStr2, "yyyyMMdd");
+    	System.out.println("2:" + date2);
+    	System.out.println("compareTo: "+date1.compareTo(date2));
+    	System.out.println("equals" + date1.equals(date2));
+    }
+}

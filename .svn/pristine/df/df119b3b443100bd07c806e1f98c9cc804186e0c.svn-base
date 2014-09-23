@@ -1,0 +1,29 @@
+<!DOCTYPE suite SYSTEM "http://beust.com/testng/testng-1.0.dtd" >
+<suite name="Suite1" parallel="tests" thread-count="5">
+
+	<test name="Packages">
+<!-- 		<parameter name="title" value="Equity APIs" />  -->
+		<packages>
+<!--	 		<package name="com.morningstar.eapi.MSFT"></package>	-->  	  
+		</packages>
+		<classes>			 
+ 			<class name="com.morningstar.eapi.Customized.MSN.GlobalCorporateAction" />			
+<!-- 			<class name="com.morningstar.eapi.Customized.MSN.FinancialStatement" /> -->			
+<!-- 			<class name="com.morningstar.eapi.Customized.MSN.ETFList" /> -->		 		
+ 			<class name="com.morningstar.eapi.Customized.MSFT.EquityDetailPrice" /> 			
+ 			<class name="com.morningstar.eapi.AnalysisResearch.CorporateAction.Dividend" />		
+ 			<class name="com.morningstar.eapi.AnalysisResearch.StockPrices.EODPriceHistory" />  					
+	       <class name="com.morningstar.eapi.customizedAPI4Microsoft.cases.CGetEquityDetails4MS" />				
+ 			<class name="com.morningstar.eapi.customizedAPI4MSNService.cases.CGetMSN_Money_Stock_Basic" />
+            <class name="com.morningstar.eapi.customizedAPI4MSNService.cases.CGetMSN_Money_Industry_Basic" />
+			<class name="com.morningstar.eapi.customizedAPI4MSNService.cases.CGetMSN_Money_Stock_EPSHistory" />
+		   <class name="com.morningstar.eapi.customizedAPI4MSNService.cases.CGetMSN_Money_Stock_TenYearSummary" />
+		   <class name="com.morningstar.eapi.customizedAPI4Microsoft.cases.CGetStockExchangeSecurity4MSList" /> 
+            <class name="com.morningstar.eapi.customizedAPI4Microsoft.cases.CGetCompanyFinancialAvailability4MSList" />     
+ <!--   			
+ 			<class name="com.morningstar.eapi.QuantitativeRatingsService.cases.CGetRatingsHistory" />
+ 			<class name="com.morningstar.eapi.QuantitativeRatingsService.cases.CGetRatingsSnapshot" /> 
+ --> 						
+		</classes>
+	</test>
+</suite>  

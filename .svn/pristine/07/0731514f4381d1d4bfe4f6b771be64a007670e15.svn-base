@@ -1,0 +1,677 @@
+package com.morningstar.FundTeam.ML;
+
+import java.io.IOException;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Date;
+import java.util.List;
+
+import com.morningstar.FundAutoTest.commons.*;
+
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Test;
+//import org.testng.Assert;
+
+import com.ibm.icu.text.SimpleDateFormat;
+
+public class FundPackageTest {
+
+	/**
+	 * @author Stefan.hou
+	 * @throws IOException 
+	 * @throws SQLException 
+	 */
+	static SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd-HH-mm-ss");
+	public static String currenTime = df.format(new Date());
+	
+	public static String testLogPath = "./log/TestLog/MerrillLynch/ML-22/";
+	public static String testLogNameCase1 = "completenessTestResult-" + currenTime + "." + "log";
+	public static String testLogNameCase2 = "formatTestResult-" + currenTime + "." + "log";
+	public static String testLogNameCase3 = "contentTestResult-" + currenTime + "." + "log";
+	public static String testLogNameCase4 = "contentTestManualCheckList-" + currenTime + "." + "log";
+	public static String testLogNameCase5 = "fileDuplicateDataTestResult-" + currenTime + "." + "log";
+	
+	public static String testLogTopic1 = "Fund Sample file for Merrill Lynch completeness testing";
+	public static String testLogTopic2 = "Fund Sample file for Merrill Lynch format testing";
+	public static String testLogTopic3 = "Fund Sample file for Merrill Lynch content verify testing";
+	public static String testLogTopic4 = "Fund Sample file for Merrill Lynch content need manual checking list";
+	public static String testLogTopic5 = "Fund Sample file for Merrill Lynch duplicate data checking";
+	public static String FundfilePath = "E:/HJG_Project/ML_Project/FundDemoFile/20131212/PLP320XA.MSGBLFND.13.12.12_10.58/PLP320XA.MSGBLFND.13.12.12_10.58";
+	
+
+	
+	
+	
+	@BeforeClass(description = "Testing preparing!")
+	public static void testPrepare() throws IOException{
+//生成自定义测试结果日志文件
+		CustomizedLog.creatCusomizedLogFile(testLogPath, testLogNameCase1, testLogTopic1);
+		CustomizedLog.creatCusomizedLogFile(testLogPath, testLogNameCase2, testLogTopic2);
+		CustomizedLog.creatCusomizedLogFile(testLogPath, testLogNameCase3, testLogTopic3);
+		CustomizedLog.creatCusomizedLogFile(testLogPath, testLogNameCase4, testLogTopic4);
+		CustomizedLog.creatCusomizedLogFile(testLogPath, testLogNameCase5, testLogTopic5);
+	}
+	
+	
+	@Test(description = "Testing:FUND sample file for Merrill Lynch completeness testing!")	
+	public static void testFundFileCompletement() throws IOException, SQLException {
+		String StartTime1 = df.format(new Date());
+		System.out.println("[TestForCompletment]Begin to test file records count numbers,please wait... ...");
+		System.out.println("[TestForCompletment]Test at:" + StartTime1);
+		CustomizedLog.writeCustomizedLogFile(testLogPath + testLogNameCase1, "[TestForCompletment]Begin to test file records count numbers,start at:" + StartTime1);
+//基本测试用例数据准备
+        String sql_getCountForBothHaveYieldAndBeta = Helper.readFileByLines("./config/Merrill_Lynch/ML-22/getCountForBothHaveYieldAndBeta.sql");
+        String sql_getCountForOnlyHaveBeta = Helper.readFileByLines("./config/Merrill_Lynch/ML-22/getCountForOnlyHaveBeta.sql");
+        String sql_getCountForOnlyHaveYield = Helper.readFileByLines("./config/Merrill_Lynch/ML-22/getCountForOnlyHaveYield.sql");
+
+//从Oidevdb81\oibtaoutputdb81获取总记录数
+		String countOnlyBeta = DBCommons.getData(sql_getCountForOnlyHaveBeta, Database.MsSQL1);
+		String countOnlyYield = DBCommons.getData(sql_getCountForOnlyHaveYield, Database.MsSQL1);
+		String countBothYieldBeta = DBCommons.getData(sql_getCountForBothHaveYieldAndBeta, Database.MsSQL1);
+		int totalSQLRecords = (Integer.parseInt(countOnlyBeta) - Integer.parseInt(countBothYieldBeta)) + (Integer.parseInt(countOnlyYield) - Integer.parseInt(countBothYieldBeta)) + Integer.parseInt(countBothYieldBeta);
+		
+//从Fund sample file中获取总记录数(新要求，至少samplefile这面的记录数要大于DB端的记录数)
+		int totalFileRecords = Helper.getTotalLinesOfFile(FundfilePath) - 2;
+		if (totalFileRecords <= totalSQLRecords){
+			CustomizedLog.writeCustomizedLogFile(testLogPath + testLogNameCase1, "Testing failed:[Case1]totalFileRecords is less than totalSQLRecords!");
+			CustomizedLog.writeCustomizedLogFile(testLogPath + testLogNameCase1, "Total records number in DataBase is:" + totalSQLRecords);
+			CustomizedLog.writeCustomizedLogFile(testLogPath + testLogNameCase1, "Total records number in Fund Sample file is:" + totalFileRecords);			
+		}
+		else{
+			System.out.println("[TestForCompletment]NOTICE:totalFileRecords is larger than totalSQLRecords!");
+		}
+//		Assert.assertTrue(recordsEquals(totalSQLRecords, totalFileRecords),"Records number are not same!");	
+		
+//2013-11-01 新增QA需求，若一条记录中即不包含Yield rate数据也不包含Beta rate数据，也视为测试失败(新增加：InvestmentId也必须存在)
+		String StartTime2 = df.format(new Date());
+		System.out.println("[TestForCompletment]Begin to test no yield and no beta rate in sample file,please wait... ...");
+		System.out.println("[TestForCompletment]Test at:" + StartTime2);
+		CustomizedLog.writeCustomizedLogFile(testLogPath + testLogNameCase1, "[TestForCompletment]Begin to test no yield and no beta rate in sample file,start at:" + StartTime2);
+		int lineRange = Helper.getTotalLinesOfFile(FundfilePath);
+		for(int lineNum = 2;lineNum < lineRange;lineNum++){
+			String fileContent = Helper.readFileInLines(FundfilePath, lineNum);
+			String[] element = fileContent.split("~",16);
+			String fileMorningstarSecurityId = element[7];
+			String fileSecurityYieldRate = element[9];
+			String fileSecurityBetaRate = element[11];
+			if(fileSecurityYieldRate == null && fileSecurityBetaRate == null){
+				CustomizedLog.writeCustomizedLogFile(testLogPath + testLogNameCase1, "Testing failed:[Case1]" + "Line number is:" + lineNum + "   " + "No yield and beta data found in this line!");
+				CustomizedLog.writeCustomizedLogFile(testLogPath + testLogNameCase1, "Original Fund file is:" + fileContent);			
+			}
+			if(fileMorningstarSecurityId == null){
+				CustomizedLog.writeCustomizedLogFile(testLogPath + testLogNameCase1, "Testing failed:[Case1]" + "Line number is:" + lineNum + "   " + "No SecId in this line!");
+				CustomizedLog.writeCustomizedLogFile(testLogPath + testLogNameCase1, "Original Fund file is:" + fileContent);						
+			}
+		}
+		
+		String endTime = df.format(new Date());
+		System.out.println("[FINISH]Test case1 has finished,please check log file for results");
+		System.out.println("End at:" + endTime);
+		CustomizedLog.writeCustomizedLogFile(testLogPath + testLogNameCase1, "[TestCase1]Test has finished,please check log file for results,end at:" + endTime);
+	
+	}
+
+
+	@Test(description = "Testing:FUND sample file for Merrill Lynch data format/size verifying testing!")
+	public static void testFundFileFormat() throws Exception{
+//读取测试Fund Sample文件，按行遍历测试
+		String startTime = df.format(new Date());
+		System.out.println("[TestForFormat]Begin to test every data's size in each lines,please wait.......");
+		System.out.println("[TestForFormat]Test at:" + startTime);
+		CustomizedLog.writeCustomizedLogFile(testLogPath + testLogNameCase2, "[TestForFormat]Begin to test every data's size in each lines,start at:" + startTime);																																												
+		int lineRange = Helper.getTotalLinesOfFile(FundfilePath);
+		for(int lineNum = 2;lineNum < lineRange;lineNum++){
+			String fileContent = Helper.readFileInLines(FundfilePath, lineNum);
+//注意该方法的第二个参数，设置为16，表示正则模式将被应用15次
+			String[] element = fileContent.split("~",16);
+//File端数据准备
+			String fileCUSIP = element[0];
+			String fileSEDOL = element[1];
+			String fileISIN = element[2];
+			String fileExchangeId = element[3];
+			String fileTickerSymbol = element[4];
+			String fileDomicile = element[5];
+//			String filePrimaryExchangeId = element[6];
+			String fileMorningstarSecurityId = element[7];
+			String fileYieldAsAtDate = element[8];
+			String fileSecurityYieldRate = element[9];
+			String fileBetaAsAtDate = element[10];
+			String fileSecurityBetaRate = element[11];
+//Only for Bond			
+//			String fileYieldBackfillIndexCode = element[12];
+//Only for Bond			
+//			String fileMorningstarYieldProxyName = element[13];
+			String fileBetaBackfillIndexCode = element[14];
+			String fileMorningstarBetaProxyName = element[15];
+//新增需求：1 每行必须有15个"~"
+			int columnNumberCount = Helper.getMatchCount("~",fileContent);
+			if(columnNumberCount != 15){
+				CustomizedLog.writeCustomizedLogFile(testLogPath + testLogNameCase2, "Testing failed:[Case2]" + "Line number is:" + lineNum + "   " + "There aren't 15 '~' in this line!");
+			}
+			
+//测试数据元素大小是否满足需求规定			
+			if(fileCUSIP.length() != 0 && fileCUSIP.length() != 9 ){
+				CustomizedLog.writeCustomizedLogFile(testLogPath + testLogNameCase2, "Testing failed:[Case2]" + "Line number is:" + lineNum + "   " + "The size of CUSIP in fund file isn't 9 bytes!");
+				CustomizedLog.writeCustomizedLogFile(testLogPath + testLogNameCase2, "Original Fund file is:" + fileContent);
+				CustomizedLog.writeCustomizedLogFile(testLogPath + testLogNameCase2,"Actual size of CUSIP in FUND file is:" + fileCUSIP.length());
+			}			
+//SEDOL没确定，暂时不测试			
+			if(fileSEDOL.length() != 0 && fileSEDOL.length() != 7 ){
+				CustomizedLog.writeCustomizedLogFile(testLogPath + testLogNameCase2, "Testing failed:[Case2]" + "Line number is:" + lineNum + "   " + "The size of SEDOL in fund file isn't 7 bytes!");
+				CustomizedLog.writeCustomizedLogFile(testLogPath + testLogNameCase2, "Original Fund file is:" + fileContent);
+				CustomizedLog.writeCustomizedLogFile(testLogPath + testLogNameCase2,"Actual size of SEDOL in FUND file is:" + fileSEDOL.length());
+			}
+			if(fileISIN.length() != 0 && fileISIN.length() != 12 ){
+				CustomizedLog.writeCustomizedLogFile(testLogPath + testLogNameCase2, "Testing failed:[Case2]" + "Line number is:" + lineNum + "   " + "The size of ISIN in fund file isn't 12 bytes!");
+				CustomizedLog.writeCustomizedLogFile(testLogPath + testLogNameCase2, "Original Fund file is:" + fileContent);
+				CustomizedLog.writeCustomizedLogFile(testLogPath + testLogNameCase2,"Actual size of ISIN in FUND file is:" + fileISIN.length());
+			}
+			if(fileExchangeId.length() != 0 && fileExchangeId.length() !=10 ){
+				CustomizedLog.writeCustomizedLogFile(testLogPath + testLogNameCase2, "Testing failed:[Case2]" + "Line number is:" + lineNum + "   " + "The size of ExchangeId in fund file isn't 10 bytes!");
+				CustomizedLog.writeCustomizedLogFile(testLogPath + testLogNameCase2, "Original Fund file is:" + fileContent);
+				CustomizedLog.writeCustomizedLogFile(testLogPath + testLogNameCase2,"Actual size of ExchangeId in FUND file is:" + fileExchangeId.length());
+			}
+			if(fileTickerSymbol.length() != 0 && fileTickerSymbol.length() > 20 ){
+				CustomizedLog.writeCustomizedLogFile(testLogPath + testLogNameCase2, "Testing failed:[Case2]" + "Line number is:" + lineNum + "   " + "The size of Primary Ticker Symbol in fund file isn't 20 bytes!");
+				CustomizedLog.writeCustomizedLogFile(testLogPath + testLogNameCase2, "Original Fund file is:" + fileContent);
+				CustomizedLog.writeCustomizedLogFile(testLogPath + testLogNameCase2,"Actual size of Symbol in FUND file is:" + fileTickerSymbol.length());
+			}
+			if(fileDomicile.length() != 0 && fileDomicile.length() != 10 ){
+				CustomizedLog.writeCustomizedLogFile(testLogPath + testLogNameCase2, "Testing failed:[Case2]" + "Line number is:" + lineNum + "   " + "The size of Domicile in fund file isn't 10 bytes!");
+				CustomizedLog.writeCustomizedLogFile(testLogPath + testLogNameCase2, "Original Fund file is:" + fileContent);
+				CustomizedLog.writeCustomizedLogFile(testLogPath + testLogNameCase2,"Actual size of Domicile in FUND file is:" + fileDomicile.length());
+			}
+//只有Equity有这个值，FUND暂时不测试			if(filePrimaryExchangeId.length() != 10 && filePrimaryExchangeId.length() != 0){
+//				CustomizedLog.writeCustomizedLogFile(testLogPath + testLogNameCase2, "Testing failed:[Case2]" + "Line number is:" + lineNum + "   " + "The size of Primary Exchange Id in fund file isn't 10 bytes!");
+//				CustomizedLog.writeCustomizedLogFile(testLogPath + testLogNameCase2, "Original Fund file is:" + fileContent);
+//				CustomizedLog.writeCustomizedLogFile(testLogPath + testLogNameCase2,"Actual size of Primary ExchangeId in FUND file is:" + filePrimaryExchangeId.length());
+//			}
+			
+			if(fileMorningstarSecurityId.length() != 0 && fileMorningstarSecurityId.length() != 10 ){
+				CustomizedLog.writeCustomizedLogFile(testLogPath + testLogNameCase2, "Testing failed:[Case2]" + "Line number is:" + lineNum + "   " + "The size of Morningstar Security in fund file isn't 10 bytes!");
+				CustomizedLog.writeCustomizedLogFile(testLogPath + testLogNameCase2, "Original Fund file is:" + fileContent);
+				CustomizedLog.writeCustomizedLogFile(testLogPath + testLogNameCase2,"Actual size of InvestmentId in FUND file is:" + fileMorningstarSecurityId.length());
+			}
+			if(fileYieldAsAtDate.length() != 0 && fileYieldAsAtDate.length() != 8 ){
+				CustomizedLog.writeCustomizedLogFile(testLogPath + testLogNameCase2, "Testing failed:[Case2]" + "Line number is:" + lineNum + "   " + "The size of Yield As At date in fund file isn't 8 bytes!");
+				CustomizedLog.writeCustomizedLogFile(testLogPath + testLogNameCase2, "Original Fund file is:" + fileContent);
+				CustomizedLog.writeCustomizedLogFile(testLogPath + testLogNameCase2,"Actual size of Yield As At Date in FUND file is:" + fileYieldAsAtDate.length());
+			}
+			
+//精度为（9,5）
+			if(fileSecurityYieldRate.length() != 0 && Helper.isDecimal(fileSecurityYieldRate) == true && Helper.getDecimalScale(fileSecurityYieldRate) != 5 ){
+				CustomizedLog.writeCustomizedLogFile(testLogPath + testLogNameCase2, "Testing failed:[Case2]" + "Line number is:" + lineNum + "   " + "The decimal scale of Security Yield Rate in fund file isn't 6 bytes!");
+				CustomizedLog.writeCustomizedLogFile(testLogPath + testLogNameCase2, "Original Fund file is:" + fileContent);
+				CustomizedLog.writeCustomizedLogFile(testLogPath + testLogNameCase2,"Actual size of Security Yield Rate's decimal in FUND file is:" + Helper.getDecimalScale(fileSecurityYieldRate));
+			}
+			
+			if(fileBetaAsAtDate.length() != 0 && fileBetaAsAtDate.length() != 8 ){
+				CustomizedLog.writeCustomizedLogFile(testLogPath + testLogNameCase2, "Testing failed:[Case2]" + "Line number is:" + lineNum + "   " + "The size of Beta As At date in fund file isn't 8 bytes!");
+				CustomizedLog.writeCustomizedLogFile(testLogPath + testLogNameCase2, "Original Fund file is:" + fileContent);
+				CustomizedLog.writeCustomizedLogFile(testLogPath + testLogNameCase2,"Actual size of Beta As At Date in FUND file is:" + fileBetaAsAtDate.length());
+			}
+			
+//精度为（9,3）			
+			if(fileSecurityBetaRate.length() != 0 && Helper.isDecimal(fileSecurityBetaRate) == true && Helper.getDecimalScale(fileSecurityBetaRate) != 3 ){
+				CustomizedLog.writeCustomizedLogFile(testLogPath + testLogNameCase2, "Testing failed:[Case2]" + "Line number is:" + lineNum + "   " + "The decimal scale of Security Beta Rate in fund file isn't 3 bytes!");
+				CustomizedLog.writeCustomizedLogFile(testLogPath + testLogNameCase2, "Original Fund file is:" + fileContent);
+				CustomizedLog.writeCustomizedLogFile(testLogPath + testLogNameCase2,"Actual size of Security Beta Rate's decimal in FUND file is:" + Helper.getDecimalScale(fileSecurityBetaRate));
+			}
+
+//只有BOND才使用，暂时不测试			if(fileYieldBackfillIndexCode.length() != 0 && fileYieldBackfillIndexCode.length() != 10 ){
+//				CustomizedLog.writeCustomizedLogFile(testLogPath + testLogNameCase2, "Testing failed:[Case2]" + "Line number is:" + lineNum + "   " + "The size of Yield Backfill Index Code in fund file isn't 10 bytes!");
+//				CustomizedLog.writeCustomizedLogFile(testLogPath + testLogNameCase2, "Original Fund file is:" + fileContent);
+//				CustomizedLog.writeCustomizedLogFile(testLogPath + testLogNameCase2,"Actual size of YieldBackfillIndexCode in FUND file is:" + fileYieldBackfillIndexCode.length());
+//			}
+			
+//只有BOND才使用，暂时不测试 			if(fileMorningstarYieldProxyName.length() != 0 && fileMorningstarYieldProxyName.length() > 40 ){
+//				CustomizedLog.writeCustomizedLogFile(testLogPath + testLogNameCase2, "Testing failed:[Case2]" + "Line number is:" + lineNum + "   " + "The size of Morningstar Yield Proxy Name in fund file isn't 40 bytes!");
+//				CustomizedLog.writeCustomizedLogFile(testLogPath + testLogNameCase2, "Original Fund file is:" + fileContent);
+//				CustomizedLog.writeCustomizedLogFile(testLogPath + testLogNameCase2,"Actual size of Morningstar Yield Proxy Name in FUND file is:" + fileMorningstarYieldProxyName.length());
+// 			}			
+			
+			if(fileBetaBackfillIndexCode.length() != 0 && fileBetaBackfillIndexCode.length() != 10 ){
+				CustomizedLog.writeCustomizedLogFile(testLogPath + testLogNameCase2, "Testing failed:[Case2]" + "Line number is:" + lineNum + "   " + "The size of Beta Backfill Index Code in fund file isn't 10 bytes!");
+				CustomizedLog.writeCustomizedLogFile(testLogPath + testLogNameCase2, "Original Fund file is:" + fileContent);
+				CustomizedLog.writeCustomizedLogFile(testLogPath + testLogNameCase2,"Actual size of Beta Backfill Index Code in FUND file is:" + fileBetaBackfillIndexCode.length());
+			}
+			if(fileMorningstarBetaProxyName.length() != 0 && fileMorningstarBetaProxyName.length() > 40 ){
+				CustomizedLog.writeCustomizedLogFile(testLogPath + testLogNameCase2, "Testing failed:[Case2]" + "Line number is:" + lineNum + "   " + "The size of Morningstar Beta Proxy Name in fund file isn't 40 bytes!");
+				CustomizedLog.writeCustomizedLogFile(testLogPath + testLogNameCase2, "Original Fund file is:" + fileContent);
+				CustomizedLog.writeCustomizedLogFile(testLogPath + testLogNameCase2,"Actual size of Morningstar Beta Proxy Name in FUND file is:" + fileMorningstarBetaProxyName.length());
+			}
+		}
+		String endTime = df.format(new Date());
+		CustomizedLog.writeCustomizedLogFile(testLogPath + testLogNameCase2, "[TestCase2]Test has finished,end at:" + endTime);
+		System.out.println("[TestCase2]Test has finished,please check log file for results");
+		System.out.println("End at:" + endTime);
+	}
+	
+
+	@Test(description = "Testing:FUND sample file for Merrill Lynch data content verifying testing!")
+	public static void testFundFileContent() throws Exception{
+
+//读取测试Fund Sample文件，按行遍历测试
+				String startTime = df.format(new Date());
+				System.out.println("[TestForContent]Begin to test every data's contents in each lines,please wait.......");																																												
+				System.out.println("Test at:" + startTime);
+				CustomizedLog.writeCustomizedLogFile(testLogPath + testLogNameCase3, "[TestForContent]Begin to test every data's contents in each lines,start at:" + startTime);
+				int lineRange = Helper.getTotalLinesOfFile(FundfilePath);				
+				for(int lineNum = 2;lineNum < lineRange;lineNum++){
+					String fileContent = Helper.readFileInLines(FundfilePath, lineNum);
+//注意该方法的第二个参数，设置为16，表示正则模式将被应用15次
+					String[] element = fileContent.split("~",16);
+//File端数据准备
+					String fileCUSIP = element[0];
+					String fileSEDOL = element[1];
+					String fileISIN = element[2];
+					String fileExchangeId = element[3];
+					String fileTickerSymbol = element[4];
+					String fileDomicile = element[5];
+//Only for bond					
+//					String filePrimaryExchangeId = element[6];
+					String fileMorningstarSecurityId = element[7];
+					String fileYieldAsAtDate = element[8];
+					String fileSecurityYieldRate = element[9];
+					String fileBetaAsAtDate = element[10];
+					String fileSecurityBetaRate = element[11];
+		//Only for Bond			
+//					String fileYieldBackfillIndexCode = element[12];
+		//Only for Bond			
+//					String fileMorningstarYieldProxyName = element[13];
+					String fileBetaBackfillIndexCode = element[14];
+					String fileMorningstarBetaProxyName = element[15];
+//测试file中的每一个数据的准确性
+//测试前准备，通过InvestmentId去找到PerformanceId，最后确定其他所有的值
+//获取PerformanceId的数量					
+					String sqlGetBasicPerformanceId = "SELECT PerformanceId FROM dbo.PerformanceIdDimension WHERE InvestmentId = " + "'" + fileMorningstarSecurityId +"'";
+					List<String> PerfId = DBCommons.getDataList(sqlGetBasicPerformanceId, Database.Vertica1);					
+					if(PerfId.size() == 1){
+//DB端数据准备		
+						String sqlToGetCUSIP = "SELECT CUSIP FROM dbo.PerformanceIdDimension WHERE PerformanceId = " + "'" + PerfId.get(0) + "'" + " AND InvestmentId = " + "'" + fileMorningstarSecurityId + "'";
+						String sqlToGetSEDOL = "SELECT ListingId FROM dbi.InvestmentExchangeListing WHERE IdType = '2' AND InvestmentId = " + "'" + fileMorningstarSecurityId + "'";
+						String sqlToGetISIN  = "SELECT ISIN FROM dbo.PerformanceIdDimension WHERE PerformanceId = " + "'" + PerfId.get(0) + "'" + " AND InvestmentId = " + "'" + fileMorningstarSecurityId + "'";
+						String sqlToGetExchangeId = "SELECT ExchangeId FROM dbo.PerformanceIdDimension WHERE PerformanceId = " + "'" + PerfId.get(0) + "'" + " AND InvestmentId = " + "'" + fileMorningstarSecurityId + "'";
+						String sqlToGetTickerSymbol = "SELECT ListingId FROM dbi.InvestmentExchangeListing WHERE IdType = '10' AND InvestmentId = " + "'" + fileMorningstarSecurityId + "'";
+//fund
+						String sqlToGetDomicile = "SELECT DomicileCountryId FROM dbo.PerformanceIdDimension WHERE PerformanceId = " + "'" + PerfId.get(0) + "'";
+
+//只有Equity有
+//						String sqlToGetPrimaryExchangeId = "";
+						String sqlToGetMorningstarSecurityId = "SELECT InvestmentId FROM dbo.PerformanceIdDimension WHERE PerformanceId = " + "'" + PerfId.get(0) + "'";
+						String sqlToGetYieldAsAtDate = "SELECT EndDate FROM dbo.MLAverage3MonthYieldForMonthEnd WHERE PerformanceId = " + "'" + PerfId.get(0) + "'";
+						String sqlToGetSecurityYieldRate = "SELECT Average3MonthYield FROM CurrentData.dbo.MLAverage3MonthYieldForMonthEnd WHERE PerformanceId = " + "'" + PerfId.get(0) + "'";
+						String sqlToGetBetaAsAtDate = "SELECT EndDate FROM dbo.ML3YearBetaForMonthEnd WHERE PerformanceId = " + "'" + PerfId.get(0) + "'";
+						String sqlToGetSecurityBetaRate = "SELECT Beta FROM CurrentData.dbo.ML3YearBetaForMonthEnd WHERE PerformanceId = " + "'" + PerfId.get(0) + "'";
+		//只有Bond才有这个值	
+//						String sqlToGetYieldBackfillIndexCode = "";
+		//只有Bond才有这个值	
+//						String sqlToGetMorningstarYieldProxyName = "";
+						String sqlToGetBetaBackfillIndexCode = "SELECT ProxyId FROM CurrentData.dbo.ML3YearBetaForMonthEnd WHERE PerformanceId = " + "'" + PerfId.get(0) + "'";
+						String sqlToGetMorningstarBetaProxyName = "SELECT InvestmentName FROM dbo.InvestmentIdDimension WHERE InvestmentId = " + "'" + fileBetaBackfillIndexCode + "'";
+
+
+						
+/*//将Sample file中的所有SecId load到一个List中
+						List<String> FileSecIdList = new ArrayList<String>();
+						FileSecIdList = loadAssignDataToList(7);*/
+
+						
+						
+//测试CUSIP
+						String DB_CUSIP = DBCommons.getData(sqlToGetCUSIP, Database.Vertica1);
+
+						
+						if(fileCUSIP.equals(DB_CUSIP) == false && DB_CUSIP != null){
+							CustomizedLog.writeCustomizedLogFile(testLogPath + testLogNameCase3, "Testing failed:[Case3]" + "Line number is:" + lineNum + "   " + "CUSIP not mapping!");
+							CustomizedLog.writeCustomizedLogFile(testLogPath + testLogNameCase3, "Original Fund file is:" + fileContent);
+							CustomizedLog.writeCustomizedLogFile(testLogPath + testLogNameCase3, "Actual CUSIP in DB is:" + DB_CUSIP);
+							CustomizedLog.writeCustomizedLogFile(testLogPath + testLogNameCase3, "Actual CUSIP in FundFile is:" + fileCUSIP);
+							CustomizedLog.writeCustomizedLogFile(testLogPath + testLogNameCase3, "==============================================");							
+						}
+//测试SEDOL
+						String DB_SEDOL = DBCommons.getData(sqlToGetSEDOL, Database.Vertica1);
+						if(fileSEDOL.equals(DB_SEDOL) == false && DB_SEDOL != null){
+							CustomizedLog.writeCustomizedLogFile(testLogPath + testLogNameCase3, "Testing failed:[Case3]" + "Line number is:" + lineNum + "   " + "SEDOL not mapping!");
+							CustomizedLog.writeCustomizedLogFile(testLogPath + testLogNameCase3, "Original Fund file is:" + fileContent);
+							CustomizedLog.writeCustomizedLogFile(testLogPath + testLogNameCase3, "Actual SEDOL in DB is:" + DB_SEDOL);
+							CustomizedLog.writeCustomizedLogFile(testLogPath + testLogNameCase3, "Actual SEDOL in FundFile is:" + fileSEDOL);
+							CustomizedLog.writeCustomizedLogFile(testLogPath + testLogNameCase3, "==============================================");							
+						}
+
+//测试ISIN						
+						String DB_ISIN = DBCommons.getData(sqlToGetISIN, Database.Vertica1);
+						if(DB_ISIN != null && fileISIN.equals(DB_ISIN) == false ){
+							CustomizedLog.writeCustomizedLogFile(testLogPath + testLogNameCase3, "Testing failed:[Case3]" + "Line number is:" + lineNum + "   " + "ISIN not mapping!");							
+							CustomizedLog.writeCustomizedLogFile(testLogPath + testLogNameCase3, "Original Fund file is:" + fileContent);
+							CustomizedLog.writeCustomizedLogFile(testLogPath + testLogNameCase3, "Actual ISIN in DB is:" + DB_ISIN);
+							CustomizedLog.writeCustomizedLogFile(testLogPath + testLogNameCase3, "Actual ISIN in FundFile is:" + fileISIN);
+							CustomizedLog.writeCustomizedLogFile(testLogPath + testLogNameCase3, "==============================================");							
+						}
+//测试ExchangeId						
+						String DB_EXCHANGEID = DBCommons.getData(sqlToGetExchangeId, Database.Vertica1);
+						if(DB_EXCHANGEID != null && fileExchangeId.equals(DB_EXCHANGEID) == false ){
+							CustomizedLog.writeCustomizedLogFile(testLogPath + testLogNameCase3, "Testing failed:[Case3]" + "Line number is:" + lineNum + "   " + "ExchangeID not mapping!");
+							CustomizedLog.writeCustomizedLogFile(testLogPath + testLogNameCase3, "Original Fund file is:" + fileContent);
+							CustomizedLog.writeCustomizedLogFile(testLogPath + testLogNameCase3, "Actual ExchangeId in DB is:" + DB_EXCHANGEID);
+							CustomizedLog.writeCustomizedLogFile(testLogPath + testLogNameCase3, "Actual ExchangeId in FundFile is:" + fileExchangeId);
+							CustomizedLog.writeCustomizedLogFile(testLogPath + testLogNameCase3, "==============================================");							
+						}
+//测试Symbol						
+						String DB_SYMBOL = DBCommons.getData(sqlToGetTickerSymbol, Database.Vertica1);
+						if(DB_SYMBOL !=null && fileTickerSymbol.equals(DB_SYMBOL) == false ){
+							CustomizedLog.writeCustomizedLogFile(testLogPath + testLogNameCase3, "Testing failed:[Case3]" + "Line number is:" + lineNum + "   " + "Symbol not mapping!");
+							CustomizedLog.writeCustomizedLogFile(testLogPath + testLogNameCase3, "Original Fund file is:" + fileContent);
+							CustomizedLog.writeCustomizedLogFile(testLogPath + testLogNameCase3, "Actual Symbol in DB is:" + DB_SYMBOL);
+							CustomizedLog.writeCustomizedLogFile(testLogPath + testLogNameCase3, "Actual Symbol in FundFile is:" + fileTickerSymbol);
+							CustomizedLog.writeCustomizedLogFile(testLogPath + testLogNameCase3, "==============================================");							
+						}
+//测试 Domicile,2013-11-1 新增VA的测试判断
+//VA(variable annual) 说明：SubaccountId 就是在dbo.PerformanceIdDimension中前缀为VA的InvestmentId
+						String sqlToGetInVestmentIdToSubaccountId = "SELECT InvestmentId FROM dbo.PerformanceIdDimension WHERE PerformanceId = " + "'" + PerfId.get(0) + "'";
+						String DB_SUBACCOUNTID = DBCommons.getData(sqlToGetInVestmentIdToSubaccountId, Database.Vertica1);
+						String sqlToGetPolicyId = "SELECT PolicyId FROM dbi.Subaccount WHERE SubaccountId = " + "'" + DB_SUBACCOUNTID + "'";
+						String DB_POLICYID = DBCommons.getData(sqlToGetPolicyId, Database.Vertica1);
+						String sqlToGetCountryId = "SELECT CountryId FROM dbi.PolicyBasic WHERE PolicyId = " + "'" + DB_POLICYID + "'";
+						if (fileDomicile.contains("VA") == true ){
+							String DB_CONTRYID = DBCommons.getData(sqlToGetCountryId, Database.Vertica1);
+							if(!fileDomicile.equals("CU$$$$$" + DB_CONTRYID)){
+								CustomizedLog.writeCustomizedLogFile(testLogPath + testLogNameCase3, "Testing failed:[Case3]" + "Line number is:" + lineNum + "   " + "Domicile not mapping!");
+								CustomizedLog.writeCustomizedLogFile(testLogPath + testLogNameCase3, "Original Fund file is:" + fileContent);
+								CustomizedLog.writeCustomizedLogFile(testLogPath + testLogNameCase3, "Actual Domicile in DB is:" + "CU$$$$$" + DB_CONTRYID);
+								CustomizedLog.writeCustomizedLogFile(testLogPath + testLogNameCase3, "Actual Domicile in FundFile is:" + fileDomicile);
+								CustomizedLog.writeCustomizedLogFile(testLogPath + testLogNameCase3, "==============================================");
+							}
+							
+						}
+						else{
+							String DB_DOMICILE = DBCommons.getData(sqlToGetDomicile, Database.Vertica1);
+							if(DB_DOMICILE != null && fileDomicile.equals(DB_DOMICILE) == false){
+								CustomizedLog.writeCustomizedLogFile(testLogPath + testLogNameCase3, "Testing failed:[Case3]" + "Line number is:" + lineNum + "   " + "Domicile not mapping!");
+								CustomizedLog.writeCustomizedLogFile(testLogPath + testLogNameCase3, "Original Fund file is:" + fileContent);
+								CustomizedLog.writeCustomizedLogFile(testLogPath + testLogNameCase3, "Actual Domicile in DB is:" + DB_DOMICILE);
+								CustomizedLog.writeCustomizedLogFile(testLogPath + testLogNameCase3, "Actual Domicile in FundFile is:" + fileDomicile);
+								CustomizedLog.writeCustomizedLogFile(testLogPath + testLogNameCase3, "==============================================");							
+							}
+						}
+//Primary Exchange Id在FUND项目中没有，暂时不测试						
+						
+//测试InvestmentId(Morningstar Security Id)			
+						String DB_INVESTMENTID = DBCommons.getData(sqlToGetMorningstarSecurityId, Database.Vertica1);
+						if(DB_INVESTMENTID != null && fileMorningstarSecurityId.equals(DB_INVESTMENTID) == false ){
+							CustomizedLog.writeCustomizedLogFile(testLogPath + testLogNameCase3, "Testing failed:[Case3]" + "Line number is:" + lineNum + "   " + "InvestmentId not mapping!");
+							CustomizedLog.writeCustomizedLogFile(testLogPath + testLogNameCase3, "Original Fund file is:" + fileContent);
+							CustomizedLog.writeCustomizedLogFile(testLogPath + testLogNameCase3, "Actual Morningstar Security Id in DB is:" + DB_INVESTMENTID);
+							CustomizedLog.writeCustomizedLogFile(testLogPath + testLogNameCase3, "Actual Morningstar Security Id in FundFile is:" + fileMorningstarSecurityId);
+							CustomizedLog.writeCustomizedLogFile(testLogPath + testLogNameCase3, "==============================================");							
+						}
+
+//测试Yield As At Date(End date for Yield)
+//sdf_1用于将DB中的时间格式转换成Date
+						SimpleDateFormat sdf_1 = new SimpleDateFormat("yyyy-MM-dd");
+//sdf_2用于将Date转换成String						
+						SimpleDateFormat sdf_2 = new SimpleDateFormat("yyyyMMdd");
+						String DB_YIELDASATDATEORE = DBCommons.getData(sqlToGetYieldAsAtDate, Database.MsSQL1);
+						if(DB_YIELDASATDATEORE == null){
+							CustomizedLog.writeCustomizedLogFile(testLogPath + testLogNameCase3, "Testing WARNED:[Case3]" + "Line number is:" + lineNum + "   " + "Yield as at Date is null!");
+						}
+						else{
+							Date DB_YIELDASATDATE = sdf_1.parse(DB_YIELDASATDATEORE);
+							String DB_YIELDASATDATE_str = sdf_2.format(DB_YIELDASATDATE);
+							if(DB_YIELDASATDATE != null && fileYieldAsAtDate.equals(DB_YIELDASATDATE_str) == false ){
+								CustomizedLog.writeCustomizedLogFile(testLogPath + testLogNameCase3, "Testing failed:[Case3]" + "Line number is:" + lineNum + "   " + "Yield as at Date not mapping!");
+								CustomizedLog.writeCustomizedLogFile(testLogPath + testLogNameCase3, "Original Fund file is:" + fileContent);
+								CustomizedLog.writeCustomizedLogFile(testLogPath + testLogNameCase3, "Actual Yield As At Date in DB is:" + DB_YIELDASATDATE);
+								CustomizedLog.writeCustomizedLogFile(testLogPath + testLogNameCase3, "Actual Yield As At Date in FundFile is:" + fileYieldAsAtDate);
+								CustomizedLog.writeCustomizedLogFile(testLogPath + testLogNameCase3, "==============================================");							
+							}
+						}
+//测试Yield rate			
+						String DB_YIELDRATE = DBCommons.getData(sqlToGetSecurityYieldRate, Database.MsSQL1);
+						if(DB_YIELDRATE != null && fileSecurityYieldRate.equals(DB_YIELDRATE) == false ){
+							CustomizedLog.writeCustomizedLogFile(testLogPath + testLogNameCase3, "Testing failed:[Case3]" + "Line number is:" + lineNum + "   " + "Yield Rate not mapping!");
+							CustomizedLog.writeCustomizedLogFile(testLogPath + testLogNameCase3, "Original Fund file is:" + fileContent);
+							CustomizedLog.writeCustomizedLogFile(testLogPath + testLogNameCase3, "Actual Yield rate in DB is:" + DB_YIELDRATE);
+							CustomizedLog.writeCustomizedLogFile(testLogPath + testLogNameCase3, "Actual Yield rate in FundFile is:" + fileSecurityYieldRate);
+							CustomizedLog.writeCustomizedLogFile(testLogPath + testLogNameCase3, "==============================================");							
+						}
+						
+//测试Beta As At Date(End date for Beta)
+						String DB_BETAASATDATEORE = DBCommons.getData(sqlToGetBetaAsAtDate, Database.MsSQL1);
+						if(DB_BETAASATDATEORE == null){
+							CustomizedLog.writeCustomizedLogFile(testLogPath + testLogNameCase3, "Testing WARNED:[Case3]" + "Line number is:" + lineNum + "   " + "Beta as at Date is null!" + "   " + "Beta Rate is:" + fileSecurityBetaRate);
+						}
+						else{
+							Date DB_BETAASATDATE = sdf_1.parse(DB_BETAASATDATEORE);
+							String DB_BETAASATDATE_str = sdf_2.format(DB_BETAASATDATE);
+							if(DB_BETAASATDATE != null && fileBetaAsAtDate.equals(DB_BETAASATDATE_str) == false ){
+								CustomizedLog.writeCustomizedLogFile(testLogPath + testLogNameCase3, "Testing failed:[Case3]" + "Line number is:" + lineNum + "   " + "Beta as at Date not mapping!");
+								CustomizedLog.writeCustomizedLogFile(testLogPath + testLogNameCase3, "Original Fund file is:" + fileContent);
+								CustomizedLog.writeCustomizedLogFile(testLogPath + testLogNameCase3, "Actual Beta As At Date in DB is:" + DB_BETAASATDATE);
+								CustomizedLog.writeCustomizedLogFile(testLogPath + testLogNameCase3, "Actual Beta As At Date in FundFile is:" + fileBetaAsAtDate);
+								CustomizedLog.writeCustomizedLogFile(testLogPath + testLogNameCase3, "==============================================");							
+							}
+						}
+
+//测试Beta Rate
+						String DB_BETARATE = DBCommons.getData(sqlToGetSecurityBetaRate, Database.MsSQL1);
+						if(DB_BETARATE != null && fileSecurityBetaRate.equals(DB_BETARATE) == false ){
+							CustomizedLog.writeCustomizedLogFile(testLogPath + testLogNameCase3, "Testing failed:[Case3]" + "Line number is:" + lineNum + "   " + "Beta rate not mapping!");
+							CustomizedLog.writeCustomizedLogFile(testLogPath + testLogNameCase3, "Original Fund file is:" + fileContent);
+							CustomizedLog.writeCustomizedLogFile(testLogPath + testLogNameCase3, "Actual Beta Rate in DB is:" + DB_BETARATE);
+							CustomizedLog.writeCustomizedLogFile(testLogPath + testLogNameCase3, "Actual Beta Rate in FundFile is:" + fileSecurityBetaRate);
+							CustomizedLog.writeCustomizedLogFile(testLogPath + testLogNameCase3, "==============================================");							
+						}
+						
+//测试Yield Backfill Index Code,funds 不用，不测试
+											
+//测试Morningstar Yield Proxy Name,funds不用，不测试
+					
+//测试Beta Backfill Index Code(ProxyId)
+						String DB_BETABACKFILLINDEXCODE = DBCommons.getData(sqlToGetBetaBackfillIndexCode, Database.MsSQL1);
+						if(DB_BETABACKFILLINDEXCODE != null && fileBetaBackfillIndexCode.equals(DB_BETABACKFILLINDEXCODE) == false ){
+							CustomizedLog.writeCustomizedLogFile(testLogPath + testLogNameCase3, "Testing failed:[Case3]" + "Line number is:" + lineNum + "   " + "Beta backfill index code not mapping!");
+							CustomizedLog.writeCustomizedLogFile(testLogPath + testLogNameCase3, "Original Fund file is:" + fileContent);
+							CustomizedLog.writeCustomizedLogFile(testLogPath + testLogNameCase3, "Actual Beta Backfill Index Code in DB is:" + DB_BETABACKFILLINDEXCODE);
+							CustomizedLog.writeCustomizedLogFile(testLogPath + testLogNameCase3, "Actual Beta Backfill Index Code in FundFile is:" + fileBetaBackfillIndexCode);
+							CustomizedLog.writeCustomizedLogFile(testLogPath + testLogNameCase3, "==============================================");			
+						}
+						
+						
+//测试Morningstar Beta Proxy Name
+						String DB_BETAPROXYNAME = DBCommons.getData(sqlToGetMorningstarBetaProxyName, Database.Vertica1);
+						if(DB_BETAPROXYNAME != null && fileMorningstarBetaProxyName.equals(DB_BETAPROXYNAME) == false ){
+							CustomizedLog.writeCustomizedLogFile(testLogPath + testLogNameCase3, "Testing failed:[Case3]" + "Line number is:" + lineNum + "   " + "Beta proxy name not mapping!");
+							CustomizedLog.writeCustomizedLogFile(testLogPath + testLogNameCase3, "Original Fund file is:" + fileContent);
+							CustomizedLog.writeCustomizedLogFile(testLogPath + testLogNameCase3, "Actual Morningstar Beta Proxy Name in DB is:" + DB_BETAPROXYNAME);
+							CustomizedLog.writeCustomizedLogFile(testLogPath + testLogNameCase3, "Actual Morningstar Beta Proxy Name in FundFile is:" + fileMorningstarBetaProxyName);
+							CustomizedLog.writeCustomizedLogFile(testLogPath + testLogNameCase3, "==============================================");							
+						}
+					}
+					
+					if(PerfId.size() > 1){
+//获取Primary PerformanceId						
+//						String sqlToGetPrimaryPerformanceId = "";
+						CustomizedLog.writeCustomizedLogFile(testLogPath + testLogNameCase4, "======" + "Total selected PerformanceId is:" + PerfId.size() + "======");
+						for(int i=0;i<PerfId.size();i++){
+							CustomizedLog.writeCustomizedLogFile(testLogPath + testLogNameCase4, "The"+ " " + i + " PerformanceId is:" + PerfId.get(i));
+						}
+						CustomizedLog.writeCustomizedLogFile(testLogPath + testLogNameCase4,"The line number is:" + lineNum + " " + "Please take a manual checking!");
+					}
+					
+					if(PerfId.size() == 0){
+						System.out.println("No PerformanceId found,this must be a problem happened,please take a look!" + "[Issue occured in] " + lineNum + " of Fund sample file");
+					}					
+				}
+				String endTime = df.format(new Date());
+				System.out.println("[TestCase3]Test has finished,please check log file for results");
+				System.out.println("End at:" + endTime);
+				CustomizedLog.writeCustomizedLogFile(testLogPath + testLogNameCase3, "[TestCase3]Test has finished,please check log file for results,end at:" + endTime);
+	}
+	
+/*	
+	private static boolean recordsEquals(int totalSQLRecords,int totalFileRecords) {
+		Assert.assertEquals(totalSQLRecords, totalFileRecords);
+		return false;
+	}
+*/	
+
+//duplicate test
+	@Test(description = "Testing:FUND sample file for Merrill Lynch data duplicate testing!")
+	public static void testFundFileDuplicateData() throws Exception{
+		String startTime1 = df.format(new Date());
+		System.out.println("[TestForDuplicateData]Begin to test no duplicate lines in Fund sample file,please wait.......");
+		System.out.println("[TestForDuplicateData]Test at:" + startTime1);
+		CustomizedLog.writeCustomizedLogFile(testLogPath + testLogNameCase5, "[TestForDuplicateData]Begin to test no duplicate lines in Fund sample file,start at:" + startTime1);
+		
+		List<String> listFullDuplicateDataContainer = new ArrayList<String>();
+		List<String> listDuplicateDatawithNoSedolAndSecIdContainer = new ArrayList<String>();
+		List<String> listSecIdContainer = new ArrayList<String>();
+		List<String> listSedolContainer = new ArrayList<String>();
+		
+		listFullDuplicateDataContainer = loadLineDataToList();
+		listDuplicateDatawithNoSedolAndSecIdContainer = loadDataToListNoSedolAndSecId();
+		listSecIdContainer = loadAssignDataToList(7);
+		listSedolContainer = loadAssignDataToList(1);
+		
+		int lineRange = Helper.getTotalLinesOfFile(FundfilePath);
+		
+		for(int lineNum = 2;lineNum < lineRange;lineNum++){
+			String fileContent = Helper.readFileInLines(FundfilePath, lineNum);
+			int lineDuplicateCount = Collections.frequency(listFullDuplicateDataContainer, fileContent);
+			if(lineDuplicateCount > 1){
+				CustomizedLog.writeCustomizedLogFile(testLogPath + testLogNameCase5, "Testing failed:[Case1]Duplicate lines number is:" + lineDuplicateCount);
+				CustomizedLog.writeCustomizedLogFile(testLogPath + testLogNameCase5, "Failed line number is:" + lineNum + "\t" + "\nFailed original content is:" + fileContent);				
+			}
+		}
+//释放listFullDuplicateDataContainer的内存空间
+		if(listFullDuplicateDataContainer.isEmpty() == false){
+			listFullDuplicateDataContainer.removeAll(listFullDuplicateDataContainer);
+			System.out.println("[Notice]The listFullDuplicateDataContainer has been removed!");
+		}
+	
+		String startTime2 = df.format(new Date());
+		System.out.println("[TestForDuplicateData]Begin to test No duplicate SEDOL in Fund sample file,please wait.......");
+		System.out.println("[TestForDuplicateData]Test at:" + startTime2);
+		CustomizedLog.writeCustomizedLogFile(testLogPath + testLogNameCase5, "[TestForDuplicateData]Begin to test No duplicate SEDOL in Fund sample file,start at:" + startTime2);
+		
+		for(int lineNum = 2;lineNum < lineRange;lineNum++){
+			String fileLineContent = Helper.readFileInLines(FundfilePath, lineNum);
+			String[] element = fileLineContent.split("~",16);
+			String fileSedol = element[1];			
+			int lineDuplicateSedolCount = Collections.frequency(listSedolContainer,fileSedol);
+//若全文中出现重复的SEDOL，则测试失败
+			if(fileSedol.isEmpty() == false && lineDuplicateSedolCount > 1){								
+					CustomizedLog.writeCustomizedLogFile(testLogPath + testLogNameCase5, "Testing failed:[Case2]Having duplicate SEDOL,the line number is:" + lineNum);
+					CustomizedLog.writeCustomizedLogFile(testLogPath + testLogNameCase5, "Invalid SEDOL is:" + fileSedol + "\tDuplicate SEDOL count is:" + lineDuplicateSedolCount + "\nFailed original content is:" + fileLineContent);							
+			}
+		}
+		
+		String startTime3 = df.format(new Date());
+		System.out.println("[TestForDuplicateData]Begin to test beside SEDOL other datas need to be totally same when SecId has duplicate records,please wait.......");
+		System.out.println("[TestForDuplicateData]Test at:" + startTime3);
+		CustomizedLog.writeCustomizedLogFile(testLogPath + testLogNameCase5, "[TestForDuplicateData]Begin to test beside SEDOL other datas need to be totally same when SecId has duplicate records,start at:" + startTime3);
+		for(int lineNum = 2;lineNum < lineRange;lineNum++){
+			String fileLineContent = Helper.readFileInLines(FundfilePath, lineNum);
+			String[] ele = fileLineContent.split("~", 16);
+			String fileSecId = ele[7];
+			String fileNoSedolAndSecId = ele[0]+ele[2]+ele[3]+ele[4]+ele[5]+ele[6]+ele[8]+ele[9]+ele[10]+ele[11]+ele[12]+ele[13]+ele[14]+ele[15];
+			int duplicateSecId = Collections.frequency(listSecIdContainer,fileSecId);
+			if(duplicateSecId > 1){
+				int duplicateDatawithNoSedolAndSecIdCount = Collections.frequency(listDuplicateDatawithNoSedolAndSecIdContainer, fileNoSedolAndSecId);
+//若除SecId和Sedol外，其他值不是唯一的，则测试失败				
+				if(duplicateDatawithNoSedolAndSecIdCount == 1){
+					CustomizedLog.writeCustomizedLogFile(testLogPath + testLogNameCase5, "Testing failed:[Case3]Other datas isn't same beside SEDOL while SecId has copied records in this line,the line number is:" + lineNum);
+					CustomizedLog.writeCustomizedLogFile(testLogPath + testLogNameCase5, "Copied SecId is:" + fileSecId + "\nFailed original content is:" + fileLineContent);							
+				}	
+			}	
+		}	
+
+//释放listSecIdContainer，listSedolContainer，listCusipContainer，listIsinContainer
+			if(listSecIdContainer.isEmpty() == false){
+				listSecIdContainer.removeAll(listSecIdContainer);
+				System.out.println("[Notice]The listSecIdContainer has been removed!");
+			}
+			if(listSedolContainer.isEmpty() == false){
+				listSedolContainer.removeAll(listSedolContainer);
+				System.out.println("[Notice]The listSedolContainer has been removed!");
+			}
+
+			if(listDuplicateDatawithNoSedolAndSecIdContainer.isEmpty() == false){
+				listDuplicateDatawithNoSedolAndSecIdContainer.removeAll(listDuplicateDatawithNoSedolAndSecIdContainer);
+				System.out.println("[Notice]The listDuplicateDatawithNoSedolAndSecIdContainer has been removed!");
+			}
+		
+		String endTime = df.format(new Date());
+		System.out.println("[TestCase4]Test has finished,please check log file for results");
+		System.out.println("End at:" + endTime);
+		CustomizedLog.writeCustomizedLogFile(testLogPath + testLogNameCase5, "[TestCase4]Test has finished,please check log file for results,end at:" + endTime);	
+	}
+	
+//将每行数据LOAD到List中	
+	public static List<String> loadLineDataToList() throws Exception{
+		List<String> list = new ArrayList<String>();
+		int lineNum = Helper.getTotalLinesOfFile(FundfilePath);
+		for(int i = 2;i < lineNum; i++){
+			String fileLineContent =Helper.readFileInLines(FundfilePath, i);
+			list.add(fileLineContent);
+		}
+		return list;
+	}
+	
+//将除了SEDOL和SecId的数据LOAD到List中
+	private static List<String> loadDataToListNoSedolAndSecId() throws Exception{
+		List<String> list = new ArrayList<String>();
+		int lineNum = Helper.getTotalLinesOfFile(FundfilePath);
+		for(int i = 2;i < lineNum; i++){
+			String fileLineContent =Helper.readFileInLines(FundfilePath, i);
+//去除每行的SEDOL(保证索引值不包含1的就可以了)
+			String[] element = fileLineContent.split("~",16);
+			String fileRealLineContent = element[0]+element[2]+element[3]+element[4]+element[5]+element[6]+element[8]+element[9]+element[10]+element[11]+element[12]+element[13]+element[14]+element[15];
+			list.add(fileRealLineContent);
+		}
+		return list;
+	}
+	
+//将指定列数据Load到一个List中
+	private static List<String> loadAssignDataToList(int columnNum) throws Exception{
+		List<String> list = new ArrayList<String>();
+		int lineNum = Helper.getTotalLinesOfFile(FundfilePath);
+		for(int i = 2;i < lineNum; i++){
+			String fileLineContent =Helper.readFileInLines(FundfilePath, i);
+			String[] element = fileLineContent.split("~",16);
+			String str = element[columnNum];
+			list.add(str);
+		}
+		return list;
+	}
+	
+	
+	public static void test() throws Exception{	
+		List<String> list = new ArrayList<String>();
+		list = loadAssignDataToList(7);
+        int lineRange = Helper.getTotalLinesOfFile(FundfilePath);		
+		for(int lineNum = 2;lineNum < lineRange;lineNum++){
+			String fileContent = Helper.readFileInLines(FundfilePath, lineNum);
+			String[] element = fileContent.split("~",16);
+			String fileSecId = element[7];
+			int lineDuplicateCount = Collections.frequency(list, fileSecId);
+			if(lineDuplicateCount > 1){
+				System.out.println("Linenumber is:" + lineNum + "\tSecId is:" + fileSecId);
+			}
+		}
+	}
+
+	
+
+	
+	public static void main(String[] args) throws Exception{
+		testPrepare();
+		testFundFileCompletement();
+		testFundFileFormat();
+//		testFundFileContent();
+//		test();
+		testFundFileDuplicateData();
+	}
+}

@@ -1,0 +1,120 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ExchangeList>
+  <Exchange	ExchangeGlobalId="EX$$$$ARCX"	ExchangeId="ARCX"	MIC="ARCX"	ExchangeName="NYSE ARCA" CountryId="USA" CountryName="United States" RegionId="NRA" RegionName="North America"/>
+  <Exchange	ExchangeGlobalId="EX$$$$CHIX"	ExchangeId="CHIX"	MIC="CHIX"	ExchangeName="CHI-X EUROPE LIMITED" CountryId="GBR" CountryName="United Kingdom" RegionId="UKI" RegionName="UK &amp; Ireland"/>
+  <Exchange	ExchangeGlobalId="EX$$$$DIFX"	ExchangeId="DIFX"	MIC="DIFX"	ExchangeName="NASDAQ DUBAI" CountryId="ARE" CountryName="United Arab Emirates" RegionId="IPM" RegionName="India, Pakistan, and Middle-East Countries"/>
+  <Exchange	ExchangeGlobalId="EX$$$$PINX"	ExchangeId="PINX"	MIC="PINX"	ExchangeName="PINK SHEETS LLC (NQB)" CountryId="USA" CountryName="United States" RegionId="NRA" RegionName="North America"/>
+  <Exchange	ExchangeGlobalId="EX$$$$ROCO"	ExchangeId="ROCO"	MIC="ROCO"	ExchangeName="GRETAI SECURITIES MARKET" CountryId="TWN" CountryName="Taiwan" RegionId="ASP" RegionName="Asia Pacific"/>
+  <Exchange	ExchangeGlobalId="EX$$$$XADS"	ExchangeId="ADS"	MIC="XADS"	ExchangeName="ABU DHABI SECURITIES MARKET" CountryId="ARE" CountryName="United Arab Emirates" RegionId="IPM" RegionName="India, Pakistan, and Middle-East Countries"/>
+  <Exchange	ExchangeGlobalId="EX$$$$XAMM"	ExchangeId="AMM"	MIC="XAMM"	ExchangeName="AMMAN STOCK EXCHANGE" CountryId="JOR" CountryName="Jordan" RegionId="IPM" RegionName="India, Pakistan, and Middle-East Countries"/>
+  <Exchange	ExchangeGlobalId="EX$$$$XAMS"	ExchangeId="AMS"	MIC="XAMS"	ExchangeName="NYSE EURONEXT - EURONEXT AMSTERDAM" CountryId="NLD" CountryName="Netherlands" RegionId="EUR" RegionName="Europe (ex UK &amp; Ireland)"/>
+  <Exchange	ExchangeGlobalId="EX$$$$XASE"	ExchangeId="ASE"	MIC="XASE"	ExchangeName="NYSE AMEX EQUITIES" CountryId="USA" CountryName="United States" RegionId="NRA" RegionName="North America"/>
+  <Exchange	ExchangeGlobalId="EX$$$$XASX"	ExchangeId="ASX"	MIC="XASX"	ExchangeName="AUSTRALIAN SECURITIES EXCHANGE LIMITED" CountryId="AUS" CountryName="Australia" RegionId="ANZ" RegionName="Australia &amp; New Zealand"/>
+  <Exchange	ExchangeGlobalId="EX$$$$XATH"	ExchangeId="ATH"	MIC="XATH"	ExchangeName="ATHENS EXCHANGE S.A. CASH MARKET" CountryId="GRC" CountryName="Greece" RegionId="EUR" RegionName="Europe (ex UK &amp; Ireland)"/>
+  <Exchange	ExchangeGlobalId="EX$$$$XBAH"	ExchangeId="BAH"	MIC="XBAH"	ExchangeName="BAHRAIN STOCK EXCHANGE" CountryId="BHR" CountryName="Bahrain" RegionId="IPM" RegionName="India, Pakistan, and Middle-East Countries"/>
+  <Exchange	ExchangeGlobalId="EX$$$$XBDA"	ExchangeId="BDA"	MIC="XBDA"	ExchangeName="BERMUDA STOCK EXCHANGE LTD" CountryId="BMU" CountryName="Bermuda" RegionId="LTA" RegionName="Latin America"/>
+  <Exchange	ExchangeGlobalId="EX$$$$XBER"	ExchangeId="BER"	MIC="XBER"	ExchangeName="BOERSE BERLIN" CountryId="DEU" CountryName="Germany" RegionId="EUR" RegionName="Europe (ex UK &amp; Ireland)"/>
+  <Exchange	ExchangeGlobalId="EX$$$$XBEY"	ExchangeId="BEY"	MIC="XBEY"	ExchangeName="BOURSE DE BEYROUTH - BEIRUT STOCK EXCHANGE" CountryId="LBN" CountryName="Lebanon" RegionId="IPM" RegionName="India, Pakistan, and Middle-East Countries"/>
+  <Exchange	ExchangeGlobalId="EX$$$$XBKK"	ExchangeId="BKK"	MIC="XBKK"	ExchangeName="STOCK EXCHANGE OF THAILAND" CountryId="THA" CountryName="Thailand" RegionId="ASP" RegionName="Asia Pacific"/>
+  <Exchange	ExchangeGlobalId="EX$$$$XBOG"	ExchangeId="BOG"	MIC="XBOG"	ExchangeName="BOLSA DE VALORES DE COLOMBIA" CountryId="COL" CountryName="Colombia" RegionId="LTA" RegionName="Latin America"/>
+  <Exchange	ExchangeGlobalId="EX$$$$XBOM"	ExchangeId="BOM"	MIC="XBOM"	ExchangeName="MUMBAI STOCK EXCHANGE" CountryId="IND" CountryName="India" RegionId="IPM" RegionName="India, Pakistan, and Middle-East Countries"/>
+  <Exchange	ExchangeGlobalId="EX$$$$XBOT"	ExchangeId="BOT"	MIC="XBOT"	ExchangeName="BOTSWANA STOCK EXCHANGE" CountryId="BWA" CountryName="Botswana" RegionId="AFR" RegionName="Africa"/>
+  <Exchange	ExchangeGlobalId="EX$$$$XBRA"	ExchangeId="BRA"	MIC="XBRA"	ExchangeName="BRATISLAVA STOCK EXCHANGE" CountryId="SVK" CountryName="Slovakia" RegionId="EUR" RegionName="Europe (ex UK &amp; Ireland)"/>
+  <Exchange	ExchangeGlobalId="EX$$$$XBRU"	ExchangeId="BRU"	MIC="XBRU"	ExchangeName="NYSE EURONEXT - EURONEXT BRUSSELS" CountryId="BEL" CountryName="Belgium" RegionId="EUR" RegionName="Europe (ex UK &amp; Ireland)"/>
+  <Exchange	ExchangeGlobalId="EX$$$$XBRV"	ExchangeId="BRV"	MIC="XBRV"	ExchangeName="BOURSE REGIONALE DES VALEURS MOBILIERES" CountryId="CIV" CountryName="C?′te d'Ivoire" RegionId="AFR" RegionName="Africa"/>
+  <Exchange	ExchangeGlobalId="EX$$$$XBSP"	ExchangeId="BSP"	MIC="BVMF"	ExchangeName="BOLSA DE VALORES DE SAO PAULO" CountryId="BRA" CountryName="Brazil" RegionId="LTA" RegionName="Latin America"/>
+  <Exchange	ExchangeGlobalId="EX$$$$XBUD"	ExchangeId="BUD"	MIC="XBUD"	ExchangeName="BUDAPEST STOCK EXCHANGE" CountryId="HUN" CountryName="Hungary" RegionId="EUR" RegionName="Europe (ex UK &amp; Ireland)"/>
+  <Exchange	ExchangeGlobalId="EX$$$$XBUE"	ExchangeId="BUE"	MIC="XBUE"	ExchangeName="BUENOS AIRES STOCK EXCHANGE" CountryId="ARG" CountryName="Argentina" RegionId="LTA" RegionName="Latin America"/>
+  <Exchange	ExchangeGlobalId="EX$$$$XBUL"	ExchangeId="BUL"	MIC="XBUL"	ExchangeName="BULGARIAN STOCK EXCHANGE" CountryId="BGR" CountryName="Bulgaria" RegionId="EUR" RegionName="Europe (ex UK &amp; Ireland)"/>
+  <Exchange	ExchangeGlobalId="EX$$$$XCAI"	ExchangeId="CAI"	MIC="XCAI"	ExchangeName="EGYPTIAN EXCHANGE" CountryId="EGY" CountryName="Egypt" RegionId="AFR" RegionName="Africa"/>
+  <Exchange	ExchangeGlobalId="EX$$$$XCAR"	ExchangeId="CAR"	MIC="XCAR"	ExchangeName="BOLSA DE VALORES DE CARACAS" CountryId="VEN" CountryName="Venezuela" RegionId="LTA" RegionName="Latin America"/>
+  <Exchange	ExchangeGlobalId="EX$$$$XCAS"	ExchangeId="CAS"	MIC="XCAS"	ExchangeName="CASABLANCA STOCK EXCHANGE" CountryId="MAR" CountryName="Morocco" RegionId="AFR" RegionName="Africa"/>
+  <Exchange	ExchangeGlobalId="EX$$$$XCOL"	ExchangeId="COL"	MIC="XCOL"	ExchangeName="COLOMBO STOCK EXCHANGE" CountryId="LKA" CountryName="Sri Lanka" RegionId="IPM" RegionName="India, Pakistan, and Middle-East Countries"/>
+  <Exchange	ExchangeGlobalId="EX$$$$XCSE"	ExchangeId="CSE"	MIC="XCSE"	ExchangeName="OMX NORDIC EXCHANGE COPENHAGEN A/S" CountryId="DNK" CountryName="Denmark" RegionId="EUR" RegionName="Europe (ex UK &amp; Ireland)"/>
+  <Exchange	ExchangeGlobalId="EX$$$$XCYS"	ExchangeId="CYS"	MIC="XCYS"	ExchangeName="CYPRUS STOCK EXCHANGE" CountryId="CYP" CountryName="Cyprus" RegionId="IPM" RegionName="India, Pakistan, and Middle-East Countries"/>
+  <Exchange	ExchangeGlobalId="EX$$$$XDAR"	ExchangeId="DAR"	MIC="XDAR"	ExchangeName="DAR ES SALAAM STOCK EXCHANGE" CountryId="TZA" CountryName="Tanzania, United Republic Of" RegionId="AFR" RegionName="Africa"/>
+  <Exchange	ExchangeGlobalId="EX$$$$XDFM"	ExchangeId="DFM"	MIC="XDFM"	ExchangeName="DUBAI FINANCIAL MARKET" CountryId="ARE" CountryName="United Arab Emirates" RegionId="IPM" RegionName="India, Pakistan, and Middle-East Countries"/>
+  <Exchange	ExchangeGlobalId="EX$$$$XDHA"	ExchangeId="DHA"	MIC="XDHA"	ExchangeName="DHAKA STOCK EXCHANGE LTD" CountryId="BGD" CountryName="Bangladesh" RegionId="IPM" RegionName="India, Pakistan, and Middle-East Countries"/>
+  <Exchange	ExchangeGlobalId="EX$$$$XDUB"	ExchangeId="DUB"	MIC="XDUB"	ExchangeName="IRISH STOCK EXCHANGE - MAIN SECURITIES MARKET" CountryId="IRL" CountryName="Ireland" RegionId="UKI" RegionName="UK &amp; Ireland"/>
+  <Exchange	ExchangeGlobalId="EX$$$$XDUS"	ExchangeId="DUS"	MIC="XDUS"	ExchangeName="BOERSE DUESSELDORF" CountryId="DEU" CountryName="Germany" RegionId="EUR" RegionName="Europe (ex UK &amp; Ireland)"/>
+  <Exchange	ExchangeGlobalId="EX$$$$XETR"	ExchangeId="ETR"	MIC="XETR"	ExchangeName="XETRA" CountryId="DEU" CountryName="Germany" RegionId="EUR" RegionName="Europe (ex UK &amp; Ireland)"/>
+  <Exchange	ExchangeGlobalId="EX$$$$XFRA"	ExchangeId="FRA"	MIC="XFRA"	ExchangeName="DEUTSCHE BOERSE AG" CountryId="DEU" CountryName="Germany" RegionId="EUR" RegionName="Europe (ex UK &amp; Ireland)"/>
+  <Exchange	ExchangeGlobalId="EX$$$$XGHA"	ExchangeId="GHA"	MIC="XGHA"	ExchangeName="GHANA STOCK EXCHANGE" CountryId="GHA" CountryName="Ghana" RegionId="AFR" RegionName="Africa"/>
+  <Exchange	ExchangeGlobalId="EX$$$$XGUA"	ExchangeId="GUA"	MIC="XGUA"	ExchangeName="GUAYAQUIL STOCK EXCHANGE" CountryId="ECU" CountryName="Ecuador" RegionId="LTA" RegionName="Latin America"/>
+  <Exchange	ExchangeGlobalId="EX$$$$XHAM"	ExchangeId="HAM"	MIC="XHAM"	ExchangeName="BOERSE HAMBURG" CountryId="DEU" CountryName="Germany" RegionId="EUR" RegionName="Europe (ex UK &amp; Ireland)"/>
+  <Exchange	ExchangeGlobalId="EX$$$$XHAN"	ExchangeId="HAN"	MIC="XHAN"	ExchangeName="BOERSE HANNOVER" CountryId="DEU" CountryName="Germany" RegionId="EUR" RegionName="Europe (ex UK &amp; Ireland)"/>
+  <Exchange	ExchangeGlobalId="EX$$$$XHEL"	ExchangeId="HEL"	MIC="XHEL"	ExchangeName="OMX NORDIC EXCHANGE HELSINKI OY" CountryId="FIN" CountryName="Finland" RegionId="EUR" RegionName="Europe (ex UK &amp; Ireland)"/>
+  <Exchange	ExchangeGlobalId="EX$$$$XHKG"	ExchangeId="HKG"	MIC="XHKG"	ExchangeName="STOCK EXCHANGE OF HONG KONG LTD" CountryId="HKG" CountryName="Hong Kong" RegionId="ASP" RegionName="Asia Pacific"/>
+  <Exchange	ExchangeGlobalId="EX$$$$XICE"	ExchangeId="ICE"	MIC="XICE"	ExchangeName="NASDAQ OMX ICELAND" CountryId="ISL" CountryName="Iceland" RegionId="EUR" RegionName="Europe (ex UK &amp; Ireland)"/>
+  <Exchange	ExchangeGlobalId="EX$$$$XIDX"	ExchangeId="IDX"	MIC="XIDX"	ExchangeName="INDONESIA STOCK EXCHANGE" CountryId="IDN" CountryName="Indonesia" RegionId="ASP" RegionName="Asia Pacific"/>
+  <Exchange	ExchangeGlobalId="EX$$$$XIST"	ExchangeId="IST"	MIC="XIST"	ExchangeName="ISTANBUL STOCK EXCHANGE" CountryId="TUR" CountryName="Turkey" RegionId="EUR" RegionName="Europe (ex UK &amp; Ireland)"/>
+  <Exchange	ExchangeGlobalId="EX$$$$XJAS"	ExchangeId="JAS"	MIC="XJAS"	ExchangeName="JASDAQ SECURITIES EXCHANGE" CountryId="JPN" CountryName="Japan" RegionId="ASP" RegionName="Asia Pacific"/>
+  <Exchange	ExchangeGlobalId="EX$$$$XJSE"	ExchangeId="JSE"	MIC="XJSE"	ExchangeName="JSE SECURITIES EXCHANGE" CountryId="ZAF" CountryName="South Africa" RegionId="AFR" RegionName="Africa"/>
+  <Exchange	ExchangeGlobalId="EX$$$$XKAR"	ExchangeId="KAR"	MIC="XKAR"	ExchangeName="KARACHI STOCK EXCHANGE (GUARANTEE) LIMITED" CountryId="PAK" CountryName="Pakistan" RegionId="IPM" RegionName="India, Pakistan, and Middle-East Countries"/>
+  <Exchange	ExchangeGlobalId="EX$$$$XKLS"	ExchangeId="KLS"	MIC="XKLS"	ExchangeName="BURSA MALAYSIA" CountryId="MYS" CountryName="Malaysia" RegionId="ASP" RegionName="Asia Pacific"/>
+  <Exchange	ExchangeGlobalId="EX$$$$XKRX"	ExchangeId="KRX"	MIC="XKRX"	ExchangeName="KOREA EXCHANGE (STOCK MARKET)" CountryId="KOR" CountryName="South Korea" RegionId="ASP" RegionName="Asia Pacific"/>
+  <Exchange	ExchangeGlobalId="EX$$$$XKUW"	ExchangeId="KUW"	MIC="XKUW"	ExchangeName="KUWAIT STOCK EXCHANGE" CountryId="KWT" CountryName="Kuwait" RegionId="IPM" RegionName="India, Pakistan, and Middle-East Countries"/>
+  <Exchange	ExchangeGlobalId="EX$$$$XLIS"	ExchangeId="LIS"	MIC="XLIS"	ExchangeName="NYSE EURONEXT - EURONEXT LISBON" CountryId="PRT" CountryName="Portugal" RegionId="EUR" RegionName="Europe (ex UK &amp; Ireland)"/>
+  <Exchange	ExchangeGlobalId="EX$$$$XLIT"	ExchangeId="LIT"	MIC="XLIT"	ExchangeName="NASDAQ OMX VILNIUS" CountryId="LTU" CountryName="Lithuania" RegionId="EUR" RegionName="Europe (ex UK &amp; Ireland)"/>
+  <Exchange	ExchangeGlobalId="EX$$$$XLJU"	ExchangeId="LJU"	MIC="XLJU"	ExchangeName="LJUBLJANA STOCK EXCHANGE (OFFICIAL MARKET)" CountryId="SVN" CountryName="Slovenia" RegionId="EUR" RegionName="Europe (ex UK &amp; Ireland)"/>
+  <Exchange	ExchangeGlobalId="EX$$$$XLON"	ExchangeId="LON"	MIC="XLON"	ExchangeName="LONDON STOCK EXCHANGE" CountryId="GBR" CountryName="United Kingdom" RegionId="UKI" RegionName="UK &amp; Ireland"/>
+  <Exchange	ExchangeGlobalId="EX$$$$XLUS"	ExchangeId="LUS"	MIC="XLUS"	ExchangeName="LUSAKA STOCK EXCHANGE" CountryId="ZMB" CountryName="Zambia" RegionId="AFR" RegionName="Africa"/>
+  <Exchange	ExchangeGlobalId="EX$$$$XLUX"	ExchangeId="LUX"	MIC="XLUX"	ExchangeName="LUXEMBOURG STOCK EXCHANGE" CountryId="LUX" CountryName="Luxembourg" RegionId="EUR" RegionName="Europe (ex UK &amp; Ireland)"/>
+  <Exchange	ExchangeGlobalId="EX$$$$XMAE"	ExchangeId="MAE"	MIC="XMAE"	ExchangeName="MACEDONIAN STOCK EXCHANGE" CountryId="MKD" CountryName="Macedonia" RegionId="EUR" RegionName="Europe (ex UK &amp; Ireland)"/>
+  <Exchange	ExchangeGlobalId="EX$$$$XMAL"	ExchangeId="MAL"	MIC="XMAL"	ExchangeName="MALTA STOCK EXCHANGE" CountryId="MLT" CountryName="Malta" RegionId="EUR" RegionName="Europe (ex UK &amp; Ireland)"/>
+  <Exchange	ExchangeGlobalId="EX$$$$XMCE"	ExchangeId="MCE"	MIC="XMCE"	ExchangeName="MERCADO CONTINUO ESPANOL" CountryId="ESP" CountryName="Spain" RegionId="EUR" RegionName="Europe (ex UK &amp; Ireland)"/>
+  <Exchange	ExchangeGlobalId="EX$$$$XMEX"	ExchangeId="MEX"	MIC="XMEX"	ExchangeName="BOLSA MEXICANA DE VALORES (MEXICAN STOCK EXCHANGE)" CountryId="MEX" CountryName="Mexico" RegionId="LTA" RegionName="Latin America"/>
+  <Exchange	ExchangeGlobalId="EX$$$$XMIL"	ExchangeId="MIL"	MIC="MTAA"	ExchangeName="BORSA ITALIANA S.P.A." CountryId="ITA" CountryName="Italy" RegionId="EUR" RegionName="Europe (ex UK &amp; Ireland)"/>
+  <Exchange	ExchangeGlobalId="EX$$$$XMNT"	ExchangeId="MNT"	MIC="XMNT"	ExchangeName="BOLSA DE VALORES DE MONTEVIDEO" CountryId="URY" CountryName="Uruguay" RegionId="LTA" RegionName="Latin America"/>
+  <Exchange	ExchangeGlobalId="EX$$$$XMSW"	ExchangeId="MSW"	MIC="XMSW"	ExchangeName="MALAWI STOCK EXCHANGE" CountryId="MWI" CountryName="Malawi" RegionId="AFR" RegionName="Africa"/>
+  <Exchange	ExchangeGlobalId="EX$$$$XMUN"	ExchangeId="MUN"	MIC="XMUN"	ExchangeName="BOERSE MUENCHEN" CountryId="DEU" CountryName="Germany" RegionId="EUR" RegionName="Europe (ex UK &amp; Ireland)"/>
+  <Exchange	ExchangeGlobalId="EX$$$$XMUS"	ExchangeId="MUS"	MIC="XMUS"	ExchangeName="MUSCAT SECURITIES MARKET" CountryId="OMN" CountryName="Oman" RegionId="IPM" RegionName="India, Pakistan, and Middle-East Countries"/>
+  <Exchange	ExchangeGlobalId="EX$$$$XNAI"	ExchangeId="NAI"	MIC="XNAI"	ExchangeName="NAIROBI STOCK EXCHANGE" CountryId="KEN" CountryName="Kenya" RegionId="AFR" RegionName="Africa"/>
+  <Exchange	ExchangeGlobalId="EX$$$$XNAM"	ExchangeId="NAM"	MIC="XNAM"	ExchangeName="NAMIBIAN STOCK EXCHANGE" CountryId="NAM" CountryName="Namibia" RegionId="AFR" RegionName="Africa"/>
+  <Exchange	ExchangeGlobalId="EX$$$$XNAS"	ExchangeId="NAS"	MIC="XNAS"	ExchangeName="NASDAQ" CountryId="USA" CountryName="United States" RegionId="NRA" RegionName="North America"/>
+  <Exchange	ExchangeGlobalId="EX$$$$XNGO"	ExchangeId="NGO"	MIC="XNGO"	ExchangeName="NAGOYA STOCK EXCHANGE" CountryId="JPN" CountryName="Japan" RegionId="ASP" RegionName="Asia Pacific"/>
+  <Exchange	ExchangeGlobalId="EX$$$$XNSA"	ExchangeId="NSA"	MIC="XNSA"	ExchangeName="NIGERIAN STOCK EXCHANGE" CountryId="NGA" CountryName="Nigeria" RegionId="AFR" RegionName="Africa"/>
+  <Exchange	ExchangeGlobalId="EX$$$$XNSE"	ExchangeId="NSE"	MIC="XNSE"	ExchangeName="NATIONAL STOCK EXCHANGE OF INDIA" CountryId="IND" CountryName="India" RegionId="IPM" RegionName="India, Pakistan, and Middle-East Countries"/>
+  <Exchange	ExchangeGlobalId="EX$$$$XNYS"	ExchangeId="NYS"	MIC="XNYS"	ExchangeName="NEW YORK STOCK EXCHANGE, INC." CountryId="USA" CountryName="United States" RegionId="NRA" RegionName="North America"/>
+  <Exchange	ExchangeGlobalId="EX$$$$XNZE"	ExchangeId="NZE"	MIC="XNZE"	ExchangeName="NEW ZEALAND EXCHANGE LTD" CountryId="NZL" CountryName="New Zealand" RegionId="ANZ" RegionName="Australia &amp; New Zealand"/>
+  <Exchange	ExchangeGlobalId="EX$$$$XOSE"	ExchangeId="OSE"	MIC="XOSE"	ExchangeName="OSAKA SECURITIES EXCHANGE" CountryId="JPN" CountryName="Japan" RegionId="ASP" RegionName="Asia Pacific"/>
+  <Exchange	ExchangeGlobalId="EX$$$$XOSL"	ExchangeId="OSL"	MIC="XOSL"	ExchangeName="OSLO BORS ASA" CountryId="NOR" CountryName="Norway" RegionId="EUR" RegionName="Europe (ex UK &amp; Ireland)"/>
+  <Exchange	ExchangeGlobalId="EX$$$$XOTC"	ExchangeId="OTC"	MIC="XOTC"	ExchangeName="OTC BULLETIN BOARD" CountryId="USA" CountryName="United States" RegionId="NRA" RegionName="North America"/>
+  <Exchange	ExchangeGlobalId="EX$$$$XPAE"	ExchangeId="PAE"	MIC="XPAE"	ExchangeName="PALESTINE SECURITIES EXCHANGE" CountryId="PSE" CountryName="Occupied Palestinian Territory" RegionId="ASP" RegionName="Asia Pacific"/>
+  <Exchange	ExchangeGlobalId="EX$$$$XPAR"	ExchangeId="PAR"	MIC="XPAR"	ExchangeName="NYSE EURONEXT - EURONEXT PARIS" CountryId="FRA" CountryName="France" RegionId="EUR" RegionName="Europe (ex UK &amp; Ireland)"/>
+  <Exchange	ExchangeGlobalId="EX$$$$XPHS"	ExchangeId="PHS"	MIC="XPHS"	ExchangeName="PHILIPPINE STOCK EXCHANGE, INC." CountryId="PHL" CountryName="Philippines" RegionId="ASP" RegionName="Asia Pacific"/>
+  <Exchange	ExchangeGlobalId="EX$$$$XPRA"	ExchangeId="PRA"	MIC="XPRA"	ExchangeName="PRAGUE STOCK EXCHANGE" CountryId="CZE" CountryName="Czech Republic" RegionId="EUR" RegionName="Europe (ex UK &amp; Ireland)"/>
+  <Exchange	ExchangeGlobalId="EX$$$$XQUI"	ExchangeId="QUI"	MIC="XQUI"	ExchangeName="QUITO STOCK EXCHANGE" CountryId="ECU" CountryName="Ecuador" RegionId="LTA" RegionName="Latin America"/>
+  <Exchange	ExchangeGlobalId="EX$$$$XRIS"	ExchangeId="RIS"	MIC="XRIS"	ExchangeName="NASDAQ OMX RIGA" CountryId="LVA" CountryName="Latvia" RegionId="EUR" RegionName="Europe (ex UK &amp; Ireland)"/>
+  <Exchange	ExchangeGlobalId="EX$$$$XSES"	ExchangeId="SES"	MIC="XSES"	ExchangeName="SINGAPORE EXCHANGE" CountryId="SGP" CountryName="Singapore" RegionId="ASP" RegionName="Asia Pacific"/>
+  <Exchange	ExchangeGlobalId="EX$$$$XSGO"	ExchangeId="SGO"	MIC="XSGO"	ExchangeName="SANTIAGO STOCK EXCHANGE" CountryId="CHL" CountryName="Chile" RegionId="LTA" RegionName="Latin America"/>
+  <Exchange	ExchangeGlobalId="EX$$$$XSHE"	ExchangeId="SHE"	MIC="XSHE"	ExchangeName="SHENZHEN STOCK EXCHANGE" CountryId="CHN" CountryName="China" RegionId="ASP" RegionName="Asia Pacific"/>
+  <Exchange	ExchangeGlobalId="EX$$$$XSHG"	ExchangeId="SHG"	MIC="XSHG"	ExchangeName="SHANGHAI STOCK EXCHANGE" CountryId="CHN" CountryName="China" RegionId="ASP" RegionName="Asia Pacific"/>
+  <Exchange	ExchangeGlobalId="EX$$$$XSTO"	ExchangeId="STO"	MIC="XSTO"	ExchangeName="OMX NORDIC EXCHANGE STOCKHOLM AB" CountryId="SWE" CountryName="Sweden" RegionId="EUR" RegionName="Europe (ex UK &amp; Ireland)"/>
+  <Exchange	ExchangeGlobalId="EX$$$$XSTU"	ExchangeId="STU"	MIC="XSTU"	ExchangeName="BOERSE STUTTGART" CountryId="DEU" CountryName="Germany" RegionId="EUR" RegionName="Europe (ex UK &amp; Ireland)"/>
+  <Exchange	ExchangeGlobalId="EX$$$$XSWA"	ExchangeId="SWA"	MIC="XSWA"	ExchangeName="SWAZILAND STOCK EXCHANGE" CountryId="SWZ" CountryName="Swaziland" RegionId="AFR" RegionName="Africa"/>
+  <Exchange	ExchangeGlobalId="EX$$$$XSWX"	ExchangeId="SWX"	MIC="XSWX"	ExchangeName="SWISS EXCHANGE" CountryId="CHE" CountryName="Switzerland" RegionId="EUR" RegionName="Europe (ex UK &amp; Ireland)"/>
+  <Exchange	ExchangeGlobalId="EX$$$$XTAE"	ExchangeId="TAE"	MIC="XTAE"	ExchangeName="TEL AVIV STOCK EXCHANGE" CountryId="ISR" CountryName="Israel" RegionId="IPM" RegionName="India, Pakistan, and Middle-East Countries"/>
+  <Exchange	ExchangeGlobalId="EX$$$$XTAI"	ExchangeId="TAI"	MIC="XTAI"	ExchangeName="TAIWAN STOCK EXCHANGE" CountryId="TWN" CountryName="Taiwan" RegionId="ASP" RegionName="Asia Pacific"/>
+  <Exchange	ExchangeGlobalId="EX$$$$XTAL"	ExchangeId="TAL"	MIC="XTAL"	ExchangeName="NASDAQ OMX TALLINN" CountryId="EST" CountryName="Estonia" RegionId="EUR" RegionName="Europe (ex UK &amp; Ireland)"/>
+  <Exchange	ExchangeGlobalId="EX$$$$XTEH"	ExchangeId="TEH"	MIC="XTEH"	ExchangeName="TEHRAN STOCK EXCHANGE" CountryId="IRN" CountryName="Iran, Islamic Republic of" RegionId="IPM" RegionName="India, Pakistan, and Middle-East Countries"/>
+  <Exchange	ExchangeGlobalId="EX$$$$XTKS"	ExchangeId="TKS"	MIC="XTKS"	ExchangeName="TOKYO STOCK EXCHANGE" CountryId="JPN" CountryName="Japan" RegionId="ASP" RegionName="Asia Pacific"/>
+  <Exchange	ExchangeGlobalId="EX$$$$XTSE"	ExchangeId="TSE"	MIC="XTSE"	ExchangeName="TORONTO STOCK EXCHANGE" CountryId="CAN" CountryName="Canada" RegionId="NRA" RegionName="North America"/>
+  <Exchange	ExchangeGlobalId="EX$$$$XTSX"	ExchangeId="TSX"	MIC="XTSX"	ExchangeName="TSX VENTURE EXCHANGE" CountryId="CAN" CountryName="Canada" RegionId="NRA" RegionName="North America"/>
+  <Exchange	ExchangeGlobalId="EX$$$$XWAR"	ExchangeId="WAR"	MIC="XWAR"	ExchangeName="WARSAW STOCK EXCHANGE" CountryId="POL" CountryName="Poland" RegionId="EUR" RegionName="Europe (ex UK &amp; Ireland)"/>
+  <Exchange	ExchangeGlobalId="EX$$$$XWBO"	ExchangeId="WBO"	MIC="XWBO"	ExchangeName="WIENER BOERSE AG" CountryId="AUT" CountryName="Austria" RegionId="EUR" RegionName="Europe (ex UK &amp; Ireland)"/>
+  <Exchange	ExchangeGlobalId="EX$$$$XZAG"	ExchangeId="ZAG"	MIC="XZAG"	ExchangeName="ZAGREB STOCK EXCHANGE" CountryId="HRV" CountryName="Croatia" RegionId="EUR" RegionName="Europe (ex UK &amp; Ireland)"/>
+  <Exchange	ExchangeGlobalId="EXTP$$$RTC"	ExchangeId="RTC"	MIC=""	ExchangeName="RTS Classic in USD" CountryId="RUS" CountryName="Russia" RegionId="EUR" RegionName="Europe (ex UK &amp; Ireland)"/>
+  <Exchange	ExchangeGlobalId="EXTP$$$RTD"	ExchangeId="RTD"	MIC=""	ExchangeName="RTS Board and Global" CountryId="RUS" CountryName="Russia" RegionId="EUR" RegionName="Europe (ex UK &amp; Ireland)"/>
+  <Exchange	ExchangeGlobalId="EXTP$$$RTO"	ExchangeId="RTO"	MIC=""	ExchangeName="RTS Standard in RUR" CountryId="RUS" CountryName="Russia" RegionId="EUR" RegionName="Europe (ex UK &amp; Ireland)"/>
+  <Exchange	ExchangeGlobalId="EXTP$$$RTR"	ExchangeId="RTR"	MIC=""	ExchangeName="RTS T+0 Order Driven in RUR" CountryId="RUS" CountryName="Russia" RegionId="EUR" RegionName="Europe (ex UK &amp; Ireland)"/>
+  <Exchange	ExchangeGlobalId="EX$$$$XBSE"	ExchangeId="BSE"	MIC="XBSE"	ExchangeName="Bukarest Stock Exchange" CountryId="ROM" CountryName="Romania" RegionId="EUR" RegionName="Europe (ex UK &amp; Ireland)"/>
+  <Exchange	ExchangeGlobalId="EX$$$$XSAU"	ExchangeId="SAU"	MIC="XSAU"	ExchangeName="SAUDI STOCK EXCHANGE" CountryId="SAU" CountryName="Saudi Arabia" RegionId="IPM" RegionName="India, Pakistan, and Middle-East Countries"/>
+  <Exchange	ExchangeGlobalId="EX$$$$DSMD"	ExchangeId="DSMD"	MIC="DSMD"	ExchangeName="Qatar Exchange" CountryId="QAT" CountryName="Qatar" RegionId="IPM" RegionName="India, Pakistan, and Middle-East Countries"/>
+  <Exchange	ExchangeGlobalId="EX$$$$XSTC"	ExchangeId="STC"	MIC="XSTC"	ExchangeName="HOCHIMINH STOCK EXCHANGE" CountryId="VNM" CountryName="Vietnam" RegionId="ASP" RegionName="Asia Pacific"/>
+  <Exchange	ExchangeGlobalId="EX$$$$GREY"	ExchangeId="GREY"	MIC="PSGM"	ExchangeName="Grey Market" CountryId="USA" CountryName="United States" RegionId="NRA" RegionName="North America"/>
+  <Exchange	ExchangeGlobalId="EX$$$$XCNQ"	ExchangeId="CNQ"	MIC="XCNQ"	ExchangeName="Canadian National Stock Exchange" CountryId="CAN" CountryName="Canada" RegionId="NRA" RegionName="North America"/>
+  <Exchange	ExchangeGlobalId="EX$$$$BATS"	ExchangeId="BATS"	MIC="BATS"	ExchangeName="BATS EXCHANGE"                      CountryId="USA" CountryName="United States"    RegionId="NRA" RegionName="North America"/>
+  <Exchange	ExchangeGlobalId="EX$$$$XMIC"	ExchangeId="MIC"	MIC="XMIC"	ExchangeName="MOSCOW INTERBANK CURRENCY EXCHANGE" CountryId="RUS" CountryName="Russia" RegionId="EUR" RegionName="Europe (ex UK &amp; Ireland)"/>
+  <Exchange ExchangeGlobalId="EXTP$$$LTS"	ExchangeId="LTS " MIC=""	ExchangeName="LSE International Trading Services" CountryId="GBR" CountryName="United Kingdom" RegionId="UKI" RegionName="UK &amp; Ireland"/>
+</ExchangeList>

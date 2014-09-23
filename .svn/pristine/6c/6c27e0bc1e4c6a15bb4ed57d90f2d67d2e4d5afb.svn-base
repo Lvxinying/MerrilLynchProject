@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Table>
+	<VerticaTableList>			
+		<VerticaTableName>dbi.CompanyAttribute</VerticaTableName>
+        <VerticaTableName>dbi.CompanyAttributes</VerticaTableName>
+		<VerticaTableName>dbi.CompanyBasic</VerticaTableName>
+		<VerticaTableName>dbi.CompanyBrazilRegulatory</VerticaTableName>
+		<VerticaTableName>dbi.CompanyClassType</VerticaTableName>
+		<VerticaTableName>dbi.CompanyClassification</VerticaTableName>	
+	</VerticaTableList>
+</Table>

@@ -1,0 +1,180 @@
+package com.morningstar.FundAutoTest.commons;
+import java.io.File;   
+ 
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
+
+import org.dom4j.Document;   
+import org.dom4j.Element;   
+import org.dom4j.io.SAXReader;   
+
+
+public class DBFactoryManager {	
+	/**
+	 * @author:Stefan.Hou
+     * @args:fileName xml配置文件路径 ；nodeName xml文件中的节点名称 ; DBnum 指定读取第几个DB的配置信息
+	 * @date:2013-10-31
+	 * @description:用于读取所有数据库配置信息
+	 */
+	
+//DBFactory配置文件的路径	
+	 private static String fileName = "./config/DBFactory.xml";
+
+//XML只有一级子节点
+	 public static String getDBFactoryConfig(String fileName,String nodeName,int DBnum) throws Exception {
+		 List<String> list = new ArrayList<String>();
+		 String text = null;
+		 list = getListXML(fileName,nodeName);
+		 for(int i = 0; i < list.size(); i++){
+			 String configcontent = list.get(DBnum-1);
+			 text = configcontent;
+		 }
+		 return text;
+     }
+	 
+	 
+	 private static List<String> getListXML(String fileName,String nodeName)throws Exception{
+//读取并解析XML文档，返回document	 
+		 List<String> nodeList = new ArrayList<String>();
+		 File inputXml = new File(fileName);   
+		 SAXReader saxReader = new SAXReader();
+		 Document doc = saxReader.read(inputXml);
+//获取根节点
+		 Element rootEle = doc.getRootElement();
+//枚举指定名称的子节点
+		 for ( Iterator<?> i = rootEle.elementIterator(nodeName); i.hasNext();) {
+		       Element xEle = (Element) i.next();
+		       nodeList.add(xEle.getStringValue());
+		    }
+		 return nodeList;
+	 }	
+
+//读取SQL SERVER的 Driver 参数： DbNum表示指定读取DBFactory的第几个DB的值，从1开始	 
+	 public static String getMssqlDriverClass(int DbNum)throws Exception{
+		 String MsSQLDriver = getDBFactoryConfig(fileName,"MsSQLDriverClass",DbNum);
+		 return MsSQLDriver;
+	 }
+	 
+//读取MySQL的 Driver 参数： DbNum表示指定读取DBFactory的第几个DB的值，从1开始	 
+	 public static String getMysqlDriverClass(int DbNum)throws Exception{
+		 String MsSQLDriver = getDBFactoryConfig(fileName,"MySQLDriverClass",DbNum);
+		 return MsSQLDriver;
+	 }
+		 
+//读取MySQL的 Driver 参数： DbNum表示指定读取DBFactory的第几个DB的值，从1开始	 
+	 public static String getVerticaDriverClass(int DbNum)throws Exception{
+		 String MsSQLDriver = getDBFactoryConfig(fileName,"VerticaDriverClass",DbNum);
+		 return MsSQLDriver;
+	 }
+	 
+//读取SQL SERVER的URL     
+	 public static String getMssqlUrl(int DbNum)throws Exception{
+		 String MsSQLUrl = getDBFactoryConfig(fileName,"MsSQLUrl",DbNum);
+		 return MsSQLUrl;
+	 }
+	 
+//读取MySQL的URL     
+	 public static String getMysqlUrl(int DbNum)throws Exception{
+		 String MsSQLUrl = getDBFactoryConfig(fileName,"MySQLUrl",DbNum);
+		 return MsSQLUrl;
+	 }
+	 
+//读取Vertica的URL
+	 public static String getVerticaUrl(int DbNum)throws Exception{
+		 String MsSQLUrl = getDBFactoryConfig(fileName,"VerticaUrl",DbNum);
+		 return MsSQLUrl;
+	 }
+	 
+//读取SQL SERVER的用户名
+	 public static String getMsSQLUername(int DbNum)throws Exception{
+		 String MsSQLUername = getDBFactoryConfig(fileName,"MsSQLUserName",DbNum);
+		 return MsSQLUername;
+	 }
+
+	 
+//读取MySQL的用户名
+	 public static String getMySQLUername(int DbNum)throws Exception{
+		 String MySQLUername = getDBFactoryConfig(fileName,"MySQLUserName",DbNum);
+		 return MySQLUername;
+	 }	 
+ 
+//读取Vertica的用户名
+	 public static String getVerticaUername(int DbNum)throws Exception{
+		 String VerticaUername = getDBFactoryConfig(fileName,"VerticaUserName",DbNum);
+		 return VerticaUername;
+	 }
+	 
+//读取SQL SERVER的用户名
+	 public static String getMsSQLPassword(int DbNum)throws Exception{
+		 String MsSQLPassword = getDBFactoryConfig(fileName,"MsSQLPassWord",DbNum);
+		 return MsSQLPassword;
+	 }
+
+	 
+//读取MySQL的密码
+	 public static String getMySQLPassword(int DbNum)throws Exception{
+		 String MySQLPassword = getDBFactoryConfig(fileName,"MySQLPassWord",DbNum);
+		 return MySQLPassword;
+	 }	 
+ 
+//读取Vertica的密码
+	 public static String getVerticaPassword(int DbNum)throws Exception{
+		 String VerticaPassword = getDBFactoryConfig(fileName,"VerticaPassWord",DbNum);
+		 return VerticaPassword;
+	 }	 
+
+	 
+//读取SQL SERVER的最大连接数
+	 public static int getMsSQLPoolSize(int DbNum)throws Exception{
+		 String MsSQLPoolSizestr = getDBFactoryConfig(fileName,"MsSQLPoolSize",DbNum);
+		 int MsSQLPoolSize = Integer.parseInt(MsSQLPoolSizestr);
+		 return MsSQLPoolSize;
+	 }
+
+//读取MySQL的最大连接数
+	 public static int getMySQLPoolSize(int DbNum)throws Exception{
+		 String MySQLPoolSizestr = getDBFactoryConfig(fileName,"MySQLPoolSize",DbNum);
+		 int MySQLPoolSize = Integer.parseInt(MySQLPoolSizestr);
+		 return MySQLPoolSize;
+	 }
+	 
+//读取Vertica的最大连接数
+	 public static int getVerticaPoolSize(int DbNum)throws Exception{
+		 String VerticaPoolSizestr = getDBFactoryConfig(fileName,"VerticaPoolSize",DbNum);
+		 int VerticaPoolSize = Integer.parseInt(VerticaPoolSizestr);
+		 return VerticaPoolSize;
+	 }
+ 
+//获取partitionCount数目
+	 public static int getPartitionCount()throws Exception{
+		 String partitionCountstr = getDBFactoryConfig(fileName,"partitionCount",1);
+		 int partitionCount = Integer.parseInt(partitionCountstr);
+		 return partitionCount;
+	 }
+
+//获取maxConnectionsPerPartition的数目
+	 public static int getmaxConnectionsPerPartition()throws Exception{
+		 String maxConnectionsPerPartitionstr = getDBFactoryConfig(fileName,"maxConnectionsPerPartition",1);
+		 int maxConnectionsPerPartition = Integer.parseInt(maxConnectionsPerPartitionstr);
+		 return maxConnectionsPerPartition;
+	 }
+	 
+//获取minConnectionsPerPartition的数目
+	 public static int getminConnectionsPerPartition()throws Exception{
+		 String minConnectionsPerPartitionstr = getDBFactoryConfig(fileName,"minConnectionsPerPartition",1);
+		 int minConnectionsPerPartition = Integer.parseInt(minConnectionsPerPartitionstr);
+		 return minConnectionsPerPartition;
+	 }
+	 
+	 
+	 
+	 
+	 
+/*public static void main(String[] args) throws Exception{
+	String text = getDBFactoryConfig("./config/DBFactory.xml","MsSQLPoolSize",4);
+	System.out.println(text);
+}*/
+
+	 
+}

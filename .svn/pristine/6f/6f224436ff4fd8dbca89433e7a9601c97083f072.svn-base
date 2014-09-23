@@ -1,0 +1,1 @@
+SELECT PerformanceId FROM dbo.MLAverage3MonthYieldForMonthEnd ORDER BY EndDate;

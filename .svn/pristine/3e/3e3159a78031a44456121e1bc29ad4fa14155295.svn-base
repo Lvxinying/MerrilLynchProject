@@ -1,0 +1,14 @@
+package com.morningstar.eapi.commons.testbase;
+import java.util.ArrayList;
+import java.util.List;
+
+
+public class TestConfigData{
+	 public String Name;
+     public String Type;
+     public String Source;
+     public String DestNodeSpecifiedDefinitions;
+     public String SourceNodeSpecifiedDefinitions;
+     public List<Check> CheckList = new ArrayList<Check>();
+
+}

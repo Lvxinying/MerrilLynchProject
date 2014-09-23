@@ -1,0 +1,60 @@
+package com.morningstar.eapi.source;
+
+import java.io.InputStream;
+import java.util.HashMap;
+
+import com.morningstar.eapi.utils.HttpConnection;
+import com.morningstar.eapi.utils.XmlHelper;
+
+public class Ownership {
+
+	private static String ownership_url = "http://ownership.morningstar.com/ownershipdata/api/GetData.aspx?function=GetOwnershipData&cusip=%s&ownertype=mutualfund";
+	private static String owner = "/OwnershipData/Owners/Owner";
+	
+	public static HashMap<String, String> getData(String CUSIP, String ownerName){
+		HashMap<String, String> map = new HashMap<String, String>();
+		
+		InputStream in = HttpConnection.getInputStream(String.format(ownership_url, CUSIP));
+		XmlHelper xmlHelper = new XmlHelper();
+		xmlHelper.readStream(in);
+		
+		int num = xmlHelper.getNodeCount(owner);
+		for(int i=1;i<num;i++){
+			String AsOfDate = "/OwnershipData/Owners/Owner["+i+"]/AsOfDate";
+			String OwnerName = "/OwnershipData/Owners/Owner["+i+"]/OwnerName";
+			String ShareClassName = "/OwnershipData/Owners/Owner["+i+"]/ShareClassName";
+			String OwnerType = "/OwnershipData/Owners/Owner["+i+"]/OwnerType";
+			String CountryId = "/OwnershipData/Owners/Owner["+i+"]/CountryId";
+			String Ticker = "/OwnershipData/Owners/Owner["+i+"]/Ticker";
+			String SecId = "/OwnershipData/Owners/Owner["+i+"]/SecId";
+			String NumberOfShares = "/OwnershipData/Owners/Owner["+i+"]/NumberOfShares";
+			String MarketValue = "/OwnershipData/Owners/Owner["+i+"]/MarketValue";
+			String ShareChange = "/OwnershipData/Owners/Owner["+i+"]/ShareChange";
+			String PercentageInPortfolio = "/OwnershipData/Owners/Owner["+i+"]/PercentageInPortfolio";
+			String PercentageOwnership = "/OwnershipData/Owners/Owner["+i+"]/PercentageOwnership";
+			String Universe = "/OwnershipData/Owners/Owner["+i+"]/Universe";
+			String PercentChangeFromPriorPort = "/OwnershipData/Owners/Owner["+i+"]/PercentChangeFromPriorPort";
+			String PreviousPortfolioDate = "/OwnershipData/Owners/Owner["+i+"]/PreviousPortfolioDate";
+			
+			if(ownerName.equals(xmlHelper.getValueFromInputStream(OwnerName))){
+				map.put("AsOfDate", xmlHelper.getValueFromInputStream(AsOfDate));
+				map.put("ShareClassName", xmlHelper.getValueFromInputStream(ShareClassName));
+				map.put("OwnerType", xmlHelper.getValueFromInputStream(OwnerType));
+				map.put("CountryId", xmlHelper.getValueFromInputStream(CountryId));
+				map.put("Ticker", xmlHelper.getValueFromInputStream(Ticker));
+				map.put("SecId", xmlHelper.getValueFromInputStream(SecId));
+				map.put("NumberOfShares", xmlHelper.getValueFromInputStream(NumberOfShares));
+				map.put("MarketValue", xmlHelper.getValueFromInputStream(MarketValue));
+				map.put("ShareChange", xmlHelper.getValueFromInputStream(ShareChange));
+				map.put("PercentageInPortfolio", xmlHelper.getValueFromInputStream(PercentageInPortfolio));
+				map.put("PercentageOwnership", xmlHelper.getValueFromInputStream(PercentageOwnership));
+				map.put("Universe", xmlHelper.getValueFromInputStream(Universe));
+				map.put("PercentChangeFromPriorPort", xmlHelper.getValueFromInputStream(PercentChangeFromPriorPort));
+				map.put("PreviousPortfolioDate", xmlHelper.getValueFromInputStream(PreviousPortfolioDate));
+			}
+				
+		}
+		return map;
+		
+	}
+}

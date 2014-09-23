@@ -1,0 +1,67 @@
+package com.morningstar.FundAutoTest.commons;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
+
+
+public class SQLData {
+	//Get Industry/IndustryGroup/Sector PerformanceId by Industry/IndustryGroup/Sector Code
+	public static String getPerformanceIDInIndustry(String identifier, String identifierType)
+	{
+		String result = "";
+		String sql = "";
+		if (identifierType.equalsIgnoreCase("Industry")) sql = "select distinct IndustryId from ReferenceData.dbo.Industry where IndustryCode='" + identifier + "'";
+		if (identifierType.equalsIgnoreCase("IndustryGroup")) sql = "select distinct IndustryGroupId from ReferenceData.dbo.Industry where GroupCode='" + identifier + "'";
+		if (identifierType.equalsIgnoreCase("Sector")) sql = "select distinct SectorGlobalId from ReferenceData.dbo.Industry where SectorCode='" + identifier + "'";
+//		result = DBCommons.getData(sql, Database.geproddb61);
+		return result;
+	}
+/*	
+	//Get all Active Symbol in that Exchange
+	public static List<String> getActiveSymbol(String ExchangeId)
+	{
+		List<String> result = new ArrayList<String>();
+		String sql = "select Symbol from GEAPI.StockExchangeSecurity where ExchangeId='" + ExchangeId + "' and Symbol!='' and StockStatus='Active' and InvestmentTypeId='EQ'";
+		result = DBCommons.getDataList(sql, Database.geapi61);
+		return result;		
+	}
+	
+	//Get all Active Symbol in that Exchange
+	public static List<String> getActiveShareClassId(String ExchangeId)
+	{
+		List<String> result = new ArrayList<String>();
+		String sql = "select distinct(ShareClassId) from GEAPI.StockExchangeSecurity where ExchangeId='" + ExchangeId + "' and Symbol!='' and StockStatus='Active' and InvestmentTypeId='EQ'";
+		result = DBCommons.getDataList(sql, Database.geapi61);
+		return result;		
+	}
+	
+	//Get all Exchanges
+	public static List<String> getAllExchange()
+	{
+		List<String> result = new ArrayList<String>();
+		String sql = "select distinct(ExchangeId) from GEAPI.StockExchangeSecurity where ExchangeId!=''";
+		result = DBCommons.getDataList(sql, Database.geapi61);
+		return result;		
+	}
+	
+	//Get all Exchange, Stocks, ShareClassId by specified Exchange
+	public static List<Map<Integer, String>> getUniverseByExchange(String[] ExchangeIds)
+	{
+		List<Map<Integer, String>> result = new ArrayList<Map<Integer, String>>(); 
+		String sql = "select ExchangeId, Symbol, ShareClassId from GEAPI.StockExchangeSecurity where ExchangeId in " + array2String(ExchangeIds) + " and Symbol!='' and StockStatus='Active' and InvestmentTypeId='EQ'";
+		result = DBCommons.getDataListMap(Database.geapi61, sql);
+		return result;
+	}
+*/	
+	private static String array2String(String[] array)
+	{
+		String result = "(";
+		for (int i = 0; i < array.length; i++)
+		{
+			if (i==0)	result = result + "'" + array[i] + "'";
+			else	result = result + ", '" + array[i] + "'";			
+		}
+		return result + ")";
+	}
+}

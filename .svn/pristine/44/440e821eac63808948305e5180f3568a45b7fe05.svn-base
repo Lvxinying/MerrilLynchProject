@@ -1,0 +1,101 @@
+package com.morningstar.eapi.source;
+
+import java.io.IOException;
+import java.io.InputStream;
+import java.net.MalformedURLException;
+
+import jcifs.smb.SmbFile;
+
+import org.apache.commons.vfs2.FileObject;
+import org.apache.commons.vfs2.FileSystemException;
+import org.apache.commons.vfs2.FileSystemOptions;
+import org.apache.commons.vfs2.VFS;
+
+import com.morningstar.eapi.utils.XmlHelper;
+
+public class RemoteShareFile {
+	String url = "";
+	String user = "";
+	String password = "";
+
+	public RemoteShareFile(String url, String user, String password) {
+		this.url = url;
+		this.user = user;
+		this.password = password;
+	}
+
+	public RemoteShareFile(String url) {
+		this.url = url;
+	}
+
+	public static void main(String[] args) {
+	}
+
+	public InputStream getRemoteHttpShareFileInputStream(XmlHelper xmlHelper) {
+		FileSystemOptions opts = new FileSystemOptions();
+		FileObject fo = null;
+		try {
+			fo = VFS.getManager().resolveFile(url, opts);
+			InputStream in = fo.getContent().getInputStream();
+			xmlHelper.readStream(in);
+			return in;
+		} catch (FileSystemException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return null;
+	}
+
+	public String getRemoteHttpShareFileValue(XmlHelper xmlHelper, String xPath) {
+		String str = xmlHelper.getValueFromInputStream(xPath);
+		return str;
+	}
+
+	public String getRemoteHttpShareFile(XmlHelper xmlHelper,String xPath) {
+		FileSystemOptions opts = new FileSystemOptions();
+		FileObject fo = null;
+		try {
+			fo = VFS.getManager().resolveFile(url, opts);
+			InputStream in = fo.getContent().getInputStream();
+			xmlHelper.readStream(in);
+			String str = xmlHelper.getValueFromInputStream(xPath);
+			return str;
+		} catch (FileSystemException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return null;
+	}
+
+	public InputStream getRemoteShareFileInputStream(XmlHelper xmlHelper) {
+		SmbFile smbFile = null;
+		
+		try {
+			smbFile = new SmbFile("smb://" + user + ":" + password + "@" + url);
+		} catch (MalformedURLException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
+		try {
+			// save remote share file to input stream
+			InputStream in = smbFile.getInputStream();
+			xmlHelper.readStream(in);
+			return in;
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return null;
+	}
+
+	public String getRemoteShareFileValue(XmlHelper xmlHelper, String xPath) {
+		String str = xmlHelper.getValueFromInputStream(xPath);
+		return str;
+	}
+	
+	public int getNodeCount(XmlHelper xmlHelper, String xPath) {
+		int size = xmlHelper.getNodeCount(xPath);
+		return size;
+	}
+
+}

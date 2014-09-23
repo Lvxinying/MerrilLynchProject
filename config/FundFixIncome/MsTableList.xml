@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Table>
+	<MsSqlTableList>			
+		<MsSqlTableName>dbi.CompanyAttribute</MsSqlTableName>
+        <MsSqlTableName>dbi.CompanyAttributes</MsSqlTableName>
+		<MsSqlTableName>dbi.CompanyBasic</MsSqlTableName>
+		<MsSqlTableName>dbi.CompanyBrazilRegulatory</MsSqlTableName>
+		<MsSqlTableName>dbi.CompanyClassType</MsSqlTableName>
+		<MsSqlTableName>dbi.CompanyClassification</MsSqlTableName>	
+	</MsSqlTableList>
+</Table>

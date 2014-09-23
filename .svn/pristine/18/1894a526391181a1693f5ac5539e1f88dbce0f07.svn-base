@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ExchangeList>
+  <Exchange	ExchangeName="NYS"	Id="126"/>
+  <Exchange	ExchangeName="NAS"	Id="126"/>
+  <Exchange	ExchangeName="LTS"	Id="151"/>
+  <Exchange	ExchangeName="TSE"	Id="127"/>
+  <Exchange	ExchangeName="TKS"	Id="133"/>
+  <Exchange ExchangeName="OSE"  Id="133"/>
+  <Exchange	ExchangeName="ASX"	Id="146"/>
+  <Exchange	ExchangeName="AMS"	Id="202"/>
+  <Exchange	ExchangeName="ETR"	Id="213"/>
+  <Exchange	ExchangeName="MIL"	Id="223"/>
+  <Exchange	ExchangeName="MCE"	Id="434"/>
+  <Exchange	ExchangeName="PAR"	Id="160"/>
+</ExchangeList>
