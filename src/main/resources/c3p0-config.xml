@@ -19,8 +19,8 @@
     <named-config name="MsSql2">  
         <property name="jdbcUrl">jdbc:jtds:sqlserver://geoutputdb61</property>  
         <property name="driverClass">net.sourceforge.jtds.jdbc.Driver</property>  
-        <property name="user">MLClient</property>  
-        <property name="password">MLClient</property>  
+        <property name="user"></property>  
+        <property name="password"></property>  
   		
  		<property name="minPoolSize">1</property>
 		<property name="maxPoolSize">2</property>
@@ -33,8 +33,8 @@
     <named-config name="MsSql3">  
         <property name="jdbcUrl">jdbc:jtds:sqlserver://pdcalcdb61</property>  
         <property name="driverClass">net.sourceforge.jtds.jdbc.Driver</property>  
-        <property name="user">QAReader</property>  
-        <property name="password">a9Vdi56C</property>  
+        <property name="user"></property>  
+        <property name="password"></property>  
  
 		<property name="minPoolSize">1</property>
 		<property name="maxPoolSize">2</property>
@@ -48,8 +48,8 @@
     <named-config name="MsSql4">  
         <property name="jdbcUrl">jdbc:jtds:sqlserver://dmdevdb81;instance=dminputdbdev</property>  
         <property name="driverClass">net.sourceforge.jtds.jdbc.Driver</property>  
-        <property name="user">DMClient</property>  
-        <property name="password">72vnQE*db]</property>  
+        <property name="user"></property>  
+        <property name="password"></property>  
  
 		<property name="minPoolSize">1</property>
 		<property name="maxPoolSize">2</property>
@@ -119,8 +119,8 @@
     <named-config name="VerticaSTG">  
         <property name="jdbcUrl">jdbc:vertica://vertstg:5433/</property>  
         <property name="driverClass">com.vertica.jdbc.Driver</property>  
-        <property name="user">TSWriter</property>  
-        <property name="password">write1DB$TS</property>  
+        <property name="user"></property>  
+        <property name="password"></property>  
   		
   		<property name="minPoolSize">1</property>
 		<property name="maxPoolSize">2</property>
@@ -133,8 +133,8 @@
     <named-config name="VerticaPROD">  
         <property name="jdbcUrl">jdbc:vertica://vertprod:5433/</property>  
         <property name="driverClass">com.vertica.jdbc.Driver</property>  
-        <property name="user">tswriter</property>  
-        <property name="password">MB1O1zR9&lt;u)T</property>  
+        <property name="user"></property>  
+        <property name="password"></property>  
   		
   		<property name="minPoolSize">1</property>
 		<property name="maxPoolSize">2</property>
@@ -148,8 +148,8 @@
        <named-config name="NetezzaQA">  
         <property name="jdbcUrl">jdbc:netezza://Msibmnetezza81vipdata:5480/MSNZDEV/</property>  
         <property name="driverClass">org.netezza.Driver</property>  
-        <property name="user">shou</property>  
-        <property name="password">shouqa</property>  
+        <property name="user"></property>  
+        <property name="password"></property>  
   		
   		<property name="minPoolSize">1</property>
 		<property name="maxPoolSize">8</property>
@@ -163,8 +163,8 @@
        <named-config name="NetezzaSTG">  
         <property name="jdbcUrl">jdbc:netezza://Msibmnetezza81vipdata:5480/MSNZSTG/</property>  
         <property name="driverClass">org.netezza.Driver</property>  
-        <property name="user">shou</property>  
-        <property name="password">shouqa</property>  
+        <property name="user"></property>  
+        <property name="password"></property>  
   		
   		<property name="minPoolSize">1</property>
 		<property name="maxPoolSize">8</property>
